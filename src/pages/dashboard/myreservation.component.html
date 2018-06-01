@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="holder-fullcontent-cartsummary-page-inner-js">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <a href="javascript:void(0);">Home</a>
+          </li>
+          <li class="active">My Account</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <!-- left side tab -->
+      <leftmenu></leftmenu>
+      <!-- right side tab -->
+      <!-- tab content -->
+      <div class="col-md-9">
+        <div class="tab-content">
+
+          <!-- My Reservations Tab -->
+          <div class="tab-pane fade active in" id="tab_b">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="holder-reservation-tab-header-inner-account-page-js">
+                  <label class="reservation-tab-content-headings-inner-js">Number Of Item Per Page</label>
+                  <select class="menus-reservation-tab-account-page-inner-js" name="pageSize" ng-model="pageSize" #pageSize (change)="setPerPageValue($event, pageSize.value)">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                    <option>45</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">Status</label>
+                  <select class="menus-reservation-tab-account-page-inner-js" ng-model="status" #status (change)="filterStatus($event, status.value)">
+                    <option>All</option>
+                    <option>Confirmed</option>
+                    <option>Open</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">Sort By</label>
+                  <select class="menus-restaurant-reservation-tab-account-page-inner-js">
+                    <option>Restaurant</option>
+                    <option>C Sky Restaurant</option>
+                    <option>Satay on Charcoal</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="holder-reservation-tab-content-styleouter-inner-js" *ngFor="let reservation of reservationlist | paginate: { id: 'server', itemsPerPage: perpage, currentPage: p, totalItems: total }; let i = index;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="holder-reservation-flex-box">
+                    <h5 class="restaurant-name-reservation-tab-content-inner-js">Restaurant</h5>:
+                    <span class="restaurant-type-details-name-reservation-tab-content-inner-js">{{reservation.merchantname}}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="holder-reservation-flex-box">
+                    <h5 class="restaurant-name-reservation-tab-content-inner-js">Cusines</h5>:
+                    <span class="restaurant-details-name-reservation-tab-content-inner-js">
+                      {{listCuisines(reservation.cusines, 1)}}
+                    </span>
+                    <a class="read-more-myreservation" #viewLinks href="javascript:void(0);" (click)="reservedCuisines(i, reservation.cusines)">View All</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="holder-reservation-flex-box">
+                    <h5 class="booking-details-reservation-tab-content-inner-js">Booking Date</h5>:
+                    <span class="holder-reservation-box-spanner">{{reservation.bookingDate}}</span>
+                  </div>
+
+                  <div class="holder-reservation-flex-box">
+                    <h5 class="booking-details-reservation-tab-content-inner-js">Reservation Date</h5>:
+                    <span class="holder-reservation-box-spanner">{{reservation.diningDate}}</span>
+                  </div>
+
+                  <div class="holder-reservation-flex-box">
+                    <h5 class="booking-details-reservation-tab-content-inner-js">Arrival Time</h5>:
+                    <span class="holder-reservation-box-spanner">{{reservation.diningTime}}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="booking-details-reservation-tab-content-inner-js">Address</h5>:
+                  <h5 class="booking-details-address-bar-reservation-tab-content-inner-js">{{reservation.businessaddress1}}</h5>
+                  <h5 class="map-heading-innerpage-reservation-tab-accountpage-js">Map</h5>
+                  <a href="javascript:void(0);">
+                    <img class="map-image-accountpage-inner-js" src="../assets/images/mapicon.png" data-toggle="modal" data-target="#displaymap"
+                      (click)="openModel(reservation.latitude,reservation.longitude)">
+                  </a>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <h5 class="reservation-id-number-reservation-tab-inner-accountpage-js">Reservation Id #{{reservation.bookingNo}}</h5>
+                  <h5 class="orderconfirmed-account-page-reservation-tab-inner-js">Your Order {{reservation.status_name}}!</h5>
+                </div>
+              </div>
+            </div>
+
+            <!-- pagination -->
+            <div class="text-center" *ngIf="!norecord && norecord != null">
+              <ul class="pagination">
+                <pagination-controls (pageChange)="getPage($event)" id="server" maxSize="5" directionLinks="true" autohide="true"></pagination-controls>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Map Dialog -->
+          <div id="displaymap" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Map</h4>
+                </div>
+                <div class="modal-body">
+                  <ngui-map zoom="13" center="{{center}}" (mapReady$)="onMapReady($event)">
+                    <marker position="{{center}}]" color="green" label="A"></marker>
+                  </ngui-map>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

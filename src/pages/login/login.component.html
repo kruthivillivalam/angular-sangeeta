@@ -1,0 +1,97 @@
+<spinner name="loginSpinner"></spinner>
+<div class="container">
+  <div class="holder-fullcontent-inner-js ">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb frm-sub-signup-brd">
+          <li>
+            <a href="javascript:void(0);" [routerLink]="['/']">{{commonTxtContentLogin.HOME_TXT}}</a>
+          </li>
+          <li class="active">{{commonTxtContentLogin.LOGIN_TXT}}</li>
+        </ol>
+
+      </div>
+    </div>
+    <spinner name="registerLoading"></spinner>
+    <div class="row main-reg-frm-sup">
+      <div class="col-md-6 col-md-offset-2">
+        <form novalidate (ngSubmit)="loginForm.valid && customLogin(loginForm.value)" name="loginForm" #loginForm="ngForm">
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+
+                <input type="email" class="form-control" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email"
+                  [(ngModel)]="login.email" #email="ngModel">
+                <div *ngIf="email.errors && (email.dirty || email.touched || loginForm.submitted)" class="alert alert-danger">
+                  <div [hidden]="!email.errors.required">
+                    {{validationError.EMAIL_REQ_ERR}}
+                  </div>
+                  <div [hidden]="!email.errors.pattern">
+                    {{validationError.EMAIL_INVALID_ERR}}
+                  </div>
+                </div>
+                <div [hidden]="!invalidCredentials" class="alert alert-danger">
+                  {{validationError.USER_NOT_FOUND_ERR}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" required name="password" minlength="6" [(ngModel)]="login.password"
+                  #password="ngModel">
+                <div *ngIf="password.errors && (password.dirty || password.touched || loginForm.submitted)" class="alert alert-danger">
+                  <div [hidden]="!password.errors.required">
+                    {{validationError.PWD_REQ_ERR}}
+                  </div>
+                  <div [hidden]="!password.errors.minlength">
+                    {{validationError.PWD_LEN_ERR}}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" required name="agree" [(ngModel)]="remember">{{textContent.REMEMBER_ME_TXT}}
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <a href="javascript:void(0);" [routerLink]="['/forgotPassword']">{{textContent.FORGOT_PWD_TXT}}</a>
+            </div>
+            <div class="col-sm-12 ">
+              <button type="submit" (click)= 'customLogin(loginForm.value)' class="btn btn-default register-signup-button">{{commonTxtContentLogin.LOGIN_TXT}}</button>
+              <a [routerLink]="['/home']" class="login-link">{{commonTxtContentLogin.CANCEL_TXT}}</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a href="javascript:void(0);" (click)="fbSignUp()">
+              <img class="img-responsive sign-in-register-image" src="../assets/images/login-with-facebook.png" alt="Login with facebook"
+                style="max-width: 280px;">
+            </a>
+          </div>
+          <div class="col-sm-12 text-center">
+            <h5 class="text-muted">OR</h5>
+          </div>
+          <div class="col-sm-12 text-center">
+            <a href="javascript:void(0);" (click)="googleSignUp()">
+              <img class="img-responsive sign-in-register-image" src="../assets/images/login-with-google.png" alt="Login with google" style="max-width: 280px;">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Page Breadcrumb -->

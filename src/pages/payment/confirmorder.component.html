@@ -1,0 +1,223 @@
+<div class="menupage-sec1-mapinfo-js">
+  <div class="container">
+    <div class="holder-fullcontent-cartsummary-page-inner-js">
+      <!-- row 2 starts -->
+      <div class="row headingAlignment">
+          <img class="order-confirmation-icon-billing-page-inner-js" src="../../assets/images/billingconfirmation-icon.png">
+          <h5 class="heading-billing-page-inner-js">Order Confirmation</h5>
+      </div>
+      <div class="row">
+        <h5 class="heading-thanks-billing-page-inner-js">Thank You  </h5>
+        <h5 class="heading-billing-address-page-inner-js">
+          {{MerchantName}} <br>
+          {{Address1}} <br>
+          {{Address2}} <br>
+          {{registeredby_mobile}} <br>
+        </h5>
+      </div>
+      <!--<div class="row">
+        <h5 class="heading-billing-address-page-inner-js">{{MerchantName}}</h5>
+      </div>
+      <div class="row">
+        <h5 class="heading-billing-address-page-inner-js">{{Address1}} <br>
+          {{Address2}}
+        </h5>
+      </div>
+      <div class="row">
+        <h5 class="heading-billing-address-page-inner-js">{{registeredby_mobile}}</h5>
+      </div>-->
+
+          <!--<div class="holder-youro  rderdetails-section-billingaddress-inner-js">
+            <div class="row">
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-billing-address-inner-js">Order Information</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-billing-address-inner-js">Payment Information</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-billing-address-inner-js">Benefit from this order</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-billing-address-inner-js">Benefits Applied</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-sm-3">
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-billing-address-inner-js">Order Number</h5>:
+                  <span class="restaurant-name-billingpage-coloumn1-details-inner-js">{{OrderNo}}</span>
+                </div>
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-billing-address-inner-js">Order type</h5>:
+                  <span class="restaurant-name-billingpage-coloumn1-details-inner-js"> {{OrderType}}</span>
+                </div>
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-billing-address-inner-js">Order date </h5>:
+                  <span class="restaurant-name-billingpage-coloumn1-details-inner-js"> {{Orderdate}} at {{Ordertime}} </span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-email-billing-address-inner-js">Payment method</h5>:
+                  <span class="restaurant-name-billingpage-details-inner-js">{{payment_type}}</span>
+                </div>
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-email-billing-address-inner-js">Payment date</h5>:
+                  <span class="restaurant-name-billingpage-details-inner-js" *ngIf="paymentDate != 'N/A'">{{paymentDate}} at {{paymenttime}}</span>
+                  <span class="restaurant-name-billingpage-details-inner-js" *ngIf="paymentDate == 'N/A'">{{paymentDate}}</span>
+                </div>
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-email-billing-address-inner-js">Payment amount</h5>:
+                  <span class="restaurant-name-billingpage-details-inner-js" *ngIf="orderddata.OrderDetails.totalPayableAmount">{{orderddata.OrderDetails.totalPayableAmount | currency:'USD':'symbol'}}</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-email-billing-address-inner-js">Coupon Earned</h5>:
+                  <span class="restaurant-name-billingpage-details-inner-js">{{coupons}}</span>
+                </div>
+                <div class="heading-tabs2-details-billing-flex-box-wrap">
+                  <h5 class="heading-tabs2-details-email-billing-address-inner-js">Loyalty Points Earned</h5>:
+                  <span class="restaurant-name-billingpage-details-inner-js">{{LoyaltyPoints}}</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3" *ngIf="orderddata.OrderDetails && orderddata.OrderDetails.BenefitsApplied && (orderddata.OrderDetails.BenefitsApplied.offers || orderddata.OrderDetails.BenefitsApplied.coupns || orderddata.OrderDetails.BenefitsApplied.LoyaltyPoints)">
+                <div class="row" *ngFor="let benefit of orderddata.OrderDetails.BenefitsApplied.offers">
+                  <div class="col-md-12">
+                    <h5 class="heading-tabs2-details-email-billing-address-inner-js">Offers Applied</h5>:
+                    <span class="restaurant-name-billingpage-details-inner-js">{{benefit.offername}}</span>
+                  </div>
+                </div>
+                <div class="row" *ngFor="let coupon of orderddata.OrderDetails.BenefitsApplied.coupons">
+                  <div class="col-md-12">
+                    <h5 class="heading-tabs2-details-email-billing-address-inner-js">Coupon Applied</h5>:
+                    <span class="restaurant-name-billingpage-details-inner-js">{{coupon.couponcode}} - {{coupon.couponName}}</span>
+                  </div>
+                </div>
+                <div class="row" *ngIf="orderddata.OrderDetails.BenefitsApplied.LoyaltyPoints">
+                  <div class="col-md-12">
+                    <h5 class="heading-tabs2-details-email-billing-address-inner-js">Loyalty Points Applied</h5>:
+                    <span class="restaurant-name-billingpage-details-inner-js">{{orderddata.OrderDetails.BenefitsApplied.LoyaltyPoints || 'Nill'}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+          <div class="holder-yourorderdetails-section-billing-inner-js">
+            <!-- row-3 -->
+            <div class="row">
+              <div class="col-md-12">
+                <h5 class="heading-tabs-billing-address-inner-js">Your Order</h5>
+              </div>
+            </div>
+            <!-- row-4 -->
+            <div class="row">
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-details-billing-address-inner-js">Name </h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-details-billing-address-inner-js">Quantity</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-details-billing-address-inner-js">Unit Price</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-details-billing-address-inner-js">Total Price</h5>
+              </div>
+            </div>
+
+            <!-- row-5 -->
+            <div class="row" *ngFor="let OrderItem of orderddata.OrderDetails.OrderItems">
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-inner-details-name-inner-js">{{OrderItem.ItemName}}
+                  <!--<span *ngIf="OrderItem.sizeName"> - {{OrderItem.sizeName}}</span>-->
+                </h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-inner-details-inner-js">{{OrderItem.OrderQty}}</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-inner-details-inner-js">{{OrderItem.UnitRate | currency:'USD':'symbol'}}</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-inner-details-inner-js">{{OrderItem.UnitRate * OrderItem.OrderQty | currency:'USD':'symbol'}}</h5>
+              </div>
+              <!--<div class="col-md-3 col-sm-3">
+              <ul class="list-unstyled">
+              <li *ngFor="let item of OrderItem.menuitem_options">
+              {{item.optionGroupItemName}} -
+              {{OrderItem.OrderQty}} -
+              {{item.AdditionalCost | currency:'USD':'symbol'}} -
+              {{item.AdditionalCost * OrderItem.OrderQty | currency:'USD':'symbol'}}
+            </li>
+          </ul>
+        </div>-->
+        <div class="col-md-12 marginTop"  *ngIf="OrderItem.menuitem_options">
+          <div class="row">
+            <div class="cart-item-specific-addon1" *ngFor="let item of OrderItem.menuitem_options">
+              <div class="col-md-3  col-sm-3" >
+                <a><i class="glyphicon " area-hidden="true"></i></a>
+                <span class="specific-addon-name marginLeft"> - {{item.optionGroupItemName}}</span>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-inner-details-inner-js">{{item.OrderQty}}
+                </h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="heading-tabs-yourorderrow-inner-details-inner-js" *ngIf="item.AdditionalCost">{{item.AdditionalCost | currency:'USD':'symbol'}}</h5>
+              </div>
+              <div class="col-md-3 col-sm-3 ">
+                <h5 class="heading-tabs-yourorderrow-inner-details-inner-js"  *ngIf="item.AdditionalCost">{{item.AdditionalCost*OrderItem.OrderQty | currency:'USD':'symbol'}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- row-6 starts -->
+
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+        </div>
+        <div class="col-md-3 col-sm-3">
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <h5 class="subtotal-row6-details-billingpage-inner-js" *ngIf="orderddata.OrderDetails.grossInvoiceAmount">Subtotal</h5>
+          <h5 class="subtotal-row6-details-billingpage-inner-js" *ngIf="orderddata.OrderDetails.taxAmount">Tax</h5>
+          <h5 class="subtotal-row6-details-billingpage-inner-js" *ngIf="orderddata.OrderDetails.totalOfferAmt">Offer Amount</h5>
+          <h5 class="subtotal-row6-details-billingpage-inner-js" *ngIf="orderddata.OrderDetails.totalCouponAmt">Coupon Amount</h5>
+          <h5 class="subtotal-row6-details-billingpage-inner-js" *ngIf="orderddata.OrderDetails.point_redeem_amt">Loyalty Point</h5>
+          <h5 class="subtotal-row6-details-billingpage-inner-js" *ngIf="orderddata.OrderDetails.deliverycharge">Delivery Charge</h5>
+          <h5 class="subtotal-row6-details-billingpage-inner-js" *ngIf="orderddata.OrderDetails.totalPayableAmount">Total Order Amount</h5>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <h5 class="tabs-yourorderrow-inner-details-inner-js" *ngIf="orderddata.OrderDetails.grossInvoiceAmount">{{orderddata.OrderDetails.grossInvoiceAmount | currency:'USD':'symbol'}}</h5>
+          <h5 class="tabs-yourorderrow-inner-details-inner-js" *ngIf="orderddata.OrderDetails.taxAmount">{{orderddata.OrderDetails.taxAmount | currency:'USD':'symbol'}}</h5>
+          <h5 class="tabs-yourorderrow-inner-details-inner-js" *ngIf="orderddata.OrderDetails.totalOfferAmt">{{orderddata.OrderDetails.totalOfferAmt | currency:'USD':'symbol'}}</h5>
+          <h5 class="tabs-yourorderrow-inner-details-inner-js" *ngIf="orderddata.OrderDetails.totalCouponAmt">{{orderddata.OrderDetails.totalCouponAmt | currency:'USD':'symbol'}}</h5>
+          <h5 class="tabs-yourorderrow-inner-details-inner-js" *ngIf="orderddata.OrderDetails.point_redeem_amt">{{orderddata.OrderDetails.point_redeem_amt | currency:'USD':'symbol'}}</h5>
+          <h5 class="tabs-yourorderrow-inner-details-inner-js" *ngIf="orderddata.OrderDetails.deliverycharge">{{orderddata.OrderDetails.deliverycharge | currency:'USD':'symbol'}}</h5>
+          <h5 class="tabs-yourorderrow-inner-details-inner-js" *ngIf="orderddata.OrderDetails.totalPayableAmount">{{orderddata.OrderDetails.totalPayableAmount | currency:'USD':'symbol'}}</h5>
+        </div>
+      </div>
+      <!-- row-7 starts -->
+
+
+    <!--</div>-->
+
+    <!--<div class="row">
+      <div class="col-md-12">
+        <a class="submitfinal-billing-page-row7-inner-js" href="javascript:void(0);" (click)="goToHome()">OK</a>
+      </div>
+    </div>-->
+
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a class="submitfinal-billing-page-row7-inner-js" href="javascript:void(0);" (click)="goToHome()">OK</a>
+    </div>
+  </div>
+</div>
+</div>

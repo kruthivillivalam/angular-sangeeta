@@ -1,0 +1,415 @@
+<div class="menupage-sec1-mapinfo-js">
+  <div class="container">
+    <div class="holder-fullcontent-menu-page-inner-js">
+      <!-- row 2 starts -->
+      <div class="row">
+        <div class="col-md-9">
+          <div class="tab-content tabs-conent-style-custom-cartpage-inner-js" style="background: none;padding: 0;">
+
+            <div class="holder-cart-head-cartpage-inner-js">
+              <h5 class="myorder-heade-cartpage-inner-js">My order</h5>
+              <a href="javascript:void(0);" style="position: relative;display: inline-block; float: right;">
+                <span class="glyphicon glyphicon-shopping-cart carticon-cartpage-inner-js"></span>
+                <span class="item-count-ordersection-cartpage-inner-js">{{cartItems.length}}</span>
+              </a>
+            </div>
+
+            <div class="row" *ngIf="cartItems && cartItems.length > 0">
+              <div class="col-md-3 col-sm-3">
+                <h5 class="item-head1cartpage-inner-js">Item</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="item-head1cartpage-inner-js">Quantity</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="item-head1cartpage-inner-js" style="text-align: right">Price</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="item-head1cartpage-inner-js" style="text-align: right">Sub Total</h5>
+              </div>
+            </div>
+
+
+            <cart-item *ngFor="let cartItem of cartItems; let idx=index" [isOnSidebar]='false' [freeItemFlag]='false' [hideItemPrice]='false'
+            [editable]='true' [cartItemIdx]='idx' [qty]="cartItem.quantity ? cartItem.quantity : 0" [cartItemObj]="cartItem.menuItem"
+            (cartItemDeletion)="handleItemDeletion($event)"></cart-item>
+
+
+
+          </div>
+          <div class="holder-pricerates-adjust-content-myordertab-inner-js1">
+            <div class="row">
+              <div class="col-md-6 col-sm-6" [routerLink]="['/restaurantdetail', restaurantData.merchantid]">
+                <a class="addmorelink-cart-page-inner-js" >Add More Food</a>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div  class="row">
+                  <div class="col-md-8 col-sm-8" >
+                    <h5 style="text-align: right">Sub Total:</h5>
+                  </div>
+                  <div class="col-md-4 col-sm-4" >
+                    <h5  style="text-align: right">{{totalCartAmount | currency:'USD':'symbol'}}</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-sm-8">
+                    <h5 style="text-align: right">Tax
+                      <span  *ngIf="totalTaxAmnt === 0">(Inclusive)</span>:
+                    </h5>
+                  </div>
+                  <div class="col-md-4 col-sm-4" >
+                    <h5 style="text-align: right" *ngIf="totalTaxAmnt === 0">$0.00</h5>
+                    <h5 style="text-align: right" *ngIf="totalTaxAmnt>0" >{{totalTaxAmnt | currency:'USD':'symbol'}}</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-sm-8" *ngIf="orderType === 'Delivery'">
+                    <h5 style="text-align: right">Delivery Charge
+                      <span  *ngIf="deliveryCharge === 0">(Free)
+                        <!--<span class="pricetotal-adjust-inner-js" *ngIf="deliveryCharge === 0">(Free)</span>-->
+                      </span>:
+
+                    </h5>
+                  </div>
+                  <div class="col-md-4 col-sm-4" *ngIf="orderType === 'Delivery'">
+                    <h5 style="text-align:  right" *ngIf="deliveryCharge === 0">$0.00
+                    </h5>
+                    <h5 style="float: right" *ngIf="deliveryCharge > 0">
+                      {{deliveryCharge | currency:'USD':'symbol'}}
+                    </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-sm-8">
+                    <h5 style="text-align: right">Total:
+                    </h5>
+                  </div>
+                  <div class="col-md-4 col-sm-4" >
+                    <h5 style="float: right" >
+                      {{totalCartAmount + totalTaxAmnt + deliveryCharge | currency:'USD':'symbol'}}
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="youmaylike-sections-suggestion-cartpage-inner-js">
+            <div class="row">
+              <div class="col-md-12">
+                <h5 class="youmaylike-head-cartpage-inner-js">You May Also Like</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <div class="holder-content-youmaylike-section-inner-cartpage-js">
+                  <img class="dummy-image-section-cartpage-inner-page-js" src="http://websitedemo2.mybrandcreator.com/images/youmayknowdummy.jpg">
+                  <p class="suggestion-content-youmaylike-sec-cartpage-inner-js">
+                    <span class="glyphicon glyphicon-asterisk vegicon-youmaylike-cartpage-inner-js"></span>Garlic Cheese Focaccia Loads of garlic, mozzarella and oregano</p>
+                    <div class="input-group-btn-vertical youmaylike-numbersection-cart-page-inner-js">
+                      <div class="col-md-5">
+                        <button class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button">
+                          <span class="glyphicon glyphicon-minus adjusticons-value-cartpage-inner-js"></span>
+                        </button>
+                        <input type="text" class="form-control spinner-myorder-section-cartpage-inner-js" value="42">
+                        <button class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button">
+                          <span class="glyphicon glyphicon-plus adjusticons-value-cartpage-inner-js"></span>
+                        </button>
+                      </div>
+                      <div class="col-md-2" style="padding: 0 0 0 0;">
+                        <p class="price-content-youmaylike-sec-cart-page-inner-js">$45</p>
+                      </div>
+                      <div class="col-md-5">
+                        <a class="add-link-youmaylink-section-inner-cartpage-js" href="#">Add</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                  <div class="holder-content-youmaylike-section-inner-cartpage-js">
+                    <img class="dummy-image-section-cartpage-inner-page-js" src="http://websitedemo2.mybrandcreator.com/images/youmayknowdummy2.jpg">
+                    <p class="suggestion-content-youmaylike-sec-cartpage-inner-js">
+                      <span class="glyphicon glyphicon-asterisk non-vegicon-youmaylike-cartpage-inner-js"></span>Garlic Cheese Focaccia Loads of garlic, mozzarella and oregano</p>
+                      <div class="input-group-btn-vertical youmaylike-numbersection-cart-page-inner-js">
+                        <div class="col-md-5">
+                          <button class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button">
+                            <span class="glyphicon glyphicon-minus adjusticons-value-cartpage-inner-js"></span>
+                          </button>
+                          <input type="text" class="form-control spinner-myorder-section-cartpage-inner-js" value="42">
+                          <button class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button">
+                            <span class="glyphicon glyphicon-plus adjusticons-value-cartpage-inner-js"></span>
+                          </button>
+                        </div>
+                        <div class="col-md-2" style="padding: 0 0 0 0;">
+                          <p class="price-content-youmaylike-sec-cart-page-inner-js">$45</p>
+                        </div>
+                        <div class="col-md-5">
+                          <a class="add-link-youmaylink-section-inner-cartpage-js" href="#">Add</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                    <div class="holder-content-youmaylike-section-inner-cartpage-js">
+                      <img class="dummy-image-section-cartpage-inner-page-js" src="http://websitedemo2.mybrandcreator.com/images/youmayknowdummy3.jpg">
+                      <p class="suggestion-content-youmaylike-sec-cartpage-inner-js">
+                        <span class="glyphicon glyphicon-asterisk vegicon-youmaylike-cartpage-inner-js"></span>Garlic Cheese Focaccia Loads of garlic, mozzarella and oregano</p>
+                        <div class="input-group-btn-vertical youmaylike-numbersection-cart-page-inner-js">
+                          <div class="col-md-5">
+                            <button class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button">
+                              <span class="glyphicon glyphicon-minus adjusticons-value-cartpage-inner-js"></span>
+                            </button>
+                            <input type="text" class="form-control spinner-myorder-section-cartpage-inner-js" value="42">
+                            <button class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button">
+                              <span class="glyphicon glyphicon-plus adjusticons-value-cartpage-inner-js"></span>
+                            </button>
+                          </div>
+                          <div class="col-md-2" style="padding: 0 0 0 0;">
+                            <p class="price-content-youmaylike-sec-cart-page-inner-js">$45</p>
+                          </div>
+                          <div class="col-md-5">
+                            <a class="add-link-youmaylink-section-inner-cartpage-js" href="#">Add</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="tabs-conent-style-custom-cartpage-inner-js" style="background: none;padding: 0;">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="holder-cart-head-cartpage-inner-js">
+                        <h5 class="myorder-header2-cartpage-inner-js">My Calorie Calculator</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2 col-sm-2">
+                      <h5 class="item-headcartpage-inner-js">S.No</h5>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                      <h5 class="item-headcartpage-inner-js">Item Name</h5>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                      <h5 class="item-headcartpage-inner-js">Calorie</h5>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                      <h5 class="item-headcartpage-inner-js">Calorie Unit</h5>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                      <h5 class="item-headcartpage-inner-js">Quantity</h5>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                      <h5 class="item-headcartpage-inner-js">Calorie Per Order</h5>
+                    </div>
+                  </div>
+
+                  <div class="holder-display-listng-cartpage-inner-js">
+                    <div class="row" *ngFor="let itemC of cartItems; let idx = index">
+                      <div class="col-md-2 col-sm-2">
+                        <h5 class="dishname-cartpage-inner-js">{{idx + 1}}</h5>
+                      </div>
+                      <div class="col-md-2 col-sm-2">
+                        <h5 class="dishname-cartpage-inner-js">{{itemC.menuItem.menuItemName}}</h5>
+                      </div>
+                      <div class="col-md-2 col-sm-2">
+                        <h5 class="dishname-cartpage-inner-js">{{ itemC.menuItem.Calorie ? (itemC.menuItem.Calorie || 0) : 0}}</h5>
+                      </div>
+                      <div class="col-md-2 col-sm-2">
+                        <h5 class="dishname-cartpage-inner-js">{{ (!itemC.menuItem.Calorie) ? (itemC.menuItem.CalorieUnit || '-') : '-'}}</h5>
+                      </div>
+                      <div class="col-md-2 col-sm-2">
+                        <h5 class="dishname-cartpage-inner-js">{{itemC.quantity}}</h5>
+                      </div>
+                      <div class="col-md-2 col-sm-2">
+                        <h5 class="dishname-cartpage-inner-js">{{itemC.quantity * (itemC.menuItem.Calorie ? itemC.menuItem.Calorie : 0) }}</h5>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="holder-pricerates-adjust-content-myordertab-inner-js">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h5 class="tax-head-pricemyordersection-inner-cartpage-js">
+                          <span class="adjust1-final-price-cartpage-inner-js">Total Calories</span>:
+                          <span class="price-adjust-myorder-cartpage-tab-inner-js">{{totalCalorie}} Kcal</span>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5 class="youmaylike-head-cartpage-inner-js">Enter your Age, Height & Weight to check the calorie required</h5>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12 calorie-params-fields">
+                      <div class="">
+                        <div class="input-group spinner customholder-spinner-caloriesec-cartpage-inner-js">
+                          <h5 class="headings-spinners-caloriesec-cartpage-inner-js">Age Years</h5>
+
+                          <input [(ngModel)]="age" class="increaseholders-calculator-cartpage-inner-js" type="text" placeholder="01" required>
+
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="input-group spinner customholder-spinner-caloriesec-cartpage-inner-js">
+                          <h5 class="headings-spinners-caloriesec-cartpage-inner-js">Height</h5>
+
+                          <input [(ngModel)]="heightCM" class="increaseholders1-calculator-cartpage-inner-js" type="text" placeholder="01" required>
+
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="input-group spinner customholder-spinner-caloriesec-cartpage-inner-js">
+                          <h5 class="headings-spinners-caloriesec-cartpage-inner-js">Weight</h5>
+
+                          <input [(ngModel)]="weightKG" class="increaseholders-calculator-cartpage-inner-js" type="text" placeholder="01" required>
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <a (click)="calculateCalorie()" class="calculatelink-caloriesec-cartpage-inner-js" href="javascript:void(0);">Calculate (Calories) Required For Me</a>
+                    </div>
+
+                  </div>
+
+                  <div class="holder-pricerates-adjust-content-myordertab-inner-js">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="resultfull-cartpage-inner-js">Result</h5>
+                      </div>
+                      <div class="col-md-8">
+                        <h5 class="resultfinal-head-pricesection-inner-cartpage-js">
+                          <span class="adjust-final-price-cartpage-inner-js">Your ordered food contains</span>:
+                          <span class="pricetotal-adjust-inner-js">{{totalCalorie}} Kcal</span>
+                        </h5>
+                        <h5 class="resultfinal-head-pricesection-inner-cartpage-js">
+                          <span class="adjust-final-price-cartpage-inner-js">You Require</span>:
+                          <span class="pricetotal-adjust-inner-js">{{calorieRequired}} Kcal</span>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-md-3">
+                <form novalidate (ngSubmit)="continuePaymentForm.valid && validateMinimumOrderAmount(continuePaymentForm)" name="continuePaymentForm"
+                #continuePaymentForm="ngForm" id="continuePaymentForm">
+                <div class="holder-left-menus-inner-menupage-js">
+                  <h5 class="leftbar-cartpage-headings-style-js">Delivery Details</h5>
+                  <!--<h6 class="restaurantname-cartpage-righttab-inner-js">Restaurant</h6>-->
+                  <h5 class="restaurantname-cartpage-rightmenu-head-inner-js">Authentic Thai Delight</h5>
+                  <h5 class="leftbar-cartpage-headings-style-js" *ngIf="deliveryType">
+                    <span class="order-type-head-spacing-adjust-inner-js">Order Type : </span>
+                    <span class="ordertype-value-adjust-spacing-cartpage-inner-js">{{ orderType }}</span>
+                    <br *ngIf="continuePaymentForm.submitted" />
+                    <span *ngIf="continuePaymentForm.submitted" [hidden]="!continuePaymentForm.controls.deliType?.hasError('required')" class="alert alert-danger">Order type is required</span>
+                  </h5>
+
+                  <div class="form-group" *ngIf="orderType === 'Delivery'">
+                    <div class="form-group">
+                      <a href="javascript:void(0)" (click)="showDeliveryAddressPrompt('Select Delivery Address','noteddeliveryaddress');" class="billing-address1-righttab-cart-page">Select Delivery Address</a>
+                    </div>
+
+                    <div *ngIf="promptMessagedelivery" class="form-control contactinfo-rightmenu-cartpage-inner-js" placeholder="Delivery Address">
+                      <div *ngIf="promptMessagedelivery">
+                        <p *ngIf="promptMessagedelivery">{{promptMessagedelivery.addressLine1}} {{promptMessagedelivery.addressLine2}} <br>
+                          {{promptMessagedelivery.city}}<br>
+                          {{promptMessagedelivery.suburb}}<br>
+                          {{promptMessagedelivery.postcode}}<br>
+                          {{promptMessagedelivery.state}}<br>
+                          {{promptMessagedelivery.country}}
+                        </p>
+                      </div>
+                    </div>
+                    <div *ngIf="(promptMessagedelivery | json) == '{}' &&  continuePaymentForm.submitted " class="alert alert-danger">
+                      Delivery address is required
+                    </div>
+                  </div>
+                  <div class="form-group" *ngIf="orderType === 'Delivery'">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="billAddressChk" [value]="true" [(ngModel)]="billAddressChk" (change)="setBillingAddress()" ng-init="checked=billAddressChk"> Is Billing Address Same as Delivery?
+                      </label>
+                    </div>
+                  </div>
+                  <div *ngIf="billAddressChk == false">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <a href="javascript:void(0)" (click)="showPrompt('Select Billing Address','notedbillingaddress');" class="billing-address1-righttab-cart-page">Select Billing Address</a>
+                      </div>
+                    </div>
+                    <div *ngIf="promptMessage" class="form-control contactinfo-rightmenu-cartpage-inner-js" placeholder="Billing Address" style="height: auto">
+                      <div *ngIf="promptMessage">
+                        <p *ngIf="promptMessage">{{promptMessage.addressLine1}} {{promptMessage.addressLine2}} <br>
+                          {{promptMessage.city}} <br>
+                          {{promptMessage.suburb}} <br>
+                          {{promptMessage.postcode}} <br>
+                          {{promptMessage.state}} <br>
+                          {{promptMessage.country}}
+                        </p>
+                      </div>
+                    </div>
+                    <div *ngIf="(promptMessage | json) == '{}' &&  continuePaymentForm.submitted" class="alert alert-danger">
+                      Billing address is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Contact Information</label>
+                    <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" [(ngModel)]="email"
+                    placeholder="Email" class="form-control contactinfo-rightmenu-cartpage-inner-js">
+                    <p class="alert alert-danger" *ngIf="email.errors && (email.dirty || email.touched || continuePaymentForm.submitted)">
+                      <span [hidden]="!email.errors.required">
+                        Email is required
+                      </span>
+                      <span [hidden]="!email.errors.pattern">
+                        Email is Invalid.
+                      </span>
+                    </p>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" placeholder="Mobile* eg: +615522663388" required minlength="10" maxlength="13" pattern="^[0-9]+$" name="mobile"
+                    [(ngModel)]="mobile"  (keyup)="mobileNotFound=false" class="form-control contactinfo-rightmenu-cartpage-inner-js">
+                    <p class="alert alert-danger" *ngIf="mobile.errors && (mobile.dirty || mobile.touched || continuePaymentForm.submitted)">
+                      <span [hidden]="!mobile.errors.required">
+                        Mobile is required
+                      </span>
+                      <span [hidden]="!mobile.errors.minlength">
+                        Mobile Number must be at least 10 digit long.
+                      </span>
+                      <span [hidden]="!mobile.errors.pattern">
+                        Mobile is Invalid.
+                      </span>
+                      <span *ngIf="!(mobile.errors) && mobileNotFound" class="alert alert-danger">{{cartValidationError.MOBILE_NO_NOT_FOUND}}
+                      </span>
+                    </p>
+                  </div>
+
+                </div>
+
+                <!--<div class="linkpayment-rightmenu-delievery-tab-inner-cartpage-js">
+                  <button type="submit" class="payment-link-delieverytab-inner-js">Continue To Payment</button>
+                </div>-->
+                <div class="linkpayment-rightmenu-delievery-tab-inner-cartpage-js">
+                  <button type="submit" class="payment-link-delieverytab-inner-js">Continue To Payment</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>

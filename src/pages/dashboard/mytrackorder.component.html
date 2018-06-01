@@ -1,0 +1,222 @@
+<div class="container">
+  <div class="holder-fullcontent-cartsummary-page-inner-js">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <a href="javascript:void(0);">Home</a>
+          </li>
+          <li class="active">My Account</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <!-- left side tab -->
+      <leftmenu></leftmenu>
+      <!-- right side tab -->
+      <!-- tab content -->
+      <div class="col-md-9">
+        <div class="tab-content">
+
+          <!-- Track Order -->
+          <div class="tab-pane fade active in" id="tab_f">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="holder-reservation-tab-header-inner-account-page-js">
+                  <label class="reservation-tab-content-headings-inner-js">Number Of Item Per Page</label>
+                  <select class="menus-reservation-tab-account-page-inner-js" name="pageSize" ng-model="pageSize" #pageSize (change)="setPerPageValue($event, pageSize.value)">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                    <option>45</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">Status</label>
+                  <select class="menus-reservation-tab-account-page-inner-js">
+                    <option>All</option>
+                    <option>Close</option>
+                    <option>Open</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">Sort By</label>
+                  <select class="menus-restaurant-reservation-tab-account-page-inner-js">
+                    <option>Restaurant</option>
+                    <option>C Sky Restaurant</option>
+                    <option>Satay on Charcoal</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="">
+              <div class="">
+                <div class="col-md-12" *ngIf="!norecord && norecord != null">
+                  <h5 class="heading-mybenefits-track-tab-inner-js">Open Orders</h5>
+                </div>
+
+                <!-- order 2 -->
+
+                <div class="holder-online-order-history-tab-accountpage-inner-js" *ngFor="let order of mytrackorderhistorylist  | paginate: { id: 'server', itemsPerPage: perpage, currentPage: p, totalItems: total }">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="holder-firstcol-onlineorder-historytab-inner-accountpage-js">
+                        <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Restaurant</h5>
+                        <span class="details-orderhistorytab-restaurantname-inner-js">{{ order.merchantname}}</span>
+                        <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                        <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                        <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                        <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                        <br>
+                        <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Cuisine</h5>
+                        <span class="details-dine-in-tab-row2-restaurantname-inner-js-spanner" *ngFor="let cuisineItem of order.cusines;let j = index;let isLast=last;">
+                          {{cuisineItem.cuisinename}}{{isLast ? '' : ', '}}
+                        </span>
+                        <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Order Status</h5>
+                        <span class="details-dine-in-tab-row2-restaurantname-inner-js">
+                          {{ order.status_name}}
+                        </span>
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#displaymap" (click)="openModel(order.latitude,order.longitude)">
+                          <img class="map-image-accountpage-inner-js" src="../assets/images/mapicon.png">
+                        </a>
+                        <br>
+
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="row">
+                        <!-- order date -->
+                        <div class="col-md-12" style="padding: 0 0 0 0;margin: 0 0 0 0;">
+                          <div class="rowholder-content-orderdate-inner-account-page-dinein-tab-js">
+                            <h5 class="orderdate-dineintab-inner-style-accountpage-js" *ngIf="order.order_type == 'TakeAway' || order.order_type == 'Delivery'">Order Date :</h5>
+                            <span class="date-output-inner-js-dinein-tab-accountpage-js" *ngIf="order.order_type == 'TakeAway' || order.order_type == 'Delivery'">{{ order.Orderdate ? order.Orderdate : 'N/A' }} </span>
+                            <p class="time-orderdetails-acountpage-inner-js" *ngIf="order.order_type == 'TakeAway' || order.order_type == 'Delivery'">{{ order.order_start_time ? order.order_start_time : 'N/A'}} </p>
+                            <h5 class="orderdate-dineintab-inner-style-accountpage-js" *ngIf="order.order_type == 'Reservation'">Reservation Date :</h5>
+                            <span class="date-output-inner-js-dinein-tab-accountpage-js" *ngIf="order.order_type == 'Reservation'">{{ order.diningDate ? order.diningDate : 'N/A'}}</span>
+                            <p class="time-orderdetails-acountpage-inner-js" *ngIf="order.order_type == 'Reservation'">{{ order.diningTime ? order.diningTime : 'N/A'}} </p>
+                            <span class="ordertype-output-inner-js-dinein-tab-accountpage-js">{{ order.order_type }}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row bs-wizard" style="border-bottom:0;margin-top:0;border-bottom: solid 1px #e0e0e0 !important;
+                                    padding: 10px 10px 20px 10px;">
+                        <div class="col-xs-3 bs-wizard-step" [ngClass]="{'complete' : phase1(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code), 'disabled' : !phase1(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                          <div class="text-center  custom-progressbar-order-tracktab-heading-inner-js">Step 1</div>
+                          <div class="progress" [ngClass]="{ 'custom-adjust-bar-color' : !phase1(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                            <div class="progress-bar"></div>
+                          </div>
+
+                          <a href="#" class="bs-wizard-dot"></a>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Delivery'">Confirmed</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'TakeAway'">Confirmed</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Reservation'">Pending</div>
+
+                        </div>
+
+                        <div class="col-xs-3 bs-wizard-step" [ngClass]="{'complete' : phase2(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code), 'disabled' : !phase2(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                          <!-- complete -->
+                          <div class="text-center  custom-progressbar-order-tracktab-heading-inner-js">Step 2</div>
+                          <div class="progress" [ngClass]="{ 'custom-adjust-bar-color' : !phase2(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                            <div class="progress-bar"></div>
+                          </div>
+                          <a href="#" class="bs-wizard-dot"></a>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Delivery'">In Kitchen</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'TakeAway'">In Kitchen</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Reservation'">Confirmed</div>
+
+                        </div>
+
+                        <div class="col-xs-3 bs-wizard-step" [ngClass]="{'complete' : phase3(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code), 'disabled' : !phase3(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                          <!-- complete -->
+                          <div class="text-center custom-progressbar-order-tracktab-heading-inner-js">Step 3</div>
+                          <div class="progress" [ngClass]="{ 'custom-adjust-bar-color' : !phase3(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                            <div class="progress-bar"></div>
+                          </div>
+                          <a href="#" class="bs-wizard-dot"></a>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Delivery'">Delivery Started</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'TakeAway'">Ready For Pickup</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Reservation'">Table Reserved</div>
+
+                        </div>
+
+                        <div class="col-xs-3 bs-wizard-step" [ngClass]="{'complete' : phase4(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code), 'disabled' : !phase4(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                          <!-- complete -->
+                          <div class="text-center  custom-progressbar-order-tracktab-heading-inner-js">Step 4</div>
+                          <div class="progress" [ngClass]="{ 'custom-adjust-bar-color' : !phase4(order.order_type == 'Reservation' ? order.reservation_status_code : order.status_code)}">
+                            <div class="progress-bar"></div>
+                          </div>
+                          <a href="#" class="bs-wizard-dot"></a>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Delivery'">Delivered</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'TakeAway'">Picked Up</div>
+                          <div class="custom-progressbar-order-tracktab-desc-inner-js" *ngIf="order.order_type == 'Reservation'">Completed</div>
+
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <h5 class="order-history-tab2-tracktab-heading-row2-inner-accountpage-js" *ngIf="order.order_type == 'Reservation'">Booking Number:</h5>
+                          <span class="details-orderhistorytab-row2-tracktab-restaurantname-inner-js" *ngIf="order.order_type == 'Reservation'">{{order.bookingNo ? order.bookingNo : 'N/A' }}</span>
+
+						  <div class="order-history-tab2-tracktab-heading-row2-aligner-box" >
+							  <h5 class="order-history-tab2-tracktab-heading-row2-inner-accountpage-js" *ngIf="order.order_type != 'Reservation'">Order Number </h5>
+								:
+							  <span class="details-orderhistorytab-row2-tracktab-restaurantname-inner-js" *ngIf="order.order_type != 'Reservation'">{{order.OrderNo ? order.OrderNo : 'N/A' }}</span>
+						  </div>
+                        </div>
+
+                        <div class="col-sm-6">
+						  <div class="order-history-tab2-tracktab-heading-row2-aligner-box" >
+							  <h5 class="order-history-tab2-tracktab-heading-row2-inner-accountpage-js" *ngIf="order.order_type != 'Reservation'">Order Amount </h5>
+								:
+							  <span class="details-orderhistorytab-row2-tracktab-restaurantname-inner-js" *ngIf="order.order_type != 'Reservation'">${{ order.order_total ? order.order_total : 'N/A'}}</span>
+						  </div>
+                        </div>
+                      </div>
+                      <a class="cancelorder-trackorder-tab-inner-account-js" href="javascript:void(0);" (click)='cancelOrder(order.OrderNo,order.merchant_id,order.order_type)'
+                        *ngIf="order.order_type == 'TakeAway' || order.order_type == 'Delivery'">Cancel Order</a>
+                      <a class="cancelorder-trackorder-tab-inner-account-js" href="javascript:void(0);" (click)='cancelOrder(order.bookingNo,order.merchant_id,order.order_type)'
+                        *ngIf="order.order_type == 'Reservation'">Cancel Order</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- pagination -->
+                <div class="text-center" *ngIf="!norecord && norecord != null">
+                  <ul class="pagination">
+                    <pagination-controls (pageChange)="getPage($event)" id="server" maxSize="5" directionLinks="true" autohide="true"></pagination-controls>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Map Dialog -->
+      <div id="displaymap" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Map</h4>
+            </div>
+            <div class="modal-body">
+              <ngui-map zoom="13" center="{{center}}" (mapReady$)="onMapReady($event)">
+                <marker position="{{center}}" color="green" label="A"></marker>
+              </ngui-map>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

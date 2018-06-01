@@ -1,0 +1,155 @@
+ <!-- Start Event Page -->
+ <div class="event-page-wrapper contact-page-wrap">
+    <div class="event-detail-wrap">
+      <div class="event-section">
+        <div class="left-event-details">
+          <div class="evevnt-text" >
+                <div class="evevnt-detail-text-custom evevnt-detail-text">
+                  <div class="evevnt-text-bold custom-contact-page-change-head">Contact Us</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div> 
+          </div>
+          <div class="evevnt-text" *ngIf="error_message">
+              <div class="evevnt-detail-text">
+                  <div class="op-error-msg" >{{error_message}}</div>
+              </div>
+          </div>            
+          <div class="contact-form" >
+            <form novalidate name="contactForm" #contactForm="ngForm" class="form" (ngSubmit)="contactForm.valid && onSubmit(contactForm.value)">
+              <div class="text-field">
+                <input type="text" placeholder="Name*" name='customer_Name' id='customer_Name'  (ngModel)="customer_Name"
+                required pattern="[a-zA-Z ]+" #customer_Name="ngModel">
+                <div *ngIf="customer_Name.errors && (customer_Name.dirty || customer_Name.touched || contactForm.submitted)"
+                class="alert alert-danger">
+                  <div [hidden]="!customer_Name.errors.required">
+                    Name is required.
+                  </div>
+                  <div [hidden]="!customer_Name.errors.pattern">
+                    Only alphabets are allowed in name.
+                  </div>
+                </div>                
+              </div>
+              <div class="text-field">
+                <input type="email" placeholder="Email*" name='customer_email' id='customer_email'  (ngModel)="customer_email"
+                required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #customer_email="ngModel">
+                <div *ngIf="customer_email.errors && (customer_email.dirty || customer_email.touched || contactForm.submitted)"
+                class="alert alert-danger">
+               <div [hidden]="!customer_email.errors.required">
+                 Email is required
+               </div>
+               <div [hidden]="!customer_email.errors.pattern">
+                 Email is Invalid.
+               </div>
+             </div>
+              </div>
+              <div class="text-field">
+                <input type="phone-number" placeholder="Mobile (optional)" name='customer_mobile' id='customer_mobile'
+                required
+                minlength="10"
+                maxlength="10"
+                pattern="^[0-9]+$"
+                (ngModel)="customer_mobile"
+                #customer_mobile="ngModel"
+                >
+                <div *ngIf="customer_mobile.errors && (customer_mobile.dirty || customer_mobile.touched || contactForm.submitted)"
+                class="alert alert-danger">
+               <div [hidden]="!customer_mobile.errors.required">
+                 Mobile is required
+               </div>
+               <div [hidden]="!customer_mobile.errors.minlength">
+                 Mobile Number must be at least 10 number long.
+               </div>
+               <div [hidden]="!customer_mobile.errors.pattern">
+                 Mobile is Invalid.
+               </div>
+             </div>                
+              </div>
+              <div class="text-field">
+                <input type="text" placeholder="How can we help you" name='help_subject' id='help_subject'  (ngModel)="help_subject"  #help_subject="ngModel" >
+              </div>
+              <div class="text-field">
+                <textarea placeholder="Message*" name='customer_enquiry_message' id='customer_enquiry_message' required   (ngModel)="customer_enquiry_message"
+                #customer_enquiry_message="ngModel" ></textarea>
+                <div   *ngIf="customer_enquiry_message.errors && (contactForm.submitted)"
+                class="alert alert-danger">
+                <div [hidden]="!customer_enquiry_message.errors.required" >
+                    Message is required
+                  </div>
+                </div>
+              </div>
+              <button type="Submit" class="contact-submit red-btn" >Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="right-event-sidebar">
+          <div class="sidebar-grid detail-grid">
+            <div class="sidebar-title detail-grid-title">Details</div>
+            <div class="sidebar-details detail-grid-text">
+              <div class="contact-detail">
+                <a href="javascript:void(0);" class="op-icon op-message">Mail : info@drink&food.com</a>
+              </div>
+              <div class="contact-detail">
+                <a href="javascript:void(0);" class="op-icon op-web">www.food&drinkfest.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-grid find-nearest-op">
+            <div class="sidebar-title detail-grid-title">Find your nearest OP Office</div>
+            <div class="sidebar-details nearest-op-ofc">
+              <div class="op-num aus">
+                <img src="../assets/images/aus.png">
+                <span class="country">Australia</span>
+                <span class="num">+61 123 123 123</span>
+              </div>
+              <div class="op-num ind">
+                <img src="../assets/images/india.png">
+                <span class="country">India</span>
+                <span class="num">+91 123 123 123</span>
+              </div>
+              <div class="op-num mal">
+                <img src="../assets/images/malaysia.png">
+                <span class="country">Malaysia</span>
+                <span class="num">+60 123 123 123</span>
+              </div>
+              <div class="op-num sa">
+                <img src="../assets/images/south-africa.png">
+                <span class="country">South Africa</span>
+                <span class="num">+27 123 123 123</span>
+              </div>
+              <div class="op-num uae">
+                <img src="../assets/images/uae.png">
+                <span class="country">UAE</span>
+                <span class="num">+71 123 123 123</span>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-grid contact-grid">
+            <div class="sidebar-title contact-grid-title">Contact (Toll free)</div>
+            <div class="sidebar-details contact-grid-detail">
+              <div class="phone-icon">
+                <i class="fa fa-phone fa-5x" aria-hidden="true"></i>
+              </div>
+              <div class="phone-detail">
+                <div class="phone-number">+91-1234567890</div>
+                <div class="phone-text">Ipsum, giving information on its origins, as well as a random Lipsum generator.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="add-restaurant-wrap custom-imgdivbg-contact">
+        <div class="img-wrap">
+          <img  class="custom-add-restaurant-wrap" src="../assets/images/salsa1.jpg">
+        </div>
+        <div class="detail-wrap">
+          <h2>Add your restaurant</h2>
+          <div class="detail-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u
+          </div>
+          <div class="action-wrap">
+            <a href="javascript:void(0);" class="red-btn">yes I'm Interested</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Event Page -->

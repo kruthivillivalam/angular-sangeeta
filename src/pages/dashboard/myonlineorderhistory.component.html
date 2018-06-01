@@ -1,0 +1,149 @@
+<div class="container">
+  <div class="holder-fullcontent-cartsummary-page-inner-js">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <a href="javascript:void(0);">Home</a>
+          </li>
+          <li class="active">My Account</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <!-- left side tab -->
+      <leftmenu></leftmenu>
+      <!-- right side tab -->
+      <!-- tab content -->
+      <div class="col-md-9">
+        <div class="tab-content">
+
+          <!-- Online Order History -->
+          <div class="tab-pane fade active in" id="tab_c">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="holder-reservation-tab-header-inner-account-page-js">
+                  <label class="reservation-tab-content-headings-inner-js">Sort by Month</label>
+                  <select class="menus-reservation-tab-account-page-inner-js">
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>Sepetember</option>
+                    <option>December</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">No. of orders Per Page</label>
+                  <select class="menus-reservation-tab-account-page-inner-js" name="pageSize" ng-model="pageSize" #pageSize (change)="setPerPageValue($event, pageSize.value)">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                    <option>45</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">Sort</label>
+                  <select class="menus-restaurant-reservation-tab-account-page-inner-js">
+                    <option>Recent Order</option>
+                    <option>Satay on Charcoal</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="holder-online-order-history-tab-accountpage-inner-js" *ngFor="let order of myonlineorderhistorylist  | paginate: { id: 'server', itemsPerPage: perpage, currentPage: p, totalItems: total }">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="holder-firstcol-onlineorder-historytab-inner-accountpage-js">
+                    <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Restaurant</h5>:
+                    <span class="details-orderhistorytab-restaurantname-inner-js">{{ order.merchantname}}</span>
+                    <span class="fa fa-star  checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <br>
+
+                    <img class="map-image-accountpage-inner-js" src="..assets/images/mapicon.png">
+                    <br>
+                    <!-- links -->
+                    <div class="links-restaurant-card-holderdiv-innertabs-accountpage-js">
+                      <a class="restaurant-card-link-style-self-inner-accountpage-js" [routerLink]="['/restaurantdetail', order.merchant_id]" fragment="reviewtab">Review</a>
+                      <a class="restaurant-card-link-style-self-inner-accountpage-js" [routerLink]="['/restaurantdetail', order.merchant_id]" fragment="menutab">View Menu</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- order date -->
+
+                <div class="col-md-8">
+                  <div class="row">
+                    <!-- order date -->
+                    <div class="col-md-12">
+                      <div class="rowholder-content-orderdate-inner-account-page-dinein-tab-js">
+                        <h5 class="orderdate-dineintab-inner-style-accountpage-js">Order Date</h5>:
+                        <span class="date-output-inner-js-dinein-tab-accountpage-js">{{ order.Orderdate}}</span>
+                        <p class="time-orderdetails-acountpage-inner-js">{{ order.order_start_time}}</p>
+                        <span class="ordertype-output-inner-js-dinein-tab-accountpage-js">{{ order.orderType}}</span>
+                      </div>
+                    </div>
+
+                    <div class="holder-scroll-items-account-page-inner-js">
+
+
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <h5 class="order-details-headingsmain-orderhistory-tab-inner-accountpage-js">Item</h5>
+                          </div>
+                          <div class="col-md-3">
+                            <h5 class="order-details-headingsmain-orderhistory-tab-inner-accountpage-js">Qty</h5>
+                          </div>
+                          <div class="col-md-3">
+                            <h5 class="order-details-headingsmain-orderhistory-tab-inner-accountpage-js">Unit Price</h5>
+                          </div>
+                          <div class="col-md-3">
+                            <h5 class="order-details-headingsmain-orderhistory-tab-inner-accountpage-js">Amount</h5>
+                          </div>
+                        </div>
+                        <div class="row" *ngFor="let orderitem of order.orderitem">
+                          <div class="col-md-3">
+                            <h5 class="order-details-headings-orderhistory-tab-inner-accountpage-js">{{ orderitem.menuitem_name}}</h5>
+                          </div>
+                          <div class="col-md-3">
+                            <h5 class="order-details-headings-orderhistory-tab-inner-accountpage-js">{{ orderitem.Quantity}}</h5>
+                          </div>
+                          <div class="col-md-3">
+                            <h5 class="order-details-headings-orderhistory-tab-inner-accountpage-js">${{ orderitem.default_Price}}/{{ orderitem.unit}}</h5>
+                          </div>
+                          <div class="col-md-3">
+                            <h5 class="order-details-headings-orderhistory-tab-inner-accountpage-js">${{ orderitem.default_Price * orderitem.Quantity}}</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h5 class="total-bar-onlineorder-history-innerpage-accountpage-js">Total Amount</h5>:
+                        <span class="price-details-onlineorder-history-innerpage-accountpage-js">${{ order.total}}</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- pagination -->
+            <div class="text-center" *ngIf="!norecord && norecord != null">
+              <ul class="pagination">
+                <pagination-controls (pageChange)="getPage($event)" id="server" maxSize="5" directionLinks="true" autohide="true"></pagination-controls>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

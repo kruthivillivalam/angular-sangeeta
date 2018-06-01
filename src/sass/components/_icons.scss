@@ -1,0 +1,257 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Icons design.
+ */
+
+.op-icon {
+  position: relative;
+  display: inline-block;
+  padding-left: 50px;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 26px;
+    width: 32px;
+    margin-top: -5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background-size: 100% auto;*/
+    background-size: contain;
+    text-align: center;
+    vertical-align: top;
+    content: '';
+  }
+}
+.op-breakfast {
+  &::before {
+    opacity: .5;
+    background-image: url('../images/breakfast.png');
+  }
+}
+.op-brunch {
+  &::before {
+    height: 24px;
+    width: 30px;
+    opacity: .5;
+    background-image: url('../images/brunch.png');
+  }
+}
+.op-free-parking {
+  &::before {
+    opacity: .5;
+    background-image: url('../images/free-parking.png');
+  }
+}
+.op-garage {
+  &::before {
+    opacity: .5;
+    background-image: url('../images/garage.png');
+  }
+}
+.op-bear {
+  &::before {
+    opacity: .5;
+    background-image: url('../images/bear.png');
+  }
+}
+.op-wine {
+  &::before {
+    opacity: .5;
+    background-image: url('../images/wine.png');
+  }
+}
+.op-dinein {
+  &::before {
+    height: 24px;
+    width: 30px;
+    opacity: .5;
+    background-image: url('../images/dine-in.png');
+  }
+}
+.op-dinner {
+  &::before {
+    height: 28px;
+    width: 30px;
+    opacity: .5;
+    background-image: url('../images/dinner.png');
+  }
+}
+.op-lunch {
+  &::before {
+    opacity: .5;
+    background-image: url('../images/lunch.png');
+  }
+}
+.op-phone {
+  &::before {
+    background-image: url('../images/phone-icon.png');
+  }
+}
+.op-message {
+  &::before {
+    background-image: url('../images/message-icon.png');
+  }
+}
+.op-universe {
+  &::before {
+    background-image: url('../images/universe-icon.png');
+  }
+}
+.op-online-order {
+  &::before {
+    width: 27px;
+    /*background-image: url('../images/online-shopping.png');*/
+    background-image: url('../images/online-shopping-new.png');
+  }
+}
+.op-pre-order {
+  &::before {
+    /*background-image: url('../images/pre-order.png');*/
+    background-image: url('../images/pre-order-new.png');
+  }
+}
+.op-tbl-reservation {
+  &::before {
+    /*background-image: url('../images/table-reservation.png');*/
+    background-image: url('../images/table-reservation-new.png');
+  }
+}
+.op-event-reservation {
+  &::before {
+    /*background-image: url('../images/event-reservation.png');*/
+    background-image: url('../images/event-reservation-new.png');
+  }
+}
+.op-car-parking {
+  &::before {
+    /*background-image: url('../images/car-parking-icon.png');*/
+    background-image: url('../images/car-parking-icon-new.png');
+  }
+}
+.op-takeaway {
+  &::before {
+    /*background-image: url('../images/takeaway-icon.png');*/
+    background-image: url('../images/takeaway-icon-new.png');
+  }
+}
+.op-delivery {
+  &::before {
+    width: 40px;
+    /*background-image: url('../images/delivery-icon.png');*/
+    background-image: url('../images/delivery-icon-new.png');
+  }
+}
+.op-indoor {
+  &::before {
+    background-image: url('../images/indoor-icon.png');
+  }
+}
+.op-outdoor {
+  &::before {
+    background-image: url('../images/out-door.png');
+  }
+}
+.op-pool-side {
+  &::before {
+    background-image: url('../images/pool-side-icon.png');
+  }
+}
+.op-terrace {
+  &::before {
+    background-image: url('../images/terrace-icon.png');
+  }
+}
+.op-wifi {
+  &::before {
+    background-image: url('../images/wifi-icon.png');
+  }
+}
+.op-music {
+  &::before {
+    background-image: url('../images/music.png');
+  }
+}
+.op-tv {
+  &::before {
+    background-image: url('../images/music.png');
+  }
+}
+
+.op-tv {
+  &::before {
+    background-image: url('../images/tv-icon.png');
+  }
+}
+.op-baby-care {
+  &::before {
+    background-image: url('../images/baby-care-icon.png');
+  }
+}
+.op-net-banking {
+  &::before {
+    background-image: url('../images/net-banking-icon.png');
+  }
+}
+.op-cash-delivery {
+  &::before {
+    background-image: url('../images/cash-on-delivery-icon.png');
+  }
+}
+.op-offline-payment {
+  &::before {
+    background-image: url('../images/offline-pay-icon.png');
+  }
+}
+.op-message {
+  &::before {
+    margin-top: -2px;
+    background-image: url('../images/mail-box.png');
+  }
+}
+.op-web {
+  &::before {
+    margin-top: -1px;
+    background-image: url('../images/web-icon.png');
+  }
+}
+.op-location {
+  &::before {
+    margin-top: 3px;
+    background-image: url('../images/location-image.png');
+  }
+}
+.op-calender {
+  &::before {
+    margin-top: -3px;
+    background-image: url('../images/calender-icon.png');
+  }
+}
+.op-time {
+  &::before {
+    margin-top: -2px;
+    background-image: url('../images/time-icon.png');
+  }
+}
+.op-nonveg,
+.op-veg {
+  &::before {
+    height: 12px;
+    width: 12px;
+    margin-top: 5px;
+    margin-left: 0;
+  }
+}
+.op-nonveg {
+  &::before {
+    background-image: url('../images/nonveg-icon.png');
+  }
+}
+.op-veg {
+  &::before {
+    background-image: url('../images/veg-icon.png');
+  }
+}

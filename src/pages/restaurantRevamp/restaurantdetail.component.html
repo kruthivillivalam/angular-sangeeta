@@ -1,0 +1,540 @@
+<div class="menupage-sec1-mapinfo-js">
+  <div class="container">
+    <div class="holder-fullcontent-menu-page-inner-js">
+      <div class="row">
+        <div class="col-md-3 col-sm-5">
+          <!-- Restaurant Timings  -->
+          <restaurant-timing [timing]="t" *ngFor="let t of restaurantTimingArray" [delivery]="showDelivery" [takeAway]="showTakeaway" ></restaurant-timing>
+        </div>
+        <div class="col-md-6 col-sm-7">
+          <!-- https://orderpointadminstaging.azurewebsites.net/uploadedimages/RestaurantLogo/{{restaurantData.photoUrl}} -->
+          <!--<img class="restaurantimage-main-menupage-inner-js" src="http://websitedemo2.mybrandcreator.com/images/dummylistingimage1.jpg">-->
+          <img class="restaurantimage-main-menupage-inner-js" src="{{imageURL}}{{restaurantData.photoUrl}}">
+          <h5 class="menu-page-head-inner-js" *ngIf="restaurantData">{{restaurantData.merchantname}}</h5>
+          <div class="rating-star">
+            <star-rating-comp [starType]="'svg'" [rating]="restaurantData.rating" [staticColor]="'ok'" [speed]="'slow'" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating-comp>
+          </div>
+          <p class="address-listing-display-menupage-js">
+            <em>{{restaurantData.userreviewcount}} Review</em>
+            <br/> {{restaurantAddress.address1}} {{restaurantAddress.address2}} {{restaurantAddress.city}}
+            <br/>{{restaurantAddress.suburb}} {{restaurantAddress.state}} {{restaurantAddress.postcode}} {{restaurantAddress.country}}
+            <br />
+            <!--<a href="javascript:void(0);">
+            <img src="../assets/images/gmap-icon.png">
+          </a>-->
+        </p>
+        <div class="buttons-inline-style-links-menupage-js">
+          <a class="links1-menupage-listing-js" href="javascript:void(0);">
+            <span class="glyphicon glyphicon-star customstyle-links-icon-menupage-listing-js"></span>{{restaurantData.rating}}/5</a>
+            <a class="links-menupage-listing-js" href="javascript:void(0);">
+              <span class="glyphicon glyphicon-user customstyle-links-icon-menupage-listing-js"></span>Chat</a>
+              <a class="links-menupage-listing-js" href="javascript:void(0);">
+                <span class="glyphicon glyphicon-play customstyle-links-icon-menupage-listing-js"></span>Video</a>
+                <a class="links-menupage-listing-js" href="javascript:void(0);" (click)="updateBookMark(restaurantData.merchantid)">
+                  <span class="glyphicon glyphicon-bookmark customstyle-links-icon-menupage-listing-js"></span>Bookmark Restaurant</a>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <a class="viewmap-link-menu-apge-inner-js" href="javascript:void(0);" #view_direction>View Map
+                  <span class="glyphicon glyphicon-map-marker"></span>
+                </a>
+                <a class="viewmap-link-menu-apge-inner-js" href="javascript:void(0);" #view_direction (click)="showDirection()">View Direction
+                  <span class="glyphicon glyphicon-road"></span>
+                </a>
+                <ngui-map zoom="19" center="{{centerLocation}}" (mapReady$)="onMapReady($event)" (mapClick)="onMapClick($event)" mapTypeId="satellite">
+                  <directions-renderer [suppressMarkers]="true" [draggable]="true" panel="#my-panel" (directions_changed)="directionsChanged()"
+                  [directions-request]="direction">
+                </directions-renderer>
+                <marker position="{{centerLocation}}" (click)="clicked($event)" label="A"></marker>
+                <info-window id="iw">
+                  <div *ngIf="marker.display">
+                    <span class="markerTitle">{{ marker.resTitle }}</span>
+                    <span class="markerAddr">{{ marker.resAddress }}</span>
+                  </div>
+                </info-window>
+                <!--<marker position="{{direction.origin}}" (click)="originclicked($event)" color="green"
+                label="A"></marker>-->
+                <info-window id="iwo">
+                  <div *ngIf="originmarker.display">
+                    <span class="markerTitle">{{ originmarker.resTitle }}</span>
+                    <span class="markerAddr">{{ originmarker.resAddress }}</span>
+                  </div>
+                </info-window>
+
+              </ngui-map>
+              <!-- <iframe class="map-menupage-inner-js" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d432910.2698042689!2d115.68135023469792!3d-32.0391737391229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32966cdb47733d%3A0x304f0b535df55d0!2sPerth+WA%2C+Australia!5e0!3m2!1sen!2sin!4v1518784713222"
+              width="800" height="550" frameborder="0" style="border:0" allowfullscreen width="350" height="350" frameborder="0"
+              style="border:solid 1px #000"></iframe> -->
+            </div>
+          </div>
+
+          <!-- row 2 starts -->
+          <div class="row">
+            <div class="col-md-9">
+              <h5 class="ourstory-head-menupage-inner-js">Our Story</h5>
+              <p class="ourstory-para-menupage-inner-js" *ngIf="aboutMe">{{aboutMe}}</p>
+              <ul class="nav nav-tabs custom-tabs-main-style-menupage-js">
+
+                <li>
+                  <a data-toggle="tab" class="headings-detailedtabs-menu-page-js" href="#foodtruckinfo">Food Truck Info</a>
+                </li>
+                <li>
+                  <a data-toggle="tab" class="headings-detailedtabs-menu-page-js" href="#restaurantinfo">Restaurant Info</a>
+                </li>
+                <li *ngIf="showTableReservation">
+                  <a data-toggle="tab" class="headings-detailedtabs-menu-page-js" href="#reservationtab">Reservation</a>
+                </li>
+                <!--<li *ngIf="!showTableReservation" (click)="showAlert('Reservation Not Available','We are sorry, table reservation is not available for this restaurant')">
+                <a data-toggle="tab" class="headings-detailedtabs-menu-page-js" href="javascript:void(0);">Reservation</a>
+              </li>-->
+              <li class="{{activemenu}}">
+                <a data-toggle="tab" class="headings-detailedtabs-menu-page-js" href="#menutab">Menu</a>
+              </li>
+              <li>
+                <a data-toggle="tab" class="headings-detailedtabs-menu-page-js" href="#gallerytab">Gallery</a>
+              </li>
+              <li>
+                <a data-toggle="tab" class="headings-detailedtabs-menu-page-js" href="#reviewtab">Reviews</a>
+              </li>
+            </ul>
+
+            <div class="tab-content tabs-conent-style-custom-menupage-inner-js">
+
+              <div id="foodtruckinfo" class="tab-pane fade">
+                <div class="content-holder-infotab-inner-menupage-js">
+                  <div class="row">
+                    <ul class="nav nav-tabs1 nav-justified">
+                      <li class="nav-item">
+                        <a class="nav-link active headings-foodtruck-tabs-menupage-inner-js" data-toggle="tab" href="#panel1" role="tab">Day</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link headings-foodtruck-tabs-menupage-inner-js" data-toggle="tab" href="#panel2" role="tab">Timings</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link headings-foodtruck-tabs-menupage-inner-js" data-toggle="tab" href="#panel3" role="tab">Address</a>
+                      </li>
+                    </ul>
+                    <!-- Tab panels -->
+                    <div class="tab-content card">
+                      <!--Panel 1-->
+                      <div class="tab-pane row fade in active" id="panel1" role="tabpane1">
+                        <div class="col-md-4">
+                          <ul class="nav nav-tabs1 nav-justified  sociallinks-holder-food-tab-menupage-inner-js">
+
+                            <li class="nav-item active">
+                              <a  class="nav-link active socialtabs-foodtruck-menupage-inner-js"  data-toggle="tab" href="#monday" role="tab">Monday</a>
+                            </li>
+                            <br>
+                            <li class="nav-item">
+                              <a  class="nav-link active socialtabs-foodtruck-menupage-inner-js"  data-toggle="tab" href="#tuesday" role="tab">Tuesday</a>
+                            </li>
+                            <br>
+                            <li class="nav-item">
+                              <a class="nav-link active socialtabs-foodtruck-menupage-inner-js"  data-toggle="tab" href="#wednesday" role="tab">Wednessday</a>
+                            </li>
+                            <br>
+                            <li class="nav-item">
+                              <a class="nav-link active socialtabs-foodtruck-menupage-inner-js"  data-toggle="tab" href="#thursday" role="tab">Thursday</a>
+                            </li>
+                            <br>
+                            <li class="nav-item">
+                              <a class="nav-link active socialtabs-foodtruck-menupage-inner-js"  data-toggle="tab" href="#friday" role="tab">Friday</a>
+                            </li>
+                            <br>
+                            <li class="nav-item">
+                              <a class="nav-link active socialtabs-foodtruck-menupage-inner-js"  data-toggle="tab" href="#saturday" role="tab">Saturday</a>
+                            </li>
+                            <br>
+                            <li class="nav-item">
+                              <a class="nav-link active socialtabs-foodtruck-menupage-inner-js"  data-toggle="tab" href="#sunday" role="tab">Sunday</a>
+                            </li>
+
+                            <br>
+                          </ul>
+                        </div>
+
+                        <!--<div class="col-md-8">
+                        <div class="tab-content">-->
+
+                        <!-- Monday Tab-->
+                        <!--<div class="tab-pane fade in active" id="monday" role="tabpanel">
+                        <h5>Truck's Location</h5><span>:</span>
+                        <h4>08.00 AM-10.00AM</h4>
+                      </div>-->
+                      <div class="col-md-8">
+                        <div class="tab-content">
+                          <!-- Monday Tab-->
+                          <div class="tab-pane fade in active" id="monday" role="tabpanel" >
+                            <div class="foodTruck row" *ngFor="let mon of monday">
+                              <div class="col-md-5">
+                                <h6>{{mon.OpeningHrs}}-{{mon.ClosingHrs}}</h6>
+                              </div>
+                              <div class="col-md-7">
+                                <h4>{{mon.address.address1}}, {{mon.address.suburb}}, {{mon.address.Postcode}}, {{mon.address.state}}, {{mon.address.country}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Tuesday Tab-->
+                          <div class="tab-pane fade" id="tuesday" role="tabpanel" >
+                            <div class="foodTruck row" *ngFor="let tue of tuesday">
+                              <div class="col-md-5">
+                                <h6>{{tue.OpeningHrs}}-{{tue.ClosingHrs}}</h6>
+                              </div>
+                              <div class="col-md-7">
+                                <h4>{{tue.address.address1}}, {{tue.address.suburb}}, {{tue.address.Postcode}}, {{tue.address.state}}, {{tue.address.country}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Wednesday Tab-->
+                          <div class="tab-pane fade" id="wednesday" role="tabpanel">
+                            <div class="foodTruck row" *ngFor="let wed of wednesday">
+                              <div class="col-md-5">
+                                <h6>{{wed.OpeningHrs}}-{{wed.ClosingHrs}}</h6>
+                              </div>
+                              <div class="col-md-7">
+                                <h4>{{wed.address.address1}}, {{wed.address.suburb}}, {{wed.address.Postcode}}, {{wed.address.state}}, {{wed.address.country}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Thursday Tab-->
+                          <div class="tab-pane fade" id="thursday" role="tabpanel">
+                            <div class="foodTruck row" *ngFor="let thu of thursday">
+                              <div class="col-md-5">
+                                <h6>{{thu.OpeningHrs}}-{{thu.ClosingHrs}}</h6>
+                              </div>
+                              <div class="col-md-7">
+                                <h4>{{thu.address.address1}}, {{thu.address.suburb}}, {{thu.address.Postcode}}, {{thu.address.state}}, {{thu.address.country}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Friday Tab-->
+                          <div class="tab-pane fade" id="friday" role="tabpanel">
+                            <div class="foodTruck row" *ngFor="let fri of friday">
+                              <div class="col-md-5">
+                                <h6>{{fri.OpeningHrs}}-{{fri.ClosingHrs}}</h6>
+                              </div>
+                              <div class="col-md-7">
+                                <h4>{{fri.address.address1}}, {{fri.address.suburb}}, {{fri.address.Postcode}}, {{fri.address.state}}, {{fri.address.country}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Saturday Tab-->
+                          <div class="tab-pane fade" id="saturday" role="tabpanel">
+                            <div class="foodTruck row" *ngFor="let sat of saturday">
+                              <div class="col-md-5">
+                                <h6>{{sat.OpeningHrs}}-{{sat.ClosingHrs}}</h6>
+                              </div>
+                              <div class="col-md-7">
+                                <h4>{{sat.address.address1}}, {{sat.address.suburb}}, {{sat.address.Postcode}}, {{sat.address.state}}, {{sat.address.country}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Sunday Tab-->
+                          <div class="tab-pane fade" id="sunday" role="tabpanel">
+                            <div class="foodTruck row" *ngFor="let sun of sunday">
+                              <div class="col-md-5">
+                                <h6>{{sun.OpeningHrs}}-{{sun.ClosingHrs}}</h6>
+                              </div>
+                              <div class="col-md-7">
+                                <h4>{{sun.address.address1}}, {{sun.address.suburb}}, {{sun.address.Postcode}}, {{sun.address.state}}, {{sun.address.country}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div id="restaurantinfo" class="tab-pane fade">
+              <restaurant-info></restaurant-info>
+            </div>
+            <div id="reservationtab" class="tab-pane fade">
+              <reservation [merchant_id]="merchant_id"></reservation>
+            </div>
+            <div id="menutab" class="tab-pane  {{activedefault}}">
+              <menu></menu>
+            </div>
+            <div id="gallerytab" class="tab-pane fade">
+              <gallery></gallery>
+            </div>
+            <div id="reviewtab" class="tab-pane fade">
+              <review></review>
+            </div>
+          </div>
+
+          <div class="holder-adsmain-image-full-menupage-js">
+            <h5 class="headings-video-advertisement-menupage-js">Advertisements</h5>
+            <img class="ad-image-self-adjust-full-mwnupage-js" src="../assets/images/adsdummy1.jpg">
+          </div>
+
+
+          <div class="holder-video-section-menupage-inner-js">
+            <h5 class="headings-video-advertisement-menupage-js">Videos</h5>
+
+            <iframe width="200" height="200" src="https://www.youtube.com/embed/uC6DWJUJ-ns"></iframe>
+            <iframe width="200" height="200" src="https://www.youtube.com/embed/uC6DWJUJ-ns"></iframe>
+            <iframe width="200" height="200" src="https://www.youtube.com/embed/uC6DWJUJ-ns"></iframe>
+            <iframe width="200" height="200" src="https://www.youtube.com/embed/uC6DWJUJ-ns"></iframe>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <form novalidate (ngSubmit)="continuePaymentForm.valid && validatePreOrder(continuePaymentForm)" name="continuePaymentForm"
+          #continuePaymentForm="ngForm" id="continuePaymentForm">
+          <div class="holder-left-menus-inner-menupage-js">
+            <h5 class="leftbar-menupage-headings-style-js" *ngIf="showPreorder">Pre Order
+              <input type="checkbox" (click)="onPreOrderSelect($event)" [checked]="isChecked" />
+            </h5>
+
+            <div class="form-group" *ngIf="showPreorder == true && isChecked == true">
+              <label *ngIf="showPreorder">Select Date</label>
+              <div class='input-group date' id='datetimepicker1' *ngIf="showPreorder">
+                <input type="date" name="preDate" required [(ngModel)]="preDate" (change)="timeSelectionCheck()" #preOrderDate="ngModel"
+                class="form-control" />
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+              <!--<div *ngIf="preOrderDate.errors && (preOrderDate.dirty || preOrderDate.touched || continuePaymentForm.submitted)" class="alert alert-danger">
+              <div [hidden]="!preOrderDate.errors.required">
+              Pre-order Date is required
+            </div>
+            <div [hidden]="!preOrderDate.errors.pattern">
+            Pre-order Date is Invalid.
+          </div>
+        </div>-->
+        <div *ngIf="invalidPreDate" class="alert alert-danger">
+          {{validationError.PRE_DATE_VALID_ERROR}}
+        </div>
+      </div>
+
+      <div class="form-group" *ngIf="showDeliveryTime && showPreorder == true && isChecked == true">
+        <label>Select Time</label>
+        <div class='input-group date' id='datetimepicker1'>
+          <input type="time" value="{{preTime}}" name="preOrderTime" [(ngModel)]="preTime" (change)="timeCheck()" #preOrderTime="ngModel" required class="form-control"
+          />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+          </span>
+        </div>
+        <!--<div *ngIf="preOrderTime.errors && (preOrderTime.dirty || preOrderTime.touched || continuePaymentForm.submitted)" class="alert alert-danger">
+        <div [hidden]="!preOrderTime.errors.required">
+        Time is required
+      </div>
+      <div [hidden]="!preOrderTime.errors.pattern">
+      Time is Invalid.
+    </div>
+  </div>-->
+  <div *ngIf="invalidPreTime" class="alert alert-danger">
+    {{validationError.PRE_TIME_VALID_ERROR}}
+  </div>
+</div>
+</div>
+<div class="holder-left-menus-inner-menupage-js" *ngIf="showTakeaway || showDelivery">
+  <h5 class="leftbar-menupage-headings-style-js">Order Type</h5>
+  <div class="form-group ">
+    <input *ngIf="showTakeaway" type="radio" name="deliType" [value]="deliveryType[0].value" [(ngModel)]="deliType" deliType="ngModel"
+    required (click)="userRequestManager.setOrderType('tk')">
+    <label *ngIf="showTakeaway" for="radio100">{{deliveryType[0].name}}</label>
+  </div>
+  <div class="form-group ">
+    <input *ngIf="showDelivery" type="radio" name="deliType" [value]="deliveryType[1].value" [(ngModel)]="deliType" deliType="ngModel"
+    required (click)="userRequestManager.setOrderType('de')">
+    <label  *ngIf="showDelivery" for="radio101" >{{deliveryType[1].name}}</label>
+  </div>
+  <div class="form-group ">
+    <input *ngIf="showDineIn" type="radio" name="deliType" [value]="deliveryType[2].value" [(ngModel)]="deliType" deliType="ngModel"
+    required (click)="userRequestManager.setOrderType('di')">
+    <label  *ngIf="showDineIn" for="radio102" >{{deliveryType[2].name}}</label>
+  </div>
+  <div class="form-group" *ngIf="deliType == 'de'">
+    <label>Postal Code</label>
+    <select class="form-control" name="postCodeItem" (change)="setPostCode(continuePaymentForm.controls.postCodeItem._value)"
+    ngModel required>
+    <option value="" disabled>Select Post Code</option>
+    <option *ngFor="let postCodeItem of restaurantData.deliverypostcodes" [ngValue]="postCodeItem">{{postCodeItem.suburb}} - {{postCodeItem.postcode}}</option>
+  </select>
+</div>
+<div *ngIf="continuePaymentForm.submitted">
+  <div [hidden]="!continuePaymentForm.controls.postCodeItem?.hasError('required')"
+  class="alert alert-danger">
+  Postcode is required
+</div>
+</div>
+<div *ngIf="continuePaymentForm.submitted">
+  <div [hidden]="!continuePaymentForm.controls.deliType?.hasError('required')" class="alert alert-danger">
+    Order Type is required
+  </div>
+</div>
+</div>
+
+<div class="holder-left-menus-inner-menupage-js">
+  <h5 class="leftbar-menupage-headings-style-js">My Order
+    <span class="my-order-cart-item" ></span>
+    <span class="glyphicon glyphicon-shopping-cart myordertab-carticon-menupage-inner-js"><span *ngIf="cartItems">{{cartItems.length}}</span></span>
+  </h5>
+  <div class="holder-carttab-menupage-inner">
+    <div class="orders-holder-menupage-ordertab-inner-js" *ngFor="let cartItem of cartItems; let idx=index">
+      <div class="row">
+        <cart-item [isOnSidebar]='true' [freeItemFlag]='false' [hideItemPrice]='true' [editable]='true' [cartItemIdx]='idx' [qty]="cartItem.quantity ? cartItem.quantity : 0"
+        [cartItemObj]="cartItem.menuItem" (cartItemDeletion)="handleItemDeletion($event)"></cart-item>
+
+      </div>
+    </div>
+
+    <div class="holder-ordertabcontent-rightmenu-menupage-inner-js1">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <p class="leftbar-price-myorder-menupage-tab-inner-js">
+          <span class="delievery-head-rightmenu-ordersection-inner-js">Delivery Charge</span>:
+          <span class="numbers-adjust-order-section-menupage-inner-js">9999.00$</span>
+        </p>
+        <p class="leftbar-price-myorder-menupage-tab-inner-js">
+        <span class="tax-head-rightmenu-ordersection-inner-js">Tax</span>:
+        <span class="numbers-adjust1-order-section-menupage-inner-js">10.00$</span>
+      </p> -->
+      <!--<div class="col-md-10 col-md-offset-1">
+      <h5 class="tax1-head1-pricemyordersection-inner-cartpage-js">
+      <span class="adjust1-final-price-cartpage-inner-js">Sub Total</span>:
+      <span class="pricetotal-adjust-inner-js">{{totalCartAmount}}</span>
+    </h5>
+  </div>-->
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <h5 class="subtotal-head-rightmenu-ordersection-inner-js1">Tax
+          <!--<span class="subtotal-head-rightmenu-ordersection-inner-js">Tax</span>:-->
+          <span *ngIf="totalTaxAmnt === 0">(Inclusive) : </span>
+          <!--<span class="numbers-adjust1-order-section-menupage-inner-js"  *ngIf="totalTaxAmnt>0">{{totalTaxAmnt | currency:'USD':'symbol'}}</span>-->
+        </h5>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <h5 style="text-align: right" *ngIf="totalTaxAmnt === 0">$0.00</h5>
+        <h5 style="text-align: right" *ngIf="totalTaxAmnt>0" >{{totalTaxAmnt | currency:'USD':'symbol'}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <h5 class="subtotal-head-rightmenu-ordersection-inner-js1">Delivery Charge
+          <span *ngIf="deliveryCharge === 0">(Free) :</span>
+        </h5>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <h5 style="text-align: right"  *ngIf="deliveryCharge === 0">$0.00</h5>
+        <h5 style="text-align: right" *ngIf="deliveryCharge>0" >{{deliveryCharge | currency:'USD':'symbol'}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <h5 class="subtotal-head-rightmenu-ordersection-inner-js1">Sub Total :
+        </h5>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <h5 style="text-align: right"  >{{totalCartAmount | currency:'USD':'symbol'}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <h5 class="subtotal-head-rightmenu-ordersection-inner-js1">Total :
+        </h5>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <h5 style="text-align: right"  >{{totalCartAmount + totalTaxAmnt + deliveryCharge | currency:'USD':'symbol'}}</h5>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="checkout-buttonlink-menupage-tab-inner-js" href="#">Checkout</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="holder-left-menus-inner-menupage-js" *ngIf="showCoupons">
+  <h5 class="leftbar-menupage-headings-style-js" *ngIf="restaurantData.coupons">Coupons</h5>
+
+  <div id="offers-slider" class="carousel slide offer-slider" data-ride="carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item" *ngFor="let items of restaurantData.coupons; let current = index;" [ngClass]="{'active' : current == 0}">
+        <div class="holder-ongoingoffer-content-menupage-inner-js">
+          <img class="coupon-image-offersection-menupage-inner-js" src="../assets/images/indexcoupon.png">
+          <p class="coupon-code-head-menupage-inner-js">Coupon Code:
+            <strong>{{ items.couponcode }}</strong>
+          </p>
+          <p class="coupon-code-name-menupage-inner-js">{{ items.couponName }}</p>
+          <p class="coupon-code-address-menupage-inner-js">{{restaurantData.merchantname}}
+            <span>{{restaurantData.address.address1}} {{restaurantData.address.address2}}</span>
+            <span>{{restaurantData.address.city}} {{restaurantData.address.suburb}}</span>
+            <span>{{restaurantData.address.state}} {{restaurantData.address.country}}</span>
+          </p>
+          <p class="coupon-code-description-menupage-inner-js">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, iure.</p>
+          <p class="coupon-code-validity-menupage-inner-js">Valid: {{items.startdate | amDateFormat: 'MMMM Do'}} - {{items.enddate | amDateFormat:
+            'MMMM Do'}} </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control offer-control" href="#offers-slider" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control offer-control" href="#offers-slider" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="holder-left-menus-inner-menupage-js" *ngIf="showOffers">
+    <h5 class="leftbar-menupage-headings-style-js" *ngIf="restaurantData.offers">Ongoing Offers</h5>
+
+    <div id="coupons-slider" class="carousel slide offer-slider" data-ride="carousel">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item" *ngFor="let items of restaurantData.offers; let current = index;" [ngClass]="{'active' : current == 0}">
+          <div class="holder-ongoingoffer-content-menupage-inner-js">
+            <img class="coupon-image-offersection-menupage-inner-js" src="../assets/images/indexcoupon.png">
+            <p class="coupon-code-head-menupage-inner-js">Offer On Over Purchase:
+              <strong>{{items.CurrencySymbol}}{{ items.OfferOnOverPurchase }}</strong>
+            </p>
+            <p class="coupon-code-name-menupage-inner-js">{{ items.OfferName }}</p>
+            <p class="coupon-code-description-menupage-inner-js">Cuurency Code: {{items.CurrencyCode}}</p>
+            <p class="coupon-code-validity-menupage-inner-js">Valid: {{items.offerStartDate | amDateFormat: 'MMMM Do'}} - {{items.offerEndDate | amDateFormat:
+              'MMMM Do'}} </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control offer-control" href="#coupons-slider" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control offer-control" href="#coupons-slider" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="adsimage-menupage-js">
+      <img class="adsimage-self-adjust-menupage-js" src="../assets/images/offersbgcustom.jpg">
+    </div>
+  </form>
+</div>
+
+</div>

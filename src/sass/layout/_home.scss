@@ -1,0 +1,490 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Home page SCSS
+ * - Cusine Type section Design
+ * - Popular section Design
+ * - Feature section Design
+ * - Why OrderPoint Design
+ */
+
+/* Cusine Type section and Popular section Design */
+.cusine-type-section,
+.cusion-type-swiper-section {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 60px;
+  padding: 0 146px;
+  @media (max-width: 1200px) {
+    padding: 0 80px;
+  }
+  @media (max-width: 640px) {
+    padding: 0 40px;
+  }
+  .cusion-type-grid {
+    position: relative;
+    .cusine-img {
+      display: inline-block;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .cusine-details {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      margin-bottom: 10px;
+      margin-left: 30px;
+      @media (max-width: 1200px){
+        margin-left: 10px;
+      }
+      a {
+        color: $white;
+        text-decoration: none;
+        h2 {
+          font-size: 35px;
+          font-family: $century-gothic-bold;
+          text-shadow: 0 3px $black-rgb-4;
+          @media (max-width: 640px) { text-shadow: 0 2px $black-rgb-4; }
+        }
+        .total-restaurant {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.popular-section {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0 95px;
+  z-index: 0;
+  @media (max-width: 1200px) {
+    padding: 0 80px;
+  }
+  @media (max-width: 640px) {
+    padding: 0 40px;
+  }
+  .bag-heading {
+    margin-bottom: 46px;
+  }
+  .live-chat-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    height: 190px;
+    width: 190px;
+    margin-right: 15px;
+    background-image: url('../images/live-chat.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-size: 34px;
+    line-height: 36px;
+    font-family: $lato-regular;
+    @media (max-width: 992px) {
+      margin-top: -50px;
+    }
+    @media (max-width: 640px) {
+      height: 108px;
+      width: 108px;
+      font-size: 20px;
+      line-height: 20px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      margin-left: 40px;
+      color: $white;
+      text-decoration: none;
+      text-shadow: 0 3px $black-rgb-4;
+      @media (max-width: 640px) { text-shadow: 0 2px $black-rgb-4; }
+      @media (max-width: 640px) {
+        margin-top: 18px;
+        margin-left: 26px;
+      }
+      p {
+        margin-bottom: 0;
+        &.chat-text {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .popular-grid-view {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    width: 100%;
+    border: 1px solid $gray-b6;
+    font-family: $lato-regular;
+    @include flex-wrap(wrap);
+    /*@include calc('width', '100% - 190px');*/
+    .popular-grid {
+      position: relative;
+      float: left;
+      display: inline-block;
+      width: 33.33%;
+      text-align: center;
+      &:nth-child(3n-1) {
+        .popular-image {
+          position: absolute;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          @media (max-width: 992px) {
+            position: relative;
+          }
+        }
+      }
+      &:nth-child(2n) {
+        @media (max-width: 992px) {
+          .popular-image {
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            left: 0;
+            @media (max-width: 767px) {
+              position: relative;
+            }
+          }
+        }
+      }
+      @media (max-width: 992px) {
+        width: 50%;
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+      .popular-image {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        &:hover {
+          .image-hover-text {
+            display: inline-block;
+            height: 100%;
+          }
+        }
+        img {
+          display: inline-block;
+          height: 220px;
+          width: 100%;
+          @media (max-width: 1200px) {
+            height: auto;
+          }
+        }
+        .image-hover-text {
+          position: absolute;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          display: inline-block;
+          height: 52px;
+          width: 100%;
+          padding: 10px 20px;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, .6);
+          text-align: left;
+          @include transition(all .5s ease 0s);
+          span {
+            color: $white;
+            font-size: 16px;
+          }
+        }
+      }
+      .popular-details {
+        display: inline-block;
+        width: 100%;
+        padding: 54px 0;
+        border-right: 1px solid $gray-b6;
+        @media (max-width: 992px) {
+          border-bottom: 1px solid $gray-b6;
+        }
+        @media (max-width: 640px) {
+          border-right: none;
+        }
+        .popular-hotel-name {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 7px;
+          color: $yellow-bd;
+          font-size: 25px;
+          @media (max-width: 1200px) {
+            font-size: 18px;
+          }
+        }
+        .popular-address {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 6px;
+          padding: 0 60px;
+          color: $black-48;
+          font-size: 17px;
+          line-height: 30px;
+          font-family: $lato-light;
+          @media (max-width: 1200px) {
+            padding: 0 20px;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        .popular-cusine-type {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 4px;
+          color: $gray-b6;
+          font-size: 14px;
+        }
+        .popular-cusine-price {
+          display: inline-block;
+          width: 100%;
+          color: $yellow-bd;
+          font-size: 30px;
+          font-family: $lato-bold;
+          @media (max-width: 1200px) {
+            font-size: 22px;
+          }
+        }
+      }
+      &:nth-child(3n) {
+        .popular-details { border-right: none; }
+      }
+      @media (max-width: 992px) {
+        &:nth-child(2n),
+        &:nth-child(3n) {
+          .popular-details { border-right: none; }
+        }
+        &:nth-child(2n+1) {
+          .popular-details { border-right: 1px solid $gray-b6; }
+        }
+      }
+      @media (max-width: 640px) {
+        &:nth-child(2n+1) {
+          .popular-details { border-right: none; }
+        }
+      }
+    }
+  }
+  .popular-grid-slider {
+    position: relative;
+    .owl-controls {
+      .owl-nav {
+        margin-top: 0;
+        .owl-prev,
+        .owl-next {
+          margin-top: -26px;
+          margin-left: -60px;
+          padding: 0;
+          @media (max-width: 1200px) {
+            margin-left: -50px;
+          }
+          @media (max-width: 640px) {
+            margin-left: -30px;
+          }
+        }
+        .owl-next {
+          margin-right: -60px;
+          @media (max-width: 1200px) {
+            margin-right: -50px;
+          }
+          @media (max-width: 640px) {
+            margin-right: -30px;
+          }
+        }
+      }
+    }
+  }
+  .popular-section-slider {
+    .popular-swiper-slider {
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 100% !important;
+        }
+      }
+    }
+    .swiper-button-next-2 {
+      margin-right: 40px;
+      @media (max-width: 640px) {
+        margin-right: 10px;
+      }
+    }
+    .swiper-button-prev-2 {
+      margin-left: 40px;
+      @media (max-width: 640px) {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.home-page-cusion-slider {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 60px;
+  z-index: 0;
+  .cusion-type-swiper-section {
+    margin-bottom: 0;
+  }
+}
+
+/* Feature section Design */
+.featured-section {
+  display: inline-block;
+  width: 100%;
+  margin-top: 65px;
+  padding: 65px 145px;
+  background-image: url('../images/feature-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: 1200px) {
+    padding: 50px 80px;
+  }
+  @media (max-width: 640px) {
+    padding: 40px;
+  }
+  .featured-grid-view {
+    display: inline-block;
+    width: 100%;
+    margin-top: 42px;
+    font-family: $opensans-regular;
+    .featured-grid {
+      display: inline-block;
+      height: 258px;
+      width: 100%;
+      border: 4px solid $gray-df;
+      background-color: $white;
+      .featured-image {
+        display: inline-block;
+        width: 100%;
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .featured-detail {
+        display: inline-block;
+        width: 100%;
+        padding: 15px;
+        h3 {
+          margin-top: 0;
+          a {
+            color: $yellow-bd;
+            font-size: 20px;
+          }
+        }
+        span {
+          display: inline-block;
+          height: 70px;
+          width: 100%;
+          color: $gray-b6;
+          font-size: 13px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+/* Why OrderPoint Design and Our vision Design */
+.why-order-wrap,
+.our-vision-wrap {
+  display: inline-block;
+  width: 100%;
+  margin: 60px 0;
+  padding: 0 110px;
+  @media (max-width: 1200px) {
+    padding: 0 80px;
+  }
+  @media (max-width: 640px) {
+    padding: 0 40px;
+  }
+}
+.why-order-wrap {
+  .order-location-grid {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    /*display: inline-block;*/
+    width: 100%;
+    margin-top: 20px;
+    @include flex-wrap(wrap);
+    .order-grid {
+      float: left;
+      display: inline-block;
+      margin-right: 40px;
+      padding: 36px 12px;
+      border: 1px solid $gray-b6;
+      text-align: center;
+      @include calc('width', '25% - 30px');
+      &:last-child {
+        margin-right: 0;
+      }
+      @media (max-width: 1200px) {
+        margin-right: 30px;
+        @include calc('width', '25% - 23px');
+      }
+      @media (max-width: 992px) {
+        margin-right: 20px;
+        margin-bottom: 20px;
+        @include calc('width', '50% - 10px');
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      @media (max-width: 640px) {
+        width: 100%;
+        margin-right: 0;
+      }
+      .order-details {
+        color: $black-48;
+        font-size: 17px;
+        font-family: $lato-light;
+        p {
+          margin-top: 16px;
+          margin-bottom: 0;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+}
+
+.our-vision-wrap {
+  margin-bottom: 0;
+  .our-vision-view {
+    display: inline-block;
+    width: 100%;
+    margin-top: 26px;
+    .our-vision-grid {
+      float: left;
+      margin-right: 84px;
+      text-align: center;
+      @include calc('width', '33.33% - 56px');
+      &:last-child { margin-right: 0; }
+      @media (max-width: 992px) {
+        margin-right: 30px;
+        @include calc('width', '33.33% - 20px');
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      .our-vision-details {
+        margin-top: 16px;
+        font-size: 20px;
+        @media (max-width: 992px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div class="holder-display-list-menutab-menupage-inner-js">
+  <img class="menutab-dishimage-menupage-inner-js" src="../assets/images/dishmenu.jpeg">
+  <div class="content-holder-menutab-list-menupage-inner-js">
+    <h5 class="headng-listing-name-menutab-inner-js">{{foodItemObj.menuItemName}}</h5>
+    <a class="read-more-menu-listing" data-placement="top" href="javascript:void(0);" title="Description" (click)="getMenuDetai(foodItemObj)" *ngIf="readMore=='True' ">Read More</a>
+    <h3  *ngIf="readMore =='False'">{{foodItemObj.MenuItemNote}}</h3>
+    <a class="read-more-menu-listing" data-placement="top" href="javascript:void(0);" title="Description" (click)="getMenuDetai(foodItemObj)"  *ngIf="readMore =='False'">Read Less</a>
+
+  <!--<input type="checkbox" class="read-more-state" id="post-1" />
+    <h5 class="read-more-wrap">{{foodItemObj.menuItemName}} <br><span class="read-more-target">{{foodItemObj.MenuItemNote}}</span></h5>
+    <label for="post-1" class="read-more-trigger"></label>-->
+
+    <div class="row contenter-boxed-flexer">
+      <div class="contenter-boxed">
+        <div class="input-group holder-increase-descrease-menuitemstab-menupage-inner-js">
+          <span class="input-group-btn">
+            <a type="button" class="quantity-left-minus onclickbuttons-menutab-menupage-inner-js glyphicon glyphicon-minus" data-type="minus" data-field="" href="javascript:void(0);" (click)="decreaseQty()">
+            </a>
+          </span>
+          <span class="input-number searchbar-incrementors-menulisting-menupage-inner-js">{{foodItem.quantity}}
+		  </span>
+          <span class="input-group-btn">
+            <a type="button" class="quantity-right-plus onclickbuttons-menutab-menupage-inner-js glyphicon glyphicon-plus" data-type="plus" data-field="" href="javascript:void(0);" (click)="increaseQty()">
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class="contenter-boxed">
+        <h5 class="pricetag-menu-tab-menupage-inner-js">{{foodItem.details.unitPrice | currency:'USD':'symbol'}}</h5>
+      </div>
+      <div class="contenter-boxed">
+        <a class="add-link-menutab-menu-page-inner-js" *ngIf="foodItem.details.itemStock === 'Y'" href="javascript:void(0);" (click)="showAddToCartPrompt()">Add</a>
+        <span class="over-txt" *ngIf="foodItem.details.itemStock === 'N'">OVER</span>
+      </div>
+    </div>
+  </div>
+</div>

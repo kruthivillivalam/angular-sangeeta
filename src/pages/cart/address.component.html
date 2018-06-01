@@ -1,0 +1,172 @@
+<div class="modal-dialog address-popup-wrap" [ngClass]="{'hide-left-popup':isoptions == 0 && issize == 0}">
+  <div class="modal-content add-comment-popup-content address-popup">
+    <div class="modal-header">
+      <div class="popup-title-wrap">
+        <span>{{title}}</span>
+      </div>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="popup-conent-section">
+        <div class="popup-right-section">
+          <div class="item-details-wrap">
+            <div class="form-group">
+              <div class="address-main-radio"  [ngClass]="{active: isActive(item)}" *ngFor="let item of orderType;let ii = index">
+                <div class="input-rc">
+                  <input name="order-type" type="radio" [value]="item.value" [(ngModel)]="addressType" (change)="showOptions($event,item);">{{item.name}}
+                  <span class="input-rc-span"></span>
+                </div>
+              </div>
+            </div>
+            <div class="op-existing-add-wrap" *ngIf="IsExisting">
+              <div class="add-content" *ngFor="let items of storedMyCart;let ii = index">
+                <div class="address-radio">
+                  <div class="input-rc">
+                    <input name="orderAddress" type="radio" (change)="selectAddress(items);" id="{{items.id}}" [value]="items.id" [checked]="ii === 0">
+                    <span class="input-rc-span"></span>
+                    <div class="address-main-list">
+                      <p>
+                        <span *ngIf="items.addressline1">{{items.addressline1}}</span>
+                        <span *ngIf="items.addressline2 && items.addressline1">, </span>
+                        <span *ngIf="items.addressline2"> {{items.addressline2}}</span>
+                        <span *ngIf="items.city && items.addressline2">, </span>
+                        <span *ngIf="items.city"> {{items.city}}</span>
+                      </p>
+                      <p>
+                        <span *ngIf="items.suburb">{{items.suburb}}</span>
+                        <span *ngIf="items.state && items.suburb">, </span>
+                        <span *ngIf="items.state"> {{items.state}}</span>
+                        <span *ngIf="items.postcode && items.state">, </span>
+                        <span *ngIf="items.postcode"> {{items.postcode}}</span>
+                        <span *ngIf="items.country && items.postcode">, </span>
+                        <span *ngIf="items.country"> {{items.country}}</span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary submit-btn" (click)="apply()">OK</button>
+                <button type="button" class="btn btn-default cancel-btn" (click)="close()" >Cancel</button>
+              </div>
+            </div>
+            <div class="op-new-add-wrap" *ngIf="!IsExisting">
+              <form novalidate (ngSubmit)="addAddressForm.valid && onSubmit(addAddressForm.value)" name="addAddressForm" #addAddressForm="ngForm">
+                <div class="form-group">
+                  <label>Business Address Line 1*</label>
+                  <input type="text" class="white-input"
+                  placeholder="Address 1*"
+                  name="businessAddress1"
+                  [(ngModel)]="addAddress.businessAddress1"
+                  #businessAddress1="ngModel"
+                  required
+                  >
+                  <div *ngIf="businessAddress1.errors && (businessAddress1.dirty || businessAddress1.touched || addAddressForm.submitted)"
+                  class="alert alert-danger">
+                  <div [hidden]="!businessAddress1.errors.required">
+                    Business Address is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Business Address Line 2</label>
+                <input type="text" class="white-input"
+                placeholder="Address 2"
+                name="businessAddress2"
+                [(ngModel)]="addAddress.businessAddress2"
+                #businessAddress2="ngModel"
+                >
+              </div>
+
+              <div class="form-group subrub-auto-cmpt">
+                <label>Suburb*</label>
+                <div class="autocomplete-input suburb-autocomplete">
+                  <ng2-completer [(ngModel)]="color3" [datasource]="dataService" [minSearchLength]="0" [inputName]="suburb" name="suburb" [placeholder]="'Search Suburb'" #suburb="ngModel" [textSearching]="'Please wait...'" class="white-input" [autoMatch]="true" [initialValue]="color3" required (selected)="getPostalcode($event);"></ng2-completer>
+                </div>
+                <div *ngIf="suburb.errors && (suburb.dirty || suburb.touched || addAddressForm.submitted)"
+                class="alert alert-danger">
+                <div [hidden]="!suburb.errors.required">
+                  Suburb is required
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" class="white-input"
+              placeholder="City"
+              name="city"
+              [(ngModel)]="addAddress.city"
+              #city="ngModel"
+              >
+            </div>
+            <div class="form-group">
+              <label>Postal Code*</label>
+              <input type="text" class="white-input"
+              placeholder="Postal Code*"
+              name="postalCode"
+              [(ngModel)]="addAddress.postalCode"
+              #postalCode="ngModel"
+              required
+              >
+              <div *ngIf="postalCode.errors && (postalCode.dirty || postalCode.touched || addAddressForm.submitted)"
+              class="alert alert-danger">
+              <div [hidden]="!postalCode.errors.required">
+                Postal Code is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>State*</label>
+            <select class="white-input"
+            name="state"
+            [(ngModel)]="addAddress.state"
+            #state="ngModel"
+            required
+            (change)="resetSuburbPostal()"
+            >
+            <option [ngValue]="''">State*</option>
+            <option *ngFor="let stateItem of suburbsByCountry" [ngValue]="stateItem.state_id">
+              {{stateItem.state_name}}
+            </option>
+          </select>
+          <div *ngIf="state.errors && (state.dirty || state.touched || addAddressForm.submitted)"
+          class="alert alert-danger">
+          <div [hidden]="!state.errors.required">
+            State is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Country*</label>
+        <select class="white-input"
+        name="country"
+        [(ngModel)]="addAddress.country"
+        #country="ngModel"
+        required (change)="getStateData($event.target.value)"
+        >
+        <option [ngValue]="''">Country*</option>
+        <option *ngFor="let countryItem of countryData" [ngValue]="countryItem.id">{{countryItem.name}}</option>
+      </select>
+      <div *ngIf="country.errors && (country.dirty || country.touched || addAddressForm.submitted)"
+      class="alert alert-danger">
+      <div [hidden]="!country.errors.required">
+        Country is required
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary submit-btn">OK</button>
+    <button type="button" class="btn btn-default cancel-btn" (click)="close()" >Cancel</button>
+  </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

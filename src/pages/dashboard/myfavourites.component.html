@@ -1,0 +1,154 @@
+<div class="container">
+  <div class="holder-fullcontent-cartsummary-page-inner-js">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li>
+              <a href="javascript:void(0);">Home</a>
+            </li>
+            <li class="active">My Account</li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <!-- left side tab -->
+        <leftmenu></leftmenu>
+        <!-- right side tab -->
+        <!-- tab content -->
+        <div class="col-md-9">
+          <div class="tab-content">
+    
+            <!-- My Favourites -->
+            <div class="tab-pane fade active in" id="tab_e">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="holder-reservation-tab-header-inner-account-page-js">
+                    <select class="menus-reservation-tab-account-page-favouriterestaurant-inner-js">
+                        <option>Favourite Restaurant</option>
+                        <option>Favourite Item</option>
+                      </select>
+    
+                    <div class="search-bar-favouritestab-holder-inner-js">
+                      <input class="searchbox-myfavourites-tab-inner-js" type="text" name="">
+                      <a href="#" class="glyphicon glyphicon-search searchicon-adjust-myfavouritetab-inner-js"></a>
+                    </div>
+    
+                    <label class="reservation-tab-content-headings-inner-js">No. Of Item Per Page</label>
+                    <select class="menus-reservation-tab-account-page-inner-favouritetab-js">
+                        <option>10</option>
+                        <option>49</option>
+                        <option>48</option>
+                        <option>47</option>
+                        <option>46</option>
+                        <option>45</option>
+                      </select>
+                    <label class="reservation-tab-content-headings-inner-js">Sort By</label>
+                    <select class="menus-restaurant-reservation-tab-account-page-inner-js">
+                        <option>All</option>
+                        <option>Italian</option>
+                        <option>Indian</option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <!-- Favourite Restaurant -->
+    
+              <div class="row">
+    
+                <div class="col-md-12">
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="myfavouriteslist.list_bookmark">Favourite Restaurant</h5>
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="!myfavouriteslist.list_bookmark">No Bookmarks</h5>
+                </div>
+    
+                <div class="col-md-4 col-sm-4" *ngFor="let eachrecord of myfavouriteslist.list_bookmark">
+                  <div class="holder-myfavouritetab-innerimage-favourite-restaurant-js">
+                    <img class="myfavouritestab-account-page-favourite-restaurantimage-inner-js" src="{{eachrecord.mphotoUrl}}">
+                    <h5 class="name-favourite-restaurant-desc-favouritetab-inner-js">{{eachrecord.merchantname}}</h5>
+                    <h5 class="myfavouritestab-account-page-favourite-restaurantimage-details-inner-js">Cusine:</h5>
+                    <span class="myfavouritestab-account-page-favourite-restaurantimage-details-cusine-inner-js">Italian,Sea Food,Maxican</span>
+                    <span class="myfavouritestab-account-page-favourite-restaurantimage-details-cusine-inner-js" *ngFor="let cuisineItem of eachrecord.cusines;let j = index;let isLast=last;">
+                        {{cuisineItem.cuisinename}}{{isLast ? '' : ', '}}
+                      </span>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a class="add-link-favorite-tab-account-page-inner-js" [routerLink]="['/restaurantdetail', eachrecord.merchantid]">View</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <hr>
+    
+              <!-- Favourite Foods -->
+              <div class="row">
+                
+                <div class="col-md-12">
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="myfavouriteslist.list_Favourite_Food">Favourite Foods</h5>
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="!myfavouriteslist.list_Favourite_Food">No Favourite Foods</h5>
+                </div>
+    
+                <div class="col-md-3 col-sm-4" *ngFor="let eachrecord of myfavouriteslist.list_Favourite_Food">
+                  <div class="holder-myfavouritetab-innerimage-favourite-restaurant-js">
+                    <img class="myfavouritestab-account-page-favourite-restaurantimage-inner-js" src="http://websitedemo2.mybrandcreator.com/images/youmayknowdummy.jpg"><!--{{eachrecord.mphotoUrl}}-->
+                    <h5 class="name-favourite-restaurant-desc-favouritetab-inner-js">{{eachrecord.menuitem_name}}</h5>
+                    <h5 class="myfavouritestab-account-page-favourite-restaurantimage-detailsrow2-inner-js">{{eachrecord.merchantname}}</h5>
+                  </div>
+                </div>
+    
+              </div>
+    
+              <hr>
+    
+              <!-- Most Visited Restaurants -->
+    
+              <div class="row">
+    
+                <div class="col-md-12">
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="myfavouriteslist.list_restaurants">Most Visited Restaurants</h5>
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="!myfavouriteslist.list_restaurants">No Visited Restaurants</h5>
+                </div>
+    
+                <div class="col-md-4 col-sm-4" *ngFor="let eachrecord of myfavouriteslist.list_restaurants">
+                  <div class="holder-myfavouritetab-innerimage-favourite-restaurant-js">
+                    <img class="myfavouritestab-account-page-favourite-restaurantimage-inner-js" src="http://websitedemo2.mybrandcreator.com/images/dummylistingimage1.jpg"><!--{{eachrecord.mphotoUrl}}-->
+                    <h5 class="name-favourite-restaurant-desc-favouritetab-inner-js">{{eachrecord.merchantname}}</h5>
+                    <h5 class="name-favourite-restaurant-desc-favouritetab-inner-js name-favourite-restaurant-desc-favouritetab-inner-js-location">{{eachrecord.city}} {{eachrecord.country}}</h5>
+                    <h5 class="myfavouritestab-account-page-favourite-restaurantimage-details-mostvisitedrestaurants-inner-js">Visited Count:
+                      <span class="count-visited-myfavourtitetab-inner-js">{{eachrecord.visitno}}</span>
+                    </h5>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a [routerLink]="['/restaurantdetail', eachrecord.merchantid]" class="add-link-favorite-tab-account-page-inner-js" href="javascript:void(0);">View</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <!-- Most Ordered Foods -->
+    
+              <div class="row">
+                <div class="col-md-12">
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="myfavouriteslist.list_Most_Ordered_Foods">Most Ordered Foods</h5>
+                  <h5 class="heading-my-favouritetab-inner-section1-js" *ngIf="!myfavouriteslist.list_Most_Ordered_Foods">No Most Ordered Foods</h5>
+                </div>
+                <div class="col-md-3 col-sm-4" *ngFor="let eachrecord of myfavouriteslist.list_Most_Ordered_Foods">
+                  <div class="holder-myfavouritetab-innerimage-favourite-restaurant-js" style="margin-bottom:15px;">
+                    <img class="myfavouritestab-account-page-favourite-restaurantimage-inner-js" src="http://websitedemo2.mybrandcreator.com/images/dummylistingimage1.jpg">
+                    <h5 class="name-favourite-restaurant-desc-favouritetab-inner-js">{{eachrecord.menuitem_name}}</h5>
+                    <p class="myfavourite-most-ord-sub-det">{{eachrecord.merchantname}}</p>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+      </div>
+    </div>
+</div>

@@ -1,0 +1,342 @@
+<div class="menupage-sec1-mapinfo-js submit-listings-content-m">
+
+  <div class="container">
+    <div class="row bs-wizard" style="border-bottom:0;">
+      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">Step 1</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Enter Information</div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step complete">
+        <!-- complete -->
+        <div class="text-center bs-wizard-stepnum">Step 2</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Select Plans and Addons</div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step complete">
+        <!-- complete -->
+        <div class="text-center bs-wizard-stepnum">Step 3</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Make Payments</div>
+      </div>
+    </div>
+  </div>
+  <form novalidate (ngSubmit)="cartForm.valid && onSubmit(cartForm)" name="cartForm" #cartForm="ngForm" id="cartForm">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="holder-fullcontent-cartsummary-page-inner-js submit-listings-holder-m">
+            <h3></h3>
+            <p class="final-submit-heading">Cart Summary.</p>
+            <div class="table-responsive">
+              <table class="table table-striped table-cart">
+                <thead>
+                  <tr>
+                    <th>
+                      <a href="#"></a>
+                    </th>
+                    <th>Item</th>
+                    <th>Type</th>
+                    <th>Billing Period</th>
+                    <th>License Count</th>
+                    <th>Unit Price</th>
+                    <th>To Pay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="javascript:void(0);" [routerLink]="['/submitlisting2']" style="margin: 0 auto; display: table;">
+                        <i class="fa fa-exchange"></i>
+                      </a>
+                    </td>
+                    <td>{{step2tempData.plan.name}}</td>
+                    <td>Plan</td>
+                    <td>{{step2tempData.plan.duration}}</td>
+                    <td>1</td>
+                    <td>${{step2tempData.plan.price | number}}</td>
+                    <td>${{step2tempData.plan.price| number}}</td>
+                  </tr>
+                  <tr *ngFor="let item of step2tempData.addon">
+                    <td>
+                      <a href="javascript:void(0);" (click)="removeAddon($event,item.id,item.price * addonLience)" style="margin: 0 auto; display: table;">
+                        <i class="fa fa-times"></i>
+                      </a>
+                    </td>
+                    <td>{{item.name}}</td>
+                    <td>Addon</td>
+                    <td>{{step2tempData.plan.duration}}</td>
+                    <td>
+                      <div class="count-selector">
+                        <span class="">
+                          <button class="btn btn-default bootstrap-touchspin-down" type="button" (click)="addLienceCount($event,item.id,'minus','addonLience'+item.id,item.price)">-</button>
+                        </span>
+                        <input class="" style="display:block;" id="addonLience{{item.id}}" type="text" [value]="item.default" name="addonLience{{item.id}}">
+                        <span class="">
+                          <button class="btn btn-default bootstrap-touchspin-up" (click)="addLienceCount($event,item.id,'plus','addonLience'+item.id,item.price)"
+                            type="button">+</button>
+                        </span>
+                      </div>
+                    </td>
+                    <td>${{item.price| number}}</td>
+                    <td>${{item.totalPrice | number}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <a class="btn" href="javascript:void(0)" [routerLink]="['/submitlisting2']">Add more</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <strong>Order Total</strong>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <strong>>${{newSum}}</strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="tabs-conent-style-custom-cartpage-inner-js">
+                  <img class="coupon-image-summarypage-inner-js" src="../../assets/images/couponicon1-summary.png">
+                  <h5 class="heading2-coupons-payment-cartsummary-page-inner-js">Payment</h5>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="holder-display-listng-cart-summary-page-inner-js">
+                  <p class="coupon-sec-payment-head-text-summarypage-inner-js">Select a payment method</p>
+                  <div class="holder-payments-highlights-inner-summarypage-js" *ngFor="let paymentItem of paymentMethod">
+                    <img *ngIf="paymentItem.method_name == 'Paypal'" class="cod-icon-image-summarypage-inner-js" src="../../assets/images/paypalicon.png">
+                    <a *ngIf="paymentItem.method_name == 'Paypal'" (click)="paymentExpress()" class="payment-cons-text-inner-summarypage-js">{{paymentItem.method_name}}</a>
+                    <img *ngIf="paymentItem.method_name != 'Paypal' && paymentItem.method_name != 'Cash On Delivery'" class="cod-icon-image-summarypage-inner-js"
+                      src="../../assets/images/mastercardicon.png">
+                    <a *ngIf="paymentItem.method_name != 'Paypal' && paymentItem.method_name != 'Cash On Delivery'" class="payment-cons-text-inner-summarypage-js"
+                      (click)="togglePaymentMethodVisibility(paymentItem.method_name)">{{paymentItem.method_name}}</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6" *ngIf="!pSelected">
+                <img class="partners-image-summarypage-inner-js" src="../../assets/images/paymentverified1.png">
+              </div>
+
+              <div class="col-md-6 submit-listing-3-payments" *ngIf="pSelected && hideOtherMethod && availableAsAMethod('Credit Card')"
+                id="paymentMethod1">
+                <h3>Pay Using Credit Card</h3>
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Card Holder Name*" name="cardHolderName" pattern="[a-z A-Z]+" [(ngModel)]="cartForm.cardHolderName"
+                      #cardHolderName="ngModel" required>
+                    <div *ngIf="cardHolderName.errors && (cardHolderName.dirty || cardHolderName.touched || cartForm.submitted) && currentTab == 'tab1'"
+                      class="alert alert-danger">
+                      <div [hidden]="!cardHolderName.errors.required">
+                        Card Holder Name is required
+                      </div>
+                      <div [hidden]="!cardHolderName.errors.pattern">
+                        Only alphabets are allowed in card holder name
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Credit Card Number*" minlength="16" maxlength="16" pattern="^[0-9]+$"
+                      name="creditCard" [(ngModel)]="cartForm.creditCard" #creditCard="ngModel" required>
+                    <div *ngIf="creditCard.errors && (creditCard.dirty || creditCard.touched || cartForm.submitted) && currentTab == 'tab1'"
+                      class="alert alert-danger">
+                      <div [hidden]="!creditCard.errors.required">
+                        Credit card number is required
+                      </div>
+                      <div [hidden]="!creditCard.errors.minlength">
+                        Credit card number must be at least 16 number long.
+                      </div>
+                      <div [hidden]="!creditCard.errors.pattern">
+                        Credit card number is Invalid.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Security Code*" minlength="3" maxlength="3" pattern="^[0-9]+$" name="securityCode"
+                      [(ngModel)]="cartForm.securityCode" #securityCode="ngModel" required>
+                    <div *ngIf="securityCode.errors && (securityCode.dirty || securityCode.touched || cartForm.submitted) && currentTab == 'tab1'"
+                      class="alert alert-danger">
+                      <div [hidden]="!securityCode.errors.required">
+                        Security Code is required
+                      </div>
+                      <div [hidden]="!securityCode.errors.minlength">
+                        Security Code must be at least 3 number long.
+                      </div>
+                      <div [hidden]="!securityCode.errors.pattern">
+                        Security Code is Invalid.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Select Month*" minlength="2" maxlength="2" pattern="^[0-9]+$" name="selectMonth"
+                      [(ngModel)]="cartForm.selectMonth" #selectMonth="ngModel" required>
+                    <div *ngIf="selectMonth.errors && (selectMonth.dirty || selectMonth.touched || cartForm.submitted) && currentTab == 'tab1'"
+                      class="alert alert-danger">
+                      <div [hidden]="!selectMonth.errors.required">
+                        Please enter month
+                      </div>
+                      <div [hidden]="!selectMonth.errors.minlength">
+                        Enter 2 digits for month Ex, 01 for Jan.
+                      </div>
+                      <div [hidden]="!selectMonth.errors.pattern">
+                        Month is Invalid.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Select Year*" minlength="4" maxlength="4" pattern="^[0-9]+$" name="selectYear"
+                      [(ngModel)]="cartForm.selectYear" #selectYear="ngModel" required>
+                    <div *ngIf="selectYear.errors && (selectYear.dirty || selectYear.touched || cartForm.submitted) && currentTab == 'tab1'"
+                      class="alert alert-danger">
+                      <div [hidden]="!selectYear.errors.required">
+                        Please enter year
+                      </div>
+                      <div [hidden]="!selectYear.errors.minlength">
+                        Enter 4 digits for month Ex, 2017.
+                      </div>
+                      <div [hidden]="!selectYear.errors.pattern">
+                        Year is Invalid.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="payment-card-image">
+                    <img src="../assets/images/sponser1.png">
+                    <img src="../assets/images/sponser2.png">
+                    <img src="../assets/images/sponser3.png">
+                    <img src="../assets/images/sponser4.png">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-6 submit-listing-3-payments" *ngIf="pSelected && !hideOtherMethod" id="paymentMethod2">
+
+                <h3>Pay Using Debit Card</h3>
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Card Holder Name*" name="debitCardHolderName" pattern="[a-z A-Z]+" [(ngModel)]="cartForm.debitCardHolderName"
+                      #debitCardHolderName="ngModel" required>
+                    <div *ngIf="debitCardHolderName.errors && (debitCardHolderName.dirty || debitCardHolderName.touched || cartForm.submitted) && currentTab == 'tab2'"
+                      class="alert alert-danger">
+                      <div [hidden]="!debitCardHolderName.errors.required">
+                        Card Holder Name is required
+                      </div>
+                      <div [hidden]="!debitCardHolderName.errors.pattern">
+                        Only alphabets are allowed in card holder name
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Debit Card Number*" minlength="16" maxlength="16" pattern="^[0-9]+$"
+                      name="debitCard" [(ngModel)]="cartForm.debitCard" #debitCard="ngModel" required>
+                    <div *ngIf="debitCard.errors && (debitCard.dirty || debitCard.touched || cartForm.submitted) && currentTab == 'tab2'" class="alert alert-danger">
+                      <div [hidden]="!debitCard.errors.required">
+                        Debit card number is required
+                      </div>
+                      <div [hidden]="!debitCard.errors.minlength">
+                        Debit card number must be at least 16 number long.
+                      </div>
+                      <div [hidden]="!debitCard.errors.pattern">
+                        Debit card number is Invalid.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Security Code*" minlength="3" maxlength="3" pattern="^[0-9]+$" name="debitSecurityCode"
+                      [(ngModel)]="cartForm.debitSecurityCode" #debitSecurityCode="ngModel" required>
+                    <div *ngIf="debitSecurityCode.errors && (debitSecurityCode.dirty || debitSecurityCode.touched || cartForm.submitted) && currentTab == 'tab2'"
+                      class="alert alert-danger">
+                      <div [hidden]="!debitSecurityCode.errors.required">
+                        Security Code is required
+                      </div>
+                      <div [hidden]="!debitSecurityCode.errors.minlength">
+                        Security Code must be at least 3 number long.
+                      </div>
+                      <div [hidden]="!debitSecurityCode.errors.pattern">
+                        Security Code is Invalid.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Select Month*" minlength="2" maxlength="2" pattern="^[0-9]+$" name="debitSelectMonth"
+                      [(ngModel)]="cartForm.debitSelectMonth" #debitSelectMonth="ngModel" required>
+                    <div *ngIf="debitSelectMonth.errors && (debitSelectMonth.dirty || debitSelectMonth.touched || cartForm.submitted) && currentTab == 'tab2'"
+                      class="alert alert-danger">
+                      <div [hidden]="!debitSelectMonth.errors.required">
+                        Please enter month
+                      </div>
+                      <div [hidden]="!debitSelectMonth.errors.minlength">
+                        Enter 2 digits for month Ex, 01 for Jan.
+                      </div>
+                      <div [hidden]="!debitSelectMonth.errors.pattern">
+                        Month is Invalid.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Select Year*" minlength="4" maxlength="4" pattern="^[0-9]+$" name="debitSelectYear"
+                      [(ngModel)]="cartForm.debitSelectYear" #debitSelectYear="ngModel" required>
+                    <div *ngIf="debitSelectYear.errors && (debitSelectYear.dirty || debitSelectYear.touched || cartForm.submitted) && currentTab == 'tab2'"
+                      class="alert alert-danger">
+                      <div [hidden]="!debitSelectYear.errors.required">
+                        Please enter year
+                      </div>
+                      <div [hidden]="!debitSelectYear.errors.minlength">
+                        Enter 4 digits for month Ex, 2017.
+                      </div>
+                      <div [hidden]="!debitSelectYear.errors.pattern">
+                        Year is Invalid.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="payment-card-image">
+                    <img src="../assets/images/sponser1.png">
+                    <img src="../assets/images/sponser2.png">
+                    <img src="../assets/images/sponser3.png">
+                    <img src="../assets/images/sponser4.png">
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                <input type="submit" class="final-submitting-m" value="Continue">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

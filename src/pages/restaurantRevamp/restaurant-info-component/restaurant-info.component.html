@@ -1,0 +1,31 @@
+<div class="content-holder-infotab-inner-menupage-js">
+  <div class="row">
+      <div class="col-md-12">
+          <h1 class="row1-infotab-head-menupage-inner-js text-capitalize">Contact</h1>
+      </div>
+      <div class="col-md-4">
+          <a href="javascript:void(0);" class="emailid-info-tab-menupage-inner-js text-capitalize"  href="tel:+91-{{phoneNumbers}}">
+              <span class="glyphicon glyphicon-phone adjust-icons-contact-tab-menupage-inner-js"></span>Call Now
+              <p>{{phoneNumbers}}</p>
+            </a>
+           <!--<p class="contact-number-info-tab-menupage-inner-js"  href="tel:+91-8130547897"> 8130547897 </p>
+           <p href="tel:+1-303-499-7111">+1 (303) 499-7111</p>-->
+      </div>
+      <div class="col-md-4">
+          <a class="emailid-info-tab-menupage-inner-js text-lowercase">
+              <span class=" glyphicon glyphicon-envelope adjust-icons-contact-tab-menupage-inner-js"></span>support@orderpoint.com</a>
+      </div>
+      <div class="col-md-4">
+          <a href="{{webUrl}}"  target="_NEW" class="emailid-info-tab-menupage-inner-js text-lowercase">{{webUrl}}</a>
+      </div>
+  </div>
+</div>
+
+<div class="content-holder-infotab-inner-menupage-js" *ngFor="let item of servicesOfRest">
+  <div class="row">
+      <div class="col-md-12" >
+          <h1 class="row2-infotab-head-menupage-inner-js text-capitalize">{{item.ParamType}}</h1>
+          <label *ngFor="let innerItem of item.ParamList" class="checkbox-inline headings-labels-info-tab-innerpage-js text-capitalize"><input type="checkbox" disabled [checked]="innerItem.merchantHas == 1">{{innerItem.paramName}}</label>
+      </div>
+  </div>
+</div>

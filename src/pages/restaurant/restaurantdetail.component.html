@@ -1,0 +1,864 @@
+<!-- Start Banner section -->
+<div class="restaurant-banner">
+  <div class="restaurant-banner-image">
+    <img src="../assets/images/rest-banner.jpg">
+  </div>
+</div>
+<!-- End Banner section -->
+<!-- Start Detail Page Section -->
+
+  <div class="restaurant-detail-section">
+
+
+    <div class="left-detail-wrap">
+      <div class="restaurant-detail-wrap">
+        <div class="restaurant-opening-hour">
+          <div class="opening-hour-table">
+            <div class="opening-hour-title">
+              <span>Opening Hour</span>
+            </div>
+            <div class="time-details" [ngClass]="{'active':todayDate==1}">
+              <div class="opening-day">Mon</div>
+              <div class="opening-time">{{openingHoursD1.opening}} - {{openingHoursD1.closing}}</div>
+            </div>
+            <div class="time-details" [ngClass]="{'active':todayDate==2}">
+              <div class="opening-day">Tue</div>
+              <div class="opening-time">{{openingHoursD2.opening}} - {{openingHoursD2.closing}}</div>
+            </div>
+            <div class="time-details" [ngClass]="{'active':todayDate==3}">
+              <div class="opening-day">Wed</div>
+              <div class="opening-time">{{openingHoursD3.opening}} - {{openingHoursD3.closing}}</div>
+            </div>
+            <div class="time-details" [ngClass]="{'active':todayDate==4}">
+              <div class="opening-day">Thu</div>
+              <div class="opening-time">{{openingHoursD4.opening}} - {{openingHoursD4.closing}}</div>
+            </div>
+            <div class="time-details" [ngClass]="{'active':todayDate==5}">
+              <div class="opening-day">Fri</div>
+              <div class="opening-time">{{openingHoursD5.opening}} - {{openingHoursD5.closing}}</div>
+            </div>
+            <div class="time-details" [ngClass]="{'active':todayDate==6}">
+              <div class="opening-day">Sat</div>
+              <div class="opening-time">{{openingHoursD6.opening}} - {{openingHoursD6.closing}}</div>
+            </div>
+            <div class="time-details" [ngClass]="{'active':todayDate==7}">
+              <div class="opening-day">Sun</div>
+              <div class="opening-time">{{openingHoursD7.opening}} - {{openingHoursD7.closing}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="restaurant-brief-detail">
+          <div class="logo-bookmark">
+            <div class="restaurant-logo">
+                <img src="{{restaurantData.photoUrl}}" >
+            </div>
+            <div class="restaurant-bookmark">
+              <a href="javascript:void(0);" (click)="updateBookMark(restaurantData.merchantid)" class="bookmark-rest-btn">Bookmark Restaurant</a>
+            </div>
+          </div>
+          <div class="restaurant-address-detail" >
+            <div class="restaurant-address-section" *ngIf="restaurantData">
+              <h2 class="restaurant-name">{{restaurantData.merchantname}}</h2>
+              <div class="rating-view red-star">
+                <div class="rating-star">
+                  <star-rating-comp [starType]="'svg'" [staticColor]="'negative'" [rating]="restaurantData.rating" [readOnly]="true" [step]="0.5" [showHalfStars]="true" ></star-rating-comp>
+                </div>
+                <div class="review-text">
+                  <a href="javascript:void(0);">{{restaurantData.userreviewcount}} Review</a>
+                </div>
+              </div>
+              <div class="restaurant-address" *ngIf="addressOfRes">
+                <p>{{addressOfRes.address1}}, {{addressOfRes.address2}}, {{addressOfRes.city}}</p>
+                <p>{{addressOfRes.suburb}}, {{addressOfRes.state}}, {{addressOfRes.Postcode}}, {{addressOfRes.country}}</p>
+                <p><a href="javascript:void(0);" class="add-map"><img src="../assets/images/gmap-icon.png"></a></p>
+              </div>
+            </div>
+            <div class="restaurant-rating-view">
+              <div class="rating-number">{{restaurantData.rating}}<span class="total-rate">/5</span></div>
+              <div class="chat-icon"><a href="javscript:void(0);">Chat</a></div>
+              <div class="video-icon"><a href="javscript:void(0);">Video</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="restaurant-story" *ngIf="aboutMe">
+        <h2 class="restaurant-story-title">Our Story</h2>
+        <div class="restaurant-story-detail">
+          <p>{{aboutMe}}</p>
+        </div>
+      </div>
+      <div class="restaurant-detail-tab">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="{{activedefault}}"><a href="#rest-info" aria-controls="rest-info" role="tab" data-toggle="tab">Restaurant Info.</a></li>
+          <li role="presentation"><a href="#reservation" aria-controls="reservation" role="tab" data-toggle="tab">Reservation</a></li>
+          <li role="presentation" class="{{activemenu}}"><a href="#menu"  aria-controls="menu" role="tab" data-toggle="tab">Menu</a></li>
+          <li role="presentation"><a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab">Gallery</a></li>
+          <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Reviews</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane {{activedefault}}" id="rest-info">
+            <div class="rest-info-wrap">
+              <div class="rest-info-section contact-section">
+                <h2>Contact</h2>
+                <div class="rest-info-services">
+                  <div class="info-section call-info-section">
+                    <a href="javascript:void(0);" class="call-now-btn op-icon op-phone" (click)="scrollDiv($event,'c'+[restaurantData.merchantid]);">Call Now</a>
+                    <ul class="card card-block card-header block" [style.height]="height + 'px'" id="c{{restaurantData.merchantid}}">
+                      <ng-container *ngIf="phoneNumbers">
+                        <li class="well well-lg">
+                          <a href="tel:{{phoneNumbers}}"> {{phoneNumbers}} </a>
+                        </li>
+                      </ng-container>
+                      <ng-container *ngIf="!phoneNumbers">
+                      <li class="well well-lg">No phone found</li>
+                      </ng-container>
+                    </ul>
+                  </div>
+                  <div class="info-section">
+                    <a href="mailto:support@orderpoint.com" class="op-icon op-message">support@orderpoint.com</a>
+                  </div>
+                  <div class="info-section">
+                    <a href="{{restaurantData.webUrl}}" class="op-icon op-universe" target="_NEW">{{restaurantData.webUrl}}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="rest-info-section service-section" *ngFor="let item of finalArray">
+                <h2>{{item.type}}</h2>
+                <div class="rest-info-services">
+                  <a href="javascript:void(0);" *ngFor="let innerItem of item.subarray"class="op-icon op-online-order hasMerchant" [ngClass]="{'hasMerchant':innerItem.has == 0, 'nothasMerchant':innerItem.has == 1}">{{innerItem.name}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="reservation">
+            <div class="reservation-wrap">
+              <div class="left-reservation-tab">
+                <div class="reservation-tab-title">Type</div>
+                <div class="reservation-type-list">
+                  <ul class="nav nav-tabs" role="tablist">
+                     <li role="presentation" class="active"><a href="#table-reserve" aria-controls="table-reserve" role="tab" data-toggle="tab" aria-expanded="true">Table Reservation</a></li>
+                    <li role="presentation"><a href="#event-reserve" aria-controls="event-reserve" role="tab" data-toggle="tab" aria-expanded="true">Event Reservation</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="right-reservation-tab">
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="table-reserve">
+                    <div class="breadcrumb-section">
+                      <ol class="breadcrumb">
+                        <li><a href="javascript:void(0);">Reservation</a></li>
+                        <li class="active">Table Reservation</li>
+                      </ol>
+                    </div>
+                    <div class="reservation-form table-reservation-form">
+						<form novalidate (ngSubmit)="reservationForm.valid && saveReservation(reservationForm.value)" name="reservationForm" #reservationForm="ngForm">
+							<div class="personal-details-wrap">
+									<div class="form-group">
+										<label>Mobile Number</label>
+										<input type="text" class="white-input" placeholder="Mobile Number"
+											minlength="10"
+											maxlength="10"
+											pattern="^[0-9]+$"
+											name="customer_mobile"
+											[(ngModel)]="reservationForm.customer_mobile"
+                      #customer_mobile="ngModel"
+                      required>
+										<div *ngIf="customer_mobile.errors && (customer_mobile.dirty || customer_mobile.touched || reservationForm.submitted)"
+										 class="alert alert-danger">
+											<div [hidden]="!customer_mobile.errors.required">
+											  Mobile is required
+											</div>
+											<div [hidden]="!customer_mobile.errors.minlength">
+											  Mobile Number must be at least 10 number long.
+											</div>
+											<div [hidden]="!customer_mobile.errors.pattern">
+											  Mobile is Invalid.
+											</div>
+										</div>
+
+									</div>
+									<div class="form-group">
+										<label>Email*</label>
+										<input type="email" class="white-input"
+										placeholder="Email*"
+										required
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+										name="customer_email"
+										[(ngModel)]="reservationForm.customer_email"
+										#customer_email="ngModel"
+										>
+										<div *ngIf="customer_email.errors && (customer_email.dirty || customer_email.touched || reservationForm.submitted)"
+										class="alert alert-danger">
+										<div [hidden]="!customer_email.errors.required">
+										Email is required
+										</div>
+										<div [hidden]="!customer_email.errors.pattern">
+										Email is Invalid.
+										</div>
+										</div>
+
+									</div>
+									<div class="form-group">
+										<label>First Name*</label>
+										<input type="text" class="white-input"
+											   placeholder="First name*"
+											   required
+											   pattern="[a-zA-Z]+"
+											   name="customer_firstname"
+											   [(ngModel)]="reservationForm.customer_firstname"
+											   #customer_firstname="ngModel">
+
+										<div *ngIf="customer_firstname.errors && (customer_firstname.dirty || customer_firstname.touched || reservationForm.submitted)"
+											 class="alert alert-danger">
+											<div [hidden]="!customer_firstname.errors.required">
+											  Firstname is required
+											</div>
+											<div [hidden]="!customer_firstname.errors.pattern">
+											  Only alphabets are allowed in firstname
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label>Last Name*</label>
+										<input type="text" class="white-input"
+											   placeholder="Last name*"
+											   required
+											   pattern="[a-zA-Z]+"
+											   name="customer_lastname"
+											   [(ngModel)]="reservationForm.customer_lastname"
+											   #customer_lastname="ngModel">
+
+										<div *ngIf="customer_lastname.errors && (customer_lastname.dirty || customer_lastname.touched || reservationForm.submitted)"
+											 class="alert alert-danger">
+											<div [hidden]="!customer_lastname.errors.required">
+											  {{validationError.LAST_NAME_REQ_ERR}}
+											</div>
+											<div [hidden]="!customer_lastname.errors.pattern">
+											  {{validationError.LAST_NAME_ALPHA_ERR}}
+										</div>
+									</div>
+								</div>	
+
+								  <div class="form-group">
+										<label>Reserved Date*</label>
+										<div class="time-reserved">
+											<input type="date" class="white-input"
+												name="reservationDate" required
+												[(ngModel)]="reservationForm.reservationDate"
+												#reservationDate="ngModel"
+											>
+											<i class="fa fa-calendar-o" aria-hidden="true"></i>
+										</div>
+										<div *ngIf="reservationDate.errors && (reservationDate.dirty || reservationDate.touched || reservationForm.submitted)"
+										 class="alert alert-danger">
+											<div [hidden]="!reservationDate.errors.required">
+											  Reserved Date is required
+											</div>
+											<div [hidden]="!reservationDate.errors.minlength">
+											  Reserved Date must be at least 10 number long.
+											</div>
+											<div [hidden]="!reservationDate.errors.pattern">
+											  Reserved Date is Invalid.
+											</div>
+                   </div>
+                    <div *ngIf="!(reservationDate.errors) && invalidDate" class="alert alert-danger">
+                      {{validationError.RES_DATE_VALID_ERROR}}
+                    </div>
+
+									</div>
+									<div class="form-group">
+										<label>Reserved Time*</label>
+										<div class="time-reserved">
+											<input type="time" class="white-input"
+												name="reservationTime" required
+												[(ngModel)]="reservationForm.reservationTime"
+												#reservationTime="ngModel"
+											>
+											<i class="fa fa-clock-o" aria-hidden="true"></i>
+										</div>
+										<div *ngIf="reservationTime.errors && (reservationTime.dirty || reservationTime.touched || reservationForm.submitted)"
+										 class="alert alert-danger">
+											<div [hidden]="!reservationTime.errors.required">
+											  Reserved Time is required
+											</div>
+											<div [hidden]="!reservationTime.errors.minlength">
+											  Reserved Time must be at least 10 number long.
+											</div>
+											<div [hidden]="!reservationTime.errors.pattern">
+											  Reserved Time is Invalid.
+											</div>
+										</div>
+
+									</div>
+
+
+
+ 							  <div class="form-group">
+										<label>Guest#*</label>
+										<input type="text" class="white-input"
+											   placeholder="Guest#*"
+											   required
+											   pattern="^[0-9]+$"
+											   name="NoOfGuests"
+											   [(ngModel)]="reservationForm.NoOfGuests"
+											   #NoOfGuests="ngModel">
+
+										<div *ngIf="NoOfGuests.errors && (NoOfGuests.dirty || NoOfGuests.touched || reservationForm.submitted)"
+											 class="alert alert-danger">
+											<div [hidden]="!NoOfGuests.errors.required">
+											  No Of Guests is required
+											</div>
+											<div [hidden]="!NoOfGuests.errors.pattern">
+											  Only numbers are allowed
+											</div>
+										</div>
+									</div>
+
+								  <div class="form-group">
+									<label>Occasion</label>
+									<select name="occasion">
+									  <option value="">Occasion</option>
+									  <option value="Engagement">Engagement</option>
+									  <option value="Birthday Party">Birthday Party</option>
+									</select>
+								  </div>
+								</div>
+							   <div class="car-park-reservation-wrap">
+                        <div class="form-group">
+                        <label>Car Park Bay.</label>
+                        <select name='carpark_bay' #carpark_bay [(ngModel)]="reservationForm.carpark_bay">
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Note</label>
+                          <textarea name='notes' #notes [(ngModel)]="reservationForm.notes" cols="25" rows="5" style="margin: 0px; width: 494px; height: 60px;"></textarea>
+                        </div>
+                        </div>
+                        <div class="car-park-reservation-wrap">
+                        <div class="reservtaion-btn">
+                            <button type="submit" class="red-btn" >Reserve Now</button>
+                          </div>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="event-reserve">
+                    <div class="breadcrumb-section">
+                      <ol class="breadcrumb">
+                        <li><a href="javascript:void(0);">Reservation</a></li>
+                        <li class="active">Event Reservation</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane {{activemenu}}" id="menu">
+            <div class="menu-wrap">
+              <div class="serch-menu-wrap grey-checkbox">
+                <div class="veg-nonveg-checkbox">
+                  <div class="checkbox-icon" *ngFor="let item of vegNonveg">
+                    <label>
+                      <div class="input-rc">
+                        <input type="checkbox" value="{{item.value}}" name="{{item.modelName}}" #search [(ngModel)]="item.modelName" [checked]="item.modelName" (click)="getVeg(item.value,$event);">
+                        <span class="input-rc-span"></span>
+                      </div>{{item.name}}
+                    </label>
+                  </div>
+                </div>
+                <div class="menu-search-box">
+                  <input type="text" placeholder="Search for food" value="" name="searchText" [(ngModel)]="searchText">
+                  <a href="javascript:void(0);" (click)="getSearchData($event,searchText);" class="search-btn">Search</a>
+                </div>
+              </div>
+              <div class="menu-categories-wrap">
+                <div class="categories-list-view">
+                  <div class="categories-title">Categories</div>
+                  <div class="categories-list">
+                    <ul>
+                      <li [ngClass]="{'active':selectedItem == 'all'}" (click)="getAllMenuItems($event,'all');">
+                        <a href="javascript:void(0);">All</a>
+                      </li>
+                      <li [ngClass]="{'active': selectedItem == category}" *ngFor="let category of restaurantMenuData">
+                        <a href="javascript:void(0);" id="{{category.menuGroupId}}" (click)="getClickedMenus($event,category);">{{category.groupName}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="categories-detail-list my-order-list-section">
+                  <div class="non-veg-list">
+                    <!-- <div class="breadcrumb-section">
+                      <ol class="breadcrumb">
+                        <li><a href="javascript:void(0);">Pizza</a></li>
+                        <li class="active">Non Veg</li>
+                      </ol>
+                    </div> -->
+                    <div class="non-veg-menu">
+                      <div class="order-list-wrap" *ngIf="noResult">
+                        <div class="list-item" >
+                          {{commonText.NO_RESULT}}
+                        </div>
+                      </div>
+                      <div class="order-list-wrap" *ngIf="!noResult">
+                        <!-- <div class="list-item" *ngFor="let item of (menuitems | searchFilter: search.value )"> -->
+                        <div class="list-item" *ngFor="let item of menuitems; let ii = index">
+                          <div class="item-name op-icon" [ngClass]="{'op-nonveg':item.vegOrNonVeg == 'N', 'op-veg':item.vegOrNonVeg == 'V'}">
+                            <a href="javascript:void(0);">{{item.menuItemName}}</a>
+                            <div class="menu-ingredients">{{item.MenuItemNote}}</div>
+                          </div>
+                          <div class="categories-order-details">
+                            <!-- <div class="total-order-item">
+                              <div class="min-item">
+                                <span>-</span>
+                              </div>
+                              <div class="total-item">2</div>
+                              <div class="add-item">
+                                <span>+</span>
+                              </div>
+                            </div> -->
+                            <div class="input-group bootstrap-touchspin">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default bootstrap-touchspin-down" type="button" (click)="addQuantityFun($event,item.menuItemid,'minus','addQuantity'+item.menuItemid)">-</button>
+                              </span>
+                              <input id="addQuantity{{item.menuItemid}}" type="text" [value]="0" class="cls-licensecnt form-control" name="addQuantity{{item.menuItemid}}"
+                              [(ngModel)]="addQuantity[item.menuItemid]"
+                              style="display:block;">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default bootstrap-touchspin-up" (click)="addQuantityFun($event,item.menuItemid,'plus','addQuantity'+item.menuItemid)" type="button">+</button>
+                              </span>
+                            </div>
+                            <div class="item-total-price">
+                              <span>${{item.unitPrice | number}}</span>
+                            </div>
+                            <div class="list-detail-btn" [ngClass]="{'added-item':item.IsoptionApplicable == '1' || item.IsSizeApplicable == '1'}">
+                              <div class="comment-images">
+                                <a href="javascript:void(0);" *ngIf="item.IsoptionApplicable == '1' || item.IsSizeApplicable == '1'" (click)=showPrompt(item.menuItemName,item.MenuItemNote,item.IsoptionApplicable,item.IsSizeApplicable,item.options,item.menuItemid,null,ii)>
+                                  <img src="../assets/images/message-icon-red.png">
+                                </a>
+                                <a href="javascript:void(0);" *ngIf="item.IsoptionApplicable == '0' && item.IsSizeApplicable == '0'" (click)=showPrompt(item.menuItemName,item.MenuItemNote,item.IsoptionApplicable,item.IsSizeApplicable,item.options,item.menuItemid,null,ii)>
+                                  <img src="../assets/images/message-icon-grey.png">
+                                </a>
+                              </div>
+                              <button class="add-btn" (click)="addMenuItem($event,item,'addQuantity'+item.menuItemid);">Add</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="gallery">Gallery</div>
+          <div role="tabpanel" class="tab-pane" id="review">
+            <!-- Review Template -->
+            <review></review>
+        </div>
+      </div>
+    </div>
+      <div class="rest-info-ad">
+        <p>Advertisement</p>
+      </div>
+      <div class="rest-info-video">
+        <div class="video-listing">
+          <h2>Videos</h2>
+          <div class="video-list">
+            <div class="video-grid">
+              <div class="video-time-wrap" data-toggle="modal" data-target="#first-video">
+                <img src="../assets/images/video-img1.png">
+                <div class="video-time">0:41</div>
+              </div>
+              <div class="modal fade" id="first-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/FlDX6LYird4" frameborder="0" allowfullscreen="" style="display: inline;"></iframe> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="video-title">Video Title</div>
+            </div>
+            <div class="video-grid">
+              <div class="video-time-wrap" data-toggle="modal" data-target="#second-video">
+                <img src="../assets/images/video-img2.png">
+                <div class="video-time">0:29</div>
+              </div>
+              <div class="modal fade" id="second-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/FlDX6LYird4" frameborder="0" allowfullscreen="" style="display: inline;"></iframe> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="video-title">Video Title</div>
+            </div>
+            <div class="video-grid">
+              <div class="video-time-wrap" data-toggle="modal" data-target="#third-video">
+                <img src="../assets/images/video-img3.png">
+                <div class="video-time">0:59</div>
+              </div>
+              <div class="modal fade" id="third-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/FlDX6LYird4" frameborder="0" allowfullscreen="" style="display: inline;"></iframe> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="video-title">Video Title</div>
+            </div>
+          </div>
+        </div>
+        <div class="presenting-dish-video video-grid">
+          <h2><span class="presenting-text">Presenting</span> the dish from kitchen</h2>
+          <div class="video-time-wrap" data-toggle="modal" data-target="#present-dish-video1">
+            <img src="../assets/images/video-img.png">
+            <div class="video-play-icon">
+              <img src="../assets/images/video-play-button.png">
+            </div>
+          </div>
+          <div class="modal fade" id="present-dish-video1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                  <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/FlDX6LYird4" frameborder="0" allowfullscreen="" style="display: inline;"></iframe> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-detail-wrap">
+      <div class="map-direction-wrap">
+        <div class="map-direction-btn">
+            <!--<a href="javascript:void(0);" class="map-btn grey-btn">View Map</a>
+          <a href="javascript:void(0);" [routerLink]=""  #view_direction class="direction-btn grey-btn" (Click)="showDirection()">View Direction</a> -->
+          <button type="button" [routerLink]="" #view_direction class="map-btn grey-btn" style="width: calc(50% - 9px);" [ngClass]="{'active':isViewMap}">View Map</button>
+          <button type="button" [routerLink]="" #view_direction class="direction-btn grey-btn" (click)="showDirection()" style="width: calc(50% - 9px);">View Direction</button>
+           <!-- <button type="submit" class="direction-btn grey-btn" (Click)="showDirection()"> View Direction</button>-->
+        </div>
+        <div class="search-map">
+          <ngui-map zoom="19"  center="{{centerLocation}}" (mapReady$)="onMapReady($event)" (mapClick)="onMapClick($event)" mapTypeId="satellite"  >
+            <marker *ngFor="let pos of positions" [position]="pos" (click)="clicked($event)" label="B"></marker>
+              <directions-renderer
+                [suppressMarkers]="true"
+                [draggable]="true"
+                panel="#my-panel"
+                (directions_changed)="directionsChanged()"
+                [directions-request]="direction">
+              </directions-renderer>
+            <info-window id="iw">
+              <div *ngIf="marker.display">
+                <span class="markerTitle">{{ marker.resTitle }}</span>
+                <span class="markerAddr">{{ marker.resAddress }}</span>
+              </div>
+            </info-window>
+            <marker position="{{direction.origin}}"  (click)="originclicked($event)" color="green" label="A" ></marker>
+            <info-window id="iwo">
+              <div *ngIf="originmarker.display">
+                <span class="markerTitle">{{ originmarker.resTitle }}</span>
+                <span class="markerAddr">{{ originmarker.resAddress }}</span>
+              </div>
+            </info-window>
+
+          </ngui-map>
+          <div id="my-panel" style='overflow: overlay;max-height: 100px;'></div>
+        </div>
+      </div>
+      <form novalidate (ngSubmit)="continuePaymentForm.valid && onSubmit(continuePaymentForm)" name="continuePaymentForm" #continuePaymentForm="ngForm" id="continuePaymentForm">
+      <div class="my-order-list-section">
+        <div class="my-order-header-wrap">
+          <div class="my-order-title">Order Type</div>
+        </div>
+        <div class="order-list-wrap">
+          <a href="javascript:void(0);" class="order-cart-item-wrap">
+            <div class="my-order-cart"> 
+              <div class="form-group" >
+                <div class="order-type-radio-wrap radio-inline-custom" *ngFor="let itemDel of deliveryType">
+                  <div >
+                    <input type="radio" name="deliType" [value]="itemDel.value" [(ngModel)]="deliType" deliType="ngModel" (change)="displayDialog($event)" required ng-init="checked=deliType">{{itemDel.name}}
+                    <span class="input-rc-span"></span>
+                  </div>
+                </div>
+                <div *ngIf="continuePaymentForm.submitted" >
+                  <div [hidden]="!continuePaymentForm.controls.deliType?.hasError('required')" class="alert alert-danger"> 
+                      Order Type is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="form-group" *ngIf="deliType == 'de'" > 
+            <label for="postecode" class='label-custom'>Poste Code:</label>
+            <input id="postecode" type="text" [value]=""  [(ngModel)]="postecode" name="postecode"  (keydown)="displayDialog($event)" required/>
+            <span class="input-rc-span"></span> 
+            <div *ngIf="continuePaymentForm.submitted" >
+              <div [hidden]="!continuePaymentForm.controls.postecode?.hasError('required')"  class="alert alert-danger"> 
+                 Postcode is required
+              </div>
+            </div>
+        </div>
+        </div>
+
+      <div class="my-order-list-section">
+        <div class="my-order-header-wrap">
+          <div class="my-order-title">My Order</div>
+          <a href="javascript:void(0);" class="order-cart-item-wrap">
+            <div class="my-order-cart">
+              <span class="my-order-cart-item" *ngIf="myOrders">{{myOrders.length}}</span>
+            </div>
+          </a>
+        </div>
+        <div class="order-list-wrap" *ngIf="myOrders">
+          <div class="list-item categories-order-details" *ngFor="let item of myOrders; let i = index">
+            <div class="item-name">
+              <span class="item-name op-icon" [ngClass]="{'op-nonveg':item.menuItem.vegOrNonVeg == 'N', 'op-veg':item.menuItem.vegOrNonVeg == 'V'}">{{item.menuItem.menuItemName}}</span>
+            </div>
+            <div class="input-group bootstrap-touchspin">
+
+              <span class="input-group-btn">
+                <button class="btn btn-default bootstrap-touchspin-down" type="button" (click)="addQuantityMyOrderFun($event,item.menuItem.menuItemid,'minus','addQuantityMyOrder'+item.menuItem.menuItemid,item.menuItem.unitPrice,i)">-</button>
+              </span>
+              <input id="addQuantityMyOrder{{item.menuItem.menuItemid}}" type="text" [value]="0" class="cls-licensecnt form-control" name="addQuantityMyOrder{{item.menuItem.menuItemid}}"
+              [(ngModel)]="item.quantity"
+              style="display:block;">
+              <span class="input-group-btn">
+                <button class="btn btn-default bootstrap-touchspin-up" (click)="addQuantityMyOrderFun($event,item.menuItem.menuItemid,'plus','addQuantityMyOrder'+item.menuItem.menuItemid,item.menuItem.unitPrice,i)" type="button">+</button>
+              </span>
+            </div>
+            <div class="item-total-price">
+              <span>${{item.menuItem.unitPrice | number}}</span>
+            </div>
+            <!-- <div class="item-total-price">
+              <span>$50</span>
+            </div> -->
+            <!-- <div class="comment-images">
+              <a href="javascript:void(0);">
+                <img src="../assets/images/message-icon-red.png">
+              </a>
+            </div> -->
+            <div class="comment-images" [ngClass]="{'added-item':item.menuItem.IsoptionApplicable == '1' || item.menuItem.IsSizeApplicable == '1'}">
+              <div class="comment-images">
+                <a href="javascript:void(0);" *ngIf="item.menuItem.IsoptionApplicable == '1' || item.menuItem.IsSizeApplicable == '1'" (click)=showPrompt(item.menuItem.menuItemName,item.menuItem.MenuItemNote,item.menuItem.IsoptionApplicable,item.menuItem.IsSizeApplicable,item.menuItem.options,item.menuItem.menuItemid,item,i)>
+                  <img src="../assets/images/message-icon-red.png">
+                </a>
+                <a href="javascript:void(0);" *ngIf="item.menuItem.IsoptionApplicable == '0' && item.menuItem.IsSizeApplicable == '0'" (click)=showPrompt(item.menuItem.menuItemName,item.menuItem.MenuItemNote,item.menuItem.IsoptionApplicable,item.menuItem.IsSizeApplicable,item.menuItem.options,item.menuItem.menuItemid,item,i)>
+                  <img src="../assets/images/message-icon-grey.png">
+                </a>
+              </div>
+            </div>
+         </div>
+        </div>
+        <!-- <div class="order-total-list-wrap">
+          <div class="order-total-detail">
+            <div class="order-total-text">Sub Total:</div>
+            <div class="order-total-price">$45</div>
+          </div>
+          <div class="order-total-detail">
+            <div class="order-total-text">Delivery Charges:</div>
+            <div class="order-total-price">$5</div>
+          </div>
+          <div class="order-total-detail">
+            <div class="order-total-text">Packing Charges:</div>
+            <div class="order-total-price">$5</div>
+          </div>
+        </div> -->
+        <div class="grand-total-wrap">
+          <div class="grand-total-text"><span>Sub Total </span><span class="order-total-text">(Quanatity * Price)</span> : </div>
+          <div class="grand-total-price">${{finalSubTotal}}</div>
+        </div>
+        <div class="checkout-btn">
+            <button class="red-btn-custom" type="submit"  data-toggle="modal" data-target="#ask-login">Checkout</button>
+        </div>
+      </div>
+      <div class="ongoing-offers-wrap">
+        <div class="ongoing-offers-heading">
+          <div class="ongoing-offers-title">Ongoing Offers</div>
+        </div>
+        <div class="ongoing-offer-list">
+          <div class="offers-slider" *ngIf="restaurantData.coupons">
+            <swiper class="popular-swiper-slider" [config]="configCoupons">
+              <div class="swiper-wrapper">
+                <div class="OfferCoupon swiper-slide" *ngFor="let items of restaurantData.coupons">
+                  <div class="offer-respon-width coupon-wrap">
+                    <div class="coupon__title">
+                      <img src="../assets/images/tag.png">
+                      <div class="coupon__header">
+                        <strong class="coupon__code">Coupon Code : {{items.couponcode}}</strong>
+                        <h3 class="coupon__name">{{items.couponName}}</h3>
+                      </div>
+                      <div class="restaurant__name">{{restaurantData.merchantname}} <span>{{restaurantData.address.address1}} {{restaurantData.address.address2}}</span>
+                        <span>{{restaurantData.address.city}} {{restaurantData.address.suburb}}</span>
+                        <span>{{restaurantData.address.state}} {{restaurantData.address.country}}</span>
+                      </div>
+                    </div>
+                    <div class="coupon__detail">
+                      <p>Lorem Ipsum is simply and typesetting industry dummy text of the printing and typesetting industry and typesetting industry</p>
+                      <div class="coupon__validation">
+                        <strong>Valid: </strong>
+                        <span> {{items.startdate | amDateFormat: 'MMMM Do'}} - {{items.enddate | amDateFormat: 'MMMM Do'}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div class="offers-slider offer-white-nav" *ngIf="restaurantData.offers">
+            <swiper class="popular-swiper-slider" [config]="configOffers">
+              <div class="swiper-wrapper">
+                <div class="OfferCoupon offer-wrap swiper-slide" [ngClass]="{'bottom-align-content':items.businessunit_id == 9, 'top-bottom-align-content':(items.businessunit_id != 9)}" *ngFor="let items of restaurantData.offers">
+                  <div class="offer-respon-width">
+                    <img *ngIf="items.businessunit_id == 1" src="../assets/images/offer-2.png">
+                    <img *ngIf="items.businessunit_id == 6" src="../assets/images/offer-5.png">
+                    <img *ngIf="items.businessunit_id == 9" src="../assets/images/offer-6.jpg">
+                    <img *ngIf="items.businessunit_id == 17" src="../assets/images/offer-4.png">
+                    <img *ngIf="items.businessunit_id != 6 && items.businessunit_id != 9 && items.businessunit_id != 17 && items.businessunit_id != 1" src="../assets/images/offer-2.png">
+                    <div class="offer-header" *ngIf="items.businessunit_id == 9">
+                      <h2>{{items.OfferName}}</h2>
+                      <div class="cashback-text">
+                        <span>{{items.CurrencySymbol}}{{items.Offervalue | number}}</span>
+                        <!-- OFF
+                        <span>+ $150 </span>
+                        CASHBACK -->
+                      </div>
+                    </div>
+
+                    <div class="offer-header-text" *ngIf="items.businessunit_id != 9">
+                      <h3 >{{items.OfferName}}</h3>
+                      <h4><i>{{items.CurrencySymbol}}{{items.Offervalue | number}}</i></h4>
+                    </div>
+
+                    <div class="offer-validity" [ngClass]="{'offer-validity-bg':(items.businessunit_id != 9)}">
+                      <p>{{items.offerStartDate | amDateFormat: 'MMMM Do'}} - {{items.offerEndDate | amDateFormat: 'MMMM Do'}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper>
+            <div class="swiper-button-next-4"></div>
+            <div class="swiper-button-prev-4"></div>
+          </div>
+          <!-- <div class="OfferCoupon offer-wrap offer-1">
+            <img src="../assets/images/offer-6.jpg">
+            <div class="offer-header">
+                <h2>First Order Free!</h2>
+                <div class="cashback-text">
+                  <span>$150</span>
+                  OFF
+                  <span>+ $150 </span>
+                  CASHBACK
+                </div>
+              </div>
+              <div class="offer-validity">
+                <p>29 March-1 April</p>
+              </div>
+          </div>
+          <div class="OfferCoupon offer-wrap offer-2">
+            <img src="../assets/images/offer-4.png">
+            <div class="offer-header-text">
+              <h3>10% DISCOUNT</h3>
+              <h4><i>On a bill of</i></h4>
+              <h4><i>more then $350</i></h4>
+            </div>
+            <div class="offer-validity offer-validity-bg">
+              <p>VALID: 2 MAY - 5 JUNE</p>
+            </div>
+          </div>
+          <div class="OfferCoupon offer-wrap offer-2">
+            <img src="../assets/images/offer-2.png">
+            <div class="offer-header-text">
+              <h3>15% DISCOUNT</h3>
+              <h4><i>On a bill of</i></h4>
+              <h4><i>more then $500</i></h4>
+            </div>
+            <div class="offer-validity offer-validity-bg">
+              <p>VALID: 2 MAY - 5 JUNE</p>
+            </div>
+          </div> -->
+          <!-- Restaurent -->
+          <!-- <div class="OfferCoupon offer-wrap offer-2">
+            <img src="../assets/images/offer-5.png">
+            <div class="offer-header-text">
+              <h3>15% DISCOUNT</h3>
+              <h4><i>On a bill of</i></h4>
+              <h4><i>more then $500</i></h4>
+            </div>
+            <div class="offer-validity offer-validity-bg">
+              <p>VALID: 2 MAY - 5 JUNE</p>
+            </div>
+          </div> -->
+           <!-- Cake -->
+          <!-- <div class="OfferCoupon offer-wrap offer-3">
+            <img src="../assets/images/offer-3.png">
+            <div class="offer-header-text">
+              <h3>Upto 60% discount</h3>
+              <div class="special-offer-wrap">Special Offer</div>
+            </div>
+            <div class="offer-validity offer-validity-bg">
+              <p>Valid on Monday</p>
+            </div>
+          </div> -->
+          <!-- <div class="OfferCoupon offer-wrap offer-3 OfferCoupon-na">
+            <img src="../assets/images/offer-3.png">
+            <div class="offer-header-text">
+              <h3>Watch this space.</h3>
+              <h3>Offers coming soon.</h3>
+            </div>
+          </div>  -->
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+  <!-- End Detail Page Section -->
+<form name="loginForm" novalidate="" class="ng-untouched ng-pristine ng-invalid"> 
+  <div class="modal fade " id="ask-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" *ngIf="displaylogin" >
+    <div class="modal-dialog sign-up-btn-wrap" role="document">
+        <div class="sign-up-wrapper log-in-wrapper page-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                  OrderPoint
+                </div>
+               <div class="sign-up-form-wrap log-in-form-wrap">
+                <div class="sign-up-btn-wrap log-in-form">
+                    <span class="login-dialog-span">Do you want to login?</span>
+                    <div class="modal-body  sign-up-wrapper">
+                      <button name='yes' id='yes'  (click)="checkUser('login');" data-dismiss="modal"  class="red-btn">Yes</button>
+                      <button  data-dismiss="modal" class="btn btn-default cancel-btn"  (click)="checkUser('cancel');">Cancel</button>
+                    </div>
+                  </div>
+                </div> 
+            </div>  
+        </div>
+    </div>
+  </div>
+</form>
+  <!-- End My History Page -->

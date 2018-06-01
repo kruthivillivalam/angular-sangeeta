@@ -1,0 +1,124 @@
+<div class="col-md-6 textAlignCenter"  *ngIf="isSidebar">
+  <h5 class="leftmenu-myorder-tab-menupage-inner-js">{{cartItem.details.menuItemName}}</h5>
+  <p class="size-specific-myordertab-menupage-inner-js" *ngIf="cartItem.details.sizeInfo">{{cartItem.details.sizeInfo.sizeName}}</p>
+</div>
+
+<div class="col-md-6" *ngIf="isSidebar">
+  <h5 class="incrementors-heading-cartsection-menupage-inner-js">Quantity</h5>
+  <div class="input-group cartsection-ordertab-menupage-inner-js">
+    <span class="input-group-btn" *ngIf="editable">
+      <button type="button" class="btn btn-default btn-number rightmenu-myorder-numbersection-buttons-menu-page-inner-js" data-type="minus"
+      data-field="quant[1]" (click)="decreaseQty()">
+      <span class="glyphicon glyphicon-minus"></span>
+    </button>
+  </span>
+  <span class="ct-qt-js">{{cartItem.quantity}}</span>
+  <span class="input-group-btn" *ngIf="editable">
+    <button type="button" class="btn btn-default btn-number numbersection-buttons-cart-page-inner-js" data-type="plus" data-field="quant[1]"
+    (click)="increaseQty()">
+    <span class="glyphicon glyphicon-plus"></span>
+  </button>
+</span>
+</div>
+</div>
+
+<div class="col-md-12" *ngIf="isSidebar">
+  <div class="incrementors-heading-cartsection-flex-box">
+    <p class="incrementors-heading-cartsection-menupage-inner-js">Rate</p>
+    <h5 class="leftmenu-myorder-price-menupage-inner-js" *ngIf='hideItemPrice && !freeItemFlag'>
+      {{cartItem.details.unitPrice | currency:'USD':'symbol'}}
+    </h5>
+    <h5 class="leftmenu-myorder-price-menupage-inner-js" *ngIf='!hideItemPrice && !freeItemFlag'>
+      {{cartItem.details.unitPrice | currency:'USD':'symbol'}}
+    </h5>
+    <h5 class="leftmenu-myorder-price-menupage-inner-js" *ngIf='!hideItemPrice && !freeItemFlag'>
+      {{((cartItem.details.unitPrice * cartItem.quantity) + (totalAddOnPrice * cartItem.quantity))| currency:'USD':'symbol'}}
+    </h5>
+    <h5 class="leftmenu-myorder-price-menupage-inner-js" *ngIf='!hideItemPrice && freeItemFlag'>
+      Free
+    </h5>
+  </div>
+</div>
+
+
+<!-- html mockup to show the added add-on items on a menu item like in case of lasaka noodles.. -->
+
+<div class="col-md-12 marginTop"  *ngIf="isSidebar">
+  <div class="row">
+    <div class="cart-item-specific-addon1" *ngFor="let item of allAdditionalAddedItem">
+      <div class="col-md-8  col-sm-8" >
+        <a><i class="glyphicon " area-hidden="true"></i></a>
+        <span class="specific-addon-name "> -{{item.optionItem.optionitemname}}</span>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <h5 class="specific-addon-price  textAlignRight">${{(item.optionItem.AdditionalCost).toFixed(2) || "NA"}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 textAlignCenter" *ngIf="isSidebar">
+    <div class="col-md-3 col-sm-3">
+      <a class="editlink-cart-page-inner-js1 leftItem" href="javascript:void(0);" *ngIf="editable" (click)="showPrompt()">
+        <span class="glyphicon glyphicon-edit"></span>Edit</a>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <a class="editlink-cart-page-inner-js1 rightItem" href="javascript:void(0);" *ngIf="editable" (click)="cartItemDeletion.emit({'itemIdx': cartItemIdx})">
+          <span class="glyphicon glyphicon-erase"></span>Delete</a>
+        </div>
+      </div>
+    </div>
+    <!-- html mockup to show the added add-on items on a menu item like in case of lasaka noodles ends.. -->
+
+    <div class="holder-display-listng-cartpage-inner-js" *ngIf="!isSidebar">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h5 class="dishname-cartpage-inner-js">{{cartItem.details.menuItemName}}</h5>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <div class="input-group-btn-vertical numbersincrease-ordertab-adjust-inner-page-js">
+            <button  *ngIf="editable" class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button" (click)="decreaseQty()">
+              <span class="glyphicon glyphicon-minus adjusticons-value-cartpage-inner-js"></span>
+            </button>
+            <input type="text" class="form-control spinner-myorder-section-cartpage-inner-js" value="{{cartItem.quantity}}" disabled>
+            <button  *ngIf="editable" class="btn btn-default spnnerup-calorietab-cartpage-inner-js" type="button" (click)="increaseQty()">
+              <span class="glyphicon glyphicon-erase adjusticons-value-cartpage-inner-js"></span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3" styel="background-color: red">
+          <h5 class="dishname-cartpage-inner-js textAlignRight" *ngIf='!hideItemPrice && !freeItemFlag'>
+            {{ cartItem.details.unitPrice | currency:'USD':'symbol'}}
+          </h5>
+          <h5 class="dishname-cartpage-inner-js" *ngIf='!hideItemPrice && freeItemFlag'>
+            Free
+          </h5>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <h5 class="dishname-cartpage-inner-js textAlignRight ">{{(cartItem.details.unitPrice * cartItem.quantity)| currency:'USD':'symbol'}}</h5>
+        </div>
+        <div class="col-md-12 marginTop"  *ngIf="!isSidebar">
+          <div class="row">
+            <div class="cart-item-specific-addon1" *ngFor="let item of allAdditionalAddedItem">
+              <div class="col-md-6  col-sm-6" >
+                <a><i class="glyphicon " area-hidden="true"></i></a>
+                <span class="specific-addon-name marginLeft"> - {{item.optionItem.optionitemname}}</span>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="specific-addon-price  textAlignRight">${{(item.optionItem.AdditionalCost).toFixed(2) || "NA"}}</h5>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <h5 class="specific-addon-price textAlignRight">${{(item.optionItem.AdditionalCost*cartItem.quantity).toFixed(2) || "NA"}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <a class="editlink-cart-page-inner-js" href="javascript:void(0);" *ngIf="editable" (click)="showPrompt()">
+            <span class="glyphicon glyphicon-edit"></span>Edit</a>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <a class="editlink-cart-page-inner-js" href="javascript:void(0);" *ngIf="editable" (click)="cartItemDeletion.emit({'itemIdx': cartItemIdx})">
+              <span class="glyphicon glyphicon-erase"></span>Delete</a>
+            </div>
+          </div>
+
+        </div>

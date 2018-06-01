@@ -1,0 +1,151 @@
+/**
+ * @file
+ * SCSS file for variables.
+ *
+ * All variables used in SCSS are defined in this file.
+ */
+
+
+/**
+ * Font face
+ */
+$opensans-extrabold: 'OpenSans Extrabold';
+$opensans-bold: 'OpenSans Bold';
+$opensans-semibold: 'OpenSans SemiBold';
+$opensans-bolditalic: 'OpenSans BoldItalic';
+$opensans-italic: 'OpenSans Italic';
+$opensans-regular: 'OpenSans Regular';
+$opensans-light: 'OpenSans light';
+
+$century-gothic: 'Century-gothic Regular';
+$century-gothic-bold: 'Century-gothic Bold';
+
+$lusitana-regular: 'Lusitana Regular';
+
+$lato-regular: 'Lato Regular';
+$lato-bold: 'Lato Bold';
+$lato-light: 'Lato light';
+
+
+/* URLs */
+$url-opensans-extrabold: url('../fonts/OpenSans/OpenSans-ExtraBold.woff');
+$url-opensans-bold: url('../fonts/OpenSans/OpenSans-Bold.woff');
+$url-opensans-semibold: url('../fonts/OpenSans/OpenSans-Semibold.woff');
+$url-opensans-bolditalic: url('../fonts/OpenSans/OpenSans-BoldItalic.woff');
+$url-opensans-italic: url('../fonts/OpenSans/OpenSans-Italic.woff');
+$url-opensans-regular: url('../fonts/OpenSans/OpenSans-Regular.woff');
+$url-opensans-light: url('../fonts/OpenSans/OpenSans-Light.woff');
+
+$url-century-gothic: url('../fonts/Century-gothic/century-gothic.woff');
+$url-century-gothic-bold: url('../fonts/Century-gothic/century-gothic-bold.woff');
+
+$url-lusitana-regular: url('../fonts/Lusitana/lusitana-regular.woff');
+
+$url-lato-regular: url('../fonts/Lato/Lato-Regular.woff');
+$url-lato-bold: url('../fonts/Lato/Lato-Bold.woff');
+$url-lato-light: url('../fonts/Lato/Lato-Light.woff');
+
+/* Color code */
+$white:       #FFF;
+$white-f5:    #F5F7F6;
+$white-f5f:   #F5F5F5;
+
+$black:       #000;
+$black-29:    #292929;
+$black-48:    #484747;
+$black-33:    #333;
+
+$gray-93:     #939696;
+$gray-6e:     #6E6E6E;
+$gray-da:     #DADADA;
+$gray-b6:     #B6B6B6;
+$gray-df:     #DFE1E0;
+$gray-b5:     #B5B5B5;
+$gray-72:     #727272;
+$gray-66:     #666;
+$gray-93:     #939393;
+$gray-cc:     #CCC;
+$gray-f6:     #F6F6F6;
+$gray-f9:     #F9F9F9;
+$gray-f0:     #F0F0F0;
+$gray-8b:     #8B8B8B;
+$gray-3e:     #3E3D3D;
+$gray-9f:     #9F9F9F;
+$gray-fc:     #FCFCFC;
+$gray-c3:     #C3C3C3;
+$gray-c7:     #C7C7C7;
+$gray-7c:     #7C7C7C;
+$gray-78:     #787878;
+$gray-42:     #424242;
+$gray-dd:     #DDD;
+$gray-d1:     #D1D1D1;
+$gray-6c:     #6C6C6C;
+$gray-e3:     #E3E9E5;
+$gray-3d:     #3D3D3D;
+
+$yellow-ff:   #FFF882;
+$yellow-bd:   #BD9522;
+$yellow-ec:   #ECD65B;
+$yellow-f7:   #F7E600;
+
+$red-c6:      #C60024;
+$red-c61:     #C61C2C;
+$red-db:      #DB1300;
+$red-d0:      #D04800;
+$red-e4:      #E40046;
+$red-c1:      #C1001B;
+$red-ce:      #CE3852;
+$red-f0:      #F0001E;
+$red-e7:      #E72738;
+$red-fb:      #FB1835;
+
+$dark-red-5c: #5C0E0C;
+
+$pink-c8:     #C8B9BA;
+$pink-fa:     #FAF7F2;
+$pink-ed:     #EDEDED;
+$pink-fe:     #FE2B50;
+$pink-fe8:    #FE8B8B;
+
+$green-22:    #22B101;
+$green-78:    #78F24B;
+$green-00:    #008501;
+$green-80:    #80B826;
+$green-8d:    #8DCD61;
+$green-7d:    #7DBD3C;
+$green-2e:    #2E9690;
+
+$blue-44:     #44509B;
+$blue-17:     #17415F;
+$blue-31:     #31708F;
+$blue-0f:     #0F0059;
+$blue-42:     #42519A;
+$blue-4e:     #4E566A;
+$blue-39:     #3960B2;
+$blue-00:     #007AB6;
+
+$sky-blue-5d: #5DA8F3;
+$sky-blue-5f: #5FA6F1;
+$sky-blue-55: #5575F7;
+
+$black-rgb-2: rgba(44, 26, 26, .2);
+$black-rgb-5: rgba(44, 26, 26, .5);
+$black-rgb-4: rgba(0, 0, 0, .4);
+
+$white-rgb-9: rgba(251, 251, 251, .9);
+
+$gray-rgba-4: rgba(195, 195, 195, .4);
+
+$red-rgba-8:  rgba(175, 21, 41, .8);
+
+/**
+ * Media query (for responsive design)
+ */
+$small-desktop: 1200px;
+$ipad: 1024x;
+$ipad-portrait: 992px;
+$mobile: 767px;
+$mobile-landscape: 600px;
+$mobile-portrait: 480px;
+$small-mobile-portrait: 360px;
+/* End */

@@ -1,0 +1,60 @@
+// a {
+//    color: #FFFFFF;
+//    font-size: 10px;
+//    text-align: center;
+//    font-weight: 1000;
+//    @media (max-width: 1200px) {
+//       font-size: 14px;
+//    }
+// }
+// h4 {
+//     color: #2E2E2E;
+//    font-size: 16px;
+//    text-align: center;
+//    font-weight: 1000;
+//    @media (max-width: 1200px) {
+//       font-size: 14px;
+// 	  color: #2E2E2E;
+//    }
+// }
+// h5 {
+//     color: #FFFFFF;
+//    font-size: 16px;
+//    text-align: center;
+//    font-weight: 1000;
+//    @media (max-width: 1200px) {
+//       font-size: 14px;
+//    }
+// }
+// .cusine-details {
+//     text-align:center;
+// }
+
+.card-text{
+    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.card-img-top{
+    height: 150px;
+}
+
+.myCentered{
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.carousel-indicators {
+    bottom: 0px !important;
+}
+
+img.rounded {
+    border-radius: 10px;
+}
+
+.featuredBtn {
+    margin: 0 0 15px 0;
+}

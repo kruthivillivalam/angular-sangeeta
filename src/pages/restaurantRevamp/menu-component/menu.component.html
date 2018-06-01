@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="searchbar-menu-tab-menupage-inner-js">
+            <span class="glyphicon glyphicon-search search-menutab-submiticon-menupage-inner-js"></span>
+            <input class="submit-link-holder-menutab-menupage-inner-js" type="text" name="search" [(ngModel)]='searchKey'>
+            <a class="submit-link-menutab-menupage-inner-js" (click)="onSearchBtnClick(searchKey)">Search</a>
+        </div>
+    </div>
+</div>
+
+<div class="holder-menu-tab-categories-content-menupage-js">
+    <div class="row">
+        <div class="col-md-3 col-sm-3">
+            <h5 class="menu-tabs-head-menupage-inner-js">Categories</h5>
+            <ul class="nav nav-tabs holder-list-menutab-leftside-menupage-js">
+                <li [ngClass]="{'active': selectedCategory === 'All'}">
+                    <a class="menu-list-datalinks-menupage-inner-js" data-toggle="tab" href="#menu" (click)="setCategory('All')">All</a>
+                </li>
+                <!-- <hr style="margin: 0 0 0 0;width: 100px;border-top: 1px solid #e6e6e6;"> -->
+                <li [ngClass]="{'active': selectedCategory == category}" *ngFor="let category of restaurantMenu">
+                    <a class="menu-list-datalinks-menupage-inner-js" data-toggle="tab" href="#menu" (click)="setCategory(category)">{{category.groupName}}</a>
+                </li>
+                <hr style="margin: 0 0 0 0;width: 100px;border-top: 1px solid #e6e6e6;">
+            </ul>
+        </div>
+
+        <div class="col-md-9 col-sm-9">
+            <div class="holder-display-outer-list-menutab-menupage-inner-js">
+                <div class="tab-content">
+                    <div id="menu" class="tab-pane fade in active">
+                        <div class="row" *ngIf="(menu | searchFilter: searchText) && (menu | searchFilter: searchText).length>0">
+                            <div class="col-md-6 col-sm-6" *ngFor="let foodItem of (menu | searchFilter: searchText); let idx = index;">
+                                <menu-item [cartItemIdx]='idx' [qty]="foodItem.quantity ? foodItem.quantity : 0" [foodItemObj]="foodItem"></menu-item>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="(menu | searchFilter: searchText) && (menu | searchFilter: searchText).length ===0">
+                            <div style="font-size:12px;color:rgb(187, 8, 8);text-align: center">NO ITEMS FOUND</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

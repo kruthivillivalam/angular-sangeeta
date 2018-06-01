@@ -1,0 +1,66 @@
+<div class="modal-dialog">
+  <div class="modal-content add-comment-popup-content">
+    <div class="modal-header">
+      <div class="popup-title-wrap">
+        <img src="../../assets/images/comment-icon.png">
+        <span>{{title}}</span>
+      </div>
+      <button *ngIf="showAddToCart" type="button" class="close" (click)="close()">&times;</button>
+      <button *ngIf="!showAddToCart" type="button" class="close" (click)="onOkPressed()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="panel panel-default" *ngIf="issize">
+        <div class="panel-body">
+          <div class="row">
+            <div class="well well-sm">Size</div>
+            <div class="col-sm-4" *ngFor="let item of promptItem.options.size">
+              <div class="radio">
+                <label><input type="radio" name="sizeCheck" value="{{item.id}}" [(ngModel)]="item.id" (click)="updateSizeInfo(item)">
+                  {{item.size_name}} - $ {{item.additionalcost}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default" *ngIf="isoptions">
+        <div class="panel-body">
+          <div class="row" *ngFor="let item of promptItem.options.optionGroups">
+            <div class="well well-sm">{{item.optionGroupName}}<span *ngIf="item.option_selection_required_type && item.option_selection_required_type === 'M'">*</span></div>
+            <div *ngIf="item.selectionType == 'M'">
+              <div class="col-sm-4" *ngFor="let inneritem of item.optionItems">
+                <div class="checkbox">
+                  <label><input type="checkbox" name="optionsCheck" value="{{inneritem.optionitemname}}"
+                    [checked]="inneritem.checked" (change)="item.selected = inneritem.checked">
+                    {{inneritem.optionitemname}} - $ {{inneritem.AdditionalCost || 0}}
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="item.selectionType == 'S'">
+              <div class="col-sm-4" *ngFor="let inneritems of item.optionItems">
+                <div class="radio">
+                  <label><input type="radio" name="optionRadio" value="{{inneritems.checked}}" [checked]="inneritems.checked"  (click)="item.selected = true; inneritems.checked=true">
+                    {{inneritems.optionitemname}} - $ {{inneritems.AdditionalCost || 0}}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="panel panel-default">
+      <div class="well well-sm">Extra Note</div>
+      <div class="panel-body">
+      <textarea rows="4" cols="75" placeholder="Add extra note here.." [(ngModel)]="message" name="name"></textarea>
+    </div>
+  </div>-->
+</div>
+<div class="modal-footer">
+  <button *ngIf="showAddToCart" type="button" class="btn btn-danger submit-btn" (click)="addToCart()">Add To Cart</button>
+  <button *ngIf="!showAddToCart" type="button" class="btn btn-danger submit-btn" (click)="onOkPressed()">OK</button>
+  <button *ngIf="showAddToCart" type="button" class="btn btn-default cancel-btn" (click)="close()" >Cancel</button>
+  <button *ngIf="!showAddToCart" type="button" class="btn btn-default cancel-btn" (click)="onOkPressed()" >Cancel</button>
+</div>
+</div>
+</div>

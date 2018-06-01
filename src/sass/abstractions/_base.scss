@@ -1,0 +1,35 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Base css of site
+ */
+
+* {
+  line-height: normal;
+  vertical-align: top;
+}
+
+body {
+  /*font-family: $opensans-regular;*/
+  font-family: $century-gothic;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+video {
+  height: auto;
+  width: 100%;
+}

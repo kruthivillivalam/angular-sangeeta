@@ -1,0 +1,128 @@
+<div class="menupage-sec1-mapinfo-js submit-listings-content-m">
+  <div class="container">
+    <div class="row bs-wizard" style="border-bottom:0;">
+      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">Step 1</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Enter Information</div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step active">
+        <!-- complete -->
+        <div class="text-center bs-wizard-stepnum">Step 2</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Select Plans and Addons</div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step disabled">
+        <!-- complete -->
+        <div class="text-center bs-wizard-stepnum">Step 3</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Make Payments</div>
+      </div>
+    </div>
+  </div>
+  <form  novalidate (ngSubmit)="planForm.valid && onSubmit(planForm.value)" name="planForm" #planForm="ngForm" class="submit-form-holder-m">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="holder-fullcontent-cartsummary-page-inner-js submit-listings-holder-m">
+            <div class="">
+              <!-- Pricing table section strts form here... -->
+              <section class="content-block pricing-table-2" style="padding:35px 0 0">
+                <div class="row">
+                  <div class="tables-row" *ngIf="planData">
+                    <div class="col-md-4 price-block " [ngClass]="{'price-block-selected' : item.planName == planValue.name}" *ngFor="let item of planData">
+                      <div class="ribbon red-hot"></div>
+                      <header>
+                        <h2>{{item.planName}}</h2>
+                        <div class="price">
+                          <span class="currency">{{item.planCurSymbol}}</span>
+                          <span class="amount">{{item.planPrice}}</span> / 
+                          <span class="period">{{item.planDuration}}</span>
+                        </div>
+                        <!-- /.price -->
+                        <a href="javascript:void(0)" name="{{item.planName}}" id="{{item.planId}}" #selectPlan class="btn btn-success" (click)="markSelectPlan(item.planName,item.planId,item.planPrice,item.planDuration);">
+                          <div class="selct-plan">
+                            Select Plan
+                          </div>
+                        </a>
+                        <div *ngIf="selectPlaned.errors && (selectPlaned.dirty || selectPlaned.touched || planForm.submitted)" class="alert alert-danger">
+                          <div [hidden]="!selectPlaned.errors">
+                            Please select at least one plan
+                          </div>
+                        </div>
+                      </header>
+                      <ul class="features">
+                        <li *ngFor="let innerItem of item.detail;let i = index">
+                          <span></span>
+                          <i class="fa " [ngClass]="{'fa-check':innerItem.included == 1,'fa-times':innerItem.included == 0}" [ngStyle]="{ 'color' : getColor(innerItem.included) }"></i> {{innerItem.modulename}}
+                        </li>
+                      </ul>
+                      <!-- /.features -->
+                    </div>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </section>
+              <!-- ./content-block -->
+              <!-- Section containing addons to be added to the cart.. -->
+              <div class="addons-wrap">
+                <h2>Select your Addons</h2>
+                <div class="row" *ngIf="addonData">
+                  <div class="col-md-3"  *ngFor="let item of addonData">
+                    <div class="single-addon-wrap">
+                      <img src="../../assets/images/padlock.png">
+                      <h4>{{item.addon_title}}</h4>
+                      <p>{{item.CurSymbol}}{{item.addon_price}}</p>
+                      <a href="javascript:void(0)" name="{{item.addon_title}}" id="{{item.id}}" (click)="setHiddenValue($event,item.addon_price);"
+                        class="btn">Add to Cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- ./addon-wrap -->
+
+              <div class="row" >
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 submit-font-props">
+                  <div class="col-md-12 terms-submit-page-step-2">
+                    <input type="checkbox" name="read-pdf" [(ngModel)]="readPdfs" #readPdf="ngModel" required >Read the Product Disclosure statement
+                    <div *ngIf="readPdf.errors && (readPdf.dirty || readPdf.touched || planForm.submitted)" class="alert alert-danger">
+                      <div [hidden]="!readPdf.errors.required">
+                        Please select read PDF
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 terms-submit-page-step-2">
+                    <input type="checkbox" name="term-condition" [(ngModel)]="termConditions" #termCondition="ngModel" required> I agree to the Terms and Conditions.
+                    <div *ngIf="termCondition.errors && (termCondition.dirty || termCondition.touched || planForm.submitted)" class="alert alert-danger">
+                      <div [hidden]="!termCondition.errors.required">
+                        Agree to terms and condition
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="clearfix"></div>
+
+                <div class="col-md-12">
+                  <input type="submit" class="submit-form-holder-input-continue" value="Continue">
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

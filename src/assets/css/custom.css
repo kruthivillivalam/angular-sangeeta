@@ -1,0 +1,7103 @@
+/* Put your custom styles here */
+/**
+	Some common styles or resets goes here..
+*/
+.over-txt{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(12,12,12,0.8);
+    padding: 7px 20px 7px 20px;
+    display: table;
+    float: left;
+    margin: 5px 0 0 0px;
+    text-transform: uppercase;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: transparent;
+}
+.promot-h2
+{
+        font-family: 'Suranna', serif;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 34px;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.promot-a
+{
+    font-family: 'montserrat', serif;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px;
+    display: table;
+    background-color: #B91319;
+    transition: all 0.2s ease 0s;
+    margin: 0 auto;
+    font-weight: 700;
+}
+.promot-a:hover
+{
+    background-color: #ffffff;
+    color: #161D27;
+}
+/**
+	Some common styles or resets ends here..
+*/
+/* top bar css start */
+.header
+{
+    width: 100%;
+}
+.header-div
+{
+    width: 100%;
+    position: relative;
+    background-image: url('../images/shutterstock_467823860.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom:6em;
+}
+.navbar-default
+{
+    z-index: 1;
+    background: rgba(0,0,0,0.4) !important;
+    border-bottom: 2px dashed #989899;
+    padding: 5px 0px 15px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin-bottom: 7%;
+}
+.navbar-default .navbar-nav li{
+	margin:10px 0 0;
+}
+.navbar-default .navbar-nav li a
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 20px 12px;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+}
+.navbar-default .navbar-nav li a:hover{
+	color:#eee;
+}
+.navbar-default .navbar-nav li .fa-shopping-cart
+{
+    position:relative;
+	top:-10px;
+}
+.navbar-default .navbar-nav li .dropdown-menu > li > a {
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+.navbar-nav > li > .dropdown-menu{
+	border-radius:0;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: #ccc;
+    background-color: transparent;
+}
+
+
+.top-black-background .navbar-nav li{
+	margin:0 0;
+}
+.top-black-background .navbar-nav li a{
+    padding: 10px 20px;
+	margin:15px 0;
+	color:#fff;
+}
+.top-black-background .navbar-nav li .dropdown-menu {
+	padding:0;
+	margin:0;
+}
+.top-black-background .navbar-nav li .dropdown-menu > li > a {
+	color: #232222;
+    margin: 0;
+    font-family: montserrat;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.top-black-background .navbar-nav li .currency-btn {
+    background-color: #fcda9a;
+    color: #000000;
+    font-family: 'Suranna', serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: table;
+    border: 1px solid transparent;
+    transition: all 0.5s ease-in-out;
+    border-radius: 0;
+	box-shadow:none;
+}
+.top-black-background .navbar-nav li .currency-btn:hover {
+    background-color: transparent !important;
+    color: #fcda9a !important;
+    border: 1px solid #fcda9a !important;
+}
+
+/* top bar css end */
+
+
+.bg-image
+{
+    width: 100%;
+}
+.bg-image h2
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+.bg-image h3
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+/* section start */
+.section
+{
+    width: 100%;
+}
+/* cuisine slider start */
+.cuisine-slider
+{
+    width: 100%;
+}
+.cuisine-img
+{
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.cusine-bg
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+}
+.cuisine-bg-reset
+{
+    right: 0;
+    left: 0;
+}
+/* cuisine slider end */
+/* featured restaurant start */
+.featured-resort
+{
+    width: 100%;
+    padding-bottom: 50px;
+	overflow:hidden;
+    padding-top: 50px;
+}
+.res-h3
+{
+    font-family: 'Montez', cursive;
+    color: #b48c80;
+    line-height: 34px;
+    font-size: 34px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.res-h2
+{
+    font-family: 'Suranna', serif;
+    color: #161d27;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 44px;
+    text-align: center;
+}
+.resort-img
+{
+    width: 100%;
+    /* border: 1px solid #a0a0a0; */
+    /* padding: 5px; */
+    box-shadow: 0 0 13px 2px #cccccc;
+}
+.resort-div
+{
+    padding: 15px 0;
+}
+.resort-profile
+{
+    background-color: #fcfbf9;
+    border: 1px solid #ededed;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    display: table;
+    width: 100%;
+    padding: 15px;
+}
+.resort-h2
+{
+       color: #41444c;
+    font-size: 19px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    margin: 0 0 12px;
+}
+.resort-p
+{
+        margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #464646;
+    text-align: center;
+}
+.resort1-p
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #464646;
+    text-align: center;
+    max-height: 90px;
+    margin: 9px 0 16px;
+    overflow: hidden;
+}
+.resort2-h2
+{
+        color: #B91319;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+.resort1-p a
+{
+    color: #b48c80;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 10em;
+    font-weight: 700;
+}
+/* featured restaurant end */
+/* order-point start */
+.order-point
+{
+    width: 100%;
+    background-image: url(../images/parallax-bg1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.order-point h2
+{
+    font-family: 'Suranna', serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+.order-point h3
+{
+    font-family: 'Montez', cursive;
+    color: #fcda9a;
+    line-height: 26px;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.boxed-color
+{
+    padding: 15px 40px;
+    color: #fff;
+    font-size: 15px;
+    background: #B91319;
+    margin: 0 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+}
+.boxed-color:hover
+{
+    color: #fff;
+}
+/* order-point end */
+/* features section start */
+.features
+{
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 60px;
+	overflow:hidden;
+}
+.features h2
+{
+    font-family: 'Suranna', serif;
+    color: #161d27;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+.features h3
+{
+    font-family: 'Montez', cursive;
+    color: #b48c80;
+    line-height: 25px;
+    font-size: 35px;
+    text-align: center;
+}
+.features-col
+{
+    padding: 0 5px;
+}
+.course
+{
+    text-align: center;
+    color: green;
+}
+.course1
+{
+    text-align: center;
+    font-family: Bradley Hand ITC;
+}
+.cours2
+{
+    margin-top: 30px;
+}
+.cours2
+{
+    position: relative;
+    margin-bottom: 50px;
+    width: 165px;
+    height: 165px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px rgba(10,20,30, .5);
+}
+.cours2 img
+{
+    width: 100%;
+}
+.cours3
+{
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.8);
+    color: #ffffff;
+    padding: 10px;
+}
+.cours3 h2
+{
+    font-family: Oswald,sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+.cours3 h3
+{
+    font-family: Lato,sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+.cours3 h5
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+.cours2:hover .cours3
+{
+    opacity: 1;
+    top: 0px;
+    transition: 1s;
+}
+.cours4
+{
+    position: absolute;
+    padding-top: 20px;
+    width: 100%;
+    height: 80px;
+    opacity: 0;
+    bottom: -50px;
+    background-color: rgba(0,0,0,0.8);
+}
+.cours2:hover .cours4
+{
+    opacity: 1;
+    bottom: 0;
+    transition: 1s;
+}
+.cours2:hover .hover
+{
+    transform: scale(1.3);
+    transition: 1s;
+}
+.cours7
+{
+    border: 1px solid rgb(73,183,43);
+    background-color: rgb(73,183,43);
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px 20px;
+}
+.cours7:hover
+{
+    background-color: transparent;
+    color: rgb(73,183,43);
+    border: 1px solid rgb(73,183,43);
+    transition: 1s;
+}
+.cou
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+.cou:hover
+{
+    color: #feb518 !important;
+}
+/* features section end */
+/* footer section start */
+.footer
+{
+    width: 100%;
+}
+.footer-div
+{
+    position: relative;
+    background-color: #0b0e13;
+    background-image: url(../images/footer-bkg-img1.png), url(../images/footer-bkg-img2.png);
+    background-position: left 60px, right 60px;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 10px;
+}
+.newsdiv
+{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.newscontent h2
+{
+    font-family: 'Suranna', serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-top: 36px;
+}
+.newsletter
+{
+    margin: 34px auto 0 auto;
+	display: block;
+	width: 100%;
+}
+.newsletter .email
+{
+    background-color: #1d2026;
+	border: none;
+	width: 68%;
+	line-height: 37px;
+	height: 40px;
+	padding-left: 10px;
+	font-size: 13px;
+	color: #acb8c4;
+	font-family: montserrat;
+	position: relative;
+}
+.newsletter .send-button
+{
+    padding: 10px 25px;
+	color: #0b0e13;
+	font-family: 'Montserrat', Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 13px;
+	text-align:center;
+	border: none;
+	border-radius: 0;
+	font-weight: 600;
+	transition: all 0.2s ease 0s;
+	background-color: #fcda9a;
+	width: 30%;
+}
+.contact-info
+{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.contact-logo
+{
+    width: 80%;
+    margin-top: 20px;
+}
+.contact-col
+{
+    width: 100%;
+}
+.contact-col h2
+{
+    font-family: 'Suranna', serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+.about-ul
+{
+    width: 100%;
+    padding-left: 0;
+}
+.about-ul li
+{
+    color: #acb8c4 !important;
+    font-size: 15px;
+    font-family: open sans;
+    font-weight: 400;
+    padding: 5px 0;
+}
+.about-ul li a
+{
+    color: #acb8c4;
+}
+.social-ul
+{
+    width: 100%;
+    padding-left: 0;
+    margin-top: 35px;
+}
+.social-ul li
+{
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+.social-ul li a
+{
+    background-color: #1d2026;
+    display: table-cell;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 50%;
+    color: #fff;
+}
+.payment
+{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.payment-img
+{
+	width:40%;
+}
+.copyright-p
+{
+	color: #acb8c4 !important;
+	font-size: 15px;
+	font-family: open sans;
+	font-weight: 300;
+	text-align:right;
+	margin-top: 0;
+}
+/* footer section end */
+/* restaurant page starts */
+.holder-fullcontent-inner-js
+{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding: 20px 10px 10px 10px;
+    border-radius: 8px;
+}
+/* listing image hover */
+.effect-listing-image-effect-js
+{
+    width: 100%;
+    height: auto;
+}
+.effect-listing-image-effect-js:hover .hover-effect-design-js {
+  opacity: 1;
+}
+.hover-display-listing-image-js
+{
+    color: #fff;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+/* ends */
+.listing-wholesection-js
+{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/annie-spratt-44241-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* resut div ..row1 */
+.searchbar-main-full-holder-adjust-js
+{
+    width: 100%;
+    height:auto;
+}
+.restaurant-page-head-totallisting-js
+{
+    font-family: 'Suranna', serif;
+    color: #b91319;
+    text-transform: capitalize;
+    font-size: 35px;
+    line-height: 36px;
+    text-align: left;
+    margin: 0 0 30px 0;
+}
+.holder-searhbar-first-col-js
+{
+    padding: 5px 0 0 40px;
+}
+.searchbar-main-headings-js
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    margin: 6px 7px 0 4px;
+}
+.search-bar-main-icons-js
+{
+    font-size: 16px;
+    color: #fcda9a;
+    border: solid 1px #fcda9a;
+    padding: 12px 12px 12px 12px;
+}
+.custom-search-bar-adjust-js
+{
+     margin-top: 7px;
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: 1px solid #fcda80;
+    border-radius: 5px;
+}
+.custom-search-bar-adjust-js .style-searchbar-input-js{
+    border-right: 1px solid #fcda80;
+    background: #0006;
+    width: 90%;
+    border-radius: 0px;
+    height: auto;
+    padding: 9px;
+	color: #fcda80;
+    border-top: 0;
+    border-left: 0;
+    display: block;
+    float: none;
+    border-bottom: 0;
+}
+.custom-search-bar-adjust-js .search-buttonicon-style-js {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fcda9a;
+    padding: 2px 6px;
+    text-align: center;
+    width: auto;
+    /* display: inline-block; */
+}
+.search-bar-main-dropdaowns-style-js
+{
+    display: inline-block;
+	margin-right: 10px;
+}
+.table-list-modal-restaurantjs
+{
+    font-family: 'Open-sans',sans-serif;
+    color: #ffa805;
+    font-weight: 100;
+    border-top: 1px solid #ffa80533 !important;
+}
+.modal-text-head-restaurant-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #fff;
+    font-size: 15px;
+    border-bottom: solid 1px #ff7303;
+}
+.modal-content1
+{
+    width: 100%;
+    height: auto;
+    padding: 50px 15px 50px 15px;
+    background: rgba(0,0,0,0.8);
+}
+.table1
+{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 0 0;
+}
+.holder-search-bar-main-dropdowns-js
+{
+    float: none;
+    margin: 7px 0 0 -10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 10px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+.dropdown-seachbar-main-js
+{
+    color: #fcda9a;
+    font-weight: 800;
+    border: 1px solid #fcda80 ;
+    padding: 9px;
+    border-radius: 5px;
+    margin: 0 0 0 0;
+    overflow: hidden;
+    display: inline-block;
+}
+.popularity-sec-js
+{
+    width: 100%;
+    height: auto;
+    padding: 10px 0 10px 0;
+    border-bottom: solid 1px #fcda9a;
+}
+.resultsdiv-numbers-js
+{
+    font-family: 'Montez', cursive;
+    color: #fcda9a;
+    line-height: 25px;
+    font-size: 25px;
+    text-align: left;
+	display:none;
+    font-weight: 700;
+}
+.resultsdiv-sort-js
+{
+    font-family: 'Montez', cursive;
+    color: #fcda9a;
+    line-height: 25px;
+    font-size: 25px;
+    text-align: right;
+	display:none;
+    font-weight: 700;
+}
+/* result siv ends ..row1 */
+/* row 2 starts (main body content )*/
+.listing-content-main-body-js
+{
+    width: 100%;
+    height: auto;
+    padding: 40px 0 40px 0;
+}
+.for2-style-listing-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    color: #414551;
+}
+.holder-listing-bg-stlye-js
+{
+    border: solid 1px #ccc9;
+    padding: 0px 0px 15px 0px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    box-shadow: 0 5px 15px #0000004d;
+    height: auto;
+    width: 100%;
+}
+.listing-inner-content-adjust-js
+{
+    padding: 0 15px 0 15px;
+}
+.postcode-head-js
+{
+        color: #414551;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    padding: 0 0 0px 0;
+    margin: -15px 0 -8px;
+    letter-spacing: 1px;
+}
+.holder-search-filter1-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #cccccc4d;
+    padding: 10px 15px 10px 15px;
+    background: #fff;
+}
+.custom-postalcode-js
+{
+    width: 100%;
+    padding: 2px 0 0 10px;
+    margin: 0 0 0 0;
+    display:inline-block;
+    border: solid 1px #ccc;
+    border-radius: 0;
+}
+.kmbutton
+{
+    width: auto;
+    padding: 0 0 0 0px;
+    margin: 15px 0 0 0;
+}
+.kmbuttondropdown-js
+{
+    display: inline;
+    border: solid 1px #ccc;
+    padding: 7px 10px 6px 10px;
+    width: 30%;
+    height: auto;
+    color: #b91319;
+    float: left;
+}
+.custon-icons-style-location-js
+{
+    padding: 0 10px 0 0;
+    color: #ddd;
+}
+.holder-search-bar-fullrow-js
+{
+    width: 100%;
+    height: auto;
+    padding: 12px 10px 12px 10px;
+    border-top: solid 1px #cccccc4d;
+    margin: 0 0 16px 0;
+    border-bottom: solid 1px #ccc;
+    background: rgba(0,0,0,0.1);
+        background-image: none;
+        background-size: auto auto;
+    background-image: url(../images/about_bg-1.jpg);
+    background-size: cover;
+}
+.border-style-division-js
+{
+    border-bottom: solid 1px #ccc9;
+    padding: 0 0 14px 0;
+}
+.border-style-division-js1
+{
+    border-bottom: solid 1px #ccc9;
+    padding: 0 0 30px 0;
+}
+.border-style-division-js1 .form-group input
+{
+    width: 100%;
+	padding:10px;
+	margin: 0 0 0 0;
+	height:auto;
+	display: inline-block;
+	border: solid 1px #ccc;
+	background: #fff;
+}
+.border-style-division-js1 .form-group select
+{
+    background: #fff;
+    width: 80px;
+}
+.border-style-division-js .node-wrapper .toggle-children-wrapper
+{
+    margin:2px 2px 0px 0px;
+	display:block;
+}
+.border-style-division-js .node-wrapper .node-content-wrapper .pull-right.locatiocount
+{
+    float:none !important;
+	    color: #b91319;
+}
+.border-style-division-js .checkbox label
+{
+    text-transform:capitalize;
+}
+.border-style-division-js .checkbox input
+{
+    margin:5px 0 0 -20px;
+}
+.locations-details-hold-js
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+.locations-details-content-js
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #414551;
+    font-weight: 500;
+}
+.find-postallink-js
+{
+    display: table;
+    background: #b91319;
+    color: #fff;
+    padding: 7px 40px 7px 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    margin: 0 auto;
+    float:right;
+}
+.searchfilters-heading-js
+{
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    background: #B91319;
+    padding: 10px 0 10px 0;
+    font-weight: 500;
+    margin: 0;
+}
+/* listing side ( right )*/
+.listing-right-side-fulldiv-js
+{
+    width: 100%;
+    height: auto;
+}
+.listing-image-display-restaurantpage-js
+{
+    width: 100%;
+    height: auto;
+}
+.heading-listing-display-restaurantpage-js
+{
+    color: #414551;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    margin: 10px 0 5px 0;
+    display: block;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+}
+.address-listing-display-restaurantpage-js
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6e7378;
+    display: block;
+    margin: 5px 0 8px;
+}
+.address-listing-display-restaurantpage-js .read-more-cuisines
+{
+    font-size: 13px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    top: -2px;
+    right: -2px;
+    color: #b91319;
+}
+.price-listing-display-restaurantpage-js
+{
+    color: #b91319;
+    line-height: 25px;
+    font-size: 22px;
+    font-weight: 700;
+	margin:5px 0;
+    display: inline-block;
+}
+.orderlink-listing-display-restaurantpage-js
+{
+    display: inline-block;
+    float: right;
+    margin: 2px 0 8px 0;
+    color: #b91319;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: solid 1px #b3aeae;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 6px 10px 6px 10px;
+}
+.orderlink-listing-display-restaurantpage-js:hover{
+	background:#b91319;
+    color: #fff;
+}
+.service-button-dropdown-listing-js
+{
+    color: #a5a5a5;
+    font-size: 15px;
+    cursor: pointer;
+}
+.features-heading-style-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #3d3e42;
+    font-size: 14px;
+    padding: 4px 0px 4px 0px;
+    cursor: pointer;
+}
+.features-heading-style-js .glyphicon
+{
+    top:0;
+}
+.caret
+{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    margin-right: 10px;
+}
+.callnow-button-listing-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #414551;
+    font-size: 15px;
+    padding: 4px 2px 4px 3px;
+    cursor: pointer;
+}
+.icons-callnow-custom-js
+{
+    font-size: 18px;
+    color: #a5a5a5;
+}
+.pagination1
+{
+    display: table;
+    margin: 20px auto;
+}
+.pagination2
+{
+    border: solid 2px #ffa805 !important;
+    color: #ffa805 !important;
+}
+.holder-buttons-services-features-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #b3aeae;
+    padding: 6px 0px 6px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.holder-buttons-services-features-js .dropdown .caret
+{
+    margin-right: 0;
+    margin-top: 3px;
+}
+/* rating bar starts */
+fieldset, label { margin: 0; padding: 0; }
+h1 { font-size: 1.5em; margin: 10px; }
+/****** Style Star Rating Widget *****/
+.rating {
+  border: none;
+  display:block;
+  text-align:left;
+  -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+}
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+.rating > label {
+  color: #ddd;
+}
+/***** CSS Magic to Highlight Stars on Hover *****/
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+/* rating bar ends */
+/* listing side ( right ends )*/
+/* restaurant page ends */
+/* menu page starts */
+.menupage-wholesection-js
+{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/menupagefullbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* row 1 */
+.menupage-sec1-mapinfo-js
+{
+    width:100%;
+    height:auto;
+    padding: 40px 0 40px 0;
+}
+.holder-fullcontent-menu-page-inner-js
+{
+    width: 100%;
+    height: auto;
+    background: #f6f6f6;
+    padding: 20px 10px 10px 10px;
+    border-radius: 8px;
+}
+/* col-1 */
+.holder-fullcontent-menu-page-inner-js .tabs-header-menu-page-inner-js .menus-timetable-menupage-inner-js
+{
+    font-size: 12px ;
+    font-family: 'Montserrat',sans-serif;
+    padding: 0 5px 0 5px ;
+	border-bottom:4px solid transparent !important;
+}
+/* tabs */
+.tabs-header-menu-page-inner-js
+{
+    border: solid 1px #0003;
+    padding: 16px 1px 16px 1px;
+    background: #efefefe6;
+}
+.tabs-menupage-timings-style-js
+{
+    padding: 20px 10px 20px 5px;
+    background: #b91319;
+}
+.tabs-content-menu-page-js
+{
+    color: #fff;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 6px 14px 6px 14px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+.division-timetable-tab-menupage-inner-js
+{
+    position: relative;
+    top: -7px;
+}
+.tabs2-menupage-timings-style-js
+{
+    padding: 20px 0px 20px 0px;
+    background: #b91319;
+}
+.days-adjust-style-menu-page-inner-js
+{
+    width: 20%;
+    height: auto;
+    display: inline-block;
+}
+.timings-adjust-style-menu-page-inner-js
+{
+     width: 20%;
+    height: auto;
+    display: inline-block;
+}
+.days-adjust1-style-menu-page-inner-js
+{
+   width: 75%;
+    height: auto;
+    display: inline-block;
+    padding: 0;
+    margin-left: 4%;
+}
+.timings-adjust1-style-menu-page-inner-js
+{
+    width: 75%;
+    height: auto;
+    display: inline-block;
+    padding: 0;
+    margin-left: 4%;
+}
+/* tabs ends */
+/* style library classes */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+{
+    border-bottom: none !important;
+    color: #b91319 !important;
+}
+.tab-pane
+{
+    padding:0;
+    border-bottom:none !important;
+}
+/* style library ends */
+/* col-1 ends */
+/* col-2 */
+.restaurantimage-main-menupage-inner-js
+{
+    width:100%;
+    height: auto;
+}
+.menu-page-head-inner-js
+{
+    color: #b91319;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'Suranna', serif;
+    text-align: left;
+    letter-spacing: 0.5px;
+	margin-bottom: 5px;
+}
+.address-listing-display-menupage-js
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6e7378;
+    margin:8px 0 10px 0;
+}
+.buttons-inline-style-links-menupage-js
+{
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 15px 0 0 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.links-menupage-listing-js
+{
+    font-family: 'Open-sans',sans-serif;
+    color: #8a8383;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border: solid 1px #b9b3b3;
+    margin: 0 5px 0 5px;
+}
+.customstyle-links-icon-menupage-listing-js
+{
+    margin: -4px 5px 0 0;
+}
+.links1-menupage-listing-js
+{
+        font-family: 'Open-sans',sans-serif;
+    color: #099e44;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border: solid 1px #b9b3b3;
+    margin: 0 5px 0 5px;
+}
+/* col-2 ends */
+/* col-3 starts */
+.map-menupage-inner-js
+{
+    width: 100%;
+    height: 337px;
+    margin: 20px 0 0 0;
+    border: solid 1px #e1e1e1 !important;
+}
+.viewmap-link-menu-apge-inner-js
+{
+    font-family: 'Open-sans',sans-serif;
+    color: #737c85;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 10px 8px 10px;
+    border: solid 1px #e1e1e1;
+    margin: 0px 0 10px 0;
+    display: inline-block;
+    background: #f0f0f0;
+}
+/* col-3 ends */
+/* row 2 starts */
+/* col-2 */
+.ourstory-head-menupage-inner-js
+{
+    color: #414551;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    text-align: left;
+}
+.ourstory-para-menupage-inner-js
+{
+    font-family: 'Open-sans',sans-serif;
+    font-size: 15px;
+    color: #636363;
+    font-weight: 500;
+}
+/* detailed tabs */
+.headings-detailedtabs-menu-page-js
+{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    background: #fff;
+    font-size: 14px !important;
+    font-weight: 100 !important;
+}
+.custom-tabs-main-style-menupage-js > li.active > a, .custom-tabs-main-style-menupage-js > li.active > a:hover, .custom-tabs-main-style-menupage-js > li.active > a:focus
+{
+    background-color: #fff;
+    color: #414551;
+    font-weight: 900 !important;
+}
+.quantity-placeholder-adjust-menutab-inner-js
+{
+    border: solid 1px #e6e6e6;
+    padding: 0 0 0 20px;
+}
+.custom-tabs-main-style-menupage-js
+{
+    border:none;
+}
+/* tabs content  */
+.tabs-conent-style-custom-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #cccccc4d;
+    padding: 20px 15px 50px 15px;
+    background: #fff;
+    margin: 15px 0 0 0;
+}
+.reservelink-reservation-tab-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #fff;
+    background: #b91319;
+    padding: 10px 30px 10px 30px;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 20px 16px auto;
+    display: table;
+    float: right;
+}
+/* gallery tab */
+.gallery-content-tab-image-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.holder-slider-image-tab-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 20px 0 20px 0;
+}
+.holder-menu-tab-categories-content-menupage-js
+{
+    width: 100%;
+    height: auto;
+    padding:20px 0 0 0;
+    border-top:1px solid #ccc;
+    margin: 25px 0 0 0;
+}
+.onclickbuttons-menutab-menupage-inner-js
+{
+    font-size: 10px;
+    height: 22px;
+    color: #099E44;
+    border-radius: 50%;
+    display: block;
+    margin: 4px 4px 0 4px;
+    border: solid 1px #d1d1d1;
+    width: 22px;
+    text-align: center;
+    line-height: 20px;
+}
+.pricetag-menu-tab-menupage-inner-js
+{
+    font-size: 20px;
+    text-align: center;
+    color: #b91319;
+    font-weight: 700;
+}
+.add-link-menutab-menu-page-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    background: #b91319;
+    padding: 7px 20px 7px 20px;
+    display: table;
+    float: left;
+    margin: 5px 0 0 0px;
+    text-transform: uppercase;
+}
+.holder-display-list-menutab-menupage-inner-js
+{
+    border: solid 1px #ececec;
+    display: table;
+    margin: 35px 0 auto;
+}
+.content-holder-menutab-list-menupage-inner-js
+{
+    padding: 0 10px 0 10px;
+    width: 100%;
+    height: auto;
+}
+.content-holder-menutab-list-menupage-inner-js .read-more-menu-listing
+{
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: -12px 0 5px;
+    display: block;
+    color: #b91319;
+}
+.holder2-display-list-menutab-menupage-inner-js
+{
+    border: solid 1px #ececec;
+    display: table;
+    margin: 20px auto;
+}
+.holder-display-outer-list-menutab-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.holder-display-list-menutab-menupage-inner-js .contenter-boxed-flexer{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+/* gallery tab ends */
+/* review tab */
+.reviewer-box-overflow-controller{
+	padding:10px 0;
+	border-top:1px solid #ccc;
+}
+.reviewer-box-overflow-controller .review-content-add-new{
+	font-family: open sans;
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.user-reviewimage-menupage-inner-js
+{
+    width: 50%;
+    height: auto;
+    border-radius: 50px;
+    display: block;
+    margin: 0 auto;
+}
+.user1-reviewimage-menupage-inner-js
+{
+    width: 50%;
+    height: auto;
+    border-radius: 50px;
+    display: table;
+    margin: 19px 46px auto;
+}
+.reviewtab-starts-rating-menupage-inner-js
+{
+    display: table;
+}
+.reviewtab2-starts-rating-menupage-inner-js
+{
+    display: table;
+    margin: 0 auto 15px 10px;
+    font-size: 18px;
+}
+.holder-reviewcontent-reviewtab-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 5px 0 0 0;
+}
+.head-review-reviewtab-menupage-inner-js
+{
+        font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #565656;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.holder1-reviewcontent-reviewtab-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    margin:0 0 0;
+}
+.user-name-reviewsec-menupage-inner-js
+{
+    display: inline;
+    font-family: 'Open-sans',sans-serif;
+    font-size: 18px;
+    padding: 0 0 0 15px;
+    color: #414551;
+    font-weight: 500;
+}
+.reviews-heading-main-tab-menupage-js
+{
+    color: #bc2f33;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    text-align: left;
+    margin-top: 0;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
+}
+.reviewshead-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    color: #727272;
+    padding: 0px 20px 0px 0;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin: 15px 0 5px;
+}
+.reviewshead1-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    color: #565656;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+.reviewshead2-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #565656;
+    text-align: center;
+    margin-left: 10px;
+}
+.datereviewtab-menu-page-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #b4b4b4;
+    font-size: 12px;
+	margin:0 0 5px;
+}
+.reviewcomment-reviewtab-menupage-inner-js p
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #565656;
+}
+.review-buttons-tabs-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    /* float: right; */
+    text-align: right;
+}
+.links-review-tab-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background: #b91319;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    margin: 2px 0 8px 0;
+}
+/* second tab review */
+.holder-reviewssection-second-reviewtab-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #ccc;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(204, 204, 204);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 204, 204);
+    padding: 5px 0px 5px 0px;
+    border-bottom: solid 1px #c3c3c3;
+    margin: 10px 0 0 0;
+}
+.holderfullreviewtab-fixheight
+{
+    height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+}
+.reviews-user-reviewsecond-tab-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: dashed 1px #ccc;
+    padding: 5px 10px 5px 10px;
+    margin: 20px 0 0 0;
+}
+.myreview-head-reviewtab2-menupage-inner-js
+{
+    display: inline;
+    font-family: 'Open-sans',sans-serif;
+    font-size: 18px;
+    color: #414551;
+    font-weight: 500;
+    position: relative;
+    top: 7px;
+}
+.reviewcontent-reviewtab2-menupage-inner-js
+{
+    display: table;
+    font-family: 'Open-sans',sans-serif;
+    font-size: 15px;
+    color: #cecece;
+    font-weight: 500;
+    position: relative;
+    top: 7px;
+}
+.username-reviewtab2-menupage-inner-js
+{
+    display: block;
+    font-family: 'Open-sans',sans-serif;
+    font-size: 18px;
+    padding: 0 0 0 15px;
+    color: #414551;
+    font-weight: 500;
+}
+.date-user-reviewtab2-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    display: table;
+    font-size: 12px;
+    color: #9f9f9f;
+    padding: 0 0 0 7px;
+    margin: 0 0 0 0;
+}
+/* second tab review ends */
+/* review tab ends */
+/* food truck info starts */
+.headings-foodtruck-tabs-menupage-inner-js
+{
+    color: #b91341 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    font-family: 'Montserrat',sans-serif;
+    text-align: center !important;
+    background: #e7e7e7;
+    padding: 25px 0 25px 0 !important;
+}
+.nav-tabs1 > li.active > a, .nav-tabs1 > li.active > a:hover, .nav-tabs1 > li.active > a:focus
+{
+    border-bottom: none !important;
+    color: #fff !important;
+    background: #b91319;
+}
+.socialtabs-foodtruck-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000;
+}
+.sociallinks-holder-food-tab-menupage-inner-js
+{
+    width: 100%;
+    background: #eaeaea;
+    padding: 15px 0 15px 0;
+    margin: 30px 0 0 0;
+}
+.holder-facebookcontenttab-menupage-foodtabinner-js {
+    width: 100%;
+    height: auto;
+    padding: 20px 10px 20px 10px;
+    background: #eaeaea;
+    margin: 30px 0 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.holder-facebookcontenttab-menupage-foodtabinner-js h5
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #736f6f;
+    width: auto;
+    margin: 0;
+    text-align: left;
+}
+.holder-facebookcontenttab-menupage-foodtabinner-js span
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    color: #9b9b9b;
+    margin: 0;
+    width: 6%;
+    text-align: center;
+}
+.holder-facebookcontenttab-menupage-foodtabinner-js h4
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #b91319;
+    margin: 0;
+    width: auto;
+    text-align: left;
+}
+/* food truck ends */
+/*  info tab starts */
+.row1-infotab-head-menupage-inner-js
+{
+    color: #bf1319;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Montserrat',sans-serif;
+    text-align: center;
+}
+.emailid-info-tab-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #414551;
+    font-size: 16px;
+    margin: 15px auto;
+    display: table;
+    font-weight: 500;
+}
+.adjust-icons-contact-tab-menupage-inner-js
+{
+    padding: 0 6px 0 0;
+}
+.contact-number-info-tab-menupage-inner-js
+{
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #bf1319;
+}
+.content-holder-infotab-inner-menupage-js
+{
+    width: 100%;
+    height: auto;
+    border-bottom: solid 1px #a09e9e80;
+    padding: 15px 0 15px 0;
+}
+.row2-infotab-head-menupage-inner-js
+{
+    color: #414551;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Montserrat',sans-serif;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+.customstyle-checkbox-menupage-inner-js
+{
+    display: inline-block;
+}
+.content-holder-infotab-inner-menupage-js .headings-labels-info-tab-innerpage-js
+{
+    margin: 10px 5px 10px 10px;
+}
+.headings-labels-info-tab-innerpage-js
+{
+    font-size: 15px;
+    font-weight: 500 !important;
+    font-family: 'Montserrat',sans-serif;
+    color: #7a7a7a;
+    margin: 10px 5px 10px 10px;
+}
+.headings-labels-info-tab-innerpage-js input
+{
+    margin: 5px 0 0 -20px;
+}
+/* info tab ends */
+/* reservation tab starts */
+.row1-reservationtab-head-menupage-inner-js
+{
+    color: #414551;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    text-align: left;
+}
+.reservation-tabs-content-tab-head-menupage-inner-js
+{
+    background: #fcfcfc !important;
+    color: #b91319 !important;
+    font-family: 'Montserrat',sans-serif !important;
+    font-weight: 500 !important;
+    border: solid 1px #b91319;
+    border-radius: 0 !important;
+    margin: 0 0 0 11px;
+}
+.reservation2-tabs-content-tab-head-menupage-inner-js
+{
+    background: #b91319 !important;
+    color: #fcfcfc !important;
+    font-family: 'Montserrat',sans-serif !important;
+    font-weight: 500 !important;
+    border: solid 1px #b91319;
+    border-radius: 0 !important;
+    margin: 0 0 0 11px;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover
+{
+    background: #fcfcfc !important;
+    color: #b91319 !important;
+    font-family: 'Montserrat',sans-serif !important;
+    font-weight: 500 !important;
+    border: solid 1px #b91319;
+    border-radius: 0 !important;
+    margin: 0 0 0 11px;
+}
+/* reservation tab ends */
+/* menu tab starts */
+.searchbar-menu-tab-menupage-inner-js
+{
+    display: table;
+    margin: 0 auto;
+}
+.submit-link-menutab-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: #099E44;
+    padding: 8px 12px 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.searchbar-menu-tab-menupage-inner-js .submit-link-holder-menutab-menupage-inner-js
+{
+    border: none;
+    background: #f0f0f0;
+    padding: 7px 32px 6px 32px;
+    border-radius: 3px;
+    height: auto;
+    font-size: 15px;
+    font-weight: normal;
+}
+.search-menutab-submiticon-menupage-inner-js
+{
+    position: absolute;
+    top: 8px;
+    right: 42%;
+    font-size: 19px;
+    color: #aeaeae;
+}
+.tabs-conent-style-custom-menupage-inner-js .tab-pane menu{
+	padding:0;
+	margin:0;
+}
+/* left side */
+.holder-list-menutab-leftside-menupage-js
+{
+    display: table;
+    border: solid 1px #e3e3e3;
+    padding: 10px 0;
+    background: #f9f9f94d;
+}
+.holder-list-menutab-leftside-menupage-js > li
+{
+    display: block;
+    border-bottom: 1px solid #e3e3e3;
+}
+.holder-list-menutab-leftside-menupage-js > li:last-child
+{
+    border-bottom: 1px solid transparent;
+}
+.holder-list-menutab-leftside-menupage-js li .menu-list-datalinks-menupage-inner-js
+{
+    font-size: 16px ;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500 ;
+    color: #5a5a5a ;
+    padding: 10px 22px;
+    margin: 3px 0;
+    text-transform: capitalize ;
+}
+.menu-tabs-head-menupage-inner-js
+{
+    color: #5a5a5a;
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    text-align: center;
+}
+.menutab-dishimage-menupage-inner-js
+{
+    width:100%;
+    height: auto;
+}
+.headng-listing-name-menutab-inner-js
+{
+    color: #666;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    height: 24px;
+    overflow: hidden;
+}
+.desc-listing-name-menutab-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    color: #a7a7a7;
+    font-weight: 700;
+    overflow: hidden;
+}
+.holder-increase-descrease-menuitemstab-menupage-inner-js
+{
+    margin-top:3px;
+}
+.searchbar-incrementors-menulisting-menupage-inner-js
+{
+    height: auto;
+    font-size: 18px;
+    font-weight: normal;
+    border: 1px solid #ccc;
+    padding: 2px 10px;
+}
+/* menu tab ends */
+/* tabs content ends */
+/* detailed tabs ends */
+/* col-2 ends */
+/* side bar css (left)*/
+.checkout-buttonlink-menupage-tab-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #fff;
+    background: #b91319;
+    padding: 10px 50px 10px 50px;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 20px 30px auto;
+    display: table;
+}
+/* left bar headings */
+.leftbar-menupage-headings-style-js
+{
+        color: #414551;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    letter-spacing: 0.5px;
+    padding: 10px;
+    background: #e0e0e0;
+    position: relative;
+}
+.leftbar-menupage-headings-style-js .my-order-cart-item
+{
+    line-height:1.1;
+}
+.holder-carttab-menupage-inner
+{
+    width: 100%;
+    height: auto;
+    padding: 0px 0 15px;
+    margin:0;
+}
+.myordertab-carticon-menupage-inner-js
+{
+    float: right;
+    padding:0 0;
+}
+.cartsection-ordertab-menupage-inner-js
+{
+    top: 8px;
+    padding: 0 0 15px 0;
+    margin: 0 0 0px 0;
+    text-align: center;
+}
+.cartsection-ordertab-menupage-inner-js .ct-qt-js
+{
+    background: #ffffff;
+    border: 1px solid #ccc;
+    display: block;
+    padding: 3px;
+}
+.size-specific-myordertab-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 1px 0 0 0;
+    color: #b91319;
+}
+.leftmenu-myorder-tab-menupage-inner-js
+{
+    color: #099e44;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 0;
+}
+.incrementors-heading-cartsection-flex-box{
+	display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-top: 10px;
+}
+.incrementors-heading-cartsection-menupage-inner-js
+{
+    color: #7a7a7a;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin:0 0 0 0 ;
+}
+.orders-holder-menupage-ordertab-inner-js
+{
+        width: 100%;
+    height: auto;
+    padding: 18px 0 10px 0;
+    border-bottom: solid 1px #b5afaf;
+}
+.leftmenu-myorder-price-menupage-inner-js
+{
+    color: #7a7a7a;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 0 16px;
+}
+.add-comment-popup-content .modal-body {
+    padding: 0;
+    overflow-x: visible;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+.add-comment-popup-content .modal-body .panel{
+    border:none;
+}
+.add-comment-popup-content .modal-body .panel .well{
+    border:none;
+	margin-bottom:8px;
+}
+.add-comment-popup-content .modal-body .panel .panel-body{
+    padding:15px 25px;
+}
+.add-comment-popup-content .modal-body .panel .checkbox, .add-comment-popup-content .modal-body .panel .radio{
+	margin-top:5px;
+}
+/* addons on cart items css here... */
+.cart-item-specific-addon{
+     display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-top: 1px solid #ded8d8;
+
+}
+
+.cart-item-specific-addon1{
+     /*display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;*/
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /*border-top: 1px solid #ded8d8;*/
+
+}
+.cart-item-specific-addon1 a{
+    font-size: 14px;
+    color: #ad0f0f;
+    margin: 5px 8px 5px 0;
+    line-height: 12px;
+}
+.cart-item-specific-addon a{
+    font-size: 14px;
+    color: #ad0f0f;
+    margin: 5px 8px 5px 0;
+    line-height: 12px;
+}
+.cart-item-specific-addon .specific-addon-name{
+}
+.cart-item-specific-addon .specific-addon-price{
+justify-self: flex-end;
+    flex-grow: 1;
+    text-align: right;
+    font-size: 16px;
+}
+.cart-item-specific-addon1 .specific-addon-price{
+justify-self: flex-end;
+    flex-grow: 1;
+    text-align: right;
+    font-size: 16px;
+}
+/* addons on cart items css ends here... */
+.subtotal-head-rightmenu-ordersection-inner-js
+{
+    color: #414551;
+    font-size: 14px;
+    padding:0 0 0 10px;
+    display: inline-block;
+    font-weight: 800;
+}
+.subtotal-head-rightmenu-ordersection-inner-1
+{
+    color: #414551;
+    font-size: 14px;
+    display: inline-block;
+    font-weight: 800;
+}
+.tax-head-rightmenu-ordersection-inner-js
+{
+    color: #414551;
+    font-size: 14px;
+    padding: 0 0 0 0;
+    text-align: left;
+    font-weight: 800;
+    width: 60%;
+}
+.delievery-head-rightmenu-ordersection-inner-js
+{
+    color: #414551;
+    font-size: 14px;
+    padding: 0 0 0 0;
+    text-align: left;
+    font-weight: 800;
+    width: 60%;
+}
+.holder-ordertabcontent-rightmenu-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #e6e6e6;
+    margin: 0 0px 0px 0;
+    display: inline-block;
+    padding: 0px 0 15px 0px;
+}
+.holder-ordertabcontent-rightmenu-menupage-inner-js1
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #e6e6e6;
+    margin: 0 0px 0px 0;
+    display: inline-block;
+}
+.editcustom-ordersec-menupage-inner-js
+{
+    text-align: center;
+    color: #bcbcbc;
+}
+.edit-link-rightmenu-ordertab-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    color: #666;
+    display: inline-grid;
+    margin: 8px 0 0 0;
+    padding: 2px 4px 2px 5px;
+    border: solid 1px #efefef;
+}
+.rightmenu-myorder-numbersection-buttons-menu-page-inner-js
+{
+    background: none !important;
+    color: #b91341 !important;
+    border-radius: 50px !important;
+    padding: 3px 4px 4px 5px !important;
+    font-size: 9px !important;
+}
+.custom-style-order-type-rightmenu-menupage-innerpage-js
+{
+    color: #34495e;
+    font-size: 14px !important;
+    padding: 8px 20px !important;
+    height: 30px !important;
+}
+.leftbar-price-myorder-menupage-tab-inner-js
+{
+    font-size: 16px;
+    font-weight: 500;
+    color: #099e44;
+    text-align: center;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.numbers-adjust-order-section-menupage-inner-js
+{
+    padding: 0 3px 0 7px;
+    float: none;
+    width: 40%;
+    text-align: right;
+}
+.numbers-adjust1-order-section-menupage-inner-js
+{
+    padding: 0 3px 0 7px;
+    float: none;
+    width: 40%;
+    text-align: right;
+}
+/* holders */
+.holder-left-menus-inner-menupage-js
+{
+    padding:0 0;
+   /* border-right: solid 1px #ccc9;*/
+}
+.holder-left-menus-inner-menupage-js .form-group input[type="radio"]{
+	margin:2px 0 0 5px;
+}
+.holder-left-menus-inner-menupage-js .form-group input[type="checkbox"]{
+	margin:4px 0 0 -20px;
+}
+.holder-left-menus-inner-menupage-js .restaurant-address{
+	display:none;
+}
+.holder-left-menus-inner-menupage-js .form-group input[type="text"], .holder-left-menus-inner-menupage-js .form-group input[type="email"]{
+	/* border-bottom: solid 1px #ccc9; */
+    padding: 8px 12px;
+    /* border-right: solid 1px #ccc9; */
+    height: auto;
+	border:2px solid #ecf0f1;
+    font-size: 14px;
+	background:#ffffff;
+}
+/* coupon bar */
+.coupon-image-offersection-menupage-inner-js
+{
+    width:100%;
+    height:auto;
+}
+.coupon-code-head-menupage-inner-js
+{
+    font-family: 'Open Sans', sans-serif;
+    color: #595959;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 500;
+}
+.coupon-code-head-menupage-inner-js strong
+{
+    display:block;
+}
+.holder-ongoingoffer-content-menupage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: dashed 1px #ccc;
+    padding: 10px 10px 10px 10px;
+}
+.coupon-code-name-menupage-inner-js
+{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    color: #b91319;
+}
+.coupon-code-address-menupage-inner-js
+{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #595959;
+    border-bottom: solid 2px #dadada;
+}
+.coupon-code-description-menupage-inner-js
+{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 900;
+    color: #909090;
+}
+.coupon-code-validity-menupage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: #b91319;
+    font-size: 14px;
+}
+/* left bar headings ends */
+/* headings ads & video css */
+.headings-video-advertisement-menupage-js
+{
+    font-family: 'Suranna', serif;
+    color: #b91319;
+    text-transform: capitalize;
+    font-size: 40px;
+    line-height: 36px;
+    margin: 20px 0 20px 0;
+}
+/* adsimage */
+.adsimage-menupage-js
+{
+    width: 100%;
+    height:auto;
+}
+.adsimage-self-adjust-menupage-js
+{
+    width:100%;
+    height:auto;
+}
+/* full ad image */
+.holder-adsmain-image-full-menupage-js
+{
+    width:100%;
+    height:auto;
+}
+.ad-image-self-adjust-full-mwnupage-js
+{
+    width: 100%;
+    height: auto;
+}
+/* ads image */
+/* video css starts */
+.holder-video-section-menupage-inner-js
+{
+    width: 100%;
+    height:auto;
+}
+/* video css ends */
+/* side bar css ends */
+/* row 2 ends */
+/* menu page ends */
+/* cart page starts  */
+.leftbar-cartpage-headings-style-js
+{
+    color: #414551;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    padding: 20px 0 10px 0;
+}
+.heading-tables-list-cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #a8a8a8;
+    font-weight: 700;
+}
+.table-itemname-cart-page-inner-js
+{
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    color: #414551;
+    font-size: 16px;
+    font-weight: 700;
+}
+.table-itemquantity-cart-page-inner-js
+{
+    font-weight: 800;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+.tabs-conent-style-custom-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #cccccc4d;
+    padding: 10px 0 10px 0;
+}
+.head-item-myordertab-cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: #b4aeae;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-bottom: solid 1px #ccc;
+    padding: 0 0 10px 0;
+}
+.price-cartpage-ordertab1-inner-js
+{
+    width: 35%;
+    height: auto;
+    float: right;
+}
+.coupon-code-submit-fill-box-loginuser-summarypage-inner-js
+{
+    background: #b91319;
+    border: none;
+    color: #fff;
+    padding: 5px 20px 5px 20px;
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    margin: 10px 0 10px 14px;
+}
+.price2-cartpage-ordertab1-inner-js
+{
+    padding: 0 0px 0 12px;
+}
+.myorder-heade-cartpage-inner-js
+{
+    color: #414551;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    text-align: left;
+    display: inline-block;
+}
+.holder-cart-head-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    border: solid 1px #f0f0f0;
+    padding: 0 10px 0 10px;
+}
+.numbersflow-list-cart-page-inner-js
+{
+    position: relative;
+    left: 25px;
+}
+.holder-display-listng-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #ededed;
+    padding: 20px 0 20px 0;
+}
+.holder-cartpage-add-delete-ordertab-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #f2f2f2;
+    margin: 15px 0 0 0;
+}
+.editlink-cart-page-inner-js
+{
+    font-family: 'Open-sans',sans-serif;
+    color: #b91319;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 30px 4px 30px;
+    border: solid 1px #f6f6f6;
+    margin: 10px auto;
+    display: table;
+}
+.editlink-cart-page-inner-js .glyphicon
+{
+    margin:-6px 5px 0 0px;
+}
+.editlink-cart-page-inner-js1
+{
+    font-family: 'Open-sans',sans-serif;
+    color: #b91319;
+    font-size: 13px;
+    font-weight: 600;
+    border: solid 1px #f6f6f6;
+    margin: 10px auto;
+    display: table;
+}
+.editlink-cart-page-inner-js1 .glyphicon
+{
+    margin:-6px 5px 0 0px;
+}
+.holdertotalbar-listing-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #f2f2f2;
+    padding: 6px 0 6px 0;
+}
+.subtotal-style-cartpage-inner-js
+{
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    color: #414551;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 70px 5px 0px;
+    float: right;
+}
+.totalprice-cart-page-inner-js
+{
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    color: #414551;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 0px 5px 0;
+    display: table;
+    float: right;
+    margin: 0 0 0 0;
+}
+.totalprice-self-cart-page-inner-js
+{
+    color: #b91319;
+    padding: 0 59px 0 11px;
+}
+.numbersection-buttons-cart-page-inner-js
+{
+    background: none !important;
+    border-radius: 50px !important;
+    padding: 2px 4px 4px 5px !important;
+    font-size: 9px;
+    color: #b91319 !important;
+}
+.total-caloriescalculator-inner-cartpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-align: right;
+    font-weight: 700;
+    padding: 10px 50px 10px 0px;
+    border: solid 1px #e9e9e9;
+}
+.title-caloriescalculatortab-inner-cartpage-js
+{
+    text-align: center;
+    font-family: 'Montserrat',serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #b91319;
+}
+.resultbar-caloriesec-cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #414551;
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+.holder-resultbar-caloriesec-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #e9e9e9;
+}
+.resuls-foodcaloriesec-cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-align: right;
+    font-weight: 700;
+    padding: 0 49px 0px 0;
+}
+.you-may-like-section-custom-inner-page-js
+{
+    width: 100%;
+    height: auto;
+}
+/* right menu */
+.contactinfo-rightmenu-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    margin: 15px 0 0 0;
+}
+.linkpayment-rightmenu-delievery-tab-inner-cartpage-js
+{
+    width: 100%;
+    height: auto;
+}
+.payment-link-delieverytab-inner-js
+{
+    display: table;
+    margin: 0 auto;
+    color: #fff;
+    background: #b91319;
+    padding: 10px 40px 10px 40px;
+    box-shadow: none;
+    font-weight: 700;
+    border: none;
+}
+.additional-suggestions-tab-cartpage-rightmenu-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #ececec;
+    display: table;
+    margin: 10px 0 0 0;
+}
+.suggestion-dish-cart-page-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.additional-sec-head-cartpage-inner-js
+{
+    color: #b4b4b4;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    padding: 6px 0px 6px 7px;
+}
+.additional-dishname-cartpage-inner-js
+{
+    font-family: 'Lato', Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 0 3px 0;
+    color: #414551;
+    display: inline-flex;
+}
+.vegicon-cartpage-additionaltab-inner-js
+{
+    color: #099E44;
+    display: table;
+    font-size: 15px;
+    margin: 1px 0 0 0;
+}
+.additional-price-tag-cartpage-inner-js
+{
+    text-align: right;
+    padding: 0 13px 0 0;
+    font-weight: 800;
+    color: #099e44;
+    font-size: 20px;
+    margin: 0 0 0 0;
+}
+.custom-numberincrease-cartpage-inner-js
+{
+    width: 50%;
+    float: left;
+}
+.holder-additional-contain-full-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #d8d8d8;
+    margin: 20px 0 0 0;
+    padding: 10px 10px 40px 10px;
+}
+/* cart page ends */
+/* cart page 2 starts */
+.holder-fullcontent-cart-page-inner-js
+{
+    width: 100%;
+    height: auto;
+    background: #f6f6f6;
+    padding: 20px 10px 10px 10px;
+    border-radius: 8px;
+}
+.cartpage-wholesection-js
+{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/cartfullbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.item-headcartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    color: #545454;
+    padding: 0 0 0 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+}
+.item-head1cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    color: #545454;
+    padding: 0 0 0 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+}
+.dishname-cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #414551;
+    padding: 0 0 0 10px;
+    text-align: center;
+}
+.myorder-header2-cartpage-inner-js
+{
+    color: #414551;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    text-align: center;
+    display: block;
+}
+.holder-display-listng-cartpage-inner-js input[type=text]{
+	color:#545454;
+}
+.holder-display-listng-cartpage-inner-js .input-group-btn-vertical input[type=text]{
+	border: solid 1px #bbbaba;
+    border-radius: 0;
+    display: inline-block;
+    margin: 0 auto;
+    color: #000;
+    padding: 0;
+    background: #fff;
+    text-align: center;
+    width: 30% !important;
+}
+.numbersincrease-ordertab-adjust-inner-page-js
+{
+    display: table;
+    margin: 0 0 0 0;
+    text-align: center;
+}
+.holderinput-myordersec-quantity-cartpage-inner-js
+{
+    height: 28px;
+    border: solid 1px #ececec;
+    margin: 5px 0 0 0;
+}
+.spinner-myorder-section-cartpage-inner-js
+{
+    border: solid 1px #e7e7e7;
+    border-radius: 0;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: inline;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    width: 45% !important;
+    height: 30px !important;
+}
+.tax-head-pricemyordersection-inner-cartpage-js
+{
+    font-size: 19px;
+    font-weight: 500;
+    font-family: 'Montserrat',sans-serif;
+    text-align: right;
+    width: 85%;
+}
+.tax1-head1-pricemyordersection-inner-cartpage-js
+{
+    float: none;
+    font-size: 19px;
+    font-weight: 500;
+    font-family: 'Montserrat',sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-right:-5px;
+}
+.price-adjust-myorder-cartpage-tab-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 0 5px 0 15px;
+}
+.holder-pricerates-adjust-content-myordertab-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #ededed;
+    padding: 10px 20px 10px 0px;
+    background: #efefef;
+}
+.holder-pricerates-adjust-content-myordertab-inner-js1
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #ededed;
+    /*padding: 10px 20px 10px 0px;*/
+    background: #efefef;
+}
+.addmorelink-cart-page-inner-js
+{
+    display: table;
+    color: #fff;
+    background: #b91319;
+    padding: 10px 40px 10px 40px;
+    border: solid 1px #b9134166;
+    font-weight: 700;
+    margin: 50px auto;
+}
+/* suggestion section starts */
+.youmaylike-sections-suggestion-cartpage-inner-js
+{
+    width:100%;
+    height: auto;
+}
+.youmaylike-head-cartpage-inner-js
+{
+    font-family: 'Suranna', serif;
+    text-align: center;
+    font-size: 26px;
+    padding: 0 0 0 0;
+}
+.dummy-image-section-cartpage-inner-page-js
+{
+    width: 100%;
+    height: auto;
+}
+.add-link-youmaylink-section-inner-cartpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    background: #b91319;
+    padding: 7px 0;
+    display: table;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 8px auto;
+    width: 100%;
+}
+.suggestion-content-youmaylike-sec-cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    color: #959595;
+}
+.price-content-youmaylike-sec-cart-page-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    text-align: right;
+    font-weight: 500;
+    color: #b91319;
+    display: inline-block;
+}
+.youmaylike-numbersection-cart-page-inner-js
+{
+    width: 100%;
+    display: inline-block;
+    padding: 0 0 0 3px;
+}
+.holder-content-youmaylike-section-inner-cartpage-js
+{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    box-shadow: 0px 0px 3px 2px #dbdbdb;
+    padding: 0 0 10px 0;
+}
+.vegicon-youmaylike-cartpage-inner-js
+{
+    top: 0px;
+    left: -4px;
+    color: #5cad5c;
+    border: solid 1px;
+    padding: 2px 2px 2px 2px;
+    font-size: 10px;
+}
+.non-vegicon-youmaylike-cartpage-inner-js
+{
+    top: 0px;
+    left: -4px;
+    color: #b91319;
+    border: solid 1px;
+    padding: 2px 2px 2px 2px;
+    font-size: 10px;
+}
+.adjust1-final-price-cartpage-inner-js
+{
+    width: 52%;
+    text-align: left;
+    /*padding: 0 10px 0 0;*/
+}
+/* suggestion section ends */
+.calculatelink-caloriesec-cartpage-inner-js
+{
+    display: table;
+    margin: 40px auto;
+    color: #fff;
+    background: #b91319;
+    padding: 10px 40px 10px 40px;
+    border: solid 1px #b9134166;
+    font-weight: 700;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+.customholder-spinner-caloriesec-cartpage-inner-js
+{
+    display: table;
+    margin: 0 20px auto;
+}
+.tabs-conent-style-custom-cartpage-inner-js .calorie-params-fields{
+	display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.headings-spinners-caloriesec-cartpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #414551;
+    padding: 0 0 0 0px;
+    text-align: center;
+}
+.increaseholders-calculator-cartpage-inner-js
+{
+        width: 80px;
+    height: auto;
+    padding: 5px 10px;
+    font-family: helvetica;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+}
+.increaseholders1-calculator-cartpage-inner-js
+{
+        width: 80px;
+    height: auto;
+    padding: 5px 10px;
+    font-family: helvetica;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+}
+.arrows-calculator-cartpage-inner-js
+{
+    padding: 2px 2px 2px 2px;
+    color: #b91319;
+    border: solid 1px #ececec;
+    top: 2px;
+}
+.spinner-calorie-section-cartpage-inner-js
+{
+    border: solid 1px #e7e7e7;
+    border-radius: 0;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    display: table;
+    margin: 0 auto;
+        margin-bottom: 0px;
+    width: 45% !important;
+    height: 30px !important;
+}
+.numbersincrease-ordertab-adjust-inner-page-js .spnnerup-calorietab-cartpage-inner-js
+{
+    display: inline;
+    box-shadow: none ;
+    color: #b9135e ;
+    background: none ;
+    padding: 0 0 0 0;
+	margin:0;
+}
+.youmaylike-numbersection-cart-page-inner-js .spnnerup-calorietab-cartpage-inner-js
+{
+    display: inline;
+    box-shadow: none ;
+    color: #b9135e ;
+    background: none ;
+    padding: 0 0 0 0;
+}
+.holder-display-listng-cartpage-inner-js .spnnerup-calorietab-cartpage-inner-js .adjusticons-value-cartpage-inner-js
+{
+    font-size: 9px;
+    margin:0 10px;
+}
+.resultfull-cartpage-inner-js
+{
+    font-size: 20px;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px 0 10px 60px;
+}
+.resultfinal-head-pricesection-inner-cartpage-js
+{
+    text-align: right;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Montserrat',sans-serif;
+    padding: 0 5px 0 0;
+}
+.price-adjust-final-cartpage-tab-inner-js
+{
+    padding: 0 0 0 167px;
+}
+.adjust-final-price-cartpage-inner-js
+{
+    width: 280px;
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
+.adjusticons-value-cartpage-inner-js
+{
+    font-size: 9px;
+}
+.pricetotal-adjust-inner-js
+{
+    padding: 0 0 0 10px;
+    width: 40%;
+    text-align: right;
+}
+.checkboxes-holder-inner-page-summary-js .checkboxes-style-summarypage-inner-js
+{
+    box-shadow: 0px 0px 0px 1px #e83f43;
+    top: 0;
+	margin:5px 0 0 -20px;
+}
+.image-verified-payments-summarypage-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.image-verified-payment-image-summarypage-inner-js
+{
+    width: 100%;
+    height: auto;
+    display: table;
+    margin: 0 auto;
+}
+.sigin-couponcode-section-inner-cartsumaarypage-js
+{
+    width:100%;
+    height:auto;
+}
+.coupon-code-signinuser-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #b91319;
+    display: inline-block;
+    width: 100%;
+    padding: 0 0 0 10px;
+}
+.head-codefil-sec-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #414551;
+    padding: 0 0 0 10px;
+}
+.head2-codefil-sec-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #414551;
+    display: inline-block;
+    width: 65%;
+    padding: 0 0 0 10px;
+}
+.loyaltypoints-signin-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    color: #b91319;
+    font-weight: 500;
+    text-align: right;
+    display: inline-block;
+    width: 15%;
+}
+.coupon-code-fill-box-loginuser-summarypage-inner-js
+{
+    border: solid 1px #ccc;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 0 0 8px;
+    margin: 0 0 0 10px;
+}
+/* payment tab starts */
+.tabs-conent-style-custom-cartpage-payment-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.heading-cartpayment-page-inner-js
+{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Suranna', serif;
+    display: none;
+    text-align: center;
+    background: #b91319;
+    padding: 10px 0 10px 0;
+    margin: 10px 0 0 0;
+}
+.coupon-sec-payment-head-text-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #414551;
+    padding: 0 0 0 10px;
+}
+.payment-cons-text-inner-summarypage-js
+{
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #4a4a4a;
+    font-weight: 500;
+    font-family: 'Montserrat',sans-serif;
+    width: 94%;
+    display: inline;
+    text-align: left;
+    line-height:50px;
+}
+.cod-icon-image-summarypage-inner-js
+{
+    width: 15%;
+    height: auto;
+}
+.payment-cons-text-inner-summarypage-js:hover
+{
+    cursor:pointer;
+    color:#b91319;
+}
+.holder-payments-highlights-inner-summarypage-js
+{
+    width: 100%;
+    height: auto;
+    border: solid 1px #cccccc4d;
+    background: #f6f6f6;
+    margin: 0 0 2px 0;
+}
+.partners-image-summarypage-inner-js
+{
+    width: 100%;
+    height: auto;
+    display: table;
+    margin: 20px auto;
+}
+/* payment tab ends */
+/* right tab */
+.restaurantname-cartpage-rightmenu-head-inner-js
+{
+    font-family: open sans;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: #b91319;
+    padding: 15px 13px 15px 13px;
+}
+.order-type-head-spacing-adjust-inner-js
+{
+    padding: 0 5px 0 0;
+}
+.ordertype-value-adjust-spacing-cartpage-inner-js
+{
+    padding: 0 0 0 5px;
+}
+.restaurantname-cartpage-righttab-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #787878;
+    display: inline-block;
+}
+.billing-address1-righttab-cart-page
+{
+    padding: 0 0 10px 0;
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-weight: 500;
+    display: table;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.item-count-ordersection-cartpage-inner-js
+{
+    position: absolute;
+    color: white;
+    padding: 0px 5px 0px 5px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #b91319;
+    font-weight: 800;
+    top: 3px;
+    right: 0px;
+}
+.carticon-cartpage-inner-js
+{
+    display: inline;
+    font-size: 23px;
+    float: right;
+    color: #b91319;
+    padding: 17px 10px 0 10px;
+}
+.dishprice-cartpage-inner-js
+{
+    color: #b91319;
+    font-family: 'Open-Sans',sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+}
+.holder-subtotal-div-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+/* right tab ends */
+/* cart page 2 ends */
+/* cart summary page starts */
+.summary-cartpage-wholesection-js
+{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/cartsummaryfullbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.heading-cartsummary-page-inner-js
+{
+    color: #414551;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Suranna",serif;
+    display: inline-block;
+    padding: 0 0 0 15px;
+    width:30%;
+}
+.holder-fullcontent-cartsummary-page-inner-js
+{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding: 20px 10px 10px 10px;
+    border-radius: 8px;
+}
+.coupon-image-summarypage-inner-js
+{
+    width:10%;
+    height:auto;
+}
+.checkbox-heading-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 100 !important;
+    color: #414551;
+    text-transform: uppercase;
+    width: 100%;
+}
+.checkboxes-holder-inner-page-summary-js
+{
+    display: table;
+    margin: 10px 0px 35px 30px;
+}
+.heading2-couponsmain-righttab-payment-cartsummary-page-inner-js
+{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Suranna",serif;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    background: #b91319;
+}
+.heading2-coupons-payment-cartsummary-page-inner-js
+{
+    color: #414551;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Suranna",serif;
+    display: inline-block;
+    padding: 0 0 0 10px;
+}
+.tabs2-conent-coupon-payment-style-custom-cartpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 20px 0 20px 0;
+}
+.coupon-sec-text-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #414551;
+    padding: 0 0 0 10px;
+}
+.coupon-discount-signup-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #414551;
+    font-weight: 600;
+    font-size: 17px;
+    width: 52%;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    top: -2px;
+}
+.signin-link-couponsection-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-weight: 700;
+}
+.payment-icons-paypal-final-summarypage-inner-js
+{
+    font-size: 24px;
+    color: #015796;
+    display: inline-block;
+    width: 6%;
+    top: 4px;
+    position: relative;
+    left:12px;
+}
+.payment-icons-cod-final-summarypage-inner-js
+{
+    font-size: 24px;
+    display: inline-block;
+    width: 6%;
+    top: 4px;
+    position: relative;
+    left: 12px;
+    color: #01963d;
+}
+.payment-icons-mastercard-final-summarypage-inner-js
+{
+    font-size: 24px;
+    display: inline-block;
+    width: 6%;
+    top: 4px;
+    position: relative;
+    left: 12px;
+    color: #eaac40;
+}
+.crediticon-payment-section-inner-js
+{
+    font-size: 18px;
+    top: 5px;
+    padding: 0 10px 0 7px;
+    color: #2f2f2f;
+}
+.debiticon-payment-section-inner-js
+{
+    font-size: 18px;
+    top: 5px;
+    padding: 0 10px 0 7px;
+    color: #ffa50a;
+}
+/* right tab starts */
+.right-side-cart-head-summarypage-inner-js
+{
+    color: #414551;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Suranna', serif;
+    padding: 20px 0 10px 0;
+}
+.holder-display-listng-select-coupon-rightab-cart-summary-page-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #e9e9e9;
+    overflow-y: scroll;
+}
+.restaurant-total1-head-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #292929;
+    display: inline-block;
+    width: 70%;
+}
+.totalprice-orderighttab-inner-summarypage-js
+{
+    font-size:15px;
+    font-weight: 500;
+    text-align: right;
+    width: 22%;
+    display: inline-block;
+}
+.totalprice-orderighttab2-inner-summarypage-js
+{
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
+    width: 22%;
+    display: inline-block;
+    color: #b91319;
+}
+.restaurant-name-head-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #292929;
+    display:block;
+}
+.restaurant-quantity-number-head-summarypage-inner-js
+{
+    width: 100%;
+    text-align: center;
+    border: solid 1px #e3e3e3;
+    background: #fff;
+    font-weight: 500;
+    font-family:'Montserrat',sans-serif;
+}
+.ordertype-sec2-head-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #292929;
+}
+.ordertype-self-sec2-head-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #292929;
+    display: inline-block;
+}
+.ordertype-self-sec2-name-head-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #989898;
+    margin: 0 0 0 0;
+    font-size: 15px;
+    display: inline-block;
+}
+.ordertype-sec2-name-head-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #989898;
+    padding: 0 0 0 15px;
+    margin: 0 0 0 0;
+    font-size: 15px;
+}
+.holder-myordercart-summarypage-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 2px 2px 2px 14px;
+    margin: 0 0 0px 0;
+}
+.holder2-1-myordercart-summarypage-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 2px 2px 2px 14px;
+    margin: 0 0 0px 0;
+}
+/* right tab */
+/* cart summary page ends */
+/* cart summary page 2 */
+.restaurantname-cartpagesummary-rightmenu-head-inner-js
+{
+    font-family: open sans;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: #b91319;
+    padding: 15px 13px 15px 13px;
+}
+.restaurant-quantity-number-head-summarypage2-inner-js
+{
+    width: 50%;
+    background: #f5f5f5;
+    font-weight: 500;
+    font-family: 'Montserrat',sans-serif;
+    border: 1px solid #ece9e9;
+    text-align: center;
+    display: table;
+    margin: 7px auto;
+}
+/* billing address */
+.ordertype-billingaddress-styleadjust-name-head-summarypage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #989898;
+    padding: 0 0 0 15px;
+    margin: 0 0 0 0;
+    width: 37%;
+    font-size: 15px;
+    display: none;
+}
+.adjust-billingadress-orderbar-inner-js
+{
+    width: 59%;
+    display: inline-flex;
+    font-family: 'Montserrat',sans-serif;
+    color: #989898;
+    font-weight: 500;
+    text-align: left;
+    padding: 0 0 0 17px;
+}
+.adjust-billingadress3-orderbar-inner-js
+{
+    width: 59%;
+    display: inline-flex;
+    font-family: 'Montserrat',sans-serif;
+    color: #989898;
+    font-weight: 500;
+    text-align: left;
+    padding: 0 0 0 13px;
+}
+/* biling address ends */
+.headings-leftbar-summarypage2-cartsummary-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #cecece;
+    font-size: 18px;
+    text-align: center;
+}
+/* my order tab adjust */
+.holder-ordertype-adjust-align-inner-summarypage-js
+{
+    display: inline-block;
+    width: 47%;
+    text-align: right;
+}
+.leftbar-nametab-summarypage2-inner-js
+{
+    color: #414551;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: 'Montserrat',sans-serif;
+    text-align: center;
+}
+/* price bars */
+.total-pricebars-summarypage-2-inner-js
+{
+    width: 50%;
+    height: auto;
+    border: 1px solid #ededed;
+    float: right;
+}
+.holder-display-listng-cart-summary-page-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.holder-display-listng-cart-summary-page-inner-js .offer-desc
+{
+    margin:5px 0;
+}
+.leftbar-nametotal-tab-main-summarypage2-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    color: #414551;
+    width: 42%;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 13px;
+}
+.leftbar-nametotal-tab-summarypage2-inner-js
+{
+    display: inline-block;
+    width: 42%;
+    text-align: right;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: #414551;
+    /*padding: 0 0 0 12px;
+    margin: 15px 0 6px 0;*/
+}
+.value-total-main-tab-leftbar-summarypage2-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #b91319;
+    width: 31%;
+    display: inline-block;
+    text-align: right;
+}
+.value-total-tab-leftbar-summarypage2-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #b91319;
+    width: 31%;
+    display: inline-block;
+    text-align: right;
+}
+.holder-price-cart-details-summarypage-2-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #cccccc4d;
+}
+/* cart summary page 2 ends */
+/* billing page starts */
+.order-confirmation-icon-billing-page-inner-js
+{
+    width: 8%;
+    height: auto;
+    display: inline-block;
+    top: -4px;
+    position: relative;
+}
+.billing-cartpage-wholesection-js
+{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/billingfullbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.heading-billing-page-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #C60024;
+    display: inline-block;
+    padding: 12px 10px 12px 0;
+}
+.heading-tabs-billing-address-inner-js
+{
+    text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    color: #414551;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+.heading-thanks-billing-page-inner-js
+{
+	text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    color: #414551;
+    font-size: 20px;
+    padding: 12px 10px 5px 10px;
+    border-radius: 5px;
+    display: block;
+}
+.heading-tabs2-details-billing-flex-box-wrap{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 20px 0;
+}
+.heading-tabs2-details-billing-address-inner-js
+{
+    text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    color: #414551;
+    font-size: 13px;
+    display: inline-block;
+    width: 40%;
+    padding: 0 0 0 12px;
+    margin: 0;
+}
+.restaurant-name-billingpage-details-inner-js
+{
+    width: auto;
+    display: inline-block;
+    text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    font-weight: 100;
+    color: #414551;
+    padding: 0 0 0 7px;
+    margin-left: 5%;
+}
+.restaurant-name-billingpage-coloumn1-details-inner-js
+{
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    font-weight: 100;
+    color: #414551;
+    margin-left: 5%;
+    padding: 0 0 0 7px;
+}
+.heading-tabs-billing-address-deatils-head-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #414551;
+    padding: 0 0 0 12px;
+}
+.heading-tabs-billing-address-deatils-head-inner-js1
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #414551;
+    padding: 0 0 0 18px;
+}
+.holder2-yourorderdetails-section-billingaddress-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.heading-tabs-billing-address-deatils-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    font-weight: 100;
+    color: #414551;
+    padding: 0 0 0 12px;
+    line-height: 17px;
+}
+.heading-tabs2-details-email-billing-address-inner-js
+{
+    text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    color: #414551;
+    font-size: 13px;
+    display: inline-block;
+    width: 45%;
+    padding: 0 0 0 12px;
+    margin: 0;
+}
+/* row-3 starts */
+.heading-tabs-yourorderrow-details-billing-address-inner-js
+{
+    width: 50%;
+    height:auto;
+    text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    color: #414551;
+    font-size: 13px;
+    display: inline-block;
+    padding: 0 0 0 12px;
+}
+/* row-3 ends */
+/* row-4 starts */
+.heading-tabs-yourorderrow-inner-details-billing-address-inner-js
+{
+    width: 50%;
+    height: auto;
+    text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    color: #414551;
+    font-size: 13px;
+    display: inline-block;
+    padding: 0 0 0 12px;
+}
+.heading-tabs-yourorderrow-inner-price-details-billing-address-inner-js
+{
+    width: 28%;
+    height: auto;
+    text-align: right;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    color: #414551;
+    font-size: 13px;
+    /*display: inline-block;*/
+}
+/* row-4 ends */
+/* order details full holder */
+.holder-yourorderdetails-section-billingaddress-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #87878766;
+    padding: 0 0 0 0px;
+    display: inline-block;
+    margin: 0 0 5px 0;
+    background: #f9f9f9;
+}
+/* order details holder ends */
+/* row-6 starts */
+.subtotal-row6-details-billingpage-inner-js
+{
+    font-family: 'montserrat',sans-serif;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 500;
+    color: #424551;
+}
+.subtotal-row6-price-details-billingpage-inner-js
+{
+    font-family: 'montserrat',sans-serif;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 500;
+    color: #424551;
+    width: 29%;
+}
+.submitfinal-billing-page-row7-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #c60024;
+    padding: 10px 60px 10px 60px;
+    display: table;
+    margin: 20px auto 30px;
+}
+/* billing page ends */
+
+/**
+	Submit listing step one page css here..
+*/
+  .submit-listings-content-m .holder-fullcontent-cartsummary-page-inner-js{
+      width: 100%;
+      margin: 0 auto;
+      display: table;
+      border-radius: 0;
+      padding: 20px;
+      background: rgba(255, 255, 255);
+  }
+  .submit-listings-content-m .submit-listings-holder-m h3 {
+      font-family: montserrat;
+      font-weight: 600;
+      color: #111010;
+      font-size: 24px;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 40px 0;
+  }
+  .submit-listings-content-m .submit-listings-holder-m p {
+      font-family: montserrat;
+	  font-weight: 500;
+	  color: #fff;
+	  font-size: 18px;
+	  display: block;
+	  text-align: left;
+	  letter-spacing: 0.5px;
+	  padding: 6px 22px;
+	  width: 90%;
+	  margin: 0 auto 40px;
+	  background: #C60024;
+  }
+  .submit-listings-holder-m .submit-form-holder-m {
+      width: 90%;
+      display: block;
+      margin: 50px auto 50px;
+  }
+  .submit-listings-holder-m .submit-form-holder-m label {
+      display: block;
+      font-family: montserrat;
+      font-weight: 500;
+      font-size: 18px;
+      margin: 23px 0 25px 0;
+      letter-spacing: 1px;
+      padding: 7px 22px;
+      background: #C60024;
+      color: #fff;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .form-group {
+      margin-bottom: 20px;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .sub-flow-box{
+      width: 85%;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      border: 1px solid #c3c3c3;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .sub-flow-box:after {
+      content: "\f078";
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      position: absolute;
+      font-size: 16px;
+      color: #ccc;
+      top: 9px;
+      right: 10px;
+      z-index: 0;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .sub-base{
+      width: 85%;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    color: #555555;
+    font-size: 16px;
+	display:block;
+    height: auto;
+    font-family: helvetica;
+    background: #fff;
+    border: 1px solid #c3c3c3;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .sub-base .completer-holder input{
+    height: auto;
+    background: #fff;
+    border: none;
+    display: block;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .sub-base-sel{
+      width: 110%;
+      padding: 10px 20px;
+      letter-spacing: 1px;
+      font-weight: normal;
+      color: #555555;
+      font-size: 16px;
+      font-family: helvetica;
+      border: none;
+      position: relative;
+      background: #fff;
+  }
+  .submit-listings-holder-m .submit-form-holder-m input[type="checkbox"]{
+      width: auto;
+      display: inline-block;
+      margin: 8px 10px 10px 0;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .submit-font-props{
+      letter-spacing: 1px;
+      font-weight: normal;
+      color: #555555;
+      font-size: 16px;
+      font-family: helvetica;
+  }
+  .submit-listings-holder-m .submit-form-holder-m .sub-base:focus
+  {
+      box-shadow: 0px 2px 4px 0px #cccccc;
+  }
+  .submit-listings-holder-m .submit-form-holder-m input[type="submit"]{
+      display: table;
+      margin: 30px auto 15px;
+      border: 1px solid transparent;
+      background: #C60024;
+      color: #fff;
+      padding: 8px 40px;
+      font-family: montserrat;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      transition: all 300ms ease-in-out;
+  }
+  .submit-listings-holder-m .submit-form-holder-m input[type="submit"]:hover {
+      border: 1px solid #C60024;
+      background: transparent;
+      color: #C60024;
+  }
+/**
+	Submit listing step one page ends here...
+*/
+/**
+    Submit listing step two page starts here...
+*/
+    .submit-listings-content-m .pricing-table-2 .price-block .price .amount {
+        font-size: 40px;
+    line-height: 34px;
+    margin-right: 5px;
+  }
+  .submit-listings-content-m .pricing-table-2 .price-block h2 {
+    font-size: 26px;
+    letter-spacing: .10em;
+    font-weight: 600;
+  }
+  .submit-listings-content-m .pricing-table-2 .price-block header {
+    padding: 50px 20px;
+  }
+  .submit-listings-content-m .pricing-table-2 .price-block-selected header {
+    background:#6585a8;
+  }
+  .submit-listings-content-m .pricing-table-2 .price-block .btn {
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 0;
+    background: #C60024;
+    box-shadow: 0 2px #C60024;
+    padding: 10px 30px;
+  }
+  .submit-listings-content-m .pricing-table-2 .price-block-selected .btn {
+    background: #22cb6a;
+    box-shadow: 0 2px #22cb6a;
+  }
+  .submit-listings-content-m .pricing-table-2 .tables-row {
+    margin-top: 0;
+  }
+
+  .submit-listings-content-m .addons-wrap h2 {
+    text-align: center;
+    font-family: open sans;
+    font-weight: 600;
+    color: #c60024;
+    font-size: 30px;
+    text-transform: uppercase;
+   }
+   .addons-wrap .single-addon-wrap{
+    width: 100%;
+    margin: 20px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 300px;
+    padding: 20px;
+    background: #f5f7fa;
+   }
+   .addons-wrap .single-addon-wrap img{
+    width: 60px;
+    margin: 20px 0 15px;
+   }
+   .addons-wrap .single-addon-wrap h4{
+    font-size: 16px;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: helvetica;
+    height: 40px;
+    margin-bottom: 0;
+   }
+   .addons-wrap .single-addon-wrap p{
+    font-size: 16px;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: helvetica;
+    height: 40px;
+    margin: 0;
+    background: transparent;
+    color: #555;
+   }
+   .addons-wrap .single-addon-wrap small{
+   }
+   .addons-wrap .single-addon-wrap a.btn{
+    color: #fff;
+    background: #c60024;
+    border-radius: 0;
+   }
+   .terms-submit-page-step-2{
+	    margin: 10px 0;
+	    font-size: 16px;
+   }
+   .terms-submit-page-step-2 input[type=checkbox]{
+	   margin: 0px 10px 0 0;
+   }
+  .submit-listings-holder-m .submit-form-holder-input-continue{
+      display: table;
+      margin: 30px auto 15px;
+      border: 2px solid transparent;
+      background: #C60024;
+      color: #fff;
+      padding: 10px 40px;
+      font-family: montserrat;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      transition: all 300ms ease-in-out;
+  }
+  .submit-listings-holder-m .submit-form-holder-input-continue:hover {
+      border: 2px solid #C60024;
+      background: transparent;
+      color: #C60024;
+  }
+
+   /*setup bar showing steps..*/
+   .bs-wizard {margin-top: 40px;}
+    .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 10px 0 50px 0;}
+    .bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+    .bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+    .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .bs-wizard > .bs-wizard-step .bs-wizard-info {
+        color: #fff;
+        font-size: 17px;
+        margin: 20px 0 10px;
+        font-weight: 600;
+        font-family: open sans;
+        text-transform: uppercase;
+    }
+    .bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+        position: absolute; width: 30px; height: 30px; display: block; background: #22CB6A; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;
+    }
+    .bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {
+        content: ' '; width: 14px; height: 14px; background: #17924b; border-radius: 50px; position: absolute; top: 8px; left: 8px;
+    }
+    .bs-wizard > .bs-wizard-step > .progress {
+        position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 12px 0;
+    }
+    .bs-wizard > .bs-wizard-step > .progress > .progress-bar {
+        width:0px; box-shadow: none; background: #22cb6a;
+    }
+    .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+    .bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+    .bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+    .bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+    .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5;}
+    .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {background:#ccc;}
+    .bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+    .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+    .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+/**
+    Submit listing step two page ends here...
+*/
+/* submit listing step three starts  */
+.submit-listings-content-m .submit-listings-holder-m .final-submit-heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:justify;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
+    width:100%
+  }
+  .submit-listings-holder-m .table-cart {
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+  }
+  .submit-listings-holder-m .table-cart thead tr  {
+    font-size: 15px;
+    font-family: times;
+    letter-spacing: 1px;
+  }
+  .submit-listings-holder-m .table-cart tbody tr {
+    font-size: 17px;
+  }
+  .submit-listings-holder-m .table-cart tbody tr .count-selector{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+  }
+  .submit-listings-holder-m .table-cart tbody tr .count-selector input{
+        width: 40px;
+    margin: 0 15px;
+    text-align: center;
+    padding: 0;
+  }
+  .submit-listings-holder-m .table-cart tbody tr .count-selector span{
+
+  }
+  .submit-listings-holder-m .table-cart tbody tr .count-selector button{
+        width: 22px;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    height: 22px;
+    border-radius: 50%;
+    background: #e6e3e3;
+    font-size: 16px;
+    line-height: 8px;
+    box-shadow: none;
+  }
+  .submit-listings-holder-m .table-cart tbody tr .btn {
+    background: none;
+    color: #555;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+  }
+  .table-cart th:nth-child(5), .table-cart th:nth-child(6), .table-cart th:nth-child(7) {
+    text-align:center;
+  }
+  .table-cart td:nth-child(5), .table-cart td:nth-child(6), .table-cart td:nth-child(7) {
+    text-align:center;
+  }
+  .submit-listings-holder-m .table-cart tbody tr td a i{
+    color: #555;
+    font-size: 18px;
+    margin: 0 auto;
+  }
+  .submit-listings-holder-m .payment-type-tabs{
+    text-align:center
+  }
+  .submit-listings-holder-m .tab-pane{
+    width: 60%;
+    margin: 35px auto 20px;
+  }
+  .submit-listings-content-m .submit-listings-holder-m .coupon-sec-payment-head-text-summarypage-inner-js {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #414551;
+    background: transparent;
+    letter-spacing: 0;
+    margin: 18px auto;
+    padding: 0;
+    width: 100%;
+  }
+  .submit-listings-content-m .submit-listings-holder-m .partners-image-summarypage-inner-js {
+    width: 60%;
+    margin: 35px auto 0;
+    float: left;
+   }
+  .submit-listings-content-m .submit-listings-holder-m .coupon-image-summarypage-inner-js {
+    width:85px;
+   }
+  .submit-listings-holder-m .final-submitting-m{
+    display: table;
+    margin: 30px auto;
+    border: 2px solid transparent;
+    background: #C60024;
+    color: #fff;
+    padding: 10px 0;
+    font-family: montserrat;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    transition: all 300ms ease-in-out;
+    text-align:center;
+    width:100%;
+  }
+  .submit-listings-content-m .submit-listing-3-payments h3{
+      font-family: montserrat;
+      font-weight: 600;
+      color: #111010;
+      font-size: 28px;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 20px 0;
+  }
+  .submit-listings-content-m .submit-listing-3-payments .form-group{
+      margin-bottom:15px;
+  }
+  .submit-listings-content-m .submit-listing-3-payments .form-group input{
+      height: auto;
+		padding: 8px 16px;
+		font-family: montserrat;
+		color: #333;
+		letter-spacing: 0.5px;
+		border-radius: 0;
+		font-size: 16px;
+  }
+
+/* submit listing step three ends */
+
+/* account page starts */
+
+/* main div */
+.myaccount-page-wholesection-inner-js
+{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/annie-spratt-44241-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* main div ends */
+
+/* left tab */
+.custompills-accountpage-inner-js
+{
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+.custompills-accountpage-inner-js > li.active > a, .custompills-accountpage-inner-js > li.active > a:focus, .custompills-accountpage-inner-js > li.active > a:hover
+{
+    background: #b91319 !important;
+    color: #fff !important;
+    font-family: 'Montserrat',sans-serif !important;
+    font-weight: 500 !important;
+    border: solid 1px #b91319;
+    border-radius: 0 !important;
+    margin: 0 0 0 5px;
+    padding: 8px 10px 8px 10px;
+}
+
+.tabs-headings-content-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #414551;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+
+
+/* left tab ends */
+/* buttons like checkboxes and radios in modals.. */
+.modal-content .radio input[type=radio], .modal-content .checkbox input[type=checkbox] {
+	margin-top:4px;
+}
+.btn.btn-primary{
+	background:#b91319;
+	box-shadow:none;
+}
+.btn.btn-primary:hover{
+	background:#b91319;
+}
+/* right tab starts */
+
+.usermain-image-accountpage-inner-js
+{
+    width: 20%;
+    height: auto;
+    border-radius: 0px;
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    border: 2px solid #757575;
+}
+
+/* userdetails */
+
+.editicon-myprofile-tab-accountpage-inner-js
+{
+    font-size: 10px;
+    background: #b91319;
+    color: #fff;
+    padding: 3px 3px 3px 3px;
+    border-radius: 2px;
+    display: table;
+    margin: 0 auto;
+}
+
+.username-account-page-inner-js
+{
+    display: inline-block;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: 'Montserrat',sans-serif;
+    color: #414551;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.holder-image-userbg-accountpage-js
+{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/userbgfullcover.jpg);
+    padding: 0 0 4px 0;
+}
+.holder-profileimage-links-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.imagechange-link-accountinfo-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-align: center;
+    display: inline-block;
+    padding: 4px 10px 4px 10px;
+}
+.imagechange-link-accountinfo-inner-js .glyphicon
+{
+    margin: -4px 5px 0 0;
+	font-size: 12px;
+}
+
+.passwordchange-link-accountinfo-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-align: center;
+    display: inline-block;
+    padding: 4px 10px 4px 10px;
+}
+.passwordchange-link-accountinfo-inner-js .glyphicon
+{
+    margin: -4px 5px 0 0;
+	font-size: 12px;
+}
+
+/* fields */
+
+.form-holderfull-profilesection-inner-js .labels-fields-tabs-inner-page-account-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    margin: 6px 0 4px 0;
+    color: #000;
+    font-weight: 200;
+    text-transform: capitalize;
+}
+
+.form-holderfull-profilesection-inner-js .account-fields-tabs-inner-page-account-js {
+    width: 90%;
+    height: auto;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 10px;
+    background: rgba(213, 213, 213, 0.1);
+    font-weight: normal;
+}
+
+.form-holderfull-profilesection-inner-js .state-fields-tabs-inner-page-account-js {
+    width: 90%;
+    height: auto;
+	border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 10px;
+    background: rgba(213, 213, 213, 0.1);
+    font-weight: normal;
+}
+
+/* date of birth */
+.form-holderfull-profilesection-inner-js .dateofbirth-field-adjust-inner-page-account-js
+{
+    width: 13%;
+    height: auto;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 6px 4px;
+    background: rgba(213, 213, 213, 0.1);
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+}
+.form-holderfull-profilesection-inner-js .monthofbirth-field-adjust-inner-page-account-js
+{
+    width: 16%;
+    height: auto;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 6px 4px;
+    background: rgba(213, 213, 213, 0.1);
+    display:inline-block;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* date of birth #*/
+
+/* Permanent Address bar */
+.permanentaddress-tab-inner-page-account-js
+{
+    width: 100%;
+    height: auto;
+}
+
+/* State tab */
+.state-fields-tabs-inner-page-account-js
+{
+    width: 60%;
+    height: 35px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    background: rgba(213, 213, 213, 0.1);
+}
+.form-holderfull-profilesection-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    padding: 15px 15px 15px 15px;
+    margin: 8px 0 0 0;
+}
+.sameaddress-option-inner-page-account-js
+{
+    width: 50%;
+    padding: 0 0 0 24px;
+    height: auto;
+}
+.labels-sameaddress-fields-tabs-inner-page-account-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    display: inline;
+    margin: 6px 0 0 0;
+    color: #b91319;
+}
+.permanentaddress-tab-inner-page-account-js .checkbox label{
+	font-size: 14px;
+	min-height: auto;
+	line-height: 15px;
+}
+.permanentaddress-tab-inner-page-account-js .checkbox label input{
+	margin: 0 0 0 -20px;
+}
+/* Permanent Address bar #*/
+/* submit link */
+.submitlink-adminpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    background: #b91319;
+    padding: 5px 20px 5px 20px;
+    border-radius: 4px;
+}
+
+/* fade effect */
+.fade
+{
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -ms-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+}
+/* submit link #*/
+
+/* fields # */
+
+/* reservation tab starts */
+.holder-reservation-tab-header-inner-account-page-js
+{
+    width: 100%;
+    height: auto;
+    padding: 5px 10px 5px;
+    background: #b91319;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.reservation-tab-content-headings-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0 10px 0 10px;
+}
+.holder-scroll-items-account-page-inner-js
+{
+    width: 100%;
+    height: 150px;
+    overflow-y:scroll;
+}
+.holder-reservation-tab-content-styleouter-inner-js .holder-reservation-flex-box{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+			flex-direction: row;
+	-webkit-box-pack: start;
+		-ms-flex-pack: start;
+			justify-content: flex-start;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+}
+.holder-reservation-tab-content-styleouter-inner-js .holder-reservation-flex-box .read-more-myreservation {
+	font-size: 13px;
+    text-transform: capitalize;
+    margin: 0px 5px 0;
+    color: #b91319;
+    font-weight: 500;
+}
+.restaurant-name-reservation-tab-content-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 16px;
+	text-transform: capitalize;
+	display: inline-block;
+	font-weight: 600;
+	width: 35%;
+	color: #414551;
+	margin: 10px 0;
+}
+.restaurant-details-name-reservation-tab-content-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+	text-transform: capitalize;
+    width: auto;
+    display: inline-table;
+    text-align: center;
+    color: #414551;
+    padding: 0 0 0 7px;
+}
+
+.booking-details-reservation-tab-content-inner-js
+{
+    font-size: 14px;
+	font-weight: 100;
+	color: #414551;
+	display: inline-block;
+	width: 35%;
+	padding: 0;
+	font-family: 'Montserrat',sans-serif;
+	text-transform: capitalize;
+	margin:10px 0;
+}
+.holder-reservation-flex-box .holder-reservation-box-spanner
+{
+    font-size: 14px;
+	font-weight: 100;
+	color: #414551;
+	display: inline-block;
+	width: auto;
+	padding: 0 0 0 15px;
+	font-family: 'Montserrat',sans-serif;
+	text-transform: capitalize;
+}
+.booking-details-address-bar-reservation-tab-content-inner-js
+{
+    font-size: 15px;
+    color: #414551;
+    display: inline-table;
+    width: 55%;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    padding: 0 0 0 8px;
+    text-transform: capitalize;
+}
+
+.holder-reservation-tab-content-styleouter-inner-js
+{
+    width: 100%;
+	height: auto;
+	border: 1px solid #eaeaea;
+	background: #f9f9f9;
+	padding: 10px 20px 0px 20px;
+	margin: 10px 0 0 0;
+	font-weight: normal;
+	font-size: 16px;
+}
+.reservation-id-number-reservation-tab-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #b91319;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.map-heading-innerpage-reservation-tab-accountpage-js
+{
+    font-size: 17px;
+    font-weight: 400;
+    color: #414551;
+    display: inline-block;
+    text-transform: capitalize;
+    width: 35%;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+    text-align: left;
+}
+.restaurant-type-details-name-reservation-tab-content-inner-js
+{
+    font-size: 15px;
+	color: #414551;
+	display: inline-table;
+	width: auto;
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 100;
+	padding: 0 0 0 15px;
+	text-transform: capitalize;
+}
+.orderconfirmed-account-page-reservation-tab-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    color: #099e44;
+    font-weight: 500;
+}
+.map-image-accountpage-inner-js
+{
+    display: inline;
+    width: 20px;
+    height: auto;
+    margin-top: -8px;
+}
+.holder-fullcontent-cartsummary-page-inner-js .menus-reservation-tab-account-page-inner-js
+{
+    width: 10%;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 3px 10px;
+    height: auto;
+}
+.holder-fullcontent-cartsummary-page-inner-js .menus-restaurant-reservation-tab-account-page-inner-js
+{
+    width: 25%;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 3px 10px;
+    height: auto;
+}
+
+/* my favourites tab */
+.holder-fullcontent-cartsummary-page-inner-js .searchbox-myfavourites-tab-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+    font-weight: normal;
+    font-size: 14px;
+}
+.holder-fullcontent-cartsummary-page-inner-js .add-link-favorite-tab-account-page-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 10px;
+	font-weight: 600;
+	color: #fff;
+	background: #b91319;
+	padding: 7px 16px 7px 16px;
+	display: table;
+	margin: 0px auto;
+	text-transform: uppercase;
+}
+
+.holder-fullcontent-cartsummary-page-inner-js .search-bar-favouritestab-holder-inner-js
+{
+    width: 114px;
+    height: auto;
+    display: inline;
+    top: -1px;
+    position: relative;
+}
+.holder-fullcontent-cartsummary-page-inner-js .searchicon-adjust-myfavouritetab-inner-js
+{
+    color: #000;
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    font-size: 14px;
+}
+.holder-fullcontent-cartsummary-page-inner-js .menus-reservation-tab-account-page-inner-favouritetab-js
+{
+    width: 5%;
+    height: auto;
+    padding: 5px 10px;
+    font-weight: normal;
+    font-size: 14px;
+}
+.holder-fullcontent-cartsummary-page-inner-js .menus-reservation-tab-account-page-favouriterestaurant-inner-js
+{
+    width: 20%;
+    height: auto;
+    padding: 5px 10px;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0 6px 0 0;
+}
+
+.myfavouritestab-account-page-favourite-restaurantimage-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.holder-myfavouritetab-innerimage-favourite-restaurant-js
+{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    padding: 0 0 10px 0;
+}
+.name-favourite-restaurant-desc-favouritetab-inner-js
+{
+    color: #666;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: capitalize;
+	text-align: left;
+	padding: 0;
+	margin: 10px;
+}
+.name-favourite-restaurant-desc-favouritetab-inner-js-location
+{
+    color: #666;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	text-transform: capitalize;
+	text-align: left;
+	padding: 0;
+	margin: 10px;
+}
+.myfavouritestab-account-page-favourite-restaurantimage-details-inner-js
+{
+    color: #b91319;
+    font-size: 14px;
+    font-family: 'Montserrat',sans-serif;
+    width: 28%;
+    font-weight: 500;
+    text-align: left;
+    display: inline-table;
+    padding: 0 0 0 4px;
+    margin: 0 0 0 0;
+}
+.myfavouritestab-account-page-favourite-restaurantimage-details-cusine-inner-js
+{
+    color: #757575;
+    font-size: 14px;
+    font-family: 'Montserrat',sans-serif;
+    width: 70%;
+    font-weight: 100;
+    display: inline-table;
+    text-align: left;
+    padding: 0 0 5px 0;
+}
+.heading-my-favouritetab-inner-section1-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #9e9999;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.myfavouritestab-account-page-favourite-restaurantimage-detailsrow2-inner-js, .myfavourite-most-ord-sub-det
+{
+    color: #b91319;
+	font-size: 14px;
+	font-family: 'Montserrat',sans-serif;
+	width: 100%;
+	font-weight: 100;
+	text-align: left;
+	display: block;
+	padding: 0;
+	margin: 0 10px;
+	text-transform: capitalize;
+}
+/* pagination starts */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #b91319;
+    border-color: #b91319;
+}
+
+.pagination li a
+{
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    color: #b91319;
+    background: none;
+    margin: 0 3px;
+        margin-left: 3px;
+    border: 1px solid #b91319;
+    padding: 5px 12px;
+    font-family: 'Montserrat',sans-serif;
+}
+
+/* pagination ends */
+
+/* reservation tab ends */
+
+/* online-order history */
+
+.holder-online-order-history-tab-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    background: #fff;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0 0 0;
+}
+.adjust-reviewdisplay-section-accountpage-inner-js
+{
+    height: auto;
+    border: 1px solid #eaeaea;
+    padding: 6px 0 0 0;
+}
+.myfavouritestab-account-page-favourite-restaurantimage-details-mostvisitedrestaurants-inner-js
+{
+    color: #b91319;
+	font-size: 14px;
+	font-family: 'Montserrat',sans-serif;
+	width: 100%;
+	font-weight: 100;
+	text-align: left;
+	display: inline-table;
+	padding: 0;
+	margin: 0 10px 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+		-ms-flex-pack: start;
+			justify-content: flex-start;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	text-transform: capitalize;
+}
+.count-visited-myfavourtitetab-inner-js
+{
+    padding: 0 0 0 5px;
+}
+.order-history-tab-heading-row1-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 14px;
+	color: #414551;
+	font-weight: 500;
+	width: auto;
+	margin: 10px 0 10px 0;
+	display: block;
+}
+
+.details-orderhistorytab-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+	text-transform: capitalize;
+	font-weight: 100;
+	width: auto;
+	color: #414551;
+	text-align: left;
+	padding: 0;
+	font-size: 14px;
+	display: block;
+}
+.fa.fa-star.checkedcustomrating-dineinorder-accounttab-inner-js {
+    font-size: 18px;
+}
+.order-details-headings-orderhistory-tab-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+}
+.order-details-headingsmain-orderhistory-tab-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+.order-history-tab2-heading-row2-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: 40%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+.order-history-tab2-date-heading-row2-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    display: inline-block;
+    color: #b91319;
+    font-weight: 500;
+    width: 73%;
+    text-align: center;
+}
+.holder-firstcol-onlineorder-historytab-inner-accountpage-js
+{
+    width: 100%;
+	height: auto;
+	border: 1px solid #eaeaea;
+	background: #f9f9f9;
+	padding: 10px;
+	margin: 0;
+}
+
+.details-orderhistorytab-row2-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    font-weight: 100;
+    width: 31%;
+    color: #414551;
+    display: inline-table;
+    text-align: center;
+}
+.details-ordertype-orderhistorytab-row2-restaurantname-inner-js
+{
+    font-weight: 500;
+    color: #b91319;
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    width: 31%;
+    display: inline-table;
+    text-align: center;
+}
+.total-bar-onlineorder-history-flex-box{
+	background: #f9f9f9;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+		-ms-flex-pack: end;
+			justify-content: flex-end;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	font-weight: normal;
+	font-size: 14px;
+	padding-right: 5%;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.total-bar-onlineorder-history-innerpage-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	display: inline-block;
+	width: 68%;
+	text-align: right;
+	color: #b91319;
+	margin: 10px 25px;
+}
+.price-details-onlineorder-history-innerpage-accountpage-js
+{
+    display: block;
+	width: auto;
+	text-align: center;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	color: #b91319;
+	padding: 0;
+	margin: 0 25px;
+}
+.time-orderdetails-acountpage-inner-js
+{
+    display: inline-block;
+    color: #b91319;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0 0 0 0;
+    line-height: 14px;
+}
+
+/* dine in tab starts */
+.details-dine-in-tab-row2-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+	text-transform: capitalize;
+	font-weight: 100;
+	width: 100%;
+	color: #414551;
+	display: block;
+	text-align: left;
+	font-size: 14px;
+	margin: 15px 0 10px;
+}
+.details-dine-in-tab-row2-restaurantname-inner-js-spanner
+{
+    font-family: 'Montserrat',sans-serif;
+	text-transform: capitalize;
+	font-weight: 100;
+	width: auto;
+	color: #414551;
+	text-align: left;
+	font-size: 14px;
+	display:inline-block;
+	margin:0;
+}
+.links-restaurant-card-holderdiv-innertabs-accountpage-js
+{
+    width: 100%;
+	height: auto;
+	display: table;
+	margin: 10px auto;
+}
+.checkedcustomrating-dineinorder-accounttab-inner-js
+{
+    color: #b91319;
+}
+
+.restaurant-card-link-style-self-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 13px;
+	color: #b91319;
+	padding: 5px;
+	border: 1px solid #eaeaea;
+	font-weight: 500;
+	text-transform: capitalize;
+}
+.rowholder-content-orderdate-inner-account-page-dinein-tab-js
+{
+     background: #f9f9f9;
+	border: 1px solid #eaeaea;
+	padding: 10px 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.orderdate-dineintab-inner-style-accountpage-js
+{
+   font-family: 'Montserrat',sans-serif;
+	font-size: 15px;
+	text-transform: capitalize;
+	font-weight: 500;
+	color: #414551;
+	width: auto;
+	display: inline-block;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.date-output-inner-js-dinein-tab-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    color: #b91319;
+    font-weight: 500;
+    width: auto;
+    display: inline-block;
+    text-align: left;
+    text-transform: capitalize;
+    padding: 0;
+}
+.ordertype-output-inner-js-dinein-tab-accountpage-js
+{
+	font-family: 'Montserrat',sans-serif;
+	font-size: 15px;
+	color: #b91319;
+	font-weight: 500;
+	width: auto;
+	display: inline-block;
+	text-align: right;
+	padding: 0;
+	text-transform: capitalize;
+}
+
+/* track order starts */
+
+.order-history-tab2-tracktab-heading-row2-aligner-box
+{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: normal;
+    font-size: 14px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+
+.order-history-tab2-tracktab-heading-row2-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: auto;
+    text-transform: capitalize;
+    margin: 15px 0;
+}
+.details-orderhistorytab-row2-tracktab-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 500;
+    width: auto;
+    color: #b91319;
+    display: inline-table;
+    text-align: center;
+}
+.custom-progressbar-order-tracktab-heading-inner-js
+{
+    color: #b91319;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+.custom-progressbar-order-tracktab-desc-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 7px 0;
+}
+.heading-mybenefits-track-tab-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #414551;
+    text-transform: uppercase;
+}
+
+.cancelorder-trackorder-tab-inner-account-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    background: #b91319;
+    color: #fff;
+    padding: 5px 8px 5px 8px;
+    float: right;
+    margin: 12px 0 0 0;
+}
+.map-heading-innerpage-trackorder-tab-accountpage-js
+{
+    font-size: 17px;
+    font-weight: 400;
+    color: #414551;
+    display: inline-block;
+    width: 10%;
+    padding: 0 0 0 6px;
+    font-family: 'Montserrat',sans-serif;
+    text-align: left;
+}
+.custom-adjust-bar-color
+{
+    background-color: #c0c0c0 !important;
+}
+/* track order ends */
+
+/* right tab ends */
+
+/* reviews tab starts */
+
+.reviews-tab-image-restaurant-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    display: table;
+    margin: 4px auto;
+}
+.checkedcustomrating-reviewtab-accounttab-inner-js
+{
+    color: #b91319;
+	font-size:17px !important;
+}
+.reviews-text-reviewtab-inner-js-accountpage-js
+{
+    width: 100%;
+    height: auto;
+}
+.reviews-text-reviewtab-inner-js-accountpage-js .review-title
+{
+    font-size: 16px;
+	font-weight: 500;
+	text-transform: capitalize;
+	margin: 6px 0;
+}
+.reviews-text-reviewtab-inner-js-accountpage-js .review-text
+{
+    font-size: 14px;
+	font-weight: normal;
+	text-transform: none;
+	margin: 10px 0;
+}
+
+.reviews-text-reviewtab-inner-js-accountpage-js p
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    color: #929292;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+/* reviews tab ends */
+
+
+/* my benefits tab starts */
+
+.heading-mybenefits-loyality-points-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 15px;
+	display: inline-block;
+	color: #414551;
+	font-weight: 500;
+	width: 46%;
+	margin: 10px 0 10px;
+}
+.holder-scroll-items-account-page-benefitstab-inner-js
+{
+    width: 100%;
+	height: 150px;
+	overflow-y: scroll;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+	font-weight: 600;
+}
+.orderdate-benefits-tab-inner-style-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #b91319;
+    width: 100%;
+    display: inline-block;
+    padding: 5px 0 0 0;
+    margin: 0 0 0 0;
+    text-align: left;
+}
+.links-benefit-tab-restauranttab-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 5px 0 5px 0;
+    display: table;
+    margin: 10px 35px auto;
+}
+.mybenefits-restaurantcard-links-accountpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    color: #b91319;
+    padding: 6px 20px 6px 20px;
+    border: 1px solid #eaeaea;
+}
+
+.description-mybenefits-loyality-points-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 15px;
+	width: auto;
+	display: inline-table;
+	text-align: left;
+	margin: 0 15px;
+}
+
+.loyalitypoints-ondish-my-benefits-tab-inner-account-page-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #b91319;
+    display:inline-block;
+}
+.confirmed-points-icon-benefits-tab-accountpage-inner-js
+{
+    background: #099e44;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 5px 4px 3px;
+    border-radius: 50px;
+}
+.description-mybenefits-points-loyality-points-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+	font-size: 15px;
+	width: auto;
+	display: inline-table;
+	text-align: left;
+	margin: 0 15px;
+}
+
+/* my benefit tab ends */
+
+/* account page ends */
+/**
+	Style updation css hereon..
+*/
+
+.ngx-pagination .current {
+    padding: 4px 12px !important;
+    background: #b91319 !important;
+    color: #fefefe;
+    cursor: default;
+}
+/*
+.style-searchbar-input-js {
+    border: solid 1px #fcda9a99 !important;
+    background: #0006 !important;
+    width: 300px !important;
+    border-radius: 0px !important;
+}
+*/
+.header-banner .banner-wrap .banner {
+    position: static ;
+    margin-bottom: 10px ;
+    margin-top: 10px ;
+}
+
+/* promotion section start */
+
+.promotion
+{
+    width: 100%;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 60px 0 40px;
+    background-attachment: fixed;
+}
+
+.promotion:before
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    content: '';
+}
+/*
+.promot-h2
+{
+    font-family: 'Suranna', serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 46px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.promot-a
+{
+    font-family: 'montserrat', serif;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px;
+    display: table;
+    background-color: #B91319;
+    transition: all 0.2s ease 0s;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+.promot-a:hover
+{
+    background-color: #ffffff;
+    color: #161D27;
+}
+*/
+/* promotion section start */
+
+.carousel-indicators li {
+    background-color: #333;
+}
+
+.carousel-indicators li.active {
+    background-color: #C60024;
+}
+
+.featured-resort .carousel-inner {
+}
+.featured-resort .carousel .carousel-control {
+	opacity: 1;
+    color: #555;
+    background: transparent;
+    height: auto;
+    width: auto;
+    display: table;
+    top: 44%;
+}
+.featured-resort .carousel .left  {
+	left:-60px;
+}
+.featured-resort .carousel .right  {
+	right:-60px;
+}
+
+.featured-restaurant-slide-column {
+    min-height: 320px;
+    max-height: 320px;
+    margin-bottom: 15px;
+}
+.features .carousel .carousel-control {
+	opacity: 1;
+    color: #555;
+    background: transparent;
+    height: auto;
+    width: auto;
+    display: table;
+    top: 44%;
+}
+.features .carousel .left  {
+	left:-60px;
+}
+.features .carousel .right  {
+	right:-60px;
+}
+
+.featured-restaurant-slide-column {
+    min-height: 320px;
+    max-height: 320px;
+    margin-bottom: 15px;
+}
+.resort1-p {
+    word-wrap: break-word;
+}
+.features .carousel-inner {
+    padding-bottom: 60px;
+}
+.google-img {
+    width: 170px;
+}
+.top-black-background {
+    width: 100%;
+    background: #111416;
+}
+
+/*
+.navbar-nav li a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 20px 12px;
+    letter-spacing: 0.2px;
+    color: #ffffff !important;
+}
+*/
+/*
+.navbar-nav li .currency-btn {
+    background-color: #fcda9a;
+    color: #ffffff;
+    font-family: 'Suranna', serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: table;
+    border: 1px solid transparent;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 20px;
+    border-radius: 0;
+}
+.currency-btn:hover {
+    background-color: transparent !important;
+    color: #fcda9a !important;
+    border: 1px solid #fcda9a !important;
+}*/
+.no-header-image {
+    background: none !important;
+	padding-bottom: 1em;
+}
+.no-header-image .navbar-default{
+    margin-bottom: 2em;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.offer-slider .offer-control {
+	opacity: 1;
+    color: #555;
+    background: transparent;
+    height: auto;
+    width: auto;
+    display: table;
+    top: 44%;
+}
+.offer-slider .left  {
+	/* left:-4px; */
+}
+.offer-slider .right  {
+	/* right:-4px; */
+}
+
+/* register page.. */
+.frm-sub-signup-brd{
+	background: #C60024;
+	padding:13px 20px 8px;
+	margin-bottom:45px;
+}.frm-sub-signup-brd li{
+
+}.frm-sub-signup-brd a{
+	color: #fff;
+    font-family: montserrat;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}.frm-sub-signup-brd li.active {
+	    color: #fff;
+    font-size: 16px;
+    font-family: montserrat;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* line-height: 26px; */
+    margin-top: 2px;
+}
+.main-reg-frm-sup form input[type=text], .main-reg-frm-sup form input[type=email], .main-reg-frm-sup form input[type=password]{
+	border-radius: 0;
+    background: transparent;
+    padding: 8px 10px;
+    height: auto;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-family: montserrat;
+	border:1px solid #ab9f9f;
+    color: #333;
+}
+.main-reg-frm-sup form select{
+	border-radius: 0;
+    background: transparent;
+    padding: 8px 10px;
+    height: auto;
+    font-size: 14px;
+	border:1px solid #ab9f9f;
+    letter-spacing: 0.5px;
+    font-family: montserrat;
+    color: #333;
+}
+.main-reg-frm-sup form .dt-brth-main{
+	border-radius: 0;
+    font-family: montserrat;
+    font-weight: 500;
+    margin: -1px 0 6px 0px;
+}
+.main-reg-frm-sup form .checkbox label{
+	font-size: 16px;
+    line-height: 16px  ;
+	padding-left:25px;
+}
+.main-reg-frm-sup form .checkbox input{
+	margin: 2px 0 0 -20px;
+}
+.main-reg-frm-sup form .checkbox a{
+	line-height: 16px;
+    font-size: 16px;
+    vertical-align: top;
+}
+.main-reg-frm-sup form .btn.btn-default{
+	font-size: 14px;
+    vertical-align: top;
+    width: auto;
+    padding: 8px 30px;
+    border: 1px solid #C60024 !important;
+    font-family: montserrat;
+    text-transform: uppercase;
+    display: inline-table;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 0;
+    margin: 10px 10px 0 0;
+}
+.main-reg-frm-sup form a.login-link{
+	    font-size: 14px;
+    vertical-align: top;
+    width: auto;
+    padding: 9px 30px;
+    border: 1px solid #C60024;
+    margin: 10px auto;
+    font-family: montserrat;
+    text-transform: uppercase;
+    display: inline-table;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.main-reg-frm-sup form .btn.btn-default:hover, .main-reg-frm-sup form .login-link:hover{
+	color:#fff;
+	background:#C60024;
+    border: 1px solid transparent;
+}
+
+/**
+	Style updation css ends hereon..
+*/
+.noUi-horizontal .noUi-tooltip{
+		bottom: 100% !important;
+		padding: 0 5px;
+	}
+/* responsive css start */
+@media only screen and (min-width:320px) and (max-width:480px)
+{
+	/* Website home page css..*/
+		/*top bar in header..*/
+	.header-div{
+		padding-bottom:0;
+	}
+	.top-black-background .navbar-nav {
+		margin:5px -15px;
+		display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+	}
+	.top-black-background .navbar-nav {
+		padding:
+	}
+	.top-black-background .navbar-nav li a.currency-btn {
+		padding:10px 20px;
+	}
+	.top-black-background .navbar-nav li a {
+		padding:5px 0 0;
+	}
+	.top-black-background .navbar-nav .open .dropdown-menu {
+		position:absolute;
+		background:#cccccc;
+		top:105%;
+	}
+	.top-black-background .navbar-nav .open .dropdown-menu>li>a {
+		color:#555;
+	}
+    .navbar-default{
+        margin-bottom: 20%;
+		padding: 0 0 16px;
+    }
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		margin-top:10px;
+	}
+	.google-img{
+		display:none;
+	}
+	.navbar-left{
+		padding-left:5px;
+	}
+	.navbar-toggle{
+		margin-top:13px;
+	}
+	.navbar-default .navbar-nav>li>a {
+		text-align: center;
+		padding: 5px;
+	}
+
+    .bg-image h2{
+        font-size: 32px;
+    }
+    .bg-image h3{
+        font-size: 22px;
+    }
+    .cuisine-bg-rese{
+        right: 5px;
+        left: 5px;
+    }
+	.header-banner .banner-wrap .banner{
+		padding:30px 8px;
+		margin-top:60px !important;
+	}
+	.header-banner .banner-wrap .banner .banner-form .choose-place .dining-checkbox label {
+		padding-left: 25px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.header-banner .banner-wrap .banner .banner-form .choose-place .dining-checkbox .checkbox {
+		margin-top:4px
+	}
+	.featured-resort{
+		padding:20px 0;
+	}
+    .res-h2{
+        font-size: 32px;
+		line-height: 36px;
+		margin-bottom: 25px;
+    }
+	.featured-restaurant-slide-column{
+		min-height:320px !important;
+		max-height:800px !important;
+		margin-bottom: 10px !important;
+		border-bottom: 1px solid #b3b0b0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+    .resort-img{
+        padding:0 25px;
+    }
+    .resort-h2{
+        font-size: 22px;
+    }
+    .resort-p{
+        font-size: 14px;
+    }
+    .resort2-h2{
+        margin:0 0 10px;
+    }
+	.promot-h2 {
+		font-size: 24px;
+		line-height: 30px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+	}
+	.features{
+		padding:30px 0;
+	}
+	.features h2{
+		font-size:32px;
+		line-height:36px;
+	}
+	.features .carousel-inner{
+		padding-bottom:15px;
+	}
+	.features .cours2 {
+		margin-bottom:25px;
+	}
+	.features .cours2 img {
+		width: 90%;
+		display: table;
+		border-bottom: 1px solid #ccc;
+		margin: 0 auto;
+	}
+	.features .carousel .left, .featured-resort .carousel .left{
+		left: -5px;
+	}
+	.features .carousel .right, .featured-resort .carousel .right{
+		right: -5px;
+	}
+	.order-point h2{
+		font-size: 32px;
+		line-height: 36px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+    }
+    .responsive-cuisine{
+        display: none;
+    }
+    .cuisine-img{
+        height: 200px;
+        margin: 0 auto;
+    }
+    .cusine-bg{
+        right: 20px;
+        left: 20px;
+        top: 20px;
+        bottom: 20px;
+    }
+    .boxed-color {
+		margin-bottom: 20px;
+		padding: 10px 25px;
+		width: 80%;
+	}
+    .features h3{
+        font-size: 30px;
+    }
+    .features h2{
+        font-size: 42px;
+        line-height: 36px;
+    }
+    .order-point{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .resort-div{
+        padding: 10px;
+    }
+	.newsdiv{
+		padding-bottom: 58px;
+	}
+	.newscontent h2{
+		font-size: 36px;
+	}
+	.newsletter .email{
+		width: 292px;
+		right: 0px;
+	}
+	.newsletter .send-button{
+		padding: 10px 20px;
+		width: 100%;
+		margin-top:10px;
+	}
+	.contact-logo{
+		width: 50%;
+	}
+	.payment-img {
+		width: 60%;
+		display: block;
+		margin: 0 auto;
+	}
+	.copyright-p{
+		text-align: center;
+		margin-top: 20px;
+	}
+    /* restaurant page starts */
+	.holder-searhbar-first-col-js {
+		padding: 5px 0;
+		text-align: center;
+	}
+    .resultsdiv-numbers-js
+    {
+        text-align: center;
+    }
+    .resultsdiv-sort-js
+    {
+        text-align: center;
+    }
+    .restaurant-page-head-totallisting-js
+    {
+        text-align: center;
+        margin: 0 0 30px 0;
+    }
+    .custom-search-bar-adjust-js
+    {
+        top: 0;
+        left: 0;
+    }
+    .style-searchbar-input-js
+    {
+        width: 90% !important;
+        font-size: 10px;
+    }
+    .holder-search-bar-main-dropdowns-js
+    {
+		margin: 15px 0 0 0px;
+		padding: 0;
+    }
+	.custom-search-bar-adjust-js .search-buttonicon-style-js {
+		padding: 0px 5px;
+	}
+    .searchbar-main-headings-js
+    {
+        margin:0;
+    }
+    .dropdown-seachbar-main-js
+    {
+        margin: 0 4px 0 0;
+    }
+    .dropdown-seachbar-main-js
+    {
+        margin: 0 0px 0 0;
+    }
+    .callnow-button-listing-js
+    {
+        font-size: 9px;
+    }
+    .features-heading-style-js
+    {
+        font-size: 12px;
+    }
+    .holder-buttons-services-features-js
+    {
+        border:none;
+        padding:0;
+    }
+    .holder-buttons-services-features-js .dropdown .glyphicon
+    {
+        font-size:10px;
+    }
+    .holder-buttons-services-features-js .dropdown .icons-callnow-custom-js
+    {
+        font-size:10px;
+    }
+    /* restaurant page ends */
+
+	/* restaurant details page.. */
+
+	.links-menupage-listing-js{
+		margin-bottom:5px;
+	}
+	.nav-tabs > li {
+		display:block;
+	}
+	.emailid-info-tab-menupage-inner-js{
+		text-align:center;
+	}
+	.searchbar-menu-tab-menupage-inner-js .submit-link-holder-menutab-menupage-inner-js{
+		width:100%;
+		padding:6px 30px 6px 10px;
+	}
+	.search-menutab-submiticon-menupage-inner-js {
+		right: 9%;
+	}
+	.searchbar-menu-tab-menupage-inner-js{
+		width:100%;
+	}
+	.submit-link-menutab-menupage-inner-js{
+		margin:5px auto;
+		display:table;
+	}
+	.menu-tabs-head-menupage-inner-js{
+		font-size:26px;
+	}
+
+	.price-content-youmaylike-sec-cart-page-inner-js{
+		margin:0;
+	}
+	.holder-list-menutab-leftside-menupage-js li .menu-list-datalinks-menupage-inner-js{
+		padding:5px 22px;
+	}
+			/* small button and add to cart price etc in menu card item.. */
+			.onclickbuttons-menutab-menupage-inner-js {
+				height: 18px;
+				width: 18px;
+				line-height: 16px;
+			}
+			.searchbar-incrementors-menulisting-menupage-inner-js {
+				font-size: 14px;
+				padding: 2px 4px;
+			}
+			.pricetag-menu-tab-menupage-inner-js{
+				font-size:16px;
+			}
+			.add-link-menutab-menu-page-inner-js {
+				font-size: 11px;
+				padding: 7px 8px 7px 8px;
+			}
+			/* small button and add to cart price etc in menu card item ends.. */
+
+	.noUi-horizontal .noUi-tooltip{
+		bottom: 100% !important;
+		padding: 0 5px;
+	}
+	.modal-content.add-comment-popup-content .panel{
+		border:none;
+	}
+	.modal-content.add-comment-popup-content .panel-body{
+		padding:0 20px 0px;
+	}
+	.modal-content.add-comment-popup-content .panel-body textarea{
+		width:100%;
+	}
+
+	/* restaurant details page ends.. */
+
+	/* cart page starts.. */
+
+	.suggestion-content-youmaylike-sec-cartpage-inner-js{
+		padding:0 10px;
+	}
+	.youmaylike-numbersection-cart-page-inner-js{
+		text-align:center;
+	}
+	.resultfinal-head-pricesection-inner-cartpage-js{
+		font-size:13px;
+		text-align:center;
+	}
+	.adjust-final-price-cartpage-inner-js, .pricetotal-adjust-inner-js{
+		width:auto;
+	}
+	.add-link-youmaylink-section-inner-cartpage-js{
+		width: 60%;
+	}
+	.spinner-myorder-section-cartpage-inner-js {
+		width: 20% !important;
+		text-align: center;
+		padding: 0 !important;
+	}
+	.tax-head-pricemyordersection-inner-cartpage-js {
+		font-size: 16px;
+		text-align: center;
+		width: 100%;
+	}
+	.resultfull-cartpage-inner-js {
+		text-align: center;
+		padding: 20px 0 10px;
+	}
+
+	/* cart page ends.. */
+
+	/* payments page starts.. */
+
+	.heading-cartsummary-page-inner-js{
+		width:85%;
+	}
+	.holder-ordertype-adjust-align-inner-summarypage-js{
+		width:100%;
+	}
+	.holder-ordertype-adjust-align-inner-summarypage-js{
+		text-align:center;
+	}
+	.numbersincrease-ordertab-adjust-inner-page-js{
+		display:block;
+	}
+	.checkboxes-holder-inner-page-summary-js{
+		margin-bottom:20px;
+	}
+
+	/* payments page ends.. */
+
+	/* confirmation page starts.. */
+
+	.heading-tabs-billing-address-inner-js {
+		font-weight: 500;
+		font-size: 14px;
+		padding: 5px 5px 5px 5px;
+	}
+
+	/* confirmation page ends.. */
+
+	/* submit listings pages starts.. */
+
+	.bs-wizard > .bs-wizard-step .bs-wizard-info{
+		font-size:12px;
+	}
+	.submit-listings-content-m .holder-fullcontent-cartsummary-page-inner-js{
+		padding:0;
+	}
+	.submit-listings-content-m .submit-listings-holder-m p{
+		padding:5px 10px;
+		font-size:16px;
+	}
+	.submit-listings-holder-m .submit-form-holder-m .form-group{
+		margin-bottom:12px;
+	}
+	.submit-listings-holder-m .submit-form-holder-m .sub-base, .submit-listings-holder-m .submit-form-holder-m .sub-flow-box{
+		width:100%;
+	}
+	.pricing-table-2 .price-block{
+		margin:0 8px 40px 8px;
+	}
+	.addons-wrap .single-addon-wrap{
+		width:90%;
+	}
+	.table-responsive{
+		width:290px;
+		overflow-x:scroll;
+	}
+
+	/* submit listings pages ends.. */
+	/* signin pages starts.. */
+
+	.my-history-breadcrumb {
+		padding: 0 0 0 30px;
+	}
+	.sign-up-wrapper .page-heading{
+		padding:0;
+	}
+	.page-wrapper .page-heading h2 {
+		font-size: 26px !important;
+	}
+	.sign-up-wrapper .sign-up-form-wrap .sign-up-form .form-group{
+		width:100%;
+	}
+	.sign-up-wrapper .sign-up-form-wrap .sign-up-other a{
+		font-size:12px;
+	}
+	.sign-up-wrapper .sign-up-form-wrap .sign-up-other {
+		padding: 10px 0;
+	}
+	.sign-up-wrapper .sign-up-form-wrap .sign-up-form .alredy-member-wrap{
+		text-align:left;
+	}
+
+	/* signin pages ends.. */
+
+	/* My account page tabs starts here on .. */
+
+	.holder-reservation-tab-header-inner-account-page-js{
+		padding:10px;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+			-ms-flex-direction:column;
+				flex-direction:column;
+	}
+	.holder-fullcontent-cartsummary-page-inner-js .menus-reservation-tab-account-page-inner-js {
+		width: 25%;
+	}
+	.holder-fullcontent-cartsummary-page-inner-js .menus-restaurant-reservation-tab-account-page-inner-js {
+		width: 50%;
+	}
+	.reservation-tab-content-headings-inner-js {
+		font-weight: 600;
+		padding: 2px 10px;
+	}
+	.holder-reservation-tab-content-styleouter-inner-js {
+		padding: 10px 6px;
+		font-size:14px;
+	}
+	.restaurant-name-reservation-tab-content-inner-js {
+		font-size: 13px;
+		font-weight: 600;
+		width: auto;
+		margin: 10px 5px 10px 0;
+	}
+	.restaurant-type-details-name-reservation-tab-content-inner-js {
+		font-size: 13px;
+		padding: 0 0 0 5px;
+	}
+	.restaurant-details-name-reservation-tab-content-inner-js {
+		font-size: 13px;
+		padding: 0 0 0 5px;
+	}
+	.booking-details-reservation-tab-content-inner-js {
+		font-size: 13px;
+		font-weight: 600;
+		margin: 10px 5px 10px 0;
+		width:auto;
+	}
+	.holder-reservation-flex-box .holder-reservation-box-spanner {
+		font-size: 13px;
+		padding: 0 0 0 5px;
+	}
+	.booking-details-address-bar-reservation-tab-content-inner-js {
+		font-size: 13px;
+		padding: 0 0 0 5px;
+	}
+	.map-heading-innerpage-reservation-tab-accountpage-js {
+		font-size: 13px;
+		font-weight: 600;
+	}
+	.holder-online-order-history-tab-accountpage-inner-js{
+		padding:10px;
+	}
+	.total-bar-onlineorder-history-innerpage-accountpage-js {
+		width: auto;
+		margin: 10px;
+	}
+	.price-details-onlineorder-history-innerpage-accountpage-js {
+		font-size: 14px;
+		margin: 10px;
+	}
+
+	/* My account page tabs ends .. */
+
+}
+@media only screen and (min-width:481px) and (max-width:767px)
+{
+	/* Website home page css..*/
+		/*top bar in header..*/
+	.header-div{
+		padding-bottom:0;
+	}
+	.top-black-background .navbar-nav {
+		margin:5px -15px;
+		display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+	}
+	.top-black-background .navbar-nav {
+		padding:
+	}
+	.top-black-background .navbar-nav li a.currency-btn {
+		padding:10px 20px;
+	}
+	.top-black-background .navbar-nav li a {
+		padding:5px 0 0;
+	}
+	.top-black-background .navbar-nav .open .dropdown-menu {
+		position:absolute;
+		background:#cccccc;
+		top:105%;
+	}
+	.top-black-background .navbar-nav .open .dropdown-menu>li>a {
+		color:#555;
+	}
+    .navbar-default{
+        margin-bottom: 20%;
+		padding: 0 0 16px;
+    }
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		margin-top:10px;
+	}
+	.google-img{
+		display:none;
+	}
+
+	.navbar-left{
+		padding-left:5px;
+	}
+	.navbar-toggle{
+		margin-top:13px;
+	}
+	.navbar-default .navbar-nav>li>a {
+		text-align: center;
+		padding: 5px;
+	}
+
+    .bg-image h2{
+        font-size: 32px;
+    }
+    .bg-image h3{
+        font-size: 22px;
+    }
+    .cuisine-bg-rese{
+        right: 5px;
+        left: 5px;
+    }
+
+	.header-banner .banner-wrap .banner{
+		padding:30px 8px;
+		margin-top:60px !important;
+	}
+	.header-banner .banner-wrap .banner .banner-form .choose-place .dining-checkbox label {
+		padding-left: 25px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.header-banner .banner-wrap .banner .banner-form .choose-place .dining-checkbox .checkbox {
+		margin-top:4px
+	}
+
+	.featured-resort{
+		padding:20px 0;
+	}
+    .res-h2{
+        font-size: 32px;
+		line-height: 36px;
+		margin-bottom: 25px;
+    }
+	.featured-restaurant-slide-column{
+		min-height:320px !important;
+		max-height:800px !important;
+		margin-bottom: 10px !important;
+		border-bottom: 1px solid #b3b0b0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+    .resort-img{
+        padding:0 25px;
+    }
+    .resort-h2{
+        font-size: 22px;
+    }
+    .resort-p{
+        font-size: 14px;
+    }
+    .resort2-h2{
+        margin:0 0 10px;
+    }
+
+	.promot-h2 {
+		font-size: 24px;
+		line-height: 30px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+	}
+
+	.features{
+		padding:30px 0;
+	}
+	.features h2{
+		font-size:32px;
+		line-height:36px;
+	}
+	.features .carousel-inner{
+		padding-bottom:15px;
+	}
+	.features .cours2 {
+		margin-bottom:25px;
+	}
+	.features .cours2 img {
+		width: 90%;
+		display: table;
+		border-bottom: 1px solid #ccc;
+		margin: 0 auto;
+	}
+
+	.order-point h2{
+		font-size: 32px;
+		line-height: 36px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+    }
+
+    .responsive-cuisine{
+        display: none;
+    }
+    .cuisine-img{
+        height: 200px;
+        margin: 0 auto;
+    }
+    .cusine-bg{
+        right: 20px;
+        left: 20px;
+        top: 20px;
+        bottom: 20px;
+    }
+	.features .carousel .left, .featured-resort .carousel .left{
+		left: -15px;
+	}
+	.features .carousel .right, .featured-resort .carousel .right{
+		right: -15px;
+	}
+
+    .boxed-color {
+		margin-bottom: 20px;
+		padding: 10px 25px;
+		width: 80%;
+	}
+    .features h3{
+        font-size: 30px;
+    }
+    .features h2{
+        font-size: 42px;
+        line-height: 36px;
+    }
+    .order-point{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .resort-div{
+        padding: 10px;
+    }
+	.newsdiv{
+		padding-bottom: 58px;
+	}
+	.newscontent h2{
+		font-size: 36px;
+	}
+	.newsletter .email{
+		width: 292px;
+		right: 0px;
+	}
+	.newsletter .send-button{
+		padding: 10px 20px;
+		width: 100%;
+		margin-top:10px;
+	}
+	.contact-logo{
+		width: 50%;
+	}
+	.payment-img {
+		width: 60%;
+		display: block;
+		margin: 0 auto;
+	}
+	.copyright-p{
+		text-align: center;
+		margin-top: 20px;
+	}
+
+
+	/* restaurant page starts */
+    .resultsdiv-numbers-js
+    {
+        text-align: center;
+    }
+    .resultsdiv-sort-js
+    {
+        text-align: center;
+    }
+    .dropdown-seachbar-main-js
+    {
+        padding: 3px 20px 2px 20px;
+        margin: 0 0px 0 0px;
+    }
+    .holder-search-bar-main-dropdowns-js
+    {
+        float:left;
+    }
+    .searchbar-main-headings-js
+    {
+       margin: 20px 0px 20px 30px;
+    }
+    .custom-search-bar-adjust-js
+    {
+        top: 8px;
+        left: 80px;
+    }
+    .style-searchbar-input-js
+    {
+        width: 220px !important;
+        font-size: 12px;
+    }
+    .features-heading-style-js
+    {
+        font-size: 18px;
+    }
+    .callnow-button-listing-js
+    {
+        font-size: 18px;
+    }
+    .holder-buttons-services-features-js
+    {
+        border: solid 1px #ccc6;
+        padding: 5px 30px 5px 30px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:1023px)
+{
+	/* Home page css here... */
+	.navbar-default .navbar-nav li a {
+		font-size: 12px;
+		padding: 12px 6px 12px;
+		letter-spacing: 0;
+	}
+	.navbar-right{
+		margin-right:0;
+	}
+	.navbar-default .navbar-nav li .fa-shopping-cart {
+		top: -7px;
+	}
+	.bg-image h2{
+		font-size:44px;
+	}
+	.bg-image h3{
+		font-size:22px;
+	}
+	.header-banner .banner-wrap .banner .banner-form .choose-place {
+		display: block;
+		margin: 0 auto;
+		width: 80%;
+	}
+	.header-banner .banner-wrap .banner .banner-form .order-select .more-filter-button .search-more {
+		height: 40px;
+	}
+	.header-banner .banner-wrap .banner .banner-form .order-select .select-wrap .location input {
+		height: 40px;
+		border-radius: 0;
+	}
+	.header-banner .banner-wrap .banner .banner-form .order-select .select-wrap .location {
+		width: 140px;
+	}
+	.header-banner .banner-wrap .banner .banner-form .order-select .select-wrap select.order-food {
+		width: 140px;
+	}
+
+	.featured-restaurant-slide-column {
+		min-height: auto !important;
+		max-height: 800px !important;
+	}
+	.carousel-indicators{
+		bottom:-30px;
+	}
+	.features .carousel-indicators{
+		bottom:30px;
+	}
+	.boxed-color {
+		padding: 2%;
+		margin: 5px 5px;
+	}
+	.contact-logo {
+		width: 290px;
+	}
+	.features .carousel .left, .featured-resort .carousel .left{
+		left: -15px;
+	}
+	.features .carousel .right, .featured-resort .carousel .right{
+		right: -15px;
+	}
+
+    /* restaurant page starts */
+	.holder-searhbar-first-col-js {
+		padding: 5px 0;
+		text-align: center;
+	}
+	.custom-search-bar-adjust-js {
+		margin: 8px auto;
+		width: 50%;
+	}
+	.holder-search-bar-main-dropdowns-js{
+		-webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+	}
+	/* restaurant details page.. */
+
+	.links-menupage-listing-js{
+		margin-bottom:5px;
+	}
+	.nav-tabs > li {
+		display:block;
+	}
+	.emailid-info-tab-menupage-inner-js{
+		text-align:center;
+	}
+	.checkout-buttonlink-menupage-tab-inner-js{
+		margin:20px auto;
+	}
+	.tabs-content-menu-page-js{
+		font-size:13px;
+	}
+	.menu-tabs-head-menupage-inner-js{
+		font-size:20px;
+	}
+	.reviewshead2-menupage-inner-js {
+		word-break: break-word;
+	}
+
+	/* restaurant details page ends.. */
+	/* cart page starts.. */
+
+	.suggestion-content-youmaylike-sec-cartpage-inner-js{
+		padding:0 10px;
+	}
+	.youmaylike-numbersection-cart-page-inner-js{
+		text-align:center;
+	}
+	.price-content-youmaylike-sec-cart-page-inner-js{
+		margin:0;
+	}
+
+	.add-link-youmaylink-section-inner-cartpage-js{
+		width: 60%;
+	}
+	.spinner-myorder-section-cartpage-inner-js {
+		width: 20% !important;
+		text-align: center;
+		padding: 0 !important;
+	}
+	.tax-head-pricemyordersection-inner-cartpage-js {
+		font-size: 18px;
+		text-align: center;
+		width: 100%;
+	}
+	.resultfull-cartpage-inner-js {
+		text-align: center;
+		padding: 20px 0 10px;
+	}
+	.resultfinal-head-pricesection-inner-cartpage-js{
+		text-align:center;
+	}
+	.adjust-final-price-cartpage-inner-js{
+		width:auto;
+	}
+	/* Myaccount page starts here.. */
+
+		/* Myreservation tab starts here.. */
+		.holder-reservation-tab-content-styleouter-inner-js .holder-reservation-flex-box .read-more-myreservation{
+			font-size:12px;
+			text-align:center;
+		}
+
+		/* Dinein order history.. */
+		.order-details-headingsmain-orderhistory-tab-inner-accountpage-js{
+			font-size:13px;
+		}
+		.orderdate-dineintab-inner-style-accountpage-js, .date-output-inner-js-dinein-tab-accountpage-js, .time-orderdetails-acountpage-inner-js, .ordertype-output-inner-js-dinein-tab-accountpage-js {
+			font-size:14px;
+		}
+		.total-bar-onlineorder-history-flex-box{
+			padding-right:5%;
+		}
+		.order-history-tab-heading-row1-inner-accountpage-js{
+			margin:6px 0 10px 0;
+			font-size:13px;
+		}
+
+		/* My favourite... */
+		.name-favourite-restaurant-desc-favouritetab-inner-js{
+			font-size:14px;
+		}
+
+		/* Track order tab */
+
+	/* Myaccount page ends here.. */
+
+	/* Payments pages starts */
+
+	.heading-tabs-billing-address-inner-js{
+		font-size:14px;
+		font-weight:600;
+	}
+
+	/* Payments pages ends */
+}
+@media only screen and (min-width:1024px) and (max-width:1279px)
+{
+
+	/* Home page css here... */
+	.navbar-default .navbar-nav li a {
+		font-size: 13px;
+		padding: 12px 8px 12px;
+		letter-spacing: 0;
+	}
+	.navbar-right{
+		margin-right:0;
+	}
+	.navbar-default .navbar-nav li .fa-shopping-cart {
+		top: -7px;
+	}
+	.bg-image h2{
+		font-size:44px;
+	}
+	.bg-image h3{
+		font-size:22px;
+	}
+
+	.featured-restaurant-slide-column {
+		min-height: auto !important;
+		max-height: 800px !important;
+	}
+	.carousel-indicators{
+		bottom:-30px;
+	}
+	.features .carousel-indicators{
+		bottom:30px;
+	}
+	.boxed-color {
+		padding: 2%;
+		margin: 5px 5px;
+	}
+	.contact-logo {
+		width: 290px;
+	}
+
+	.features .carousel .left, .featured-resort .carousel .left{
+		left: -15px;
+	}
+	.features .carousel .right, .featured-resort .carousel .right{
+		right: -15px;
+	}
+	.header-banner .banner-wrap .banner .banner-form .choose-place {
+		display: block;
+		margin: 0 auto;
+		width: 86%;
+	}
+
+    /* restaurant page starts */
+	.searchbar-main-headings-js{
+		font-size:12px;
+		margin:6px 7px 0 0;
+	}
+	.search-bar-main-dropdaowns-style-js {
+		margin-right: 5px;
+	}
+    .dropdown-seachbar-main-js
+    {
+        padding: 9px 4px;
+	    margin: 0;
+	    font-weight: 500;
+		font-size:13px;
+    }
+    .dropdown-seachbar-main-js .caret
+    {
+	    margin-right: 2px;
+    }
+    .holder-search-bar-main-dropdowns-js
+    {
+		margin: 6px 0 0;
+    }
+    .features-heading-style-js
+    {
+        font-size: 11px;
+    }
+    .callnow-button-listing-js
+    {
+        font-size: 11px;
+    }
+	/* restaurant details page.. */
+	.checkout-buttonlink-menupage-tab-inner-js{
+		margin:20px auto;
+	}
+	.menu-tabs-head-menupage-inner-js{
+		font-size:24px;
+	}
+	.pricetag-menu-tab-menupage-inner-js{
+		font-size:16px;
+	}
+
+	/* restaurant details page ends.. */
+	/* cart page starts  */
+
+	.add-link-youmaylink-section-inner-cartpage-js{
+		padding:7px 12px;
+	}
+	.spinner-myorder-section-cartpage-inner-js{
+		width:49% !important;
+	}
+	.resultfinal-head-pricesection-inner-cartpage-js{
+		text-align:center;
+	}
+	.tax-head-pricemyordersection-inner-cartpage-js {
+		font-size: 18px;
+		text-align: center;
+		width: 100%;
+	}
+
+	/* cart page ends  */
+
+	/* Myaccount page starts here.. */
+
+		/* Myreservation tab starts here.. */
+		.holder-reservation-tab-content-styleouter-inner-js .holder-reservation-flex-box .read-more-myreservation{
+			font-size:12px;
+			text-align:center;
+		}
+
+		/* Dinein order history.. */
+		.order-details-headingsmain-orderhistory-tab-inner-accountpage-js{
+			font-size:13px;
+		}
+		.orderdate-dineintab-inner-style-accountpage-js, .date-output-inner-js-dinein-tab-accountpage-js, .time-orderdetails-acountpage-inner-js, .ordertype-output-inner-js-dinein-tab-accountpage-js {
+			font-size:14px;
+		}
+		.total-bar-onlineorder-history-flex-box{
+			padding-right:0;
+		}
+		.order-history-tab-heading-row1-inner-accountpage-js{
+			margin:6px 0 10px 0;
+			font-size:13px;
+		}
+
+		/* My favourite... */
+		.name-favourite-restaurant-desc-favouritetab-inner-js{
+			font-size:14px;
+		}
+
+		/* Track order tab */
+
+	/* Myaccount page ends here.. */
+}
+
+.register-signup-button{
+    border: 1px solid #C60024;
+    background: transparent;
+    color: #C60024;
+}
+
+.center-align-vertical {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sign-in-register-image {
+    display: inline-block;
+  }
+
+/* below devices with width more then 1280px and upto 1365px */
+@media only screen and (min-width:1280px) and (max-width:1365){
+
+
+
+}
+
+/* below devices with width more then 1366px and upto 1439px */
+@media only screen and (min-width:1366px) and (max-width:1439){
+
+
+
+}
+
+/* below devices with width more then 1400px and upto 1599px */
+@media only screen and (min-width:1400px) and (max-width:1599){
+
+
+
+}
+
+/* below devices with width more then 1600px and upto 1679px */
+@media only screen and (min-width:1600px) and (max-width:1679){
+
+
+
+}
+
+/* below devices with width more then 1680px and upto 1919px */
+@media only screen and (min-width:1680px) and (max-width:1919){
+
+
+
+}
+
+/* above devices with width equal or more then 1920px */
+@media only screen and (min-width:1920px) {
+
+
+
+}
+/* responsive css end */

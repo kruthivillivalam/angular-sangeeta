@@ -1,0 +1,176 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Footer SCSS.
+ */
+
+.footer-wrap {
+  display: inline-block;
+  width: 100%;
+  padding: 56px 0;
+  background-color: $black-29;
+  color: $gray-93;
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  .footer-menu {
+    display: inline-block;
+    width: 100%;
+    .footer-grid {
+      float: left;
+      width: 25%;
+      @media (max-width: 992px) {
+        width: 50%;
+        &:nth-child(3) {
+          clear: left;
+        }
+      }
+      /*@media (max-width: 480px) {
+        width: 100%;
+      }*/
+      &.social-details {
+        @media (max-width: 480px) {
+          width: 100%;
+        }
+      }
+      &.account-details {
+        @media (max-width: 480px) {
+          width: 100%;
+          margin-bottom: 15px;
+          .footer-details {
+            ul {
+              li {
+                float: left;
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+      .footer-title {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 12px;
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+      .footer-details {
+        ul {
+          li {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 12px;
+            a {
+              color: $gray-93;
+              font-size: 13px;
+              &:hover { color: $red-c6; }
+            }
+          }
+        }
+        .social-icon {
+          ul {
+            li {
+              float: left;
+              width: auto;
+              a {
+                display: inline-block;
+                margin-right: 18px;
+                margin-bottom: 16px;
+                font-size: 12px;
+                &:hover {
+                  color: $red-c6;
+                }
+              }
+            }
+          }
+        }
+        .newsletter {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 22px;
+          font-size: 14px;
+          .footer-title { text-transform: capitalize; }
+          .footer-details {
+            .input-search {
+              display: inline-block;
+              width: 100%;
+              margin-bottom: 15px;
+              input {
+                display: inline-block;
+                height: 45px;
+                width: 100%;
+                padding-left: 15px;
+                border: 1px solid $gray-93;
+                background-color: transparent;
+                color: $gray-da;
+                font-size: 12px;
+                &:focus {
+                  outline: none;
+                }
+              }
+            }
+            .search-btn {
+              display: inline-block;
+              width: 100%;
+              padding: 12px;
+              border: none;
+              background-color: $red-c6;
+              color: $white;
+              font-size: 16px;
+              text-align: center;
+              text-decoration: none;
+              text-transform: uppercase;
+              &:hover {
+                background-color: $gray-93;
+              }
+              &:focus { outline: none; }
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    .footer-copyright,
+    .sponser-section {
+      float: left;
+      display: inline-block;
+      width: 50%;
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+    }
+    .footer-copyright {
+      @media (max-width: 992px) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-bottom: -40px;
+      }
+    }
+    .sponser-section {
+      text-align: right;
+      @media (max-width: 992px) {
+        margin-top: 10px;
+        text-align: left;
+      }
+      a {
+        opacity: .6;
+        @include filter(grayscale(1));
+        &:hover {
+          opacity: 1;
+          @include filter(grayscale(0));
+        }
+        img {
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+}

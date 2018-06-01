@@ -1,0 +1,36 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Layout SCSS.
+ */
+
+
+/* Import of variables created for site */
+@import 'abstractions/variable';
+@import 'abstractions/mixins';
+@import 'abstractions/fonts';
+@import 'abstractions/base';
+@import 'abstractions/typography';
+
+@import 'globals/forms';
+@import 'components/components';
+@import 'components/icons';
+
+@import 'globals/header';
+@import 'globals/footer';
+@import 'globals/sidebar';
+
+@import 'thirdparty/owl-carousel/owl.carousel';
+
+@import 'layout/home';
+@import 'layout/search';
+@import 'layout/restaurant-detail';
+@import 'layout/cart-payment';
+@import 'layout/history';
+@import 'layout/basic-page';
+@import 'layout/submit-listing';
+@import 'layout/event-page';
+@import 'layout/blog';
+@import 'layout/press';
+@import 'layout/contact-us';

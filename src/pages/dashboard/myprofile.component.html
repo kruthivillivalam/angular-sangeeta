@@ -1,0 +1,359 @@
+<div class="container">
+  <div class="holder-fullcontent-cartsummary-page-inner-js">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <a href="javascript:void(0);">Home</a>
+          </li>
+          <li class="active">My Account</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <!-- left side tab -->
+      <leftmenu></leftmenu>
+      <!-- right side tab -->
+      <!-- tab content -->
+      <div class="col-md-9">
+        <div class="tab-content">
+          <div class="tab-pane fade active in" id="tab_a">
+            <form novalidate name="userForm" #userForm="ngForm" class="form">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="holder-image-userbg-accountpage-js">
+                    <img class="usermain-image-accountpage-inner-js" src="../assets/images/end-user-image.jpg">
+                  </div>
+                  <h5 class="username-account-page-inner-js">{{user.firstName}}</h5>
+                  <br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="holder-profileimage-links-accountpage-inner-js">
+                    <a class="imagechange-link-accountinfo-inner-js" href="javascript:void(0);">
+                      <span class="glyphicon glyphicon-pencil"></span>Change Image</a>
+                    <br>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="holder-profileimage-links-accountpage-inner-js">
+                    <a class="passwordchange-link-accountinfo-inner-js" href="javascript:void(0);" data-toggle="modal" data-target="#change-password">
+                      <span class="glyphicon glyphicon-edit"></span>Change Password</a>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- form -->
+              <div class="form-holderfull-profilesection-inner-js">
+                <!-- first name -->
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <label class="labels-fields-tabs-inner-page-account-js">First Name</label>
+                      <br>
+                      <input class="account-fields-tabs-inner-page-account-js" type="text" placeholder="First name*" required pattern="[a-zA-Z]+"
+                        name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel">
+                      <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched || userForm.submitted)" class="alert alert-danger">
+                        <div [hidden]="!firstName.errors.required">
+                          Firstname is required
+                        </div>
+                        <div [hidden]="!firstName.errors.pattern">
+                          Only alphabets are allowed in firstname
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- last name -->
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <label class="labels-fields-tabs-inner-page-account-js">Last Name</label>
+                      <br>
+                      <input class="account-fields-tabs-inner-page-account-js" type="text" placeholder="Last name*" required pattern="[a-zA-Z]+"
+                        name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel">
+                      <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched ||userForm.submitted)" class="alert alert-danger">
+                        <div [hidden]="!lastName.errors.required">
+                          Lastname is required
+                        </div>
+                        <div [hidden]="!lastName.errors.pattern">
+                          Only alphabets are allowed in lastname
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <label class="labels-fields-tabs-inner-page-account-js">Email</label>
+                      <br>
+                      <input class="account-fields-tabs-inner-page-account-js" type="email" placeholder="Email*" required readonly pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        name="email" [(ngModel)]="user.Email" #email="ngModel">
+                      <div *ngIf="email.errors && (email.dirty || email.touched || userForm.submitted)" class="alert alert-danger">
+                        <div [hidden]="!email.errors.required">
+                          Email is required
+                        </div>
+                        <div [hidden]="!email.errors.pattern">
+                          Email is Invalid.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Phone Number -->
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <label class="labels-fields-tabs-inner-page-account-js">Phone Number</label>
+                      <br>
+                      <input class="account-fields-tabs-inner-page-account-js" type="number" placeholder="Mobile*" required minlength="10" maxlength="10"
+                        pattern="^[0-9]+$" name="mobile" [(ngModel)]="user.Mobileno" #mobile="ngModel">
+                      <div *ngIf="mobile.errors && (mobile.dirty || mobile.touched || userForm.submitted)" class="alert alert-danger">
+                        <div [hidden]="!mobile.errors.required">
+                          Mobile is required
+                        </div>
+                        <div [hidden]="!mobile.errors.minlength">
+                          Mobile Number must be at least 10 number long.
+                        </div>
+                        <div [hidden]="!mobile.errors.pattern">
+                          Mobile is Invalid.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Date Of Birth -->
+                <div class="form-group">
+                  <label class="labels-fields-tabs-inner-page-account-js">Date Of Birth</label>
+                  <br>
+                  <select [(ngModel)]="user.days" name="days" class="dateofbirth-field-adjust-inner-page-account-js">
+                    <option *ngFor="let day of days" [ngValue]="day">{{day}}</option>
+                  </select>
+                  <!-- month -->
+                  <select [(ngModel)]="user.month" name="month" class="monthofbirth-field-adjust-inner-page-account-js">
+                    <option *ngFor="let month of months;let i = index" [ngValue]="i">{{month}}</option>
+                  </select>
+                  <!-- year -->
+                  <select [(ngModel)]="user.year" name="year" class="dateofbirth-field-adjust-inner-page-account-js">
+                    <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
+                  </select>
+                </div>
+
+
+                <!-- Permanent Address -->
+                <div class="permanentaddress-tab-inner-page-account-js">
+                  <label class="labels-fields-tabs-inner-page-account-js">Permanent Address</label>
+                  <!-- Address Line 1 -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Address Line 1</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" placeholder="Address Line 1" name="address1" [(ngModel)]="PermanentAddress.address1">
+                      </div>
+                    </div>
+                    <!-- Address Line 2 -->
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Address Line 2</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" placeholder="Address Line 2" name="address2" [(ngModel)]="PermanentAddress.address2">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Suburb -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Suburb</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" placeholder="Suburb" name="Suburb" [(ngModel)]="PermanentAddress.Suburb">
+                      </div>
+                    </div>
+                    <!-- City -->
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">City</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" placeholder="City" name="City" [(ngModel)]="PermanentAddress.City">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Postal Code -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Postal Code</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" placeholder="1234" name="Postalcode" [(ngModel)]="PermanentAddress.Postalcode"
+                          #Postalcode="ngModel">
+                      </div>
+                    </div>
+
+                    <!-- State -->
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">State</label>
+                        <br>
+                        <select [(ngModel)]="PermanentAddress.state_id" #state="ngModel" name="state" class="state-fields-tabs-inner-page-account-js">
+                          <option [ngValue]="''" selected>State</option>
+                          <option *ngFor="let stateItem of stateData" [value]="stateItem.id">{{stateItem.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Country -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Country</label>
+                        <br>
+                        <select [(ngModel)]="PermanentAddress.country_Id" #country="ngModel" name="country" (change)="getStateData($event.target.value)"
+                          class="state-fields-tabs-inner-page-account-js">
+                          <option [ngValue]="''">Country</option>
+                          <option *ngFor="let countryItem of countryData" [value]="countryItem.id">{{countryItem.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Delivery Address -->
+                <div class="permanentaddress-tab-inner-page-account-js">
+                  <label class="labels-fields-tabs-inner-page-account-js">Delivery Address</label>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" (change)="onCheckDeliveryAddress($event)" ng-reflect-name="delivery_address_checkox" ng-model="delivery_address_checkox"
+                            name="delivery_address_checkox"> Same as permanent Address
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Address Line 1 -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Address Line 1</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" name="delivery_address1" placeholder="Address line 1"
+                          [(ngModel)]="deliveryAddress.address1">
+                      </div>
+                    </div>
+                    <!-- Address Line 2 -->
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Address Line 2</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" name="delivery_address2" placeholder="Address line 2"
+                          [(ngModel)]="deliveryAddress.address2">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Suburb -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Suburb</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" name="delivery_Suburb" placeholder="suburb" [(ngModel)]="deliveryAddress.Suburb">
+                      </div>
+                    </div>
+                    <!-- City -->
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">City</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" name="delivery_City" placeholder="Perth" [(ngModel)]="deliveryAddress.City">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Postal Code -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Postal Code</label>
+                        <br>
+                        <input class="account-fields-tabs-inner-page-account-js" type="text" name="delivery_Postalcode" placeholder="1234" [(ngModel)]="deliveryAddress.Postalcode"
+                          #Postalcode="ngModel">
+                      </div>
+                    </div>
+
+                    <!-- State -->
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">State</label>
+                        <br>
+                        <select class="state-fields-tabs-inner-page-account-js" [(ngModel)]="deliveryAddress.state_id" #state="ngModel" name="delivery_state">
+                          <option [ngValue]="''" selected>State</option>
+                          <option *ngFor="let stateItem of stateData" [value]="stateItem.id">{{stateItem.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Country -->
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                        <label class="labels-fields-tabs-inner-page-account-js">Country</label>
+                        <br>
+                        <select class="state-fields-tabs-inner-page-account-js" [(ngModel)]="deliveryAddress.country_Id" #country="ngModel" name="delivery_country"
+                          (change)="getStateData($event.target.value)">
+                          <option [ngValue]="''">Country</option>
+                          <option *ngFor="let countryItem of countryData" [value]="countryItem.id">{{countryItem.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <br/>
+                <!-- submit link -->
+                <a class="submitlink-adminpage-inner-js" href="javascript:void(0);" (click)="userForm.valid && onSubmit(userForm.value)">Save</a>
+
+              </div>
+              <!-- Permanent Address -->
+            </form>
+          </div>
+
+          <!-- Change Password Modal -->
+          <div id="change-password" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <form novalidate name="changePasswordForm" #changePasswordForm="ngForm">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Change Password</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" name='password' [(ngModel)]='password' class="form-control myprofile-changepass-password">
+                    </div>
+                    <div class="form-group">
+                      <label>Confirm Password</label>
+                      <input type="password" name='confirm_password' [(ngModel)]='confirm_password' class="form-control myprofile-changepass-confirm-password">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="changePasswordForm.valid && onChangePassword(changePasswordForm.value)">Update Password</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

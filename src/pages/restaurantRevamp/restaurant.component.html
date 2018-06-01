@@ -1,0 +1,294 @@
+<div class="popularity-sec-js">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="resultsdiv-numbers-js">{{allSearchData.resultsFound}} Results so far</h5>
+      </div>
+
+      <div class="col-md-6">
+        <h5 class="resultsdiv-sort-js">Sort by Popularity</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="listing-content-main-body-js">
+  <div class="container">
+    <div class="holder-fullcontent-inner-js">
+      <div class="row">
+        <div class="col-md-12">
+          <h5 class="restaurant-page-head-totallisting-js">
+            <span *ngIf="alreadySearchedData.locations">{{alreadySearchedData.locations.suburb}}</span> &nbsp; Order from {{allSearchData.resultsFound}}
+            restaurants
+          </h5>
+        </div>
+      </div>
+
+      <div class="holder-search-bar-fullrow-js">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="holder-searhbar-first-col-js">
+              <h5 class="searchbar-main-headings-js">Change view:</h5>
+              <a href="javascript:void(0);" (click)="isMapView('list');">
+                <span class="glyphicon glyphicon-align-justify search-bar-main-icons-js"></span>
+              </a>
+              <a href="javascript:void(0);" *ngIf="allMerchantData?.length>0" (click)="isMapView('map');">
+                <span class="glyphicon glyphicon-map-marker search-bar-main-icons-js"></span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="input-group custom-search-bar-adjust-js">
+              <input id="msg" type="text" class="form-control style-searchbar-input-js" [(ngModel)]='searchKey' name="msg" placeholder="Type Restaurant Name Here">
+              <div class="input-group-btn">
+                <button class="search-buttonicon-style-js" (click)="searchRestaurant(searchKey)">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="holder-search-bar-main-dropdowns-js">
+              <h5 class="searchbar-main-headings-js">Show:</h5>
+              <div class="dropdown search-bar-main-dropdaowns-style-js">
+                <a class="dropdown-seachbar-main-js" type="button" data-toggle="dropdown">{{ perpage }}
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="javascript:void(0);" (click)="setPerPagePreference(10)">10</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="setPerPagePreference(20)">20</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="setPerPagePreference(30)">30</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="setPerPagePreference(40)">40</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="setPerPagePreference(50)">50</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="setPerPagePreference(60)">60</a>
+                  </li>
+                </ul>
+              </div>
+
+              <h5 class="searchbar-main-headings-js">Sort By:</h5>
+              <div class="dropdown search-bar-main-dropdaowns-style-js">
+                <a class="dropdown-seachbar-main-js" type="button" data-toggle="dropdown">{{ sortBySelection }}
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="javascript:void(0);" (click)="sortBySelectedItem('Cost For Two')">Cost For 2</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="sortBySelectedItem('Delivery')">Delivery</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="sortBySelectedItem('TakeAway')">Take Away</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="sortBySelectedItem('Suburb')">Suburb</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="searchfilters-heading-js">Search Filters</h5>
+          <div class="holder-search-filter1-js">
+
+            <!-- Order For 2 -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Order For 2 </label>
+              <br>
+              <nouislider [(ngModel)]="someRange3" [config]="someRange3config" [tooltips]="[true]" style="margin-top: 1.5em;" (ngModelChange)="onChange($event)"
+              #sliderRef name="sliderRef"></nouislider>
+            </div>
+
+            <!-- Postal code -->
+            <div class="form-group border-style-division-js border-style-division-js1">
+              <div class="row">
+                <form novalidate (ngSubmit)="postcodeSearchForm.valid && onSubmit(postcodeSearchForm.value)" name="postcodeSearchForm" #postcodeSearchForm="ngForm">
+                  <div class="col-md-12">
+                    <label class="postcode-head-js">Postcode</label>
+                    <br>
+                    <div class="form-group">
+                      <input type="text" placeholder="postcode" name="postalcode" [(ngModel)]="postcodeSearch.postalcode" #postalcode="ngModel"
+                      pattern="^[0-9]+$" ngValue='' required class="form-control">
+                      <div *ngIf="postalcode.errors && (postalcode.dirty || postalcode.touched || postcodeSearchForm.submitted)" class="alert alert-danger">
+                        <div [hidden]="!postalcode.errors.required">
+                          Postalcode is required
+                        </div>
+                        <div [hidden]="!postalcode.errors.pattern">
+                          Postalcode is Invalid.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <select name="postalcodeKm" [(ngModel)]="postcodeSearch.postalcodeKm" #postalcodeKm="ngModel">
+                        <option value="''">KM</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <button class="find-postallink-js" href="#" type="submit">Find</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- LOCATIONS -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Locations</label>
+              <br>
+              <tree-root #tree [nodes]="nodes" (focus)="getSuburbId($event)" (initialized)="onEvent($event)">
+                <ng-template #treeNodeTemplate let-node>
+                  <span class="locationname" title="{{node.data.id}}">{{ node.data.name }}</span>
+                  <span class="pull-right locatiocount"> ({{node.data.subTitle}})</span>
+                </ng-template>
+              </tree-root>
+            </div>
+
+
+            <!-- Meal Types -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Meal Types</label>
+              <br>
+              <div class="checkbox" *ngFor="let items of allFilters.Meal_Type">
+                <label>
+                  <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Meal_Type',$event);">{{items.name}}
+                </label>
+              </div>
+            </div>
+
+            <!-- Service Area -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Service Area</label>
+              <br>
+              <div class="checkbox" *ngFor="let items of allFilters.Service_Area">
+                <label>
+                  <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Service_Area',$event);">{{items.name}}
+                </label>
+              </div>
+            </div>
+
+            <!-- Parking Types -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Parking Types</label>
+              <br>
+              <div class="checkbox" *ngFor="let items of allFilters.Parking_Type">
+                <label>
+                  <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Parking_Type',$event);">{{items.name}}
+                </label>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Features</label>
+              <br>
+              <div class="checkbox" *ngFor="let items of allFilters.Merchant_Features">
+                <label>
+                  <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Merchant_Features',$event);">{{items.name}}
+                </label>
+              </div>
+            </div>
+
+            <!-- Seating locations -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Seating locations</label>
+              <br>
+              <div class="checkbox" *ngFor="let items of allFilters.Seating_Location">
+                <label>
+                  <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Seating_Location',$event);">{{items.name}}
+                </label>
+              </div>
+            </div>
+
+            <!-- Alcohol Types -->
+            <div class="form-group border-style-division-js">
+              <label class="postcode-head-js">Alcohol Types</label>
+              <br>
+
+              <div class="checkbox" *ngFor="let items of allFilters.Alcohol_Type">
+                <label>
+                  <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Alcohol_Type',$event);">{{items.name}}
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- listing side -->
+        <div class="col-md-8">
+          <div class="listing-right-side-fulldiv-js">
+            <div class="row" *ngIf="isSearchData && !isMapViewFlag">
+              <restaurant-search [skip]="skip" [addClear]="num" [restaurants]="restaurants" *ngFor="let restaurants of allMerchantData | paginate: { id: 'server', itemsPerPage: perpage, currentPage: p, totalItems: total }; let num = index; let skip = first;"></restaurant-search>
+            </div>
+            <div class="search-result-view-wrap" *ngIf="isSearchData && isMapViewFlag">
+              <ngui-map zoom="{{zoomlevel}}" center="{{center}}" (mapReady$)="onMapReady($event)" (mapClick)="onMapClick($event)" mapTypeId="satellite" >
+                <directions-renderer
+                [suppressMarkers]="true"
+                [draggable]="true"
+                panel="#my-panel"
+                (directions_changed)="directionsChanged()"
+                [directions-request]="direction">
+              </directions-renderer>
+              <marker *ngFor="let pos of positions; let i = index; " [position]='pos.latlong'  (click)="clicked($event,pos)" [label]='pos.markerno' > </marker>
+
+              <info-window id='iw'>
+                <div *ngIf="marker.display">
+                  <span class="markerTitle">{{ marker.resTitle }}</span>
+                  <span class="markerAddr">{{ marker.resAddress }}</span>
+                </div>
+                <button type="button" name="getdirection" class="btn btn-default" (click)="onGetDirection($event )">Get Direction</button>
+              </info-window>
+
+              <!--<marker position="{{direction.origin}}"  (click)="originclicked($event)" color="green" label="A" ></marker>-->
+              <info-window id="iwo">
+                <div >
+
+                  <span class="markerTitle">{{ originmarker.resTitle }}</span>
+                  <span class="markerAddr">{{ originmarker.resAddress }}</span>
+                </div>
+              </info-window>
+
+            </ngui-map>
+            <div id="my-panel"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12" *ngIf="isSearchData && !isMapViewFlag">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="pagination pagination1">
+              <pagination-controls (pageChange)="getPage($event)" id="server" maxSize="5" directionLinks="true" autohide="true"></pagination-controls>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

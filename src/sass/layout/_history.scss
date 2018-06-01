@@ -1,0 +1,1131 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * History page SCSS
+ * - My History Page Design
+ */
+
+/* My History Page Design */
+.my-history-breadcrumb {
+  padding: 45px 60px 0;
+  font-family: $opensans-regular;
+  @media (max-width: 992px) {
+    padding: 30px 30px 0;
+  }
+  .breadcrumb {
+    padding: 0;
+    > li {
+      font-size: 14px;
+    }
+  }
+}
+.my-history-page-wrapper {
+  padding-top: 40px;
+  @media (max-width: 992px) {
+    padding: 30px;
+  }
+  .my-history-page-detail {
+    display: inline-block;
+    width: 100%;
+    font-family: $century-gothic;
+    .left-history-tab-list {
+      float: left;
+      min-height: 700px;
+      width: 315px;
+      margin-right: 65px;
+      padding: 0 20px;
+      border: 1px solid $gray-b6;
+      @media (max-width: 992px) {
+        width: 275px;
+        margin-right: 25px;
+      }
+      @media (max-width: 767px) {
+        min-height: 0;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+        padding: 0;
+      }
+      ul {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style-type: none;
+        li {
+          display: inline-block;
+          width: 100%;
+          padding-left: 30px;
+          border-bottom: 1px solid $gray-b6;
+          @media (max-width: 992px) { padding-left: 10px; }
+          &:last-child {
+            border-bottom: none;
+          }
+          a {
+            display: inline-block;
+            width: 100%;
+            padding: 17px 0;
+            color: $black-48;
+            font-size: 16px;
+            @media (max-width: 767px) {
+              padding: 12px 0;
+              font-size: 14px;
+            }
+            &:hover {
+              color: $red-db;
+            }
+          }
+          &.active {
+            a {
+              color: $black-33;
+              font-family: $century-gothic-bold;
+            }
+          }
+        }
+      }
+    }
+    .right-history-tab-details {
+      float: left;
+      @include calc('width', '100% - 380px');
+      @media (max-width: 992px) {
+        @include calc('width', '100% - 300px')
+      }
+      @media (max-width: 767px) { width: 100%; }
+
+      /* My Profile Page */
+      .my-profile-wrap {
+        .form-group {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 20px;
+          label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+            color: $gray-78;
+            font-size: 13px;
+            font-family: $century-gothic-bold;
+          }
+          input {
+            width: 65%;
+            padding-left: 20px;
+            @media (max-width: 992px) {
+              width: 100%;
+            }
+          }
+        }
+        .form-heading {
+          display: inline-block;
+          width: 100%;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          color: $gray-78;
+          font-size: 16px;
+          font-family: $century-gothic-bold;
+          .comopare-address {
+            margin-top: 12px;
+            label { color: $gray-72; }
+          }
+        }
+        .account-name-wrap {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 30px;
+          font-size: 23px;
+          font-family: $opensans-regular;
+          @media (max-width: 480px) {
+            font-size: 18px;
+          }
+          .your-account-text {
+            float: left;
+            margin-right: 14px;
+            color: $black-48;
+            font-family: $opensans-semibold;
+          }
+          .person-name {
+            float: left;
+            color: $pink-fe;
+          }
+        }
+        .profile-image-wrap {
+          display: inline-block;
+          width: 100%;
+          .current-profile-image {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            .profile-image {
+              display: inline-block;
+              margin-right: 15px;
+            }
+            a {
+              display: inline-block;
+              color: $gray-78;
+              font-size: 14px;
+              font-family: $century-gothic-bold;
+              vertical-align: bottom;
+            }
+          }
+          .update-profile-image {
+            display: none;
+            width: 100%;
+            .browse-btn {
+              float: left;
+              margin-top: 10px;
+              margin-right: 10px;
+            }
+            .update-image {
+              float: left;
+              .submit-btn {
+                padding: 10px 18px;
+                border: none;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+        .personal-detail-wrap {
+          display: inline-block;
+          width: 100%;
+          margin-top: 20px;
+          .verify-wrap,
+          .verified-wrap {
+            position: relative;
+            float: left;
+            width: 65%;
+            margin-right: 25px;
+            @media (max-width: 992px) {
+              width: 100%;
+              margin-right: 0;
+            }
+            input { width: 100%; }
+          }
+          .verify-wrap {
+            .verify-text {
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin-top: 12px;
+              margin-right: 25px;
+              @media (max-width: 640px) {
+                margin-right: 10px;
+              }
+              a {
+                color: $pink-fe;
+                font-size: 13px;
+              }
+            }
+          }
+          .verified-wrap {
+            .verified-text {
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin-top: 8px;
+              margin-right: 25px;
+              @media (max-width: 640px) {
+                margin-right: 10px;
+              }
+              img {
+                height: 22px;
+                width: 22px;
+              }
+            }
+          }
+          .edit-input {
+            float: left;
+            margin-top: 8px;
+            color: $gray-c3;
+            font-size: 15px;
+            font-family: $opensans-light;
+            text-transform: uppercase;
+            &:hover { color: $red-db; }
+            @media (max-width: 992px) {
+              width: 100%;
+              text-align: right;
+            }
+          }
+        }
+        .changed-password-wrap {
+          display: inline-block;
+          width: 100%;
+          margin-top: 30px;
+          .changed-password-text {
+            font-size: 12px;
+            a {
+              color: $pink-fe;
+            }
+          }
+          .changed-pwd-form-wrap {
+            .modal-header {
+              button {
+                &:focus { outline: none; }
+              }
+            }
+            .modal-body {
+              padding: 30px 60px;
+              @media (max-width: 767px) { padding: 30px; }
+              h2 {
+                display: inline-block;
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 30px;
+                font-size: 21px;
+                font-family: $century-gothic-bold;
+                text-align: center;
+              }
+              .changed-pwd-form {
+                .form-group {
+                  input {
+                    width: 100%;
+                  }
+                }
+              }
+              .changed-pwd-btn {
+                margin-top: 20px;
+                text-align: center;
+                a {
+                  @media (max-width: 640px) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .save-detail-btn {
+          display: inline-block;
+          width: 65%;
+          text-align: right;
+          @media (max-width: 992px) { width: 100%; }
+        }
+      }
+
+      /* My Reservation Page */
+      .my-reservation-wrap {
+        font-family: $opensans-regular;
+        .serch-view-filter-section {
+          font-family: $century-gothic;
+          @media (max-width: 1300px) {
+            padding-right: 10px;
+            padding-left: 10px;
+          }
+          @media (max-width: 480px) {
+            padding-right: 0;
+            padding-left: 0;
+          }
+          .task-page-section,
+          .status-section,
+          .sort-by-section,
+          .month-section {
+            margin-left: 20px;
+            @media (max-width: 1200px) {
+              width: 100%;
+              margin-bottom: 10px;
+            }
+            @media (max-width: 640px) { margin-left: 0; }
+          }
+        }
+        .restaurant-table-wrap {
+          .restaurant-table-header {
+            .restaurant-name-wrap,
+            .cuisine-name-wrap {
+              .restaurant-title,
+              .cuisine-title {
+                float: left;
+                margin-right: 6px;
+                font-family: $opensans-semibold;
+              }
+              .restaurant-name-text,
+              .cuisine-name-text {
+                float: left;
+              }
+            }
+            .restaurant-name-wrap {
+              float: left;
+              font-size: 18px;
+              @media (max-width: 992px) {
+                width: 100%;
+              }
+              .restaurant-name-text {
+                font-family: $opensans-light;
+              }
+            }
+            .cuisine-name-wrap {
+              float: right;
+              margin-top: 4px;
+              font-size: 12px;
+              @media (max-width: 992px) {
+                float: left;
+                width: 100%;
+              }
+            }
+          }
+          .restaurant-table-detail-wrap {
+            .restaurant-table-sub-header {
+              .booking-date-wrap,
+              .reservation-date-wrap,
+              .arrival-time-wrap {
+                float: left;
+                font-size: 17px;
+                @media (max-width: 1300px) {
+                  font-size: 18px;
+                }
+                .booking-date-title,
+                .reservation-date-title,
+                .arrival-time-title {
+                  display: inline-block;
+                  margin-right: 6px;
+                  font-family: $opensans-semibold;
+                }
+                .booking-date,
+                .reservation-date,
+                .arrival-time {
+                  display: inline-block;
+                  font-family: $opensans-light;
+                }
+              }
+              .reservation-date-wrap {
+                text-align: center;
+              }
+              .booking-date-wrap,
+              .reservation-date-wrap {
+                width: 35%;
+                @media (max-width: 992px) {
+                  width: 100%;
+                  text-align: left;
+                }
+              }
+              .arrival-time-wrap {
+                width: 30%;
+                margin-right: 0;
+                text-align: right;
+                @media (max-width: 992px) {
+                  width: 100%;
+                  text-align: left;
+                }
+              }
+            }
+            .restaurant-table-detail {
+              &.reservation-detail {
+                padding-top: 22px;
+                padding-bottom: 22px;
+              }
+              .reservation-id-wrap,
+              .your-order-status-wrap {
+                .reservation-id-text,
+                .your-order-text {
+                  display: inline-block;
+                  margin-right: 6px;
+                  font-family: $opensans-semibold;
+                }
+                .reservation-id,
+                .order-status {
+                  display: inline-block;
+                  font-family: $opensans-light;
+                }
+              }
+              .reservation-id-wrap {
+                float: left;
+                margin-top: 8px;
+                font-size: 24px;
+                @media (max-width: 992px) {
+                  width: 100%;
+                }
+              }
+              .your-order-status-wrap {
+                float: right;
+                font-size: 36px;
+                @media (max-width: 992px) {
+                  width: 100%;
+                  margin-top: 10px;
+                  text-align: left;
+                }
+                .order-status {
+                  &.open-order {
+                    color: $green-00;
+                  }
+                  &.close-order {
+                    color: $red-f0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* Benefits Page */
+      .benefits-wrapper {
+        .benefits-type {
+          display: inline-block;
+          width: 100%;
+          .benefits-type-header {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 30px;
+            .benefits-type-text {
+              font-size: 22px;
+              font-family: $opensans-semibold;
+              span { color: $pink-fe; }
+            }
+          }
+          .restaurant-table-wrap {
+            .restaurant-table-header {
+              .restaurant-name-wrap,
+              .cuisine-name-wrap {
+                float: left;
+                @media (max-width: 992px) {
+                  width: 100%;
+                }
+              }
+              .cuisine-name-wrap {
+                float: right;
+              }
+            }
+            .restaurant-table-detail-wrap {
+              .restaurant-table-sub-header {
+                .drink-food-text {
+                  float: left;
+                  font-size: 18px;
+                  font-family: $opensans-semibold;
+                  @media (max-width: 992px) { width: 100%; }
+                }
+                .date-wrap {
+                  float: right;
+                  font-size: 18px;
+                  @media (max-width: 992px) {
+                    float: left;
+                    width: 100%;
+                  }
+                  .date-text {
+                    display: inline-block;
+                    font-family: $opensans-semibold;
+                  }
+                  .date-number {
+                    display: inline-block;
+                    font-family: $opensans-light;
+                  }
+                }
+              }
+              .restaurant-table-detail {
+                &.points-coupon-wrap {
+                  padding: 20px;
+                  .ava-point-coupon-wrap {
+                    float: left;
+                    margin-top: 4px;
+                    font-size: 24px;
+                    @media (max-width: 992px) { width: 100%; }
+                    @media (max-width: 480px) { font-size: 20px; }
+                    .available-image,
+                    .unavailable-image {
+                      display: inline-block;
+                      margin-right: 12px;
+                      @media (max-width: 480px) { width: 100%; }
+                    }
+                    .available-text {
+                      display: inline-block;
+                      margin-top: 3px;
+                      font-family: $opensans-semibold;
+                      &.coupon-text { text-transform: uppercase; }
+                    }
+                    .available-number {
+                      display: inline-block;
+                      color: $gray-72;
+                      font-size: 30px;
+                      font-family: $opensans-light;
+                      @media (max-width: 480px) { font-size: 20px; }
+                    }
+                  }
+                  .off-point-wrap {
+                    float: right;
+                    font-size: 34px;
+                    @media (max-width: 992px) {
+                      float: left;
+                      width: 100%;
+                    }
+                    @media (max-width: 480px) { font-size: 24px; }
+                    .off-point-text {
+                      display: inline-block;
+                      margin-right: 10px;
+                      font-family: $opensans-semibold;
+                    }
+                    .off-point-number {
+                      display: inline-block;
+                      color: $gray-72;
+                      font-family: $opensans-light;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* Track order History */
+      .track-order-wrapper {
+        .restaurant-table-wrap {
+          .restaurant-table-detail-wrap {
+            .restaurant-table-sub-header {
+              .order-wrap {
+                float: left;
+                width: 20%;
+                font-size: 18px;
+                @media (max-width: 1400px) {
+                  font-size: 16px;
+                }
+                @media (max-width: 1300px) {
+                  font-size: 12px;
+                }
+                @media (max-width: 1200px) {
+                  width: 50%;
+                  margin-bottom: 6px;
+                  font-size: 16px;
+                }
+                @media (max-width: 767px) { width: 100%; }
+                .order-title {
+                  display: inline-block;
+                  /*margin-right: 8px;*/
+                  font-family: $opensans-semibold;
+                }
+                .order-number {
+                  display: inline-block;
+                  font-family: $opensans-light;
+                }
+              }
+            }
+            .restaurant-table-detail {
+              .track-order {
+                display: inline-block;
+                width: 100%;
+                margin: 25px 0;
+                .progress {
+                  position: relative;
+                  height: 8px;
+                  margin-bottom: 15px;
+                  overflow: visible;
+                  background-color: $pink-ed;
+                  -moz-box-shadow: inset 0 2px 5px $gray-dd, 0 0 0 $gray-dd;
+                  -webkit-box-shadow: inset 0 2px 5px $gray-dd, 0 0 0 $gray-dd;
+                  box-shadow: inset 0 2px 5px $gray-dd, 0 0 0 $gray-dd;
+                  .progress-bar {
+                    &.progress-pt-1 {
+                      width: 1%;
+                      .progress-1 {
+                        background: $green-80;
+                        color: $white;
+                      }
+                    }
+                    &.progress-pt-33 {
+                      width: 33.33%;
+                      .progress-1,
+                      .progress-2 {
+                        background: $green-80;
+                        color: $white;
+                      }
+                    }
+                    &.progress-pt-66 {
+                      width: 66.66%;
+                      .progress-1,
+                      .progress-2,
+                      .progress-3 {
+                        background: $green-80;
+                        color: $white;
+                      }
+                    }
+                    &.progress-pt-100 {
+                      width: 100%;
+                      .progress-1,
+                      .progress-2,
+                      .progress-3,
+                      .progress-4 {
+                        background: $green-80;
+                        color: $white;
+                      }
+                    }
+                    .progress-number {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      display: inline-block;
+                      height: 23px;
+                      width: 23px;
+                      margin-top: -8px;
+                      /*background: $green-80;*/
+                      background: $pink-ed;
+                      /*color: $white;*/
+                      color: $gray-72;
+                      font-size: 16px;
+                      font-family: $opensans-semibold;
+                      @include border-radius(100%);
+                    }
+                    .progress-1 {
+                      z-index: 999999;
+                      margin-left: -1px;
+                    }
+                    .progress-2 {
+                      left: 33.33%;
+                    }
+                    .progress-3 {
+                      left: 66.66%;
+                    }
+                    .progress-4 {
+                      right: 0;
+                      left: auto;
+                      margin-right: -1px;
+                    }
+                    &.progress-bar-success {
+                      background-color: $green-80;
+                    }
+                  }
+                }
+                .progress-tracker-detail {
+                  display: inline-block;
+                  width: 100%;
+                  ul {
+                    margin-bottom: 0;
+                    padding-left: 0;
+                    list-style-type: none;
+                    li {
+                      float: left;
+                      width: 25%;
+                      color: $gray-72;
+                      font-size: 13px;
+                      font-family: $opensans-semibold;
+                      @media (max-width: 640px) {
+                        font-size: 11px;
+                      }
+                      &:nth-child(2) {
+                        text-align: center;
+                      }
+                      &:nth-child(3) {
+                        text-align: right;
+                      }
+                      &:last-child {
+                        text-align: right;
+                      }
+                    }
+                  }
+                }
+              }
+              .restaurant-address-wrap {
+                .restaurant-cancel-order {
+                  float: left;
+                  @media (max-width: 992px) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    text-align: center;
+                  }
+                  .cancel-btn {
+                    padding: 10px 40px;
+                  }
+                }
+                .restaurant-map-wrap {
+                  @media (max-width: 992px) { text-align: center; }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* Online Order History */
+      .online-order-history-wrap {
+        display: inline-block;
+        width: 100%;
+        .serch-view-filter-section {
+          @media (max-width: 1400px) {
+            padding-right: 10px;
+            padding-left: 10px;
+          }
+          @media (max-width: 480px) {
+            padding-right: 0;
+            padding-left: 0;
+          }
+          .search-filter-left {
+            .month-section,
+            .task-page-section,
+            .sort-by-section {
+              margin-left: 20px;
+              @media (max-width: 1300px) {
+                margin-left: 10px;
+              }
+              @media (max-width: 1200px) {
+                width: 100%;
+                margin-bottom: 10px;
+              }
+            }
+            .month-section {
+              @media (max-width: 1300px) {
+                width: 100%;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        .restaurant-table-wrap {
+          .restaurant-table-header {
+            @media (max-width: 1300px) {
+              padding-right: 15px;
+              padding-left: 15px;
+            }
+            .online-restaurant-name-wrap,
+            .online-order-type-wrap ,
+            .online-order-status-wrap {
+              float: left;
+              .online-restaurant-title,
+              .online-order-type-name {
+                display: inline-block;
+                font-family: $opensans-semibold;
+              }
+              .online-restaurant-name-text,
+              .online-order-type {
+                display: inline-block;
+                font-family: $opensans-light;
+              }
+            }
+            .online-restaurant-name-wrap {
+              width: 30%;
+              font-size: 16px;
+              @media (max-width: 1200px) {
+                width: 100%;
+              }
+              .online-restaurant-name-text {
+                margin-top: 2px;
+                font-size: 14px;
+              }
+            }
+            .online-order-status-wrap,
+            .online-order-type-wrap {
+              width: 20%;
+              margin-top: 4px;
+              font-size: 12px;
+              text-align: right;
+              @media (max-width: 1200px) {
+                width: 100%;
+                text-align: left;
+              }
+            }
+            .online-order-date-wrap {
+              float: left;
+              width: 30%;
+              margin-top: 2px;
+              font-size: 15px;
+              font-family: $opensans-light;
+              text-align: right;
+              @media (max-width: 1200px) {
+                width: 100%;
+                text-align: left;
+              }
+            }
+          }
+          .restaurant-table-sub-header,
+          .restaurant-table-detail {
+            display: inline-block;
+            width: 100%;
+            .item-list-table-section {
+              display: inline-block;
+              @include calc('width', '100% - 284px');
+              @media (max-width: 1200px) {
+                width: 100%;
+              }
+              .item-list-th,
+              .item-list-td {
+                float: left;
+                width: 100%;
+                color: $gray-72;
+                .item-list {
+                  float: left;
+                  &.item {
+                    width: 50%;
+                    padding-left: 20px;
+                  }
+                  &.quality {
+                    width: 15%;
+                  }
+                  &.unit-price {
+                    width: 20%;
+                  }
+                  &.amount {
+                    width: 15%;
+                  }
+                }
+              }
+            }
+            .total-amount-section {
+              width: 280px;
+              text-align: right;
+              vertical-align: bottom;
+              @media (max-width: 1200px) {
+                width: 100%;
+              }
+              .total-amount {
+                font-size: 24px;
+                font-family: $opensans-semibold;
+                span {
+                  margin-left: 6px;
+                  font-family: $opensans-light;
+                }
+              }
+            }
+          }
+          .restaurant-table-sub-header {
+            padding: 10px 0;
+            @media (max-width: 480px) {
+              display: none;
+            }
+            .item-list-table-section {
+              .item-list-th {
+                font-size: 13px;
+                font-family: $opensans-semibold;
+              }
+            }
+          }
+          .restaurant-table-detail {
+            padding: 0;
+            .item-list-table-section {
+              .item-list-td {
+                padding: 20px 0;
+                border-bottom: 1px solid $white-f5;
+                font-family: $opensans-light;
+                &:last-child {
+                  border-bottom: none;
+                }
+                .item-list {
+                  &.item,
+                  &.amount {
+                    @media (max-width: 480px) {
+                      width: 100%;
+                      margin-bottom: 10px;
+                      padding: 0;
+                      text-align: center;
+                    }
+                  }
+                  &.amount {
+                    font-size: 16px;
+                  }
+                  &.quality,
+                  &.unit-price {
+                    color: $gray-c3;
+                    @media (max-width: 480px) {
+                      width: 100%;
+                      margin-bottom: 10px;
+                      padding: 0;
+                      text-align: center;
+                    }
+                  }
+                }
+              }
+            }
+            .total-amount-section {
+              display: inline-block;
+              padding-right: 20px;
+              padding-bottom: 20px;
+              @media (max-width: 1200px) {
+                padding-top: 20px;
+              }
+              @media (max-width: 480px) {
+                padding-right: 0;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      /* Dine in Order History */
+      .dine-in-order-history {
+        .restaurant-table-wrap {
+          .restaurant-table-header {
+            .online-restaurant-name-wrap {
+              float: left;
+              width: 50%;
+              @media (max-width: 992px) {
+                width: 100%;
+              }
+            }
+            .online-order-date-wrap {
+              float: left;
+              width: 30%;
+              @media (max-width: 992px) {
+                float: left;
+                width: 100%;
+              }
+            }
+          }
+          .restaurant-table-detail {
+            .restaurant-address-wrap {
+              padding: 10px 20px;
+            }
+          }
+        }
+      }
+
+      /* My Favourite History */
+      .my-favourite-restaurant {
+        .serch-view-filter-section {
+          @media (max-width: 1300px) {
+            padding-right: 0;
+            padding-left: 0;
+          }
+          .search-filter-left {
+            @media (min-width: 1250px) and (max-width: 1400px) {
+              font-size: 12px;
+            }
+            @media (max-width: 1250px) {
+              float: left;
+              width: 100%;
+            }
+            .search-fav-rest-food {
+              float: left;
+              @media (max-width: 1250px) {
+                width: 100%;
+                margin-bottom: 10px;
+              }
+              .select-rest-item-wrap {
+                position: relative;
+                float: left;
+                @media (max-width: 480px) {
+                  width: 100%;
+                  margin-bottom: 10px;
+                  select { width: 100%; }
+                }
+                &::after {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  display: inline-block;
+                  margin-top: 8px;
+                  margin-right: 10px;
+                  content: url('../images/select-dropdown-arrow.png');
+                }
+                select { background-image: none; }
+              }
+              .search-rest-item-wrap {
+                position: relative;
+                float: left;
+                margin-left: 10px;
+                &::after {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  margin: 10px 6px;
+                  font-family: 'FontAwesome';
+                  cursor: pointer;
+                  content: '\f002';
+                }
+                @media (max-width: 480px) {
+                  width: 100%;
+                  margin-bottom: 10px;
+                  margin-left: 0;
+                  input { width: 100%; }
+                }
+                input {
+                  height: 35px;
+                  @include border-radius(0);
+                }
+              }
+            }
+            .task-page-section,
+            .sort-by-section {
+              @media (max-width: 1500px) {
+                margin-left: 30px;
+              }
+              @media (max-width: 1300px) {
+                margin-left: 10px;
+              }
+              @media (max-width: 1200px) {
+                width: 100%;
+                margin-bottom: 10px;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        .favourite-slider-wrap {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 50px;
+          padding-right: 50px;
+          @media (max-width: 992px) {
+            padding-right: 30px;
+            padding-left: 30px;
+          }
+          .favourite-slider-title {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-family: $opensans-semibold;
+          }
+          .fav-grid-wrapper {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: flex;
+            width: 100%;
+            @include flex-wrap(wrap);
+            .owl-stage {
+              display: -webkit-flex;
+              display: -moz-flex;
+              display: flex;
+              @include flex-wrap(wrap);
+            }
+            .favourite-grid {
+              display: inline-block;
+              height: 100%;
+              border: 1px solid $gray-b6;
+              .favourite-image {
+                display: inline-block;
+                width: 100%;
+              }
+              .favourite-detail {
+                display: inline-block;
+                width: 100%;
+                padding: 15px;
+                h3 {
+                  display: inline-block;
+                  width: 100%;
+                  margin: 0;
+                  a {
+                    color: $red-db;
+                    font-size: 18px;
+                    font-family: $opensans-semibold;
+                  }
+                }
+                .favourite-sub-detail {
+                  display: inline-block;
+                  width: 100%;
+                  margin-top: 4px;
+                  color: $gray-72;
+                  font-size: 13px;
+                }
+              }
+            }
+            .owl-controls {
+              .owl-nav {
+                .owl-prev,
+                .owl-next {
+                  height: 44px;
+                  width: 22px;
+                  @media (max-width: 992px) {
+                    height: 34px;
+                    width: 17px;
+                  }
+                }
+                .owl-prev {
+                  margin-left: -40px;
+                }
+                .owl-next {
+                  margin-right: -40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* End */

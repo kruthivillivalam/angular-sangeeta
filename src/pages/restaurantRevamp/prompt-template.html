@@ -1,0 +1,61 @@
+<div class="modal-dialog" [ngClass]="{'hide-left-popup':isoptions == 0 && issize == 0}">
+    <div class="modal-content add-comment-popup-content">
+      <div class="modal-header">
+        <div class="popup-title-wrap">
+          <img src="../../assets/images/comment-icon.png">
+          <span>{{title}}</span>
+        </div>
+        <button type="button" class="close" (click)="onOkPressed()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="popup-conent-section">
+          <div class="popup-left-section" *ngIf="isoptions != 0 || issize != 0">
+            <div *ngIf="isoptions != 0">
+              <div *ngFor="let item of promptItem.options.optionGroups">
+                <div class="left-section-title">{{item.optionGroupName}}</div>
+                <div class="modifier-selection-wrap grey-checkbox">
+                  <div class="modifier-selection-checkbox" *ngFor="let inneritem of item.optionItems">
+                    <label>
+                      <div class="input-rc">
+                        <input type="checkbox" name="optionsCheck" value="{{inneritem.optionitemname}}" [(ngModel)]="inneritem.checked" [checked]="inneritem.checked">
+                        <span class="input-rc-span">
+                        </span>{{inneritem.optionitemname}} - ${{inneritem.AdditionalCost || 0}}
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="issize != 0">
+              <div class="left-section-title">Size</div>
+              <div class="modifier-selection-wrap grey-checkbox">
+                <div class="modifier-selection-checkbox" *ngFor="let item of promptItem.options.size">
+                  <label>
+                    <div class="input-rc">
+                      <input type="radio" name="sizeCheck" value="{{item.id}}" [(ngModel)]="item.id" (click)="updateSizeInfo(item)">
+                      <span class="input-rc-span"></span>{{item.size_name}} - ${{item.additionalcost}}
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup-right-section">
+            <div class="item-details-wrap">
+              <div class="item-name op-icon op-veg">
+                <a href="javascript:void(0);">{{title}}</a>
+              </div>
+              <div class="extra-note-wrap">
+                <textarea rows="4" cols="30" placeholder="Extra Note" [(ngModel)]="promptItem.MenuItemNote" name="name"></textarea>
+              </div>
+              <div class="modal-footer">
+               <button *ngIf="showAddToCart" type="button" class="btn btn-primary submit-btn" (click)="addToCart()">Add To Cart</button>
+               <button *ngIf="!showAddToCart" type="button" class="btn btn-primary submit-btn" (click)="onOkPressed()">OK</button>
+               <button type="button" class="btn btn-default cancel-btn" (click)="onOkPressed()" >Cancel</button>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

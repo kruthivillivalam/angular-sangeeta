@@ -1,0 +1,69 @@
+<div class="review-list-view">
+    <div class="reviewer-list">
+      <div class="reviewer-profile-section">
+        <div class="reviewer-image">
+          <img src="../../../assets/images/mou-lisa.png">
+        </div>
+        <div class="reviewer-name">Mou Lisa</div>
+        <div class="review-date">March 16,2017</div>
+      </div>
+      <div class="reviewer-comment-section">
+        <div class="review-header">
+          <div class="review-comment-rate-wrapper">
+            <div class="reviewer-comment-title">Delicious Food and Better Staff</div>
+            <div class="reviewer-rating">
+              <div class="reviewer-rate">4.3</div>
+              <div class="reviewer-star">
+                <div class="rating-view red-star">
+                    <div class="rating-star">
+                        <star-rating-comp [starType]="'svg'" [staticColor]="'negative'" [rating]="4" [readOnly]="true" [step]="0.5" [showHalfStars]="true" ></star-rating-comp>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comment-details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ore magnam aliquam.</div>
+      </div>
+    </div>
+    <div class="more-review">
+        <a href="javascript:void(0);" class="more-review-btn">Load More Reviews</a>
+    </div>
+</div>
+
+<!-- Add Your Comment Section -->
+<div class="add-new-reviewer-comment review-list-view">
+    <div class="reviewer-list">
+        <div class="reviewer-profile-section">
+        <div class="reviewer-image">
+            <img src="../../../assets/images/john-smith.png">
+        </div>
+        <div class="reviewer-name">{{userName || 'Guest'}}</div>
+        <div class="review-date">{{ratingDate}}</div>
+        </div>
+        <div class="add-comment-section">
+        <div class="add-comment-terms">{{commonText.REVIEW_POSTED_PUBLICALLY}}</div>
+        <div class="reviewer-star">
+            <div class="rating-view red-star">
+                <div class="rating-star">
+                    <star-rating-comp
+                    (onClick)="onRatingClick($event)"
+                     [starType]="'svg'" [staticColor]="'negative'"
+                     [rating]="userCommentObj.star_rating" [readOnly]="false" [step]="1" [showHalfStars]="true" >
+                    </star-rating-comp>
+                </div>
+            </div>
+        </div>
+        <div class="add-comment-form">
+            <input type="text" placeholder="Enter Title" [(ngModel)]="userCommentObj.review_title">
+            <textarea rows="4" cols="50" placeholder="Write your review" [(ngModel)]="userCommentObj.review_text">
+            </textarea>
+            <div class="comment-button">
+            <a href="javascript:void(0);" (click)='onPostComment(userCommentObj)' class="post-btn">{{commonText.POST_TXT}}</a>
+            <a href="javascript:void(0);" (click)='onCancelBtnClick()' class="cancel-btn">{{commonText.CANCEL_TXT}}</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+

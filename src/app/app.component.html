@@ -1,0 +1,492 @@
+
+<section [ngClass]="{'listing-wholesection-js' : !displayHeader }">
+<header class="header">
+
+
+  <div class="header-div" [ngClass]="{'no-header-image' : !displayHeader || isStatic }">
+
+    <!-- top bar div -->
+
+    <div class="top-black-background">
+      <div class="container-fluid">
+        <div class="col-md-6 col-sm-6">
+          <img src="../assets/images/en_badge_web_generic.png" class="google-img" />
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="!localStorage.get('userData');">
+              <a href="javascript:void(0);" [routerLink]="['/register']" class="sign-in-up">Sign Up</a>
+            </li>
+            <li *ngIf="!localStorage.get('userData');">
+              <a href="javascript:void(0);" [routerLink]="['/login']" class="sign-in-up">Sign In</a>
+            </li>
+            <li class="dropdown" *ngIf="localStorage.get('userData');">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">{{fName}} {{lName}}
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="javascript:void(0);" (click)="logoutUser();" *ngIf="localStorage.get('userData');">Logout</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+
+              <a class="btn btn-primary dropdown-toggle currency-btn" href="javascript:void(0);" data-toggle="dropdown">Currency
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="javascript:void(0);">
+                    <img src="../assets/images/inr.png"> INR
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">
+                    <img src="../assets/images/aud.png"> AUD
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">
+                    <img src="../assets/images/usd.png"> USD
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!--.TOPBAR.. -->
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="javascript:void(0);" [routerLink]="['/']" class="navbar-left">
+            <img src="../assets/images/logored.png" style="max-height: 61px;">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="javascript:void(0);" (click)="reserveTable('Table_Booking', $event)">Reserve Table</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" (click)="reserveTable('Order_food', $event)">Order Food</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">Find an Event</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" [routerLink]="['/submitlisting1']">Submit a Listing</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">Help</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="track-order" *ngIf="localStorage.get('userData');">Track Your Order</a>
+            </li>
+            <li *ngIf="localStorage.get('userData');">
+              <a href="javascript:void(0);" [routerLink]="['/myprofile']">My Account</a>
+            </li>
+
+            <li>
+              <a href="javascript:void(0);" [routerLink]="['/cart']">
+                <!--<span class="fa fa-2x fa-shopping-cart"></span>
+                <span class="item-count-ordersection-cartpage-inner-js">{{cartItems.length}}</span>-->
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="bg-image">
+      <h2 *ngIf="!isStatic">Welcome to Order Point, Perth</h2>
+      <h3 *ngIf="!isStatic">Amazing & Delicious Food, Order Now!</h3>
+
+      <div class="header-banner"  *ngIf="localStorage.get('childheader')">
+        <div class="banner-wrap">
+          <div class="banner">
+            <!-- Banner Form -->
+            <div class="banner-form">
+              <form novalidate (ngSubmit)=" onSubmit(homeSearchForm.value)" name="homeSearchForm" class="filter-form" #homeSearchForm="ngForm">
+                <div class="choose-place" *ngIf="businessUnits">
+                  <input type="checkbox" class="read-more-state" id="businessShowMore" *ngIf="businessUnits.length > 6" />
+                  <div class="read-more-wrap">
+                    <div class="dining-checkbox" *ngFor="let businessUnit of businessUnits;let i = index" [ngClass]="{'read-more-target':i>=6}">
+                      <!--<label>
+                        <div class="checkbox">
+                          <input type="checkbox" name="businessUnits" value="{{businessUnit.businessUnitId}}" [ngModel]="businessUnit" [checked]="businessUnit.checked" (change)="getSelectedBusiness(businessUnit)">
+
+                        </div>{{businessUnit.businessUnitName}}
+                      </label>-->
+                      <label>
+                    <div class="checkbox">
+                      <input type="checkbox" name="businessUnits" value="{{businessUnit.businessUnitId}}"  [(ngModel)]="businessUnit.checked" [checked]="businessUnit.checked" (change)="getSelectedBusiness(businessUnit)" >
+
+                    </div>{{businessUnit.businessUnitName}}
+                  </label>
+                    </div>
+                  </div>
+                  <label for="businessShowMore" class="read-more-trigger"></label>
+
+
+                </div>
+                <div class="op-error-msg" *ngIf="showMessage">{{showMessage}}</div>
+                <div class="popup-postion-cls">
+                  <div class="order-select">
+
+                    <div class="select-wrap">
+                      <select class="order-food" name="orderFood" [(ngModel)]="homeSearch.orderFood" #orderFood="ngModel">
+                        <option [ngValue]="''">Order food</option>
+                        <option *ngFor="let foodItem of foodData" [ngValue]="foodItem.param_id">{{foodItem.paramName}}</option>
+
+                      </select>
+                    </div>
+                    <div class="select-wrap">
+                      <!-- [(ngModel)]="selectCuisine" (change)="getLocationData(selectCuisine)" -->
+                      <select class="cusion-food" name="cusionFood" [(ngModel)]="homeSearch.cusionFood" #cusionFood="ngModel">
+                        <option [ngValue]="''">Cuisines, Food types</option>
+                        <option *ngFor="let cuisineItem of CuisineTypeData" [ngValue]="cuisineItem.id">{{cuisineItem.cuisineName}}</option>
+
+                      </select>
+                    </div>
+                    <div class="select-wrap">
+                      <!-- <select class="location">
+                      <option>Location</option>
+                      <option *ngFor="let locationItem of LocationData" [ngValue]="locationItem.id">{{locationItem.suburb}}</option>
+
+                    </select> -->
+                      <div class="location" [ngStyle]="{'border': setAlert, 'background': bgColor}">
+                        <ng2-completer [(ngModel)]="color4" [datasource]="dataService" [minSearchLength]="0" [inputName]="location" name="location"
+                          [placeholder]="'Select Location'" [textSearching]="'Please wait...'" class="white-input" [autoMatch]="true"
+                          [initialValue]="color4" (selected)="onItemSelect($event)" #location="ngModel" required></ng2-completer>
+                      </div>
+                      <div class="direct-location-icon" (click)="getCurrLocation();">
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <!-- <div class="select-wrap">
+                    <div class="direct-location-icon">
+                      <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                    </div>
+                  </div> -->
+                    <div class="more-filter-button" *ngIf="displayMore">
+                      <button type="button" class="search-more" (click)="showSelectedFilters()">More</button>
+                    </div>
+                    <div class="search-food-btn select-wrap">
+                      <!-- <a href="javascript:void(0);">Search Food</a> -->
+                      <button type="submit" class="search-btn">Search Food</button>
+                    </div>
+                  </div>
+                  <!-- Bannerinner filer added -->
+                  <!--<div class="banner-search-filter-section">
+                  <div class="filter-search">
+                    <div class="filter-wrap">
+                    </div>
+                    <div class="filter-wrap">
+                    </div>
+                    <div class="filter-wrap">
+                    </div>
+                    <div class="filter-wrap">
+                    </div>
+                  </div>
+                  <div class="save-serch">
+                    <a href="javascript:void(0)">
+                      <span>Save Search</span>
+                    </a>
+                  </div>
+                </div>-->
+                  <!-- Popuop of sidebar-->
+                  <div class="filter-popup-section show-filter-popup grey-checkbox" *ngIf="selectedFilters">
+                    <div class="price-post-wrap">
+                      <div class="filter-row price-slider">
+                        <div _ngcontent-c2="" class="search-body" style="padding:0px;text-align:left;margin-bottom:0px;">
+                          <div _ngcontent-c2="" class="search-area-wrap" style="border:none;margin-bottom:0px;">
+                            <div _ngcontent-c2="" class="sidebar-choose-option" style="border:none;margin-bottom:0px;">
+                              <div _ngcontent-c2="" class="sidebar-grid meal-price-section" style="border:none;margin-bottom:0px;">
+                                <div _ngcontent-c2="" class="sidebar-grid-detail choose-price" style="text-align:left;padding-left:20px;">
+
+                                  <div class="filer-title" style="text-align:left;">Order for 2</div>
+
+                                  <nouislider class="slider-grid" [(ngModel)]="someRange3" [config]="someRange3config" [tooltips]="[true]" (ngModelChange)="onChange($event)"
+                                    #sliderRef name="sliderRef"></nouislider>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="filter-row post-card">
+                        <div class="filer-title">Postcode</div>
+                        <div class="filer-detail">
+                          <div class="post-code-input">
+                            <input type="text">
+                          </div>
+                          <div class="post-code-field">
+                            <select>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                            <!-- <button type="button" class="btn btn-default">Find</button> -->
+                            <div class="button">km</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--
+                  <div class="price-post-wrap">
+                    <div class="filter-row price-slider">
+                      <div class="filer-title">Order for 2</div>
+                      <div class="filer-detail "><nouislider [(ngModel)]="someRange3" [config]="someRange3config" [tooltips]="[true]" (ngModelChange)="onChange($event)" #sliderRef name="sliderRef"></nouislider></div>
+                    </div>
+                    <div class="filter-row post-card">
+                      <div class="filer-title">Postcode</div>
+                      <div class="filer-detail">
+                        <div class="post-code-input">
+                          <input type="text" value="{{searchedPostCode}}">
+                        </div>
+                        <div class="post-code-field">
+                          <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                          </select>-->
+                    <!-- <button type="button" class="btn btn-default">Find</button> -->
+                    <!--<div class="button">km</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                -->
+                    <!-- <div class="filter-row">
+                    <div class="filer-title">Location</div>
+                    <div class="filer-detail"></div>
+                  </div> -->
+                    <div class="filter-row">
+                      <div class="filer-title">Meal Types</div>
+                      <div class="filer-detail">
+                        <label class="filter-field op-icon" *ngFor="let items of allFilters.Meal_Type">
+                          <span class="label-name">{{items.name}}</span>
+                          <!--<div class="checkbox checkbox-inline">-->
+                          <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Meal_Type',$event);">
+                          <!-- <span class="input-rc-span"></span> -->
+                          <!--</div>-->
+                        </label>
+                      </div>
+                    </div>
+                    <div class="filter-row">
+                      <div class="filer-title">Service Types</div>
+                      <div class="filer-detail">
+                        <label class="filter-field op-icon" *ngFor="let items of allFilters.Service_Type">
+                          <span class="label-name">{{items.name}}</span>
+                          <!--<div class="checkbox checkbox-inline">-->
+                          <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Service_Type',$event);">
+                          <!-- <span class="input-rc-span"></span> -->
+                          <!--</div>-->
+                        </label>
+                      </div>
+                    </div>
+                    <div class="filter-row">
+                      <div class="filer-title">Parking Types</div>
+                      <div class="filer-detail">
+                        <label class="filter-field op-icon" *ngFor="let items of allFilters.Parking_Type">
+                          <span class="label-name">{{items.name}}</span>
+                          <!--<div class="checkbox checkbox-inline">-->
+                          <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Parking_Type',$event);">
+                          <!-- <span class="input-rc-span"></span> -->
+                          <!--</div>-->
+                        </label>
+                      </div>
+                    </div>
+                    <div class="filter-row">
+                      <div class="filer-title">Features</div>
+                      <div class="filer-detail">
+                        <label class="filter-field op-icon" *ngFor="let items of allFilters.Merchant_Features">
+                          <span class="label-name">{{items.name}}</span>
+                          <!--<div class="checkbox checkbox-inline">-->
+                          <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Merchant_Features',$event);">
+                          <!-- <span class="input-rc-span"></span> -->
+                          <!--</div>-->
+                        </label>
+                      </div>
+                    </div>
+                    <div class="filter-row">
+                      <div class="filer-title">Seating Location</div>
+                      <div class="filer-detail">
+                        <label class="filter-field op-icon" *ngFor="let items of allFilters.Seating_Location">
+                          <span class="label-name op-icon">{{items.name}}</span>
+                          <!--<div class="checkbox checkbox-inline">-->
+                          <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Seating_Location',$event);">
+                          <!-- <span class="input-rc-span"></span> -->
+                          <!--</div>-->
+                        </label>
+                      </div>
+                    </div>
+                    <div class="filter-row">
+                      <div class="filer-title">Alcohol Type</div>
+                      <div class="filer-detail">
+                        <label class="filter-field op-icon" *ngFor="let items of allFilters.Alcohol_Type">
+                          <span class="label-name">{{items.name}}</span>
+                          <!--<div class="checkbox checkbox-inline">-->
+                          <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Alcohol_Type',$event);">
+                          <!-- <span class="input-rc-span"></span> -->
+                          <!--</div>-->
+                        </label>
+                      </div>
+                    </div>
+                    <div class="filter-row update-clear-wrap">
+                      <button class="btn btn-default update-btn" type="reset">Clear</button>
+                      <button class="btn btn-primary clear-btn" type="button" (click)="updateSelectedFilters()">Update</button>
+                    </div>
+                  </div>
+                  <!-- Popup Overlay -->
+                  <!-- <div class="filter-popup-overlay popuop-overlay"></div> -->
+                </div>
+              </form>
+            </div>
+            <!-- Banner Form Ends -->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</header>
+<spinner name="homePageSpinner"></spinner>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="footer-div">
+    <div class="container">
+      <div class="newsdiv">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="newscontent">
+              <h2>Newsletter</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <form class="newsletter">
+              <input class="email" placeholder="Subscribe to our newsletter feed:" type="email">
+              <input class="send-button" value="Submit" type="submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="assets/images/logo.png" class="contact-logo" />
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="contact-col">
+              <h2>About Us</h2>
+              <ul class="about-ul">
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/aboutus']">Who We Are?</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/careers']">Careers</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/press']">Press</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/privacy-policy']">Policies</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/terms']">Terms</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="contact-col">
+              <h2>Information</h2>
+              <ul class="about-ul">
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/contact']">Contact Us</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/help']">Help</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/blog']">Blog</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" [routerLink]="['/sitemap']">Site map</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="contact-col">
+              <h2>My Account</h2>
+              <ul class="about-ul">
+                <li *ngIf="loggedin == true">
+                  <a href="javascript:void(0);" [routerLink]="['/myprofile']">Account</a>
+                </li>
+                <li *ngIf="!loggedin">
+                  <a href="javascript:void(0);" [routerLink]="['/login']">Login</a>
+                </li>
+                <li *ngIf="loggedin == true">
+                  <a href="javascript:void(0);" [routerLink]="['/mytrackorder']">Track an Order</a>
+                </li>
+                <li *ngIf="loggedin == true">
+                  <a href="javascript:void(0);" [routerLink]="['/myonlineorderhistory']">Order History</a>
+                </li>
+              </ul>
+              <ul class="social-ul">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="payment">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="assets/images/payment.png" class="payment-img" />
+          </div>
+          <div class="col-md-6">
+            <p class="copyright-p">© orderpoint 2017- All Rights Reserved </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</section>

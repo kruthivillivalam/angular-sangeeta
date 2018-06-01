@@ -1,0 +1,169 @@
+<div class="row">
+  <div class="col-md-12">
+      <h1 class="row1-reservationtab-head-menupage-inner-js">Reservation</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <div id="exTab1">
+          <ul class="nav nav-pills">
+              <li class="active">
+                  <a class="reservation2-tabs-content-tab-head-menupage-inner-js" href="#1a" data-toggle="tab">Table Reservation</a>
+              </li>
+              <li>
+                  <a class="reservation2-tabs-content-tab-head-menupage-inner-js" href="#2a" data-toggle="tab">Event Reservation</a>
+              </li>
+          </ul>
+
+          <div class="tab-content clearfix">
+              <div class="tab-pane active" id="1a">
+                  <form novalidate (ngSubmit)="reservationForm.valid && saveReservation(reservationForm.value)" name="reservationForm" #reservationForm="ngForm">
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Mobile Number*</label>
+                          <input type="text" class="form-control" minlength="10" maxlength="10" pattern="^[0-9]+$" name="customer_mobile" [(ngModel)]="reservationForm.customer_mobile"
+                              #customer_mobile="ngModel" required>
+                          <div *ngIf="customer_mobile.errors && (customer_mobile.dirty || customer_mobile.touched || reservationForm.submitted)" class="alert alert-danger">
+                              <div [hidden]="!customer_mobile.errors.required">
+                                  Mobile is required
+                              </div>
+                              <div [hidden]="!customer_mobile.errors.minlength">
+                                  Mobile Number must be at least 10 digit long.
+                              </div>
+                              <div [hidden]="!customer_mobile.errors.pattern">
+                                  Mobile is Invalid.
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Email*</label>
+                          <input type="email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="customer_email"
+                              [(ngModel)]="reservationForm.customer_email" #customer_email="ngModel">
+                          <div *ngIf="customer_email.errors && (customer_email.dirty || customer_email.touched || reservationForm.submitted)" class="alert alert-danger">
+                              <div [hidden]="!customer_email.errors.required">
+                                  Email is required
+                              </div>
+                              <div [hidden]="!customer_email.errors.pattern">
+                                  Email is Invalid.
+                              </div>
+                          </div>
+
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">First Name*</label>
+                          <input type="text" class="form-control" required pattern="[a-zA-Z]+" name="customer_firstname" [(ngModel)]="reservationForm.customer_firstname"
+                              #customer_firstname="ngModel">
+                          <div *ngIf="customer_firstname.errors && (customer_firstname.dirty || customer_firstname.touched || reservationForm.submitted)"
+                              class="alert alert-danger">
+                              <div [hidden]="!customer_firstname.errors.required">
+                                  {{validationError.FIRST_NAME_REQ_ERR}}
+                              </div>
+                              <div [hidden]="!customer_firstname.errors.pattern">
+                                  {{validationError.FIRST_NAME_ALPHA_ERR}}
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Last Name*</label>
+                          <input type="text" class="form-control" required pattern="[a-zA-Z]+" name="customer_lastname" [(ngModel)]="reservationForm.customer_lastname"
+                              #customer_lastname="ngModel">
+                          <div *ngIf="customer_lastname.errors && (customer_lastname.dirty || customer_lastname.touched || reservationForm.submitted)"
+                              class="alert alert-danger">
+                              <div [hidden]="!customer_lastname.errors.required">
+                                  {{validationError.LAST_NAME_REQ_ERR}}
+                              </div>
+                              <div [hidden]="!customer_lastname.errors.pattern">
+                                  {{validationError.LAST_NAME_ALPHA_ERR}}
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Reserved Date*</label>
+                          <input type="date" class="form-control" name="reservationDate" required [(ngModel)]="reservationForm.reservationDate" #reservationDate="ngModel">
+                          <div *ngIf="reservationDate.errors && (reservationDate.dirty || reservationDate.touched || reservationForm.submitted)" class="alert alert-danger">
+                              <div [hidden]="!reservationDate.errors.required">
+                                  Reserved Date is required
+                              </div>
+                              <div [hidden]="!reservationDate.errors.minlength">
+                                  Reserved Date must be at least 10 number long.
+                              </div>
+                              <div [hidden]="!reservationDate.errors.pattern">
+                                  Reserved Date is Invalid.
+                              </div>
+                          </div>
+                          <div *ngIf="!(reservationDate.errors) && invalidDate" class="alert alert-danger">
+                              {{validationError.RES_DATE_VALID_ERROR}}
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Reserved Time*</label>
+                          <input type="time" class="form-control" name="reservationTime" required [(ngModel)]="reservationForm.reservationTime" #reservationTime="ngModel">
+                          <div *ngIf="reservationTime.errors && (reservationTime.dirty || reservationTime.touched || reservationForm.submitted)" class="alert alert-danger">
+                              <div [hidden]="!reservationTime.errors.required">
+                                  Reserved Time is required
+                              </div>
+                              <div [hidden]="!reservationTime.errors.minlength">
+                                  Reserved Time must be at least 10 number long.
+                              </div>
+                              <div [hidden]="!reservationTime.errors.pattern">
+                                  Reserved Time is Invalid.
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Guests*</label>
+                          <input type="text" class="form-control" required pattern="^[0-9]+$" name="NoOfGuests" [(ngModel)]="reservationForm.NoOfGuests"
+                              #NoOfGuests="ngModel">
+                          <div *ngIf="NoOfGuests.errors && (NoOfGuests.dirty || NoOfGuests.touched || reservationForm.submitted)" class="alert alert-danger">
+                              <div [hidden]="!NoOfGuests.errors.required">
+                                  No Of Guests is required
+                              </div>
+                              <div [hidden]="!NoOfGuests.errors.pattern">
+                                  Only numbers are allowed
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Occasion</label>
+                          <select class="form-control" id="usr">
+                              <option value="">Occasion</option>
+                              <option value="Engagement">Engagement</option>
+                              <option value="Birthday Party">Birthday Party</option>
+                          </select>
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Car Park Bay</label>
+                          <select class="form-control" id="usr" name='carpark_bay' #carpark_bay [(ngModel)]="reservationForm.carpark_bay">
+                              <option>0</option>
+                              <option>1</option>
+                              <option>2</option>
+                          </select>
+                      </div>
+
+                      <div class="col-md-6">
+                          <label class="headings-labels-info-tab-innerpage-js">Note</label>
+                          <textarea class="form-control" id="comment" name='notes' #notes [(ngModel)]="reservationForm.notes" style="width:100%" cols="25"
+                              rows="5"></textarea>
+                      </div>
+                      <div class="col-md-12">
+                          <button type="submit" class="reservelink-reservation-tab-menupage-inner-js" href="#">Reserve Now</button>
+                      </div>
+
+                  </form>
+              </div>
+
+
+
+              <div class="tab-pane" id="2a">
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

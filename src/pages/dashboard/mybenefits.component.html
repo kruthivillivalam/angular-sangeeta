@@ -1,0 +1,197 @@
+<div class="container">
+  <div class="holder-fullcontent-cartsummary-page-inner-js">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li>
+            <a href="javascript:void(0);">Home</a>
+          </li>
+          <li class="active">My Account</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <!-- left side tab -->
+      <leftmenu></leftmenu>
+      <!-- right side tab -->
+      <!-- tab content -->
+      <div class="col-md-9">
+        <div class="tab-content">
+
+          <!-- My Benefits -->
+          <div class="tab-pane fade active in" id="tab_h">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="holder-reservation-tab-header-inner-account-page-js">
+                  <label class="reservation-tab-content-headings-inner-js">Number Of Item Per Page</label>
+                  <select class="menus-reservation-tab-account-page-inner-js" name="pageSize" ng-model="pageSize" #pageSize (change)="setPerPageValue($event, pageSize.value)">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                    <option>45</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">Status</label>
+                  <select class="menus-reservation-tab-account-page-inner-js">
+                    <option>All</option>
+                    <option>Close</option>
+                    <option>Open</option>
+                  </select>
+                  <label class="reservation-tab-content-headings-inner-js">Sort By</label>
+                  <select class="menus-restaurant-reservation-tab-account-page-inner-js">
+                    <option>Restaurant</option>
+                    <option>C Sky Restaurant</option>
+                    <option>Satay on Charcoal</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="holder-online-order-history-tab-accountpage-inner-js" *ngIf="loyaltypointcouponlist">
+              <!-- Loyalty Points -->
+              <div class="row" *ngFor="let  loyaltypoint of  loyaltypointlist ">
+                <div class="col-md-4">
+                  <div class="holder-firstcol-onlineorder-historytab-inner-accountpage-js">
+                    <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Restaurant</h5>
+                    <span class="details-orderhistorytab-restaurantname-inner-js">{{loyaltypoint.merchantname}}</span>
+                    <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Cuisine</h5>
+                    <p class="details-orderhistorytab-restaurantname-inner-js">
+                      <span *ngFor="let cuisineItem of loyaltypoint.cusines;let j = index;let isLast=last;"> {{cuisineItem.cuisinename}}{{isLast ? '' : ', '}} </span>
+                    </p>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Address</h5>
+                    <span class="details-dine-in-tab-row2-restaurantname-inner-js">1/6 Cowper Wharf Roadway,Woolloomooloo NSW 2011,Australia</span>
+
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#displaymap" (click)="openModel(cuisineItem.latitude,cuisineItem.longitude)">
+                      <img class="map-image-accountpage-inner-js" src="../assets/images/mapicon.png">
+                    </a>
+                    <br>
+
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <!-- order date -->
+                    <div class="col-md-12">
+                      <div class="rowholder-content-orderdate-inner-account-page-dinein-tab-js">
+                        <h5 class="orderdate-benefits-tab-inner-style-accountpage-js">Loyality Points</h5>
+                      </div>
+                    </div>
+
+                    <div class="holder-scroll-items-account-page-benefitstab-inner-js" style="overflow:hidden">
+                      <!-- item tabs -->
+                      <div class="col-md-12">
+						<div class="heading-mybenefits-loyality-points-flexbox">
+							<h5 class="heading-mybenefits-loyality-points-inner-js">Available Points</h5>:
+							<span class="description-mybenefits-points-loyality-points-inner-js">{{loyaltypoint.earn_points}}</span>
+							<a class="glyphicon glyphicon-ok confirmed-points-icon-benefits-tab-accountpage-inner-js" href="#"></a>
+                        </div>
+
+						<div class="heading-mybenefits-loyality-points-flexbox">
+							<h5 class="heading-mybenefits-loyality-points-inner-js">Used Points</h5>:
+							<span class="description-mybenefits-loyality-points-inner-js">{{loyaltypoint.used_points}}</span>
+						</div>
+
+                        <h5 class="loyalitypoints-ondish-my-benefits-tab-inner-account-page-js">Points & Points Plus Smart Points Added</h5>
+                        <span class="glyphicon glyphicon-heart"></span>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <!-- Coupons -->
+              <div class="row" *ngFor="let  eachcoupon of  couponlist  | paginate: { id: 'server', itemsPerPage: perpage, currentPage: p, totalItems: total }">
+                <div class="col-md-4">
+                  <div class="holder-firstcol-onlineorder-historytab-inner-accountpage-js">
+                    <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Restaurant</h5>:
+                    <span class="details-orderhistorytab-restaurantname-inner-js">{{eachcoupon.merchantname}}</span>
+                    <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Cuisine</h5>:
+                    <p class="details-orderhistorytab-restaurantname-inner-js">
+                      <span *ngFor="let cuisineItem of loyaltypoint.cusines;let j = index;let isLast=last;"> {{cuisineItem.cuisinename}}{{isLast ? '' : ', '}} </span>
+                    </p>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <span class="fa fa-star checkedcustomrating-dineinorder-accounttab-inner-js"></span>
+                    <br>
+                    <h5 class="order-history-tab-heading-row1-inner-accountpage-js">Address</h5>
+                    <span class="details-dine-in-tab-row2-restaurantname-inner-js">1/6 Cowper Wharf Roadway,Woolloomooloo NSW 2011,Australia</span>
+
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#displaymap" (click)="openModel(order.latitude,order.longitude)">
+                      <img class="map-image-accountpage-inner-js" src="../assets/images/mapicon.png">
+                    </a>
+                    <br>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <!-- order date -->
+                    <div class="col-md-12">
+                      <div class="rowholder-content-orderdate-inner-account-page-dinein-tab-js">
+                        <h5 class="orderdate-benefits-tab-inner-style-accountpage-js">Coupon</h5>
+                      </div>
+                    </div>
+
+                    <div class="holder-scroll-items-account-page-benefitstab-inner-js" style="overflow:hidden">
+                      <!-- item tabs -->
+                      <div class="col-md-12">
+                        <h5 class="heading-mybenefits-loyality-points-inner-js">{{eachcoupon.couponTitle}}</h5>:
+                        <span class="description-mybenefits-points-loyality-points-inner-js">${{eachcoupon.couponvalue}}</span>
+                        <a class="glyphicon glyphicon-ok confirmed-points-icon-benefits-tab-accountpage-inner-js" href="#"></a>
+                        <br>
+                        <h5 class="heading-mybenefits-loyality-points-inner-js">Last Date Of Offer</h5>:
+                        <span class="description-mybenefits-loyality-points-inner-js">20 April 2017</span>
+                        <h5 class="loyalitypoints-ondish-my-benefits-tab-inner-account-page-js">Use this coupon to avail the offer!</h5>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- pagination -->
+            <div class="text-center" *ngIf="loyaltypointcouponlist">
+              <ul class="pagination" *ngIf="!norecord && norecord != null">
+                <pagination-controls (pageChange)="getPage($event)" id="server" maxSize="5" directionLinks="true" autohide="true"></pagination-controls>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Map Dialog -->
+      <div id="displaymap" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Map</h4>
+            </div>
+            <div class="modal-body">
+              <ngui-map zoom="13"  center="{{center}}" (mapReady$)="onMapReady($event)">
+                <marker position="{{center}}" color="green" label="A"></marker>
+              </ngui-map>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

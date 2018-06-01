@@ -1,0 +1,259 @@
+<div class="menupage-sec1-mapinfo-js">
+  <div class="container">
+    <div class="holder-fullcontent-cartsummary-page-inner-js">
+      <!-- row 2 starts -->
+      <div class="row">
+        <div class="col-md-9">
+          <h5 class="restaurantname-cartpagesummary-rightmenu-head-inner-js" *ngIf="resData">{{resData.merchantname}}</h5>
+          <div class="tabs-conent-style-custom-cartpage-inner-js" *ngIf="offerArray && offerArray.length > 0">
+            <img class="coupon-image-summarypage-inner-js" src="../../assets/images/couponicon-summary0.png">
+            <h5 class="heading-cartsummary-page-inner-js">Offers Select Any Offer</h5>
+          </div>
+
+          <div class="holder-display-listng-cart-summary-page-inner-js" *ngIf="offerArray && offerArray.length > 0">
+            <div class="row">
+
+              <div class="col-md-3" *ngFor="let offer of offerArray">
+                <label class="offer-desc" (click)="applyOffer(offer)">
+                  <i *ngIf="selectedOffer === offer.offers" class="fa fa-dot-circle-o icon-offr"></i>
+                  <i *ngIf="selectedOffer !== offer.offers" class="fa fa-circle-o icon-offr"></i>
+                  <!-- <input type="radio" name="offer" value="{{offer.offers.id}}" [(ngModel)]="offer.offers.id" (click)="applyOffer(offer)"> -->
+                  {{offer.offers.OfferName}}
+                </label>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="holder-display-listng-cart-summary-page-inner-js">
+            <div class="tabs-conent-style-custom-cartpage-inner-js">
+              <img class="coupon-image-summarypage-inner-js" src="../../assets/images/couponicon-summary-main.png">
+              <h5 class="heading-cartsummary-page-inner-js">My order ({{cartItems.length}} - items)
+              </h5>
+              <div class="holder-ordertype-adjust-align-inner-summarypage-js">
+                <p class="ordertype-self-sec2-head-summarypage-inner-js">Order Type:
+                  <span>{{deliType}}</span>
+                </p>
+              </div>
+            </div>
+            <div class="holder-price-cart-details-summarypage-2-inner-js">
+              <div class="row">
+                <div class="col-md-3 col-sm-3">
+                  <h5 class="headings-leftbar-summarypage2-cartsummary-inner-js">Item</h5>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <h5 class="headings-leftbar-summarypage2-cartsummary-inner-js">Quantity</h5>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <h5 class="headings-leftbar-summarypage2-cartsummary-inner-js rightAlign" >Price</h5>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <h5 class="headings-leftbar-summarypage2-cartsummary-inner-js rightAlign">Sub Total</h5>
+                </div>
+              </div>
+
+              <div class="123456">
+                <cart-item *ngFor="let cartItem of cartItems; let idx=index" [isOnSidebar]='false' [freeItemFlag]='false' [hideItemPrice]='false'
+                [editable]='false' [cartItemIdx]='idx' [qty]="cartItem.quantity ? cartItem.quantity : 0" [cartItemObj]="cartItem.menuItem"
+                (cartItemDeletion)="handleItemDeletion($event)"></cart-item>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="holder-myordercart-summarypage-inner-js" *ngIf="userStoredData">
+                    <p class="ordertype-sec2-head-summarypage-inner-js">Customer Detail</p>
+                    <p class="ordertype-sec2-name-head-summarypage-inner-js">{{userStoredData.firstName}} {{userStoredData.lastName}}</p>
+                    <p class="ordertype-sec2-name-head-summarypage-inner-js">{{userStoredData.email}}</p>
+                    <p class="ordertype-sec2-name-head-summarypage-inner-js">{{userStoredData.mobile}}</p>
+                    <p class="ordertype-sec2-name-head-summarypage-inner-js" *ngIf="guest_customer_email || guest_customer_mobile">{{guest_customer_email}}</p>
+                    <p class="ordertype-sec2-name-head-summarypage-inner-js" *ngIf="guest_customer_email || guest_customer_mobile">{{guest_customer_mobile}}</p>
+                  </div>
+                  <div class="holder2-1-myordercart-summarypage-inner-js" *ngIf="deliType === 'Delivery'">
+                    <p class="restaurant-name-head-summarypage-inner-js">Delivery Address</p>
+                    <p class="heading-tabs-billing-address-deatils-head-inner-js1">{{deliveryAddress.addressline1 || deliveryAddress.addressLine1}} {{deliveryAddress.addressline2 || deliveryAddress.addressLine2}}<br>
+                      {{deliveryAddress.suburb}}<br>
+                      {{deliveryAddress.city}}<br>
+                      {{deliveryAddress.postcode}}<br>
+                      {{deliveryAddress.state}}<br>
+                      {{deliveryAddress.country}}</p>
+                  </div>
+                  <div class="holder2-1-myordercart-summarypage-inner-js">
+                    <p class="restaurant-name-head-summarypage-inner-js">Billing Address</p>
+                  <p class="heading-tabs-billing-address-deatils-head-inner-js1">{{billingAddress.addressLine1}}, {{billingAddress.addressLine2}}<br>
+                    {{billingAddress.suburb}}<br>
+                    {{billingAddress.city}}<br>
+                    {{billingAddress.postcode}}<br>
+                    {{billingAddress.state}}<br>
+                    {{billingAddress.country}}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                  <div  class="row">
+                    <div class="col-md-6 col-sm-6" >
+                      <h5 class="confirmationHeader">Sub Total:</h5>
+                    </div>
+                    <div class="col-md-6 col-sm-6" >
+                      <h5  class="confirmationText">{{subtotal | currency:'USD':'symbol'}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationHeader">Tax
+                        <span class="pricetotal-adjust-inner-js" *ngIf="taxtotal === 0">(Inclusive)</span>:
+                        <!--<h5 class="confirmationHeaderWran" *ngIf="taxtotal == 0">(Inclusive):</h5>-->
+                      </h5>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationText" *ngIf="taxtotal > 0">{{taxtotal | currency:'USD':'symbol'}}</h5>
+                      <h5 class="confirmationText" *ngIf="taxtotal == 0">$0.00</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationHeader" *ngIf="deliType === 'Delivery'">Delivery:
+                        <span class="pricetotal-adjust-inner-js" *ngIf="deliType === 'Delivery' && deliveryCharge == 0">(Free)</span>
+                      </h5>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationText" *ngIf="deliType === 'Delivery' && deliveryCharge > 0">{{deliveryCharge | currency:'USD':'symbol'}}</h5>
+                      <h5 class="confirmationText" *ngIf="deliType === 'Delivery' && deliveryCharge == 0">$0.00</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationHeader" *ngIf="selectedOffer && OfferAmount > 0">Selected Offer - {{selectedOffer.OfferName}}:</h5>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationText" *ngIf="selectedOffer && OfferAmount > 0">{{OfferAmount | currency:'USD':'symbol'}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <span class="confirmationHeader" *ngIf="selectedCoupon && selectedCoupon.coupons && couponAmount > 0">Applied Coupon  {{selectedCoupon.coupons.couponcode}} - {{selectedCoupon.coupons.couponName}}:</span>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationText" *ngIf="couponAmount > 0">{{couponAmount | currency:'USD':'symbol'}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationHeader" *ngIf="redeemedPoints > 0">Loyalty Points Redeemed :</h5>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationText" *ngIf="redeemedPoints > 0">{{redeemedPoints}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationHeader" *ngIf="redeemedPoints > 0">Amount Redeemed form Loyalty points :</h5>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationText" *ngIf="dollarValueOfLoyaltyPoint > 0">{{dollarValueOfLoyaltyPoint | currency:'USD':'symbol'}}</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationHeader">Total :</h5>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <h5 class="confirmationText">{{grandTotal | currency:'USD':'symbol'}}</h5>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="tabs-conent-style-custom-cartpage-inner-js">
+                    <img class="coupon-image-summarypage-inner-js" src="../../assets/images/couponicon1-summary.png">
+                    <h5 class="heading2-coupons-payment-cartsummary-page-inner-js">Payment</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="holder-display-listng-cart-summary-page-inner-js">
+                    <p class="coupon-sec-payment-head-text-summarypage-inner-js">Select a payment method</p>
+                    <div class="holder-payments-highlights-inner-summarypage-js" *ngFor="let paymentItem of paymentMethod">
+                      <img *ngIf="paymentItem.method_name == 'Paypal'" class="cod-icon-image-summarypage-inner-js" src="../../assets/images/paypalicon.png">
+                      <a *ngIf="paymentItem.method_name == 'Paypal'" (click)="paymentExpress()" class="payment-cons-text-inner-summarypage-js">{{paymentItem.method_name}}</a>
+
+                      <img *ngIf="paymentItem.id == 5" class="cod-icon-image-summarypage-inner-js" src="../../assets/images/codicon.png">
+                      <a *ngIf="paymentItem.id == 5" (click)="onSubmitCOD()" class="payment-cons-text-inner-summarypage-js">{{paymentItem.method_name}}</a>
+
+                      <img *ngIf="paymentItem.method_name == 'Debit Card'" class="cod-icon-image-summarypage-inner-js" src="../../assets/images/mastercardicon.png">
+                      <a *ngIf="paymentItem.method_name == 'Debit Card'" class="payment-cons-text-inner-summarypage-js" (click)="openCheckout()">Credit/Debit</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- right tab starts -->
+
+
+          <div class="col-md-3">
+            <div class="holder-left-menus-inner-menupage-js">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="holder-display-listng-cart-summary-page-inner-js" *ngIf="!token">
+                    <p class="coupon-sec-text-summarypage-inner-js">Coupons and Loyalty points can be be availed by
+                      <a class="signin-link-couponsection-inner-js" href="javascript:void(0);" (click)="redirectToLogin()">Signing in</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="tabs2-conent-coupon-payment-style-custom-cartpage-inner-js">
+                    <h5 class="heading2-couponsmain-righttab-payment-cartsummary-page-inner-js">Coupons and Loyalty Points</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+
+                  <div class="holder-display-listng-select-coupon-rightab-cart-summary-page-inner-js" *ngIf="token && (couponArray && couponArray.length > 0)">
+                    <p class="coupon-sec-text-summarypage-inner-js">Select Coupon and Click Apply</p>
+                    <p class="coupon-code-signinuser-summarypage-inner-js" *ngFor="let coupon of couponArray" (click)="appliedCoupon = coupon;appliedCouponCode = coupon.coupons.couponcode">{{coupon.coupons.couponcode}} -
+                      <span class="coupon-discount-signup-summarypage-inner-js">{{coupon.coupons.couponName}}</span>
+                    </p>
+                  </div>
+
+                  <div class="sigin-couponcode-section-inner-cartsumaarypage-js">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="head-codefil-sec-summarypage-inner-js">Coupon Code</p>
+                        <input class="coupon-code-fill-box-loginuser-summarypage-inner-js" type="text" placeholder="Select Coupon Code" [(ngModel)]="appliedCouponCode">
+                        <input class="coupon-code-submit-fill-box-loginuser-summarypage-inner-js" type="button" (click)="applyCoupon()" value="Apply">
+                      </div>
+                      <div class="col-md-12" *ngIf="token && availableLoyaltyPoint > 0">
+                        <p class="head2-codefil-sec-summarypage-inner-js">Available Loyalty Points</p>:
+                        <span class="loyaltypoints-signin-summarypage-inner-js">{{availableLoyaltyPoint}}</span>
+                        <input class="coupon-code-fill-box-loginuser-summarypage-inner-js" [(ngModel)]="appliedLoyaltyPoint" type="text" placeholder="Enter Point">
+                        <input class="coupon-code-submit-fill-box-loginuser-summarypage-inner-js" (click)="applyLoyaltyPoints()" type="button" value="Apply">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        <!--</div>-->
+      </div>
+    </div>
+
+
+    <!-- row 3  starts -->
+
+
+  </div>

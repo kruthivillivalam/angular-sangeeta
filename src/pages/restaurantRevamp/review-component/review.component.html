@@ -1,0 +1,54 @@
+<h3 class="reviews-heading-main-tab-menupage-js">User Reviews</h3>
+
+<div class="col-md-3 col-sm-3">
+    <img class="user-reviewimage-menupage-inner-js" src="../assets/images/userreviewimg.jpg">
+    <p class="reviewshead1-menupage-inner-js">{{userName || 'Guest'}}
+        <br/>{{ratingDate}}
+    </p>
+    <div class="rating-star">
+        <star-rating-comp (onClick)="onRatingClick($event)" [starType]="'svg'" [staticColor]="'ok'" [rating]="userCommentObj.star_rating" [speed]="'slow'" [step]="1" [showHalfStars]="true" [readOnly]="false"></star-rating-comp>
+    </div>
+</div>
+
+<div class="col-md-9 col-sm-9">
+    <div class="holder1-reviewcontent-reviewtab-menupage-inner-js">
+        <p class="reviewshead-menupage-inner-js">{{commonText.REVIEW_POSTED_PUBLICALLY}}</p>
+        <div class="form-group">
+            <input type="text" placeholder="Title" class="form-control" id="usr" [(ngModel)]="userCommentObj.review_title">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" placeholder="User Review" rows="5" id="comment" [(ngModel)]="userCommentObj.review_text"></textarea>
+        </div>
+
+        <div class="review-buttons-tabs-menupage-inner-js">
+            <a class="links-review-tab-menupage-inner-js" href="javascript:void(0);" (click)='onPostComment(userCommentObj)'>{{commonText.POST_TXT}}</a>
+            <a class="links-review-tab-menupage-inner-js" href="javascript:void(0);" (click)='onCancelBtnClick()'>{{commonText.CANCEL_TXT}}</a>
+        </div>
+    </div>
+</div>
+<hr style="border-top: 1px solid #e6e6e6;" />
+
+<div class="holderfullreviewtab-fixheight">
+    <div class="holder-reviewssection-second-reviewtab-menupage-inner-js">
+        <div class="row reviewer-box-overflow-controller" *ngFor="let review of userReviews">
+            <div class="col-md-3 col-sm-3">
+                <img class="user1-reviewimage-menupage-inner-js" src="../../assets/images/userreviewimg.jpg">
+                <p class="reviewshead2-menupage-inner-js">{{review.customer_name}}</p>
+            </div>
+
+            <div class="col-md-9 col-sm-9">
+                <div class="rating-star" *ngIf="review.average_user_rating && review.average_user_rating!= null">
+                    <star-rating-comp [starType]="'svg'" [rating]="review.average_user_rating" [staticColor]="'ok'" [speed]="'slow'" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating-comp>
+                </div>
+                <div class="holder-reviewcontent-reviewtab-menupage-inner-js">
+                    <p class="datereviewtab-menu-page-inner-js">{{review.review_date | date}}</p>
+                    <div class="reviewcomment-reviewtab-menupage-inner-js">
+                        <h5 class="head-review-reviewtab-menupage-inner-js">{{review.review_title}}</h5>
+                        <div class="review-content-add-new">{{review.review_text}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

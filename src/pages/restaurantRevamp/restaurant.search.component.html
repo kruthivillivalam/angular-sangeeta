@@ -1,0 +1,97 @@
+<div class="col-md-6 col-sm-6" *ngIf="item">
+    <div class="holder-listing-bg-stlye-js">
+        <div class="effect-listing-image-effect-js">
+		<!--{{ item.photoUrl || '../assets/images/no-image1.png'}} -->
+            <img class="listing-image-display-restaurantpage-js"  [routerLink]="['/restaurantdetail', item.merchantid]" [src]="item.photoUrl" onError="this.src='../assets/images/no-image1.png'" />
+        </div>
+        <div class="listing-inner-content-adjust-js">
+
+            <h5 class="heading-listing-display-restaurantpage-js"  [routerLink]="['/restaurantdetail', item.merchantid]">{{ item.merchantname }}</h5>
+            <div class="rating-star">
+            <star-rating-comp [starType]="'svg'" [rating]="item.rating" [staticColor]="'ok'" [speed]="'slow'" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating-comp>
+        </div>
+            <p class="address-listing-display-restaurantpage-js">
+                <em>{{item.userreviewcount}} Review{{(item.userreviewcount > 1) ? 's' : ''}}</em>
+                <br /> {{resAddress.address1}} {{resAddress.address2}} {{resAddress.city}}
+                <br /> {{resAddress.suburb}} {{resAddress.state}} {{resAddress.postcode}} {{resAddress.country}}
+            </p>
+            <p class="address-listing-display-restaurantpage-js"> Cusines: {{ listCuisines(item.cuisine, 2) }}
+                <a *ngIf="item.cuisine.length > 2" class="read-more-cuisines" href="javascript:void(0);" data-placement="top" data-trigger="focus" data-toggle="popover" title="Cuisines" [attr.data-content]="listCuisines(item.cuisine, 0)">View All</a>
+            </p>
+            <p class="price-listing-display-restaurantpage-js">${{item.costft}}
+                <span class="for2-style-listing-js">for2</span>
+            </p>
+            <a class="orderlink-listing-display-restaurantpage-js" href="javascript:void(0);" [routerLink]="['/restaurantdetail', item.merchantid]">View Now</a>
+            <div class="holder-buttons-services-features-js">
+
+                <div class="dropdown" *ngIf="item.service.length > 0">
+                    <a class="dropdown-toggle service-button-dropdown-listing-js" type="button" data-toggle="dropdown">
+                        <span class=" glyphicon glyphicon-indent-right"></span>
+                        <span class="features-heading-style-js">Services</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let serviceItem of item.service">
+                            <a href="javascript:void(0);">{{serviceItem.paramname}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dropdown" *ngIf="item.service.length == 0">
+                    <a class="dropdown-toggle service-button-dropdown-listing-js" type="button" data-toggle="dropdown">
+                        <span class=" glyphicon glyphicon-indent-right"></span>
+                        <span class="features-heading-style-js">Services</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:void(0);">No Services</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dropdown" *ngIf="item.features.length > 0">
+                    <a class="dropdown-toggle service-button-dropdown-listing-js" type="button" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-th-large"></span>
+                        <span class="features-heading-style-js">Features</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let featureItem of item.features">
+                            <a href="javascript:void(0);">{{featureItem.paramname}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="dropdown" *ngIf="item.features.length == 0">
+                    <a class="dropdown-toggle service-button-dropdown-listing-js" type="button" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-th-large"></span>
+                        <span class="features-heading-style-js">Features</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:void(0);">No Features</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dropdown" *ngIf="item.phone">
+                    <a class="dropdown-toggle service-button-dropdown-listing-js" type="button" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-phone icons-callnow-custom-js"></span>
+                        <span class="features-heading-style-js">Call Now</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="tel:{{item.phone}}">{{item.phone}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="clearfix" *ngIf="item && clearfix && !dontClear"></div>

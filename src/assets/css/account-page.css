@@ -1,0 +1,930 @@
+/* account page starts */
+/* main div */
+.myaccount-page-wholesection-inner-js
+{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/annie-spratt-44241-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* main div ends */
+
+/* left tab */
+.custompills-accountpage-inner-js
+{
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+.custompills-accountpage-inner-js > li.active > a, .custompills-accountpage-inner-js > li.active > a:focus, .custompills-accountpage-inner-js > li.active > a:hover
+{
+    background: #b91319 !important;
+    color: #fff !important;
+    font-family: 'Montserrat',sans-serif !important;
+    font-weight: 500 !important;
+    border: solid 1px #b91319;
+    border-radius: 0 !important;
+    margin: 0 0 0 5px;
+    padding: 8px 10px 8px 10px;
+}
+
+.tabs-headings-content-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #414551;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+
+
+/* left tab ends */
+
+/* right tab starts */
+
+.usermain-image-accountpage-inner-js
+{
+    width: 20%;
+    height: auto;
+    border-radius: 0px;
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+}
+
+/* userdetails */
+
+.editicon-myprofile-tab-accountpage-inner-js   
+{
+    font-size: 10px;
+    background: #b91319;
+    color: #fff;
+    padding: 3px 3px 3px 3px;
+    border-radius: 2px;
+    display: table;
+    margin: 0 auto;
+}
+
+.username-account-page-inner-js
+{
+    display: inline-block;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: 'Montserrat',sans-serif;
+    color: #414551;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.holder-image-userbg-accountpage-js
+{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/userbgfullcover.jpg);
+    padding: 0 0 4px 0;
+}
+.holder-profileimage-links-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.imagechange-link-accountinfo-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-align: center;
+    display: inline-block;
+    padding: 4px 10px 4px 10px;
+}
+
+.passwordchange-link-accountinfo-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-align: center;
+    display: inline-block;
+    padding: 4px 10px 4px 10px;
+}
+
+/* fields */
+
+.labels-fields-tabs-inner-page-account-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    margin: 6px 0 0 0;
+    color: #000;
+    font-weight: 200;
+}
+
+.account-fields-tabs-inner-page-account-js
+{
+    width: 90%;
+    height: 35px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    background: rgba(213, 213, 213, 0.1);
+}
+
+/* date of birth */
+.dateofbirth-field-adjust-inner-page-account-js
+{
+    width: 13%;
+    height: 26px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    background: rgba(213, 213, 213, 0.1);
+    display:inline-block;
+}
+.monthofbirth-field-adjust-inner-page-account-js
+{
+    width: 16%;
+    height: 28px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    background: rgba(213, 213, 213, 0.1);
+    display:inline-block;
+}
+
+/* date of birth #*/
+
+/* Permanent Address bar */
+.permanentaddress-tab-inner-page-account-js
+{
+    width: 100%;
+    height: auto;
+}
+
+/* State tab */
+.state-fields-tabs-inner-page-account-js
+{
+    width: 60%;
+    height: 35px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    background: rgba(213, 213, 213, 0.1);
+}
+.form-holderfull-profilesection-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    padding: 15px 15px 15px 15px;
+    margin: 8px 0 0 0;
+}
+.sameaddress-option-inner-page-account-js
+{
+    width: 50%;
+    padding: 0 0 0 24px;
+    height: auto;
+}
+.labels-sameaddress-fields-tabs-inner-page-account-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    display: inline;
+    margin: 6px 0 0 0;
+    color: #b91319;
+}
+/* Permanent Address bar #*/
+/* submit link */
+.submitlink-adminpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    background: #b91319;
+    padding: 5px 20px 5px 20px;
+    border-radius: 4px;
+}
+
+/* fade effect */
+.fade
+{
+    opacity: 0;
+    -webkit-transition: opacity 2.25s linear;
+    -moz-transition: opacity 2.25s linear;
+    -ms-transition: opacity 2.25s linear;
+    -o-transition: opacity 2.25s linear;
+    transition: opacity 2.25s linear;
+}
+/* submit link #*/
+
+/* fields # */
+
+/* reservation tab starts */
+.holder-reservation-tab-header-inner-account-page-js
+{
+    width: 100%;
+    height: auto;
+    padding: 5px 10px 5px 40px;
+    background: #b91319;
+}
+
+.reservation-tab-content-headings-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0 10px 0 10px;
+}
+
+.holder-scroll-items-account-page-inner-js
+{
+    width: 100%;
+    height: 150px;
+    overflow-y:scroll;
+}
+.restaurant-name-reservation-tab-content-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    text-transform: capitalize;
+    display: inline-block;
+    font-weight: 600;
+    width: 38%;
+    color: #414551;
+}
+.restaurant-details-name-reservation-tab-content-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    width: 40%;
+    display: inline-table;
+    text-align: center;
+    color: #414551;
+    padding: 0 0 0 7px;
+}
+
+.booking-details-reservation-tab-content-inner-js
+{
+    font-size: 14px;
+    font-weight: 100;
+    color: #414551;
+    display: inline-block;
+    width: 38%;
+    padding: 0 0 0 6px;
+    font-family: 'Montserrat',sans-serif;
+}
+.booking-details-address-bar-reservation-tab-content-inner-js
+{
+    font-size: 15px;
+    color: #414551;
+    display: inline-table;
+    width: 55%;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    padding: 0 0 0 8px;
+}
+
+.holder-reservation-tab-content-styleouter-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    background: #f9f9f9;
+    padding: 10px 33px 0px 33px;
+    margin: 10px 0 0 0;
+}
+.reservation-id-number-reservation-tab-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    color: #b91319;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.map-heading-innerpage-reservation-tab-accountpage-js
+{
+    font-size: 17px;
+    font-weight: 400;
+    color: #414551;
+    display: inline-block;
+    width: 43%;
+    padding: 0 0 0 6px;
+    font-family: 'Montserrat',sans-serif;
+    text-align: left;
+}
+.restaurant-type-details-name-reservation-tab-content-inner-js
+{
+    font-size: 15px;
+    color: #414551;
+    display: inline-table;
+    width: 55%;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 100;
+    padding: 0 0 0 7px;
+}
+.orderconfirmed-account-page-reservation-tab-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    color: #099e44;
+    font-weight: 500;
+}
+.map-image-accountpage-inner-js
+{
+    display: inline;
+    width: 10%;
+    height: auto;
+}
+.menus-reservation-tab-account-page-inner-js
+{
+    width: 10%;
+    height: auto;
+    padding: 1px 0 1px 0;
+}
+.menus-restaurant-reservation-tab-account-page-inner-js
+{
+    width: 25%;
+    height: auto;
+    padding: 1px 0 1px 0;
+}
+
+/* my favourites tab */
+.searchbox-myfavourites-tab-inner-js
+{   
+    width: 13%;
+    height: auto;
+    padding: 5px 0 5px 0;
+}
+.add-link-favorite-tab-account-page-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    background: #b91319;
+    padding: 7px 16px 7px 16px;
+    display: table;
+    margin: 5px auto;
+    text-transform: uppercase;
+}
+
+.search-bar-favouritestab-holder-inner-js
+{
+    width: 100%;
+    height: auto;
+    display: inline;
+}
+.searchicon-adjust-myfavouritetab-inner-js
+{
+    color: #000;
+    position: relative;
+    right: 22px;
+}
+.menus-reservation-tab-account-page-inner-favouritetab-js
+{
+    width: 5%;
+    height: auto;
+    padding: 5px 0 5px 0;
+}
+.menus-reservation-tab-account-page-favouriterestaurant-inner-js
+{
+    width: 20%;
+    height: auto;
+    padding: 5px 0 5px 0;
+}
+
+.myfavouritestab-account-page-favourite-restaurantimage-inner-js
+{
+    width: 100%;
+    height: auto;
+}
+.holder-myfavouritetab-innerimage-favourite-restaurant-js
+{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    padding: 0 0 10px 0;
+}
+.name-favourite-restaurant-desc-favouritetab-inner-js
+{
+    color: #666;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 0 0 0 5px;
+}
+.myfavouritestab-account-page-favourite-restaurantimage-details-inner-js
+{
+    color: #b91319;
+    font-size: 14px;
+    font-family: 'Montserrat',sans-serif;
+    width: 28%;
+    font-weight: 500;
+    text-align: left;
+    display: inline-table;
+    padding: 0 0 0 4px;
+    margin: 0 0 0 0;
+}
+.myfavouritestab-account-page-favourite-restaurantimage-details-cusine-inner-js
+{
+    color: #757575;
+    font-size: 14px;
+    font-family: 'Montserrat',sans-serif;
+    width: 70%;
+    font-weight: 100;
+    display: inline-table;
+    text-align: left;
+    padding: 0 0 5px 0;
+}
+.heading-my-favouritetab-inner-section1-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #9e9999;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.myfavouritestab-account-page-favourite-restaurantimage-detailsrow2-inner-js
+{
+    color: #b91319;
+    font-size: 14px;
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+    font-weight: 100;
+    text-align: left;
+    display: inline-table;
+    padding: 0 0 0 4px;
+    margin: 0 0 0 0;
+}
+/* pagination starts */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #b91319;
+    border-color: #b91319;
+}
+
+.pagination li a 
+{
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    color: #b91319;
+    background: none;
+    margin: 0 3px;
+        margin-left: 3px;
+    border: 1px solid #b91319;
+    padding: 5px 12px;
+    font-family: 'Montserrat',sans-serif;
+}
+
+/* pagination ends */
+
+/* reservation tab ends */
+
+/* online-order history */
+
+.holder-online-order-history-tab-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    background: #fff;
+    padding: 10px 33px 10px 33px;
+    margin: 10px 0 0 0;
+}
+.adjust-reviewdisplay-section-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    margin: 5px 0 0 0;
+    padding: 6px 0 0 0;
+}
+.myfavouritestab-account-page-favourite-restaurantimage-details-mostvisitedrestaurants-inner-js
+{
+    color: #b91319;
+    font-size: 14px;
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+    font-weight: 100;
+    text-align: left;
+    display: inline-table;
+    padding: 0 0 0 6px;
+    margin: 0 0 0 0; 
+}
+.count-visited-myfavourtitetab-inner-js
+{
+    padding: 0 0 0 5px;
+}
+.order-history-tab-heading-row1-inner-accountpage-js   
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: 40%;
+    margin:6px 0 0 0;
+}
+
+.details-orderhistorytab-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    font-weight: 100;
+    width: 55%;
+    color: #414551;
+    display: inline-table;
+    text-align: left;
+    padding: 0 0 0 3px;
+}
+.order-details-headings-orderhistory-tab-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 100;
+    width: 80%;
+    text-align: center;
+}
+.order-details-headingsmain-orderhistory-tab-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: 80%;
+    text-align: center;
+}
+.order-history-tab2-heading-row2-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: 40%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+.order-history-tab2-date-heading-row2-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 13px;
+    display: inline-block;
+    color: #b91319;
+    font-weight: 500;
+    width: 73%;
+    text-align: center;
+}
+.holder-firstcol-onlineorder-historytab-inner-accountpage-js
+{
+    width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    background: #f9f9f9;
+    padding: 0 0px 12px 3px;
+    margin: 0px 0 0 0;
+}
+
+.details-orderhistorytab-row2-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    font-weight: 100;
+    width: 31%;
+    color: #414551;
+    display: inline-table;
+    text-align: center;
+}
+.details-ordertype-orderhistorytab-row2-restaurantname-inner-js
+{
+    font-weight: 500;
+    color: #b91319;
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    width: 31%;
+    display: inline-table;
+    text-align: center;
+}
+.total-bar-onlineorder-history-innerpage-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    width: 74%;
+    text-align: right;
+    color: #b91319;
+}
+.price-details-onlineorder-history-innerpage-accountpage-js
+{
+    display: inline-block;
+    width: 13%;
+    text-align: right;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #b91319;
+    padding: 0 3px 0 0;
+}
+.time-orderdetails-acountpage-inner-js
+{
+    display: inline-block;
+    color: #b91319;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 0 5px 0;
+    margin: 0 0 0 0;
+}
+
+/* dine in tab starts */
+.details-dine-in-tab-row2-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    font-weight: 100;
+    width: 100%;
+    color: #414551;
+    display: inline-table;
+    text-align: left;
+    font-size: 12px;
+}
+.links-restaurant-card-holderdiv-innertabs-accountpage-js
+{
+    width: 88%;
+    height: auto;
+    display: table;
+    margin: 10px auto;
+}
+.checkedcustomrating-dineinorder-accounttab-inner-js
+{
+    color: #b91319;
+}
+
+.restaurant-card-link-style-self-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    color: #b91319;
+    padding: 6px 20px 6px 20px;
+    border: 1px solid #eaeaea;
+}
+.rowholder-content-orderdate-inner-account-page-dinein-tab-js
+{
+    background: #f9f9f9;
+    border: 1px solid #eaeaea;
+    padding: 0 0 5px 10px;
+}
+
+.orderdate-dineintab-inner-style-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #414551;
+    width: 19%;
+    display: inline-block;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.date-output-inner-js-dinein-tab-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    color: #b91319;
+    font-weight: 500;
+    width: 31%;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 0 5px;
+}
+.ordertype-output-inner-js-dinein-tab-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    color: #b91319;
+    font-weight: 500;
+    width: 31%;
+    display: inline-block;
+    text-align: right;
+    padding: 0 7px 0 0;
+}
+/* track order starts */
+
+.order-history-tab2-tracktab-heading-row2-inner-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: 50%;
+}
+.details-orderhistorytab-row2-tracktab-restaurantname-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    text-transform: capitalize;
+    font-weight: 500;
+    width: 20%;
+    color: #b91319;
+    display: inline-table;
+    text-align: center;
+}
+.custom-progressbar-order-tracktab-heading-inner-js
+{
+    color: #b91319;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+.custom-progressbar-order-tracktab-desc-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    color: #b91319;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
+.heading-mybenefits-track-tab-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #414551;
+    text-transform: uppercase;        
+}
+
+.cancelorder-trackorder-tab-inner-account-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    background: #b91319;
+    color: #fff;
+    padding: 5px 8px 5px 8px;
+    float: right;
+    margin: 12px 0 0 0;
+}
+.map-heading-innerpage-trackorder-tab-accountpage-js
+{
+    font-size: 17px;
+    font-weight: 400;
+    color: #414551;
+    display: inline-block;
+    width: 10%;
+    padding: 0 0 0 6px;
+    font-family: 'Montserrat',sans-serif;
+    text-align: left;
+}
+.custom-adjust-bar-color
+{
+    background-color: #c0c0c0 !important;
+}
+/* track order ends */
+
+/* right tab ends */
+
+/* reviews tab starts */
+
+.reviews-tab-image-restaurant-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    display: table;
+    margin: 4px auto;
+}
+.checkedcustomrating-reviewtab-accounttab-inner-js
+{
+    color: #b91319;
+}
+.reviews-text-reviewtab-inner-js-accountpage-js
+{
+    width: 100%;
+    height: auto;
+}
+
+.reviews-text-reviewtab-inner-js-accountpage-js p
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    color: #929292;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+/* reviews tab ends */
+
+
+/* my benefits tab starts */
+
+.heading-mybenefits-loyality-points-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    color: #414551;
+    font-weight: 500;
+    width: 46%;
+}
+.holder-scroll-items-account-page-benefitstab-inner-js
+{
+    width: 100%;
+    height: 150px;
+    overflow-y: scroll;
+    padding: 0 0 0 10px;
+}
+.orderdate-benefits-tab-inner-style-accountpage-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #b91319;
+    width: 100%;
+    display: inline-block;
+    padding: 5px 0 0 0;
+    margin: 0 0 0 0;
+    text-align: left;
+}
+.links-benefit-tab-restauranttab-accountpage-inner-js
+{
+    width: 100%;
+    height: auto;
+    padding: 5px 0 5px 0;
+    display: table;
+    margin: 10px 35px auto;
+}
+.mybenefits-restaurantcard-links-accountpage-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    color: #b91319;
+    padding: 6px 20px 6px 20px;
+    border: 1px solid #eaeaea;
+}
+
+.description-mybenefits-loyality-points-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    width: 50%;
+    display: inline-table;
+    text-align:left;
+}
+
+.loyalitypoints-ondish-my-benefits-tab-inner-account-page-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #b91319;
+    display:inline-block;
+}
+.confirmed-points-icon-benefits-tab-accountpage-inner-js
+{
+    background: #099e44;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 5px 4px 3px;
+    border-radius: 50px;
+}
+.description-mybenefits-points-loyality-points-inner-js
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    width: 8%;
+    display: inline-table;
+    text-align: left;
+}
+
+/* my benefit tab ends */
+
+
+/* account page ends */

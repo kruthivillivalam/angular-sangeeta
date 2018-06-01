@@ -1,0 +1,191 @@
+<!-- section start. -->
+<section class="section" style="background-color:#fff;">
+    <!-- cuisine slider start. -->
+    <div class="cuisine-slider">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4" style="padding:0;">
+                    <div class="cuisine-img">
+                        <div class="cusine-bg" style="background-image:url(../assets/images/imagebox11.jpg);"></div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding:0;">
+                    <div class="cuisine-img responsive-cuisine ">
+                        <div class="cusine-bg cuisine-bg-reset" style="background-image:url(../assets/images/imagebox13.jpg);"></div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding:0;">
+                    <div class="cuisine-img responsive-cuisine">
+                        <div class="cusine-bg" style="background-image:url(../assets/images/imagebox12.jpg);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cuisine slider end. -->
+    <!--- featured restaurant start-->
+    <div class="featured-resort">
+        <h3 class="res-h3">Get fine Dining</h3>
+        <h2 class="res-h2">Most Popular In Locality</h2>
+
+        <div class="container">
+            <div id="featured-restaurant" class="carousel slide" data-ride="carousel" data-interval="30000">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#featured-restaurant" [attr.data-slide-to]="i" [ngClass]="{'active' : i == 0}" *ngFor="let items of tempArray; let i = index"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div [ngClass]="{ 'item' : true, 'active' : i == 0 }" *ngFor="let items of tempArray; let i = index">
+                        <div class="row" style="overflow: hidden;">
+                            <!-- Wrapper for thumbnail -->
+                            <div class="col-md-3 col-sm-3 featured-restaurant-slide-column" *ngFor="let item of items; let j = index">
+
+                                <div class="row">
+                                  <div  [routerLink]="['/restaurantdetail', item.merchantId]">
+                                    <div class="col-md-12">
+                                        <!-- <img [src]="imageURL + item.imageUrl" onError="this.src='../assets/images/no-image1.png'" class="resort-img" style="max-height: 263px;" /> -->
+                                        <div class="card myCentered" style="width:100%; height:280px;">
+                                            <img class="card-img-top rounded" [src]="featuredImageUrl + item.featureItemImageUrl"  onError="this.src='../assets/images/not_found.png'" alt="Card image">
+                                            <div class="card-body">
+                                              <p class="card-title"><strong>{{item.MerchantName |  slice:0:20}}</strong></p>
+                                              <p class="card-text">{{item.cuisinename | slice:0:20}}</p>
+                                              <a [routerLink]="['/restaurantdetail', item.merchantId]" class="btn btn-primary btn-small">View</a>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <!-- <div class="col-md-6" *ngIf="j<=1">
+                                        <div class="resort-div">
+                                            <h2 class="resort-h2">{{item.MerchantName}}</h2>
+                                            <p class="resort-p">{{item.address}}</p>
+                                            <p class="resort1-p"><strong>Cusine:</strong> {{item.cuisinename}}</p>
+                                            <h2 class="resort2-h2">$200</h2>
+                                        </div>
+                                    </div> -->
+                                  </div>
+                                  <!-- <div  [routerLink]="['/restaurantdetail', item.merchantId]">
+                                    <div class="col-md-6" *ngIf="j>=2">
+                                        <div class="resort-div">
+                                            <h2 class="resort-h2">{{item.MerchantName}}</h2>
+                                            <p class="resort-p">{{item.address}}</p>
+                                            <p class="resort1-p"><strong>Cusine:</strong> {{item.cuisinename}}</p>
+                                            <h2 class="resort2-h2">$200</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" *ngIf="j>=2">
+                                        <img  [src]="imageURL + item.imageUrl" onError="this.src='../assets/images/no-image1.png'"  class="resort-img" style="max-height: 263px;" />
+                                    </div>
+                                  </div> -->
+
+                                </div>
+
+                            </div>
+                            <!-- wrapper ends -->
+                        </div>
+                    </div>
+                </div>
+
+				<a class="left carousel-control" href="#featured-restaurant" data-slide="prev">
+                    <span class="fa fa-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#featured-restaurant" data-slide="next">
+                    <span class="fa fa-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--- featured restaurant end-->
+    <!-- promotion section start. -->
+    <div class="promotion">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="promot-h2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptas magnam ipsum inventore eos,
+                        veritatis porro laboriosam quod iste reiciendis. </h2>
+                    <a [routerLink]="['/submitlisting1']" class="promot-a">REGISTER AS A MERCHANT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- promotion section end. -->
+
+
+    <!-- featured -->
+    <div class="features">
+        <h2>Featured Restaurants</h2>
+
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="30000">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" [attr.data-slide-to]="i" [ngClass]="{'active' : i == 0}" *ngFor="let items of featuredRestaurantData; let i = index"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div [ngClass]="{ 'item' : true, 'active' : i == 0 }" *ngFor="let items of featuredRestaurantData; let i = index">
+                        <div class="row" style="overflow: hidden;">
+                            <div class="col-md-2 col-sm-4" *ngFor="let item of items; let j = index">
+                                <!-- <div class="cours2" style="overflow:hidden;"  [routerLink]="['/restaurantdetail', item.id]">
+                                    <img class="hover" src="{{item.imageUrl}}"  onError="this.src='../assets/images/not_found.png'">
+                                    <div class="cours3">
+                                        <h2>{{item.MerchantName}}</h2>
+                                        <h5 class="featured-cuisines-on-thumb" style="text-align:center;">{{item.cuisineNames}}</h5>
+                                    </div>
+                                    <div class="cours4 text-center">
+                                        <a [routerLink]="['/restaurantdetail', item.id]" class="cou">View More
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div> -->
+                                <div class="card myCentered" style="width:100%; height:300px;">
+                                    <img class="card-img-top rounded" src="{{item.imageUrl}}"  onError="this.src='../assets/images/not_found.png'" alt="Card image">
+                                    <div class="card-body">
+                                      <p class="card-title"><strong>{{item.MerchantName |  slice:0:20}}</strong></p>
+                                      <p class="card-text">{{item.cuisineNames | slice:0:20}}</p>
+                                      <a [routerLink]="['/restaurantdetail', item.id]" class="btn btn-primary btn-small featuredBtn">View</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- featured -->
+
+
+    <!--- why order-point section start-->
+    <div class="order-point">
+        <h3>Experience</h3>
+        <h2>Why order with OrderPoint</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <a href="javascript:void(0);" class="boxed-color">
+                        <i class="fa fa-cutlery font25"></i>
+                        <br> Online Order</a>
+                    <a href="javascript:void(0);" class="boxed-color">
+                        <i class="fa fa-car font25"></i>
+                        <br> Free Parking</a>
+                    <a href="javascript:void(0);" class="boxed-color">
+                        <i class="fa fa-briefcase font25"></i>
+                        <br>conference halls</a>
+                    <a href="javascript:void(0);" class="boxed-color">
+                        <i class="fa fa-bicycle font25"></i>
+                        <br> Home Delivery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--- why order-point section end-->
+</section>

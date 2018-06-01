@@ -1,0 +1,321 @@
+<!-- Start Search Section -->
+  <div class="search-body">
+    <div class="search-result-header">
+      <div class="search-result-title">
+        <span class="serch-place-name" *ngIf="alreadySearchedData.locations">{{alreadySearchedData.locations.suburb}}  </span>
+        <span class="serch-order-from">Order from {{allSearchData.resultsFound}} restaurants</span>
+        <!-- <span class="serch-order-from">Order from 10 restaurants</span> -->
+      </div>
+    </div>
+    <div class="serch-view-filter-section">
+      <div class="list-map-section">
+        <div class="choose-view">
+          <label>Change View:</label>
+          <span class="list-view">
+            <a href="javascript:void(0)" (click)="isMapView('list');" [ngClass]="{'active':!isMapViewFlag}">List</a></span>
+        </div>
+        <div class="choose-map" *ngIf="allMerchantData?.length>0">
+          <a href="javascript:void(0)" (click)="isMapView('map');" class="map-icon" [ngClass]="{'active':isMapViewFlag}">Map</a>
+        </div>
+      </div>
+      <div class="search-filter-left">
+        <div class="choose-location-section">
+          <div class="select-location">{{suburblocation}}</div>
+          <a href="javascript:void(0)">Change Location</a>
+        </div>
+        <div class="task-page-section">
+            <span>Show:</span>
+            <div class="task-page-select">
+                <select  name="pageSize"  ng-model="pageSize"  #pageSize (change)="setPerPageValue($event, pageSize.value)">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>40</option>
+                    <option>50</option>
+                    <option>60</option>
+                  </select>
+            </div>
+          </div>
+        <div class="sort-by-section">
+          <span>Sort by:</span>
+          <div class="sort-by-select">
+            <select>
+              <option>Relevance</option>
+              <option>49</option>
+              <option>48</option>
+              <option>47</option>
+              <option>46</option>
+              <option>45</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search-area-wrap">
+      <div class="sidebar-choose-option">
+        <div class="sidebar-grid meal-price-section">
+          <div class="sidebar-grid-title">Order for 2</div>
+          <div class="sidebar-grid-detail choose-price">
+            <!-- <input type="range" multiple min="0" step="1" max="10" data-values="1,9" /> -->
+            <nouislider [(ngModel)]="someRange3" [config]="someRange3config" [tooltips]="[true]" style="margin-top: 4em;" (ngModelChange)="onChange($event)" #sliderRef name="sliderRef"></nouislider>
+          </div>
+        </div>
+		 <!--postcode-->
+		<div class="sidebar-grid location-section">
+      <form novalidate (ngSubmit)="postcodeSearchForm.valid && onSubmit(postcodeSearchForm.value)" name="postcodeSearchForm" #postcodeSearchForm="ngForm">
+        <div class="sidebar-grid-title">Postcode</div>
+  	     <div class="sidebar-grid-detail choose-location grey-checkbox">
+           <div class="form-group">
+             <input type="text" placeholder="postcode" name="postalcode" [(ngModel)]="postcodeSearch.postalcode" #postalcode="ngModel" pattern="^[0-9]+$" ngValue='' required>
+             <div *ngIf="postalcode.errors && (postalcode.dirty || postalcode.touched || postcodeSearchForm.submitted)"
+                class="alert alert-danger">
+               <div [hidden]="!postalcode.errors.required">
+                 Postalcode is required
+               </div>
+               <div [hidden]="!postalcode.errors.pattern">
+                 Postalcode is Invalid.
+               </div>
+             </div>
+           </div>
+           <div class="form-group">
+             <select name="postalcodeKm" [(ngModel)]="postcodeSearch.postalcodeKm" #postalcodeKm="ngModel">
+               <option value="''">KM</option>
+               <option value="5">5</option>
+               <option value="10">10</option>
+               <option value="15">15</option>
+               <option value="20">20</option>
+               <option value="25">25</option>
+             </select>
+             <button type="submit" class="btn btn-default" >Find</button>
+           </div>
+         </div>
+       </form>
+     </div>
+        <!--locations-->
+        <div class="sidebar-grid location-section">
+          <div class="sidebar-grid-title">Loactions</div>
+          <div class="location-detail">
+            <tree-root #tree [nodes]="nodes" (focus)="getSuburbId($event)" (initialized)="onEvent($event)">
+              <ng-template #treeNodeTemplate let-node>
+                <span class="locationname" title="{{node.data.id}}">{{ node.data.name }}</span>
+                <span class="pull-right locatiocount"> ({{node.data.subTitle}})</span>
+              </ng-template>
+            </tree-root>
+          </div>
+        </div>
+		<!--Meal Types-->
+		<div class="sidebar-grid feature-section">
+      <div class="sidebar-grid-title">Meal Types</div>
+      <div class="sidebar-grid-detail choose-feature grey-checkbox">
+        <label *ngFor="let items of allFilters.Meal_Type">
+          <div class="checkbox checkbox-inline-custom-filter">
+            <input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Meal_Type',$event);">
+            <!-- <span class="input-rc-span"></span> -->
+          </div>
+          <span class="label-name">{{items.name}}</span>
+        </label>
+      </div>
+    </div>
+<!-- commented by sachin as per suggestion of sangeetha for time being we are using search area instead of search type. -->
+    <!-- 
+    <div class="sidebar-grid feature-section">
+      <div class="sidebar-grid-title">Service Types</div>
+      <div class="sidebar-grid-detail choose-feature grey-checkbox">
+        <label *ngFor="let items of allFilters.Service_Type">
+          <div class="checkbox checkbox-inline-custom-filter"><input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Service_Type',$event);"><span class="input-rc-span"></span></div><span class="label-name">{{items.name}}</span>
+        </label>
+      </div>
+    </div>
+    -->   
+		<div class="sidebar-grid feature-section">
+      <div class="sidebar-grid-title">Service Area</div>
+      <div class="sidebar-grid-detail choose-feature grey-checkbox">
+        <label *ngFor="let items of allFilters.Service_Area">
+          <div class="checkbox checkbox-inline-custom-filter"><input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Service_Area',$event);"><!-- <span class="input-rc-span"></span> --></div><span class="label-name">{{items.name}}</span>
+        </label>
+      </div>
+    </div>    
+		<div class="sidebar-grid feature-section">
+      <div class="sidebar-grid-title">Parking Types</div>
+      <div class="sidebar-grid-detail choose-feature grey-checkbox">
+        <label *ngFor="let items of allFilters.Parking_Type">
+          <div class="checkbox checkbox-inline"><input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Parking_Type',$event);"><!-- <span class="input-rc-span"></span> --></div><span class="label-name">{{items.name}}</span>
+        </label>
+      </div>
+    </div>
+    <div class="sidebar-grid feature-section">
+      <div class="sidebar-grid-title">Features</div>
+      <div class="sidebar-grid-detail choose-feature grey-checkbox">
+        <label *ngFor="let items of allFilters.Merchant_Features">
+          <div class="checkbox checkbox-inline"><input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Merchant_Features',$event);"><!-- <span class="input-rc-span"></span> --></div><span class="label-name">{{items.name}}</span>
+        </label>
+      </div>
+    </div>
+		<div class="sidebar-grid feature-section">
+      <div class="sidebar-grid-title">Seating Locations</div>
+      <div class="sidebar-grid-detail choose-feature grey-checkbox">
+        <label *ngFor="let items of allFilters.Seating_Location">
+          <div class="checkbox checkbox-inline"><input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Seating_Location',$event);"><!-- <span class="input-rc-span"></span> --></div><span class="label-name">{{items.name}}</span>
+        </label>
+      </div>
+    </div>
+		<div class="sidebar-grid feature-section">
+      <div class="sidebar-grid-title">Alcohol Types</div>
+      <div class="sidebar-grid-detail choose-feature grey-checkbox">
+        <label *ngFor="let items of allFilters.Alcohol_Type">
+          <div class="checkbox checkbox-inline"><input type="checkbox" value="{{items.id}}" [(ngModel)]="items.checked" name="casual-dinning" [checked]="items.checked" (change)="getExtraFilters('Alcohol_Type',$event);"><!-- <span class="input-rc-span"></span> --></div><span class="label-name">{{items.name}}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+      <div class="search-result-view-wrap" *ngIf="isSearchData && !isMapViewFlag">
+        <div class="search-result-grid" *ngFor="let item of allMerchantData | paginate: { id: 'server', itemsPerPage: perpage, currentPage: p, totalItems: total }">
+          <a [routerLink]="['/restaurantdetail', item.merchantid]">
+          <div class="search-image" [ngClass]="{'noImg':item.photoUrl}">
+            <img src="{{item.photoUrl || '../assets/images/inner-grid-2.png'}}" width="">
+          </div>
+        </a>
+          <div class="search-result-details-wrap">
+            <div class="search-detail">
+              <div class="search-result-loaction-details">
+                <div class="search-result-hotel-name"><a [routerLink]="['/restaurantdetail', item.merchantid]">{{item.merchantname}}</a></div>
+                <div class="rating-view red-star">
+                  <div class="rating-star">                
+          					<star-rating-comp [starType]="'svg'" [staticColor]="'negative'" [rating]="item.rating" [readOnly]="true" [step]="0.5" [showHalfStars]="true" ></star-rating-comp>
+                  </div>
+                  <div class="review-text">
+                    <a href="javascript:void(0);">{{item.userreviewcount}} Review</a>
+                  </div>
+                </div>
+              </div>
+              <div class="search-result-price">
+                <div class="price-text">{{item.currency}} {{item.costft}}</div>
+                <div class="person-number">for 2</div>
+              </div>
+            </div>
+            <div class="address-search-wrapper">
+              <div class="search-result-address">
+                <p>{{item.address.address1}}, {{item.address.address2}}, {{item.address.city}}</p>
+                <p>{{item.address.suburb}}, {{item.address.state}}, {{item.address.Postcode}}, {{item.address.country}}</p>
+              </div>
+              <div class="search-result-cusine-type">
+                <span class="op-cusine-title">Cusine:</span>
+                <input type="checkbox" class="read-more-state" id="post-{{item.merchantid}}" *ngIf="item.cuisine.length > 5"/>
+                <!-- <div class="search-read-more-wrap"> -->
+                  <div class="read-more-wrap">
+                    <span *ngFor="let cuisineItem of item.cuisine;let i = index" [ngClass]="{'read-more-target':i>=5}">
+                      {{cuisineItem.cuisinename}}
+                    </span>
+                  </div>
+                  <label for="post-{{item.merchantid}}" class="read-more-trigger"></label>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="choose-restaurant-type">
+              <div class="search-service-features">
+                <button type="button" class="btn btn-primary op-search-btn" (click)="scrollDiv($event,'s'+[item.merchantid]);">Services
+                </button>
+                <ul class="card card-block card-header block" [style.height]="height + 'px'" id="s{{item.merchantid}}">
+                  <ng-container *ngIf="item.service?.length > 0">
+                    <li class="well well-lg" *ngFor="let serviceItem of item.service;let iService = indexService">{{serviceItem.paramname}}</li>
+                  </ng-container>
+                  <ng-container *ngIf="item.service?.length <= 0">
+                  <li class="well well-lg">No service found</li>
+                  </ng-container>
+                </ul>
+              </div>
+
+              <div class="search-service-features">
+                <button type="button" class="btn btn-primary op-search-btn" (click)="scrollDiv($event,'f'+[item.merchantid]);">Features
+                </button>
+                <ul class="card card-block card-header block" [style.height]="height + 'px'" id="f{{item.merchantid}}">
+                  <ng-container *ngIf="item.features?.length > 0">
+                    <li class="well well-lg" *ngFor="let featureItem of item.features;let iFeature = indexFeatures">{{featureItem.paramname}}</li>
+                  </ng-container>
+                  <ng-container *ngIf="item.features?.length <= 0">
+                  <li class="well well-lg">No feature found</li>
+                  </ng-container>
+                </ul>
+              </div>
+              <!-- <div class="search-service-features" [ngClass]="{'show-search-list':heightF > 0 }">
+                <button type="button" class="btn btn-primary op-search-btn" (click)="heightF = heightF ? 0 : element.scrollHeight">Features
+                </button>
+                <ul class="card card-block card-header block" [style.height]="heightF + 'px'" #element>
+                  <li class="well well-lg" *ngFor="let featureItem of item.features;let iFeature = indexFeatures">{{featureItem.paramname}}</li>
+                </ul>
+              </div> -->
+              <!-- <a href="javascript:void(0)" class="home-delivery">Home Delivery</a>
+              <a href="javascript:void(0)" class="pure-veg">Pure Vegetarian</a>
+              <a href="javascript:void(0)" class="air-cond">Air Conditioned</a>
+              <a href="javascript:void(0)" class="kids-playground">Kids Playground</a> -->
+            </div>
+
+            <div class="call-menu-btn" #recordsdisplay>
+              <div class="search-btn-wrap">
+                <a href="javascript:void(0);" class="call-now-btn red-btn" (click)="scrollDiv($event,'c'+[item.merchantid]);">Call Now</a>
+                <ul class="card card-block card-header block" [style.height]="height + 'px'" id="c{{item.merchantid}}">
+                  <ng-container *ngIf="item.phone">
+                    <li class="well well-lg">
+                      <a href="tel:{{item.phone}}"> {{item.phone}} </a>
+                    </li>
+                  </ng-container>
+                  <ng-container *ngIf="!item.phone">
+                  <li class="well well-lg">No phone found</li>
+                  </ng-container>
+                </ul>
+              </div>
+              <div class="search-btn-wrap">
+                <a [routerLink]="['/restaurantdetail', item.merchantid]" fragment="menu" class="view-menu red-btn">View Menu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pager">
+            <div class="pagination" >
+              <!-- <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div> -->
+              <pagination-controls (pageChange)="getPage($event)" id="server" maxSize = "5" directionLinks="true" autohide="true"></pagination-controls>
+            </div>
+        </div>
+      </div>
+      <div class="search-result-view-wrap" *ngIf="isRecordFound" >
+        <div class="search-result-grid">
+          No record found
+        </div>
+      </div>
+      {{centerLocation}}
+      <div class="search-result-view-wrap" *ngIf="isSearchData && isMapViewFlag">
+        <ngui-map zoom="{{zoomlevel}}" center="{{centerLocation}}" (mapReady$)="onMapReady($event)" (mapClick)="onMapClick($event)" mapTypeId="satellite" >
+          <directions-renderer
+          [suppressMarkers]="true"
+          [draggable]="true"
+          panel="#my-panel"
+          (directions_changed)="directionsChanged()"
+          [directions-request]="direction">
+          </directions-renderer>
+          <marker *ngFor="let pos of positions; let i = index; " [position]='pos.latlong'  (click)="clicked($event,pos)" [label]='pos.markerno' > </marker>
+
+          <info-window id='iw'>
+            <div *ngIf="marker.display">
+              <span class="markerTitle">{{ marker.resTitle }}</span>
+              <span class="markerAddr">{{ marker.resAddress }}</span>
+            </div>
+             <button type="button" name="getdirection" class="btn btn-default" (click)="onGetDirection($event )">Get Direction</button>
+          </info-window>
+
+          <marker position="{{direction.origin}}"  (click)="originclicked($event)" color="green" label="A" ></marker>
+            <info-window id="iwo">
+              <div >
+
+                <span class="markerTitle">{{ originmarker.resTitle }}</span>
+                <span class="markerAddr">{{ originmarker.resAddress }}</span>
+              </div>
+            </info-window>
+
+        </ngui-map>
+       <div id="my-panel"></div>
+ 
+  <!-- Please click the marker to see a info window -->
+      </div>
+    </div>
+  </div>
+  <!-- End Search Section -->

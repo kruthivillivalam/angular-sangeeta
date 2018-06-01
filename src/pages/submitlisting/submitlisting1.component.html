@@ -1,0 +1,256 @@
+<div class="menupage-sec1-mapinfo-js submit-listings-content-m">
+
+  <div class="container">
+    <div class="row bs-wizard" style="border-bottom:0;">
+      <div class="col-xs-4 bs-wizard-step active">
+        <div class="text-center bs-wizard-stepnum">Step 1</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Enter Information</div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step disabled">
+        <!-- complete -->
+        <div class="text-center bs-wizard-stepnum">Step 2</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Select Plans and Addons</div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step disabled">
+        <!-- complete -->
+        <div class="text-center bs-wizard-stepnum">Step 3</div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <a href="#" class="bs-wizard-dot"></a>
+        <div class="bs-wizard-info text-center">Make Payments</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="holder-fullcontent-cartsummary-page-inner-js submit-listings-holder-m">
+          <h3>Submit a Listing</h3>
+          <p>Provide the information required below.</p>
+          <div class="">
+            <form novalidate (ngSubmit)="merchantForm.valid && onSubmit(merchantForm.value);firstName.focus()" name="merchantForm" #merchantForm="ngForm"
+              class="submit-form-holder-m">
+              <div class="row">
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input class="sub-base" name="firstName" placeholder="First Name*" pattern="[a-zA-Z]+" [(ngModel)]="merchant.firstName" #firstName
+                    required type="text">
+                  <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched || merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!firstName.errors.required">
+                      Firstname is required
+                    </div>
+                    <div [hidden]="!firstName.errors.pattern">
+                      Only alphabets are allowed in firstname
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input class="sub-base" placeholder="Last Name*" pattern="[a-zA-Z]+" name="lastName" [(ngModel)]="merchant.lastName" #lastName="ngModel"
+                    required type="text">
+                  <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched ||merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!lastName.errors.required">
+                      Lastname is required
+                    </div>
+                    <div [hidden]="!lastName.errors.pattern">
+                      Only alphabets are allowed in lastname
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input class="sub-base" placeholder="Email address*" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$"
+                    name="email" [(ngModel)]="merchant.email" #email="ngModel" required>
+                  <div *ngIf="email.errors && (email.dirty || email.touched || merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!email.errors.required">
+                      Email is required
+                    </div>
+                    <div [hidden]="!email.errors.pattern">
+                      Email is Invalid.
+                    </div>
+                  </div>
+                  <div *ngIf="emailexistMessage && email.value !== ''" class="alert alert-danger">
+                    {{emailexistMessage}}
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input class="sub-base" placeholder="Mobile Number*" minlength="10" maxlength="10" pattern="^[0-9]+$" name="mobile" [(ngModel)]="merchant.mobile"
+                    #mobile="ngModel" required type="number">
+                  <div *ngIf="mobile.errors && (mobile.dirty || mobile.touched || merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!mobile.errors.required">
+                      Mobile is required
+                    </div>
+                    <div [hidden]="!mobile.errors.minlength">
+                      Mobile Number must be at least 10 number long.
+                    </div>
+                    <div [hidden]="!mobile.errors.pattern">
+                      Mobile is Invalid.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="sub-flow-box">
+                    <select class="sub-base-sel" name="prorganisation" #prorganisation="ngModel" [(ngModel)]="merchant.prorganisation" required>
+                      <option value="''">Primary Role at your Organisation*</option>
+                      <option *ngFor="let merchantRoleItem of merchantRoleData" [ngValue]="merchantRoleItem.id">{{merchantRoleItem.name}}</option>
+                    </select>
+                    <div *ngIf="prorganisation.errors && (prorganisation.dirty || prorganisation.touched || merchantForm.submitted)" class="alert alert-danger">
+                      <div [hidden]="!prorganisation.errors.required">
+                        Primary Role at Organisation is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="sub-base" placeholder="Merchant Business Name*" name="merchantBusiness" #merchantBusiness="ngModel"
+                    [(ngModel)]="merchant.merchantBusiness" required>
+                  <div *ngIf="merchantBusiness.errors && (merchantBusiness.dirty || merchantBusiness.touched || merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!merchantBusiness.errors.required">
+                      Business Name is required
+                    </div>
+                  </div>
+                  <div *ngIf="merchantexistMessage && merchantBusiness.value !== ''" class="alert alert-danger">
+                    {{merchantexistMessage}}
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="sub-base" placeholder="Business Registration Number" name="businessNumber" [(ngModel)]="merchant.businessNumber"
+                    #businessNumber="ngModel">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="sub-base" placeholder="Address 1*" name="businessAddress1" [(ngModel)]="merchant.businessAddress1"
+                    #businessAddress1="ngModel" required>
+                  <div *ngIf="businessAddress1.errors && (businessAddress1.dirty || businessAddress1.touched || merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!businessAddress1.errors.required">
+                      Business Address is required
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="sub-base" placeholder="Address 2" name="businessAddress2" [(ngModel)]="merchant.businessAddress2"
+                    #businessAddress2="ngModel">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="autocomplete-input suburb-autocomplete">
+                    <ng2-completer [(ngModel)]="color3" [datasource]="dataService" [minSearchLength]="0" [inputName]="suburb" name="suburb" [placeholder]="'Search Suburb*'"
+                      #suburb="ngModel" [textSearching]="'Please wait...'" class="sub-base" [autoMatch]="true" [initialValue]="color3"
+                      required (selected)="getPostalcode($event);" style=""></ng2-completer>
+                  </div>
+                  <div *ngIf="suburb.errors && (suburb.dirty || suburb.touched || merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!suburb.errors.required">
+                      Suburb is required
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input class="sub-base" placeholder="City" name="city" [(ngModel)]="merchant.city" #city="ngModel" type="text">
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="sub-base" placeholder="Postal Code*" name="postalCode" [(ngModel)]="merchant.postalCode" #postalCode="ngModel"
+                    required>
+                  <div *ngIf="postalCode.errors && (postalCode.dirty || postalCode.touched || merchantForm.submitted)" class="alert alert-danger">
+                    <div [hidden]="!postalCode.errors.required">
+                      Postal Code is required
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="sub-flow-box">
+                    <select class="sub-base-sel" name="state" [(ngModel)]="merchant.state" #state="ngModel" required (change)="resetSuburbPostal()">
+                      <option [ngValue]="''">State*</option>
+                      <option *ngFor="let stateItem of suburbsByCountry" [ngValue]="stateItem.state_id">
+                        {{stateItem.state_name}}
+                      </option>
+                    </select>
+                    <div *ngIf="state.errors && (state.dirty || state.touched || merchantForm.submitted)" class="alert alert-danger">
+                      <div [hidden]="!state.errors.required">
+                        State is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                  <div class="sub-flow-box">
+                    <select class="sub-base-sel" name="country" [(ngModel)]="merchant.country" #country="ngModel" required (change)="getStateData($event.target.value)">
+                      <option [ngValue]="''">Country*</option>
+                      <option *ngFor="let countryItem of countryData" [ngValue]="countryItem.id">{{countryItem.name}}</option>
+                    </select>
+                    <div *ngIf="country.errors && (country.dirty || country.touched || merchantForm.submitted)" class="alert alert-danger">
+                      <div [hidden]="!country.errors.required">
+                        Country is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 ">
+                  <label>Registered Business Units*</label>
+
+                  <div class="col-md-4" *ngFor="let businessItems of businessUnits">
+                    <div class="row">
+                      <div class="col-md-1" style="float: left; margin-left: 25px">
+                        <input type="radio" name="businessUnits" value="{{businessItems.businessUnitId}}" [(ngModel)]="businessItems.checked"
+                      [checked]="businessItems.checked" (click)='selectBusinessUnit(businessItems)'>
+                  </div>
+                  <div class="col-md-10" style="float: right">
+                      <h6 style="font-size: 14px; color: black; text-align:left; margin-left:-14px"> {{businessItems.businessUnitName}}</h6>
+                    </div>
+                  </div>
+                      <!--<div class="row radio">
+                      <input style="" type="radio" name="businessUnits" value="{{businessItems.businessUnitId}}"  [(ngModel)]="businessItems.checked"
+                      [checked]="businessItems.checked" (click)='selectBusinessUnit(businessItems)'>
+                      <label>  {{businessItems.businessUnitName}}</label>
+                    </div>
+                  </div>
+                    <<div class="form-group ">
+                      <label><input  type="radio" name="deliType" value="{{businessItems.businessUnitId}}" [(ngModel)]="businessItems.checked"
+                       (click)='selectBusinessUnit(businessItems)'>
+                      {{businessItems.businessUnitName}}</label>
+                    </div>
+                  </div>-->
+                  <!--<div class="col-sm-4" *ngFor="let inneritems of businessUnits">
+                    <div class="radio">
+                      <label><input type="radio" name="optionRadio" value="{{inneritems.checked}}" [checked]="inneritems.checked"  (click)='selectBusinessUnit(inneritems)'>
+                        {{inneritems.businessUnitName}}
+                      </label>
+                    </div>-->
+                  </div>
+
+                </div>
+
+				<div class="clearfix"></div>
+
+                <div class="col-md-12">
+                  <input type="submit" class="" value="Continue">
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

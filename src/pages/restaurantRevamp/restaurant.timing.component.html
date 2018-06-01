@@ -1,0 +1,47 @@
+<ul class="nav nav-tabs tabs-header-menu-page-inner-js">
+    <li class="active">
+        <a data-toggle="tab" class="menus-timetable-menupage-inner-js" href="#home">Business</a>
+    </li>
+    <li *ngIf="delivery === true">
+        <a data-toggle="tab"  class="menus-timetable-menupage-inner-js" href="#menu1">Delivery</a>
+    </li>
+    <li *ngIf="takeAway === true">
+        <a data-toggle="tab"  class="menus-timetable-menupage-inner-js" href="#menu2">Take Away</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <ul class="tabs-menupage-timings-style-js">
+            <li *ngFor="let businessTimings of businessTimingsArray">
+                <a class="tabs-content-menu-page-js" href="#">
+                    <span class="days-adjust-style-menu-page-inner-js">{{businessTimings.day || "NA"}}</span>
+					-
+                    <span class="days-adjust1-style-menu-page-inner-js">{{businessTimings.timings || "Closed"}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        <ul class="tabs2-menupage-timings-style-js">
+            <li *ngFor="let deliveryTimings of deliveryTimingsArray">
+                <a class="tabs-content-menu-page-js" href="#">
+                    <span class="timings-adjust-style-menu-page-inner-js">{{deliveryTimings.day}}</span>
+					-
+                    <span class="timings-adjust1-style-menu-page-inner-js">{{deliveryTimings.timings || "Closed"}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+        <ul class="tabs2-menupage-timings-style-js">
+            <li *ngFor="let takeAwayTimings of takeAwayTimingsArray">
+                <a class="tabs-content-menu-page-js" href="#">
+                    <span class="timings-adjust-style-menu-page-inner-js">{{takeAwayTimings.day || "NA"}}</span>
+					-
+                    <span class="timings-adjust1-style-menu-page-inner-js">{{takeAwayTimings.timings || "Closed"}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

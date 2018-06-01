@@ -1,0 +1,227 @@
+<div class="container">
+  <div class="holder-fullcontent-inner-js ">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb frm-sub-signup-brd">
+          <li>
+            <a href="javascript:void(0);" [routerLink]="['/']">{{commonTxtContentReg.HOME_TXT}}</a>
+          </li>
+          <li class="active">{{commonTxtContentReg.REG_TXT}}</li>
+        </ol>
+      </div>
+    </div>
+    <!-- End Page Breadcrumb -->
+    <spinner name="registerLoading"></spinner>
+    <!-- Start Register Page -->
+    <div class="row main-reg-frm-sup">
+      <div class="col-md-6 col-md-offset-2">
+        <form novalidate (ngSubmit)="userForm.valid && verifyEmail(userForm.value)" name="userForm" #userForm="ngForm">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+
+                <input type="text" class="form-control" placeholder="First Name*" required pattern="[a-zA-Z]+" name="firstName" [(ngModel)]="user.firstName"
+                  #firstName="ngModel">
+
+                <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched || userForm.submitted)" class="alert alert-danger">
+                  <div [hidden]="!firstName.errors.required">
+                    {{regValidationError.FIRST_NAME_REQ_ERR}}
+                  </div>
+                  <div [hidden]="!firstName.errors.pattern">
+                    {{regValidationError.FIRST_NAME_ALPHA_ERR}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Last Name*" required pattern="[a-zA-Z]+" name="lastName" [(ngModel)]="user.lastName"
+                  #lastName="ngModel">
+                <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched ||userForm.submitted)" class="alert alert-danger">
+                  <div [hidden]="!lastName.errors.required">
+                    {{regValidationError.LAST_NAME_REQ_ERR}}
+                  </div>
+                  <div [hidden]="!lastName.errors.pattern">
+                    {{regValidationError.LAST_NAME_ALPHA_ERR}}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email*" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              name="email" [(ngModel)]="user.email" #email="ngModel" (keyup)="emailNotFound=false">
+            <div *ngIf="email.errors && (email.dirty || email.touched || userForm.submitted)" class="alert alert-danger">
+              <div [hidden]="!email.errors.required">
+                {{regValidationError.EMAIL_REQ_ERR}}
+              </div>
+              <div [hidden]="!email.errors.pattern">
+                {{regValidationError.EMAIL_INVALID_ERR}}
+              </div>
+            </div>
+            <div *ngIf="!(email.errors) && emailNotFound" class="alert alert-danger">{{regValidationError.EMAIL_NOT_FOUND}}
+            </div>
+
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Mobile* eg: +615522663388" required minlength="10" maxlength="13" pattern="^[0-9,+]+$"
+              name="mobile" [(ngModel)]="user.mobile" #mobile="ngModel" (keyup)="mobileNotFound=false">
+            <div *ngIf="mobile.errors && (mobile.dirty || mobile.touched || userForm.submitted)" class="alert alert-danger">
+              <div [hidden]="!mobile.errors.required">
+                {{regValidationError.MOBILE_REQ_ERR}}
+              </div>
+              <div [hidden]="!mobile.errors.minlength">
+                {{regValidationError.MOBILE_LEN_ERR}}
+              </div>
+              <div [hidden]="!mobile.errors.pattern">
+                {{regValidationError.MOBILE_INVALID_ERR}}
+              </div>
+            </div>
+            <div *ngIf="!(mobile.errors) && mobileNotFound" class="alert alert-danger">{{regValidationError.MOBILE_NO_NOT_FOUND}}
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="dt-brth-main">{{regTextContent.REG_DOB_TXT}}</p>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <select [(ngModel)]="user.days" name="days" class="form-control">
+                  <option *ngFor="let day of days" [ngValue]="day">{{day}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <select class="form-control" [(ngModel)]="user.month" name="month">
+                  <option *ngFor="let month of months;let i = index" [ngValue]="i">{{month}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <select class="form-control" [(ngModel)]="user.year" name="year">
+                  <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password*" required name="password" minlength="6" [(ngModel)]="user.password"
+              #password="ngModel">
+            <div *ngIf="password.errors && (password.dirty || password.touched || userForm.submitted)" class="alert alert-danger">
+              <div [hidden]="!password.errors.required">
+                {{regValidationError.PWD_REQ_ERR}}
+              </div>
+              <div [hidden]="!password.errors.minlength">
+                {{regValidationError.PWD_LEN_ERR}}
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Confirm Password*" required name="confpassword" minlength="6" validateEqual="password"
+              [(ngModel)]="user.confpassword" #confpassword="ngModel">
+            <div *ngIf="confpassword.errors && (confpassword.dirty || confpassword.touched || userForm.submitted) " class="alert alert-danger">
+              <div [hidden]="!confpassword.errors.required">
+                {{regValidationError.PWD_REQ_ERR}}
+              </div>
+              <div [hidden]="!confpassword.errors.minlength">
+                {{regValidationError.PWD_LEN_ERR}}
+              </div>
+              <div [hidden]="confpassword.valid || (confpassword.pristine  )">
+                {{regValidationError.PWD_MISSMATCH_ERR}}
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Address 1" name="cust_addr1" [(ngModel)]="user.address" maxlength="50">
+          </div>
+          <div class="form-group">
+
+            <input type="text" class="form-control" name="cust_addr2" placeholder="Address 2" [(ngModel)]="user.address2" maxlength="50">
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="autocomplete-input suburb-autocomplete">
+                  <ng2-completer [(ngModel)]="color3" [datasource]="dataService" [minSearchLength]="0" [inputName]="suburb" name="suburb" [placeholder]="'Search Suburb'" #suburb="ngModel" [textSearching]="'Please wait...'" class="white-input" [autoMatch]="true" [initialValue]="color3" required (selected)="getPostalcode($event);"></ng2-completer>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="City" [(ngModel)]="user.city" name="city">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Postal Code" [(ngModel)]="user.pincode" name="pincode" readonly>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="State" [(ngModel)]="user.state" name="state" readonly>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <select class="form-control" [(ngModel)]="user.country" #country="ngModel" name="country" (change)="getSuburbsByCountry(user.country)">
+              <option [ngValue]="''">{{regTextContent.COUNTRY_TXT}}</option>
+              <option *ngFor="let countryItem of countryData" [ngValue]="countryItem.id">{{countryItem.name}}</option>
+            </select>
+            <!-- countryData -->
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" required name="agree" [(ngModel)]="user.agree" #agree="ngModel">{{regTextContent.I_AGREE_TXT}} <a href="javascript:void(0);" data-toggle="modal" data-target="#first-video">{{regTextContent.TERMS_N_COND_TXT}}</a></label>
+              </div>
+            </div>
+            <div class="col-sm-12" *ngIf="agree.errors && (agree.dirty || agree.touched || userForm.submitted) ">
+              <div class="alert alert-danger">
+                <div [hidden]="!agree.errors.required">
+                  {{regValidationError.PLS_AGREE_ERR}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 ">
+              <button type="submit" class="btn btn-default register-signup-button">{{commonTxtContentReg.SIGNUP_TXT}}</button>
+              <a [routerLink]="['/login']" class="login-link">{{commonTxtContentReg.LOGIN_TXT}}</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a href="javascript:void(0);" (click)="fbSignUp()">
+              <img class="img-responsive sign-in-register-image" src="../assets/images/login-with-facebook.png" alt="Login with facebook" style="max-width: 280px;">
+            </a>
+          </div>
+          <div class="col-sm-12 text-center">
+            <h5 class="text-muted">OR</h5>
+          </div>
+          <div class="col-sm-12 text-center">
+            <a href="javascript:void(0);" (click)="googleSignUp()">
+              <img class="img-responsive sign-in-register-image" src="../assets/images/login-with-google.png" alt="Login with google" style="max-width: 280px;">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

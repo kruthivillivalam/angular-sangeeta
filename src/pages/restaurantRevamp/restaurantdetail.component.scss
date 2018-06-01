@@ -1,0 +1,113 @@
+.orderType {
+  margin-left: 60px;
+}
+
+.block {
+  overflow: hidden;
+  -webkit-transition: height .5s;
+  transition: height .5s;
+}
+
+h3 {
+  margin: 0;
+  border: none;
+  border-bottom: 5px solid transparent;
+  color: gray;
+  font-size: 15px;
+  @media (max-width: 1200px) {
+    font-size: 14px;
+  }
+  &:hover {
+    /*border: none;*/
+    background-color: transparent;
+  }
+}
+
+.deliveryTabs {
+  width: 33%;
+}
+
+.openingHourTable {
+  float: left;
+  margin-left: -5%;
+}
+.restaurant-opening-hour {
+  width: 40%
+}
+.restaurant-brief-detail {
+  width: 60%
+}
+.date-field {
+  width: 100%;
+}
+.time-field {
+  width: 100%;
+}
+h6 {
+  color: gray;
+  font-size: 15px;
+}
+.active {
+  .a {
+    color:red;
+  }
+}
+.foodTruck {
+  width: 100%;
+  height: auto;
+  padding: 20px 10px 20px 0px;
+  background: #eaeaea;
+  margin-left: 10px;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.foodTruck h5
+{
+  font-family: 'Montserrat',sans-serif;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #736f6f;
+  width: auto;
+  margin: 0;
+  text-align: left;
+}
+.foodTruck span
+{
+  font-family: 'Montserrat',sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  color: #9b9b9b;
+  margin: 0;
+  width: 6%;
+  text-align: center;
+}
+.foodTruck h4
+{
+  font-family: 'Montserrat',sans-serif;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #b91319;
+  margin: 0;
+  width: auto;
+  text-align: left;
+}
+br
+{
+  display: block;
+  margin: 5px 0;
+}
